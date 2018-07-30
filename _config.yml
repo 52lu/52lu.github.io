@@ -72,3 +72,4 @@ deploy:
   type: git
   repo: https://github.com/MrLiuqh/liuqh.github.io.git
   barnch: master
+
