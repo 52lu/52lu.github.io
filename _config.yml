@@ -70,6 +70,6 @@ theme: next
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/MrLiuqh/liuqh.github.io.git
-  barnch: master
+  repo: git@github.com:MrLiuqh/liuqh.github.io.git
+  barnch: hexo
 
