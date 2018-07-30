@@ -1,0 +1,23 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/INS-Platform-Git.iml
+.idea
+.idea/dbnavigator.xml
+cache/
+/log
+*~
+.DS_Store
+test.sh
+/tests
+.htaccess
+*.tgz
+LqhTest.php
+claimNote/
+Lqh.php
+Sww.php
+Lhs_Tools2.php
+Mytest.php
+framework
+authFile/
+www/cata/*
+*.txt
+*.docx
