@@ -72,4 +72,3 @@ deploy:
   type: git
   repo: git@github.com:MrLiuqh/liuqh.github.io.git
   barnch: hexo
-
