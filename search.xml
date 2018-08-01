@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F07%2F31%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[RabbitMQ安装方法总结]]></title>
+    <url>%2F2018%2F08%2F01%2Frabbit-mq-install%2F</url>
+    <content type="text"><![CDATA[具体安装如下： 一：安装Erlang：12345678 # rpm --import http://binaries.erlang-solutions.com/debian/erlang_solutions.asc # cd /etc/yum.repos.d/ # wget http://binaries.erlang-solutions.com/rpm/centos/erlang_solutions.repo # yum install esl-erlang 二：安装esl-erlang-compat：12345# cd /tmp/ # wget https://raw.github.com/jasonmcintosh/esl-erlang-compat/master/rpmbuild/RPMS/noarch/esl-erlang-compat-R14B-1.el6.noarch.rpm # yum install esl-erlang-compat-R14B-1.el6.noarch.rpm 三：安装RabbitMQ 12345# cd /tmp # wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.2/rabbitmq-server-3.6.2-1.noarch.rpm # yum install rabbitmq-server-3.6.2-1.noarch.rpm 到此，RabbitMQ基本安装完成了。 四：RabbitMQ页面监控系统RabbitMQ提供了一个web的监控页面系统，这个系统是以Plugin的方式进行调用的。在Documentation下的Server下的Management是关于配置这个插件的。地址：http://www.rabbitmq.com/management.html这个管理插件是包含在RabbitMQ发行包里的，所以只需激活即可。 命令：1# rabbitmq-plugins enable rabbitmq_management 五：配置登陆用户 123# rabbitmqctl add_user leyue leyue100# rabbitmqctl set_user_tags leyue administrator# rabbitmqctl set_permissions -p / leyue &quot;.*&quot; &quot;.*&quot; &quot;.*&quot; 浏览器地址栏输入：http://localhost:15672 用户名登陆 RabbitMQ服务启动、关闭、重启12345# service rabbitmq-server start //开启# service rabbitmq-server stop //关闭#service rabbitmq-server restart //重启 具体使用，待续….]]></content>
+      <categories>
+        <category>rabbitmq</category>
+      </categories>
+      <tags>
+        <tag>rabbitmq</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[php]]></title>
-    <url>%2F2018%2F07%2F31%2Fphp%2F</url>
-    <content type="text"><![CDATA[PHP1hello php]]></content>
+    <title><![CDATA[PHP 中 in_array 需要注意，根据具体场景设置第三个参数]]></title>
+    <url>%2F2018%2F08%2F01%2Fphp-in-array%2F</url>
+    <content type="text"><![CDATA[问题描述: 在使用php的in_array 函数时；我习惯性使用以下的方式判断： 1234567$a = &apos;1abc&apos;;$array = [1,2,3];if (in_array($a,$array)&#123; echo &apos;do .....&apos;;&#125; else &#123; echo &apos;do else .....&apos;;&#125; 按照预想应该会输出1do else ..... 但是实际输出的是：1do ..... 原因：根据官方文档函数 in_array 的描述： 在 array 中搜索 search，如果没有设置 type 则使用宽松的比较。第三个参数默认为 false，当 search 和 array 中的元素比较时会进行类型转换，相当于使用 == 进行比较。 备注：上个例子中的$a=’1abc’ 再和数字做比较时会转为$a=1 总结12in_array()第三个参数决定变量和数组中元素如何进行比较。值为 false（默认值）时，相当于 ==，值为 true 时，相当于 ===。]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP float金额在强制转换为整型时，发现数值不对。]]></title>
+    <url>%2F2018%2F08%2F01%2Fphp-float%2F</url>
+    <content type="text"><![CDATA[今天发现一个很奇怪的问题: PHP float金额在强制转换为整型时，发现数值和实际相差1分。 123456789101112131415今天发现一个很奇怪的问题； 我有一笔订单金额为$a = 529.80 交易时我做了金额检验： 客户端传给我的是字符串52980（分）， 我从数据库取出是：529.80 然后 * 100 （变成分） $b = 52980， 然后在转为整型 intval($b),发现一个奇怪的问题，变成了52979 少了一分。然后都试了一遍，发现： [ *.30 *.80 *.31 *.81 ] 都有这个问题具体原因还不明白。]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[php 正则去掉字符串中非汉字字符串]]></title>
+    <url>%2F2018%2F08%2F01%2Fphp-preg_match_all%2F</url>
+    <content type="text"><![CDATA[直接上代码示例： 123456$str=&apos;2016，北京欢迎您 from around you..&apos;; preg_match_all(&apos;/[\x&#123;4e00&#125;-\x&#123;9fff&#125;]+/u&apos;, $str, $matches); $str = join(&apos;&apos;, $matches[0]); 输出 1北京欢迎您]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MacBook brew yaf error: unknown type name 'HASHKIT_API']]></title>
+    <url>%2F2018%2F07%2F31%2Fbrew-yaf-error-unknown-type-name-HASHKIT-API%2F</url>
+    <content type="text"><![CDATA[问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’ 1234567891011121314151617181920212223\h:\W \u$ brew install php70-yaf==&gt; Installing php70-yaf from homebrew/php==&gt; Downloading https://github.com/laruence/yaf/archive/yaf-3.0.3.tar.gzAlready downloaded: /Users/liuqh/Library/Caches/Homebrew/php70-yaf-3.0.3.tar.gz==&gt; /usr/local/opt/php70/bin/phpize==&gt; ./configure --prefix=/usr/local/Cellar/php70-yaf/3.0.3 --with-php-config=/usr/local/opt/php70/bin/php-config==&gt; makeLast 15 lines from /Users/liuqh/Library/Logs/Homebrew/php70-yaf/03.make:/usr/local/include/string.h:56:1: error: unknown type name &apos;HASHKIT_API&apos;HASHKIT_API^/usr/local/include/string.h:57:1: error: expected identifier or &apos;(&apos;const char *hashkit_string_c_str(const hashkit_string_st* self);^6 errors generated.make: *** [yaf_bootstrap.lo] Error 1make: *** Waiting for unfinished jobs....6 errors generated.make: *** [yaf.lo] Error 16 errors generated.make: *** [yaf_application.lo] Error 16 errors generated.make: *** [yaf_dispatcher.lo] Error 1 ====&gt; 解决方法：找到/usr/local/include/string.h 注释调和’HASHKIT_API有关的代码； 123456789101112/*=============================20180314 解决yaf 装不上的问题，注释#HASHKIT_APIvoid hashkit_string_free(hashkit_string_st *ptr);#HASHKIT_APIsize_t hashkit_string_length(const hashkit_string_st *self);#HASHKIT_APIconst char *hashkit_string_c_str(const hashkit_string_st* self);#================================================================*/ 补充：以上的解决方法有问题，虽然 phpinfo 能显示 yaf 扩展；但是实际使用中会报错； 1234567891011&gt;&gt;&gt; nginx 报错： 2018/03/16 12:01:44 [error] 4965#0: *25 kevent() reported about an closed connection (54: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: 127.0.0.1, request: &quot;GET /test/lqh/test?XDEBUG_SESSION_START=19833 HTTP/1.1&quot;, upstream: &quot;fastcgi://127.0.0.1:9000&quot;, host: &quot;www.cloudins.com&quot;&gt;&gt;&gt;php-fpm报错:[16-Mar-2018 12:21:27] NOTICE: fpm is running, pid 6593[16-Mar-2018 12:21:27] NOTICE: ready to handle connections[16-Mar-2018 12:22:01] WARNING: [pool www] child 6594 exited on signal 11 (SIGSEGV) after 34.532384 seconds from start[16-Mar-2018 12:22:01] NOTICE: [pool www] child 6602 started[16-Mar-2018 14:10:02] NOTICE: Finishing ...[16-Mar-2018 14:10:02] NOTICE: exiting, bye-bye! 结论：12345=========================================================这些错误信息各种 google，都没有对应的解决方案，只是遇到同样问题的人；后来最后的解决方法是从同事电脑 （MacBook Pro）brew安装好的包直接引入;我的电脑是（MacBook），个人猜测是电脑系统（/usr/local/include）中文件的问题，因为我发现MacBook Pro该目录中没有这些文件；]]></content>
       <categories>
         <category>php</category>
       </categories>

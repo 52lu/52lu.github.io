@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="php," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="记录：填坑、挖坑的心累历程。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="庆辉">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="问题描述: 在使用php的in_array 函数时；我习惯性使用以下的方式判断： 1234567$a     = &amp;apos;1abc&amp;apos;;$array =  [1,2,3];if (in_array($a,$array)&amp;#123;    echo  &amp;apos;do .....&amp;apos;;&amp;#125; else &amp;#123;    echo  &amp;apos;do else .....&amp;">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP 中 in_array 需要注意，根据具体场景设置第三个参数">
+<meta property="og:url" content="http://yoursite.com/2018/08/01/php-in-array/index.html">
 <meta property="og:site_name" content="庆辉">
-<meta property="og:description" content="记录：填坑、挖坑的心累历程。">
+<meta property="og:description" content="问题描述: 在使用php的in_array 函数时；我习惯性使用以下的方式判断： 1234567$a     = &amp;apos;1abc&amp;apos;;$array =  [1,2,3];if (in_array($a,$array)&amp;#123;    echo  &amp;apos;do .....&amp;apos;;&amp;#125; else &amp;#123;    echo  &amp;apos;do else .....&amp;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/php-in-array.png">
+<meta property="og:updated_time" content="2018-08-01T02:49:49.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="庆辉">
-<meta name="twitter:description" content="记录：填坑、挖坑的心累历程。">
+<meta name="twitter:title" content="PHP 中 in_array 需要注意，根据具体场景设置第三个参数">
+<meta name="twitter:description" content="问题描述: 在使用php的in_array 函数时；我习惯性使用以下的方式判断： 1234567$a     = &amp;apos;1abc&amp;apos;;$array =  [1,2,3];if (in_array($a,$array)&amp;#123;    echo  &amp;apos;do .....&amp;apos;;&amp;#125; else &amp;#123;    echo  &amp;apos;do else .....&amp;">
+<meta name="twitter:image" content="http://yoursite.com/images/php-in-array.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/01/php-in-array/"/>
 
 
 
 
 
-  <title>归档 | 庆辉</title>
+  <title>PHP 中 in_array 需要注意，根据具体场景设置第三个参数 | 庆辉</title>
   
 
 
@@ -153,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,222 +290,212 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/php-in-array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/demo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="庆辉">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">PHP 中 in_array 需要注意，根据具体场景设置第三个参数</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T10:25:05+08:00">
+                2018-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/01/rabbit-mq-install/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ安装方法总结</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-01T10:55:17+08:00"
-              content="2018-08-01" >
-          08-01
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/01/php-in-array/" itemprop="url">
-              
-                <span itemprop="name">PHP 中 in_array 需要注意，根据具体场景设置第三个参数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-01T10:25:05+08:00"
-              content="2018-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/01/php-float/" itemprop="url">
-              
-                <span itemprop="name">PHP float金额在强制转换为整型时，发现数值不对。</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-01T10:13:44+08:00"
-              content="2018-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>问题描述:<br> 在使用php的in_array 函数时；我习惯性使用以下的方式判断：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a     = &apos;1abc&apos;;</span><br><span class="line">$array =  [1,2,3];</span><br><span class="line">if (in_array($a,$array)&#123;</span><br><span class="line">    echo  &apos;do .....&apos;;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    echo  &apos;do else .....&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>按照预想应该会输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">do else .....</span><br></pre></td></tr></table></figure></p>
+<p>但是实际输出的是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">do  .....</span><br></pre></td></tr></table></figure></p>
+<p>原因：根据官方文档函数 in_array 的描述：<br><img src="/images/php-in-array.png" alt="avatar"></p>
+<p>在 array 中搜索 search，如果没有设置 type 则使用宽松的比较。<br>第三个参数默认为 false，当 search 和 array 中的元素比较时会进行类型转换，相当于使用 == 进行比较。</p>
+<p><font color="#DC143C">备注：上个例子中的$a=’1abc’ 再和数字做比较时会转为$a=1</font></p>
+<h2><span id=""></span></h2><p>总结<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">in_array()第三个参数决定变量和数组中元素如何进行比较。</span><br><span class="line">值为 false（默认值）时，相当于 ==，值为 true 时，相当于 ===。</span><br></pre></td></tr></table></figure></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/01/php-preg_match_all/" itemprop="url">
-              
-                <span itemprop="name">php 正则去掉字符串中非汉字字符串</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-01T10:05:37+08:00"
-              content="2018-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/" itemprop="url">
-              
-                <span itemprop="name">MacBook brew yaf error: unknown type name 'HASHKIT_API'</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-31T19:47:18+08:00"
-              content="2018-07-31" >
-          07-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是我继续坚持的动力！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.png" alt="Mr.Liu 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.png" alt="Mr.Liu 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/01/php-float/" rel="next" title="PHP float金额在强制转换为整型时，发现数值不对。">
+                <i class="fa fa-chevron-left"></i> PHP float金额在强制转换为整型时，发现数值不对。
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/01/rabbit-mq-install/" rel="prev" title="RabbitMQ安装方法总结">
+                RabbitMQ安装方法总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -509,6 +503,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -529,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +611,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text"></span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -760,6 +783,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
