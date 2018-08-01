@@ -394,7 +394,7 @@
       
 
       
-        <p>今天发现一个很奇怪的问题: PHP float金额在强制转换为整型时，发现数值和实际相差1分。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>今天发现一个很奇怪的问题: PHP float金额在强制转换为整型时，发现数值和实际相差1分。</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">今天发现一个很奇怪的问题；</span><br><span class="line"></span><br><span class="line">    我有一笔订单金额为$a = 529.80  交易时我做了金额检验：</span><br><span class="line">    </span><br><span class="line">    客户端传给我的是字符串52980（分），</span><br><span class="line">    </span><br><span class="line">    我从数据库取出是：529.80 然后 * 100 （变成分） $b = 52980，</span><br><span class="line">    </span><br><span class="line">    然后在转为整型 intval($b),发现一个奇怪的问题，变成了52979 少了一分。然后都试了一遍，发现：</span><br><span class="line">    </span><br><span class="line">    [ *.30  *.80  *.31  *.81 ]  都有这个问题</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">具体原因还不明白。</span><br></pre></td></tr></table></figure>
       
@@ -539,7 +539,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -550,7 +550,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -561,7 +561,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
