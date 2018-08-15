@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="php," />
+  <meta name="keywords" content="php,mac," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’">
-<meta name="keywords" content="php">
+<meta name="keywords" content="php,mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;">
 <meta property="og:url" content="http://yoursite.com/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/index.html">
 <meta property="og:site_name" content="QingHui&#39;s Blog">
 <meta property="og:description" content="问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-01T09:33:34.356Z">
+<meta property="og:updated_time" content="2018-08-15T10:34:26.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;">
 <meta name="twitter:description" content="问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’">
@@ -362,17 +362,6 @@
 
                 
                 
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/mac/" itemprop="url" rel="index">
-                    <span itemprop="name">mac</span>
-                  </a>
-                </span>
-
-                
-                
               
             </span>
           
@@ -405,7 +394,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’</p>
+        <p>问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">\h:\W \u$ brew install php70-yaf</span><br><span class="line">==&gt; Installing php70-yaf from homebrew/php</span><br><span class="line">==&gt; Downloading https://github.com/laruence/yaf/archive/yaf-3.0.3.tar.gz</span><br><span class="line">Already downloaded: /Users/liuqh/Library/Caches/Homebrew/php70-yaf-3.0.3.tar.gz</span><br><span class="line">==&gt; /usr/local/opt/php70/bin/phpize</span><br><span class="line">==&gt; ./configure --prefix=/usr/local/Cellar/php70-yaf/3.0.3 --with-php-config=/usr/local/opt/php70/bin/php-config</span><br><span class="line">==&gt; make</span><br><span class="line">Last 15 lines from /Users/liuqh/Library/Logs/Homebrew/php70-yaf/03.make:</span><br><span class="line">/usr/local/include/string.h:56:1: error: unknown type name &apos;HASHKIT_API&apos;</span><br><span class="line">HASHKIT_API</span><br><span class="line">^</span><br><span class="line">/usr/local/include/string.h:57:1: error: expected identifier or &apos;(&apos;</span><br><span class="line">const char *hashkit_string_c_str(const hashkit_string_st* self);</span><br><span class="line">^</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf_bootstrap.lo] Error 1</span><br><span class="line">make: *** Waiting for unfinished jobs....</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf.lo] Error 1</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf_application.lo] Error 1</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf_dispatcher.lo] Error 1</span><br></pre></td></tr></table></figure>
 <p>====&gt; 解决方法：<br>找到/usr/local/include/string.h 注释调和’HASHKIT_API有关的代码；</p>
@@ -460,6 +449,8 @@
         <div class="post-tags">
           
             <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/mac/" rel="tag"># mac</a>
           
         </div>
       
@@ -552,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -563,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -574,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
