@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="php,mac," />
+  <meta name="keywords" content="mysql," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’">
-<meta name="keywords" content="php,mac">
+<meta name="description" content="问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&amp;gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In curre">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;">
-<meta property="og:url" content="http://yoursite.com/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/index.html">
+<meta property="og:title" content="Row size too large (&gt; 8126) for mysql">
+<meta property="og:url" content="http://yoursite.com/2018/09/11/Row-size-too-large-8126-for-mysql/index.html">
 <meta property="og:site_name" content="QingHui&#39;s Blog">
-<meta property="og:description" content="问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’">
+<meta property="og:description" content="问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&amp;gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In curre">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-13T03:30:15.683Z">
+<meta property="og:updated_time" content="2019-02-13T03:46:42.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;">
-<meta name="twitter:description" content="问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’">
+<meta name="twitter:title" content="Row size too large (&gt; 8126) for mysql">
+<meta name="twitter:description" content="问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&amp;gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In curre">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/11/Row-size-too-large-8126-for-mysql/"/>
 
 
 
 
 
-  <title>MacBook brew yaf error: unknown type name 'HASHKIT_API' | QingHui's Blog</title>
+  <title>Row size too large (> 8126) for mysql | QingHui's Blog</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/Row-size-too-large-8126-for-mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MacBook brew yaf error: unknown type name 'HASHKIT_API'</h1>
+          <h1 class="post-title" itemprop="name headline">Row size too large (> 8126) for mysql</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T19:47:18+08:00">
-                2018-07-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-11T11:14:07+08:00">
+                2018-09-11
               </time>
             
 
@@ -355,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
                   </a>
                 </span>
 
@@ -394,14 +394,28 @@
       
 
       
-        <p>问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’</p>
+        <h3><span id="问题sqlstate42000-syntax-error-or-access-violation-1118-row-size-too-large-gt-8126-changing-some-columns-to-text-or-blob-or-using-row_formatdynamic-or-row_formatcompressed-may-help-in-current-row-format-blob-prefix-of-768-bytes-is-stored-inline">问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.</span></h3><h4><span id="错误分析">错误分析</span></h4><p>根据报错信息，mysql提示是行的数据过大，应该将一些字段类型声明为TEXT或者BLOB，再或者将ROW_FORMAT(行格式)设置为DYNAMIC或者COMPRESSED。根据这个信息，我们查看一下mysql数据库的一些变量参数信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有表的状态</span><br><span class="line">show table status;</span><br><span class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span class="line">| Name   | Engine | Version | Row_format | Rows | Avg_row_length | Data_length |</span><br><span class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span class="line">| t_test | InnoDB |      10 | Dynamic    |    0 |              0 |       16384 |</span><br><span class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span class="line"></span><br><span class="line"># 查看当前数据库innodb引擎的文件格式</span><br><span class="line">show variables like &apos;%innodb_file_format%&apos;;</span><br><span class="line">+--------------------------+-----------+</span><br><span class="line">| Variable_name            | Value     |</span><br><span class="line">+--------------------------+-----------+</span><br><span class="line">| innodb_file_format       | Barracuda |</span><br><span class="line">| innodb_file_format_check | ON        |</span><br><span class="line">| innodb_file_format_max   | Barracuda |</span><br><span class="line">+--------------------------+-----------+</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">\h:\W \u$ brew install php70-yaf</span><br><span class="line">==&gt; Installing php70-yaf from homebrew/php</span><br><span class="line">==&gt; Downloading https://github.com/laruence/yaf/archive/yaf-3.0.3.tar.gz</span><br><span class="line">Already downloaded: /Users/liuqh/Library/Caches/Homebrew/php70-yaf-3.0.3.tar.gz</span><br><span class="line">==&gt; /usr/local/opt/php70/bin/phpize</span><br><span class="line">==&gt; ./configure --prefix=/usr/local/Cellar/php70-yaf/3.0.3 --with-php-config=/usr/local/opt/php70/bin/php-config</span><br><span class="line">==&gt; make</span><br><span class="line">Last 15 lines from /Users/liuqh/Library/Logs/Homebrew/php70-yaf/03.make:</span><br><span class="line">/usr/local/include/string.h:56:1: error: unknown type name &apos;HASHKIT_API&apos;</span><br><span class="line">HASHKIT_API</span><br><span class="line">^</span><br><span class="line">/usr/local/include/string.h:57:1: error: expected identifier or &apos;(&apos;</span><br><span class="line">const char *hashkit_string_c_str(const hashkit_string_st* self);</span><br><span class="line">^</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf_bootstrap.lo] Error 1</span><br><span class="line">make: *** Waiting for unfinished jobs....</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf.lo] Error 1</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf_application.lo] Error 1</span><br><span class="line">6 errors generated.</span><br><span class="line">make: *** [yaf_dispatcher.lo] Error 1</span><br></pre></td></tr></table></figure>
-<p>====&gt; 解决方法：<br>找到/usr/local/include/string.h 注释调和’HASHKIT_API有关的代码；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*=============================20180314 解决yaf 装不上的问题，注释</span><br><span class="line">#HASHKIT_API</span><br><span class="line">void hashkit_string_free(hashkit_string_st *ptr);</span><br><span class="line"></span><br><span class="line">#HASHKIT_API</span><br><span class="line">size_t hashkit_string_length(const hashkit_string_st *self);</span><br><span class="line"></span><br><span class="line">#HASHKIT_API</span><br><span class="line">const char *hashkit_string_c_str(const hashkit_string_st* self);</span><br><span class="line"></span><br><span class="line">#================================================================</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<p>补充：以上的解决方法有问题，虽然 phpinfo 能显示 yaf 扩展；但是实际使用中会报错；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; nginx 报错：</span><br><span class="line">     2018/03/16 12:01:44 [error] 4965#0: *25 kevent() reported about an closed connection (54: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: 127.0.0.1, request: &quot;GET /test/lqh/test?XDEBUG_SESSION_START=19833 HTTP/1.1&quot;, upstream: &quot;fastcgi://127.0.0.1:9000&quot;, host: &quot;www.cloudins.com&quot;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;php-fpm报错:</span><br><span class="line"></span><br><span class="line">[16-Mar-2018 12:21:27] NOTICE: fpm is running, pid 6593</span><br><span class="line">[16-Mar-2018 12:21:27] NOTICE: ready to handle connections</span><br><span class="line">[16-Mar-2018 12:22:01] WARNING: [pool www] child 6594 exited on signal 11 (SIGSEGV) after 34.532384 seconds from start</span><br><span class="line">[16-Mar-2018 12:22:01] NOTICE: [pool www] child 6602 started</span><br><span class="line">[16-Mar-2018 14:10:02] NOTICE: Finishing ...</span><br><span class="line">[16-Mar-2018 14:10:02] NOTICE: exiting, bye-bye!</span><br></pre></td></tr></table></figure>
-<p>结论：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">=========================================================</span><br><span class="line">这些错误信息各种 google，都没有对应的解决方案，只是遇到同样问题的人；</span><br><span class="line">后来最后的解决方法是从同事电脑 （MacBook Pro）brew安装好的包直接引入;</span><br><span class="line">我的电脑是（MacBook），个人猜测是电脑系统（/usr/local/include）中文件的问题，因为我发现MacBook Pro该目录中没有这些文件；</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>mysql的innodb引擎存储blob/text类型字段的行为，取决于三个因素：字段大小、整行(row)大小、innodb行格式。</p>
+</blockquote>
+<p><strong>innodb引擎支持的文件格式包括Antelope(羚羊)、Barracuda(梭子鱼):</strong></p>
+<ul>
+<li>Antelope提供Redundant（冗长）、Compact（紧凑）文件格式</li>
+<li>Barracuda除此之外提供Dynamic(动态)和 Compressed(压缩)</li>
+</ul>
+<p>Antelope格式的innodb引擎会尽可能地将整行数据存储在一个innodb page上，并且一个InnoDB page存储多行数据(至少是2行)，一个innodb page大约是16k，所以行大小限制为(16k - page header- page trailer) / 2。如果行中有可变长度字段(blob/text/varchar)，并且整行大小超过行大小限制，InnoDB会将字段其余数据页外存储(off-page)。这种情况下(Redundant或Compact)，每个可变长度字段(blob/text/varchar)的前768字节存储在innodb page内的行中，其余部分存储在页外。</p>
+<blockquote>
+<p>导致innodb的1118错误的原因：1、多个可变长度字段；2、每个字段的值超过768(不是定义的字段大小，而是字段值的大小)；3、innodb引擎不是在定义表的时候判断，而是每次插入操作的时候判断。</p>
+</blockquote>
+<p>Barracuda格式的innodb引擎，当ROW_FORMAT设置为DYNAMIC只使用一个20字节的指针作为可变长度类型，并且优先选择较小的字段存储在innodb page上。并且可以给blob增加前缀索引(prefix index)，将前缀索引建立在page外的blob上而不是page内。ROW_FORMAT设置为COMPRESSED时，innodb引擎的对可变长度字段的存储策略类似，并且总是压缩不在page内的数据，即使没有设置KEY_BLOCK_SIZE，也没有启用正常数据和索引的压缩。</p>
+<p>innodb在存储blob时，page内部和外部的blob其实时不共享的。每个blob在页外都有16k分配，即使blob只有1个字节大小。如果每行有多个blob，可能会导致数据库效率比较低。所以最好是一行只定义一个blob来组合数据，并且压缩改数据，text类型同理</p>
+<p>==解决方案==</p>
+<h5><span id="解决方案1-dynamic">解决方案1 – Dynamic</span></h5><p>将innodb引擎的文件格式设置为Barracuda，并且将行格式设置为DYNAMIC。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SET GLOBAL innodb_file_format=Barracuda;</span><br><span class="line"></span><br><span class="line">ALTER TABLE [tableName] ENGINE=InnoDB ROW_FORMAT=DYNAMIC;</span><br></pre></td></tr></table></figure>
+<h5><span id="解决方案2-compressed">解决方案2 – Compressed</span></h5><p>将innodb引擎的文件格式设置为Barracuda，将行格式设置为COMPRESSED，并且设置缓冲池索引块大小。一般压缩效果明显，压缩率在30%-40%左右，但是会影响存储效率。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SET GLOBAL innodb_file_format=Barracuda;</span><br><span class="line"></span><br><span class="line">ALTER TABLE [tableName] ENGINE=InnoDB ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8，</span><br></pre></td></tr></table></figure>
+<h5><span id="解决方案3-单表一文件">解决方案3 – 单表一文件</span></h5><p>每张表一个文件，不建议使用。对于单行多可变长度字段的表，效果可以，但是对于其他表浪费存储空间。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">innodb_file_format=Barracuda</span><br><span class="line"></span><br><span class="line">innodb_file_per_table=1</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -448,9 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/php/" rel="tag"># php</a>
-          
-            <a href="/tags/mac/" rel="tag"># mac</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -463,15 +475,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/" rel="next" title="fatal: Pathspec 'xxx' is in submodule for php yaf vendor">
+                <i class="fa fa-chevron-left"></i> fatal: Pathspec 'xxx' is in submodule for php yaf vendor
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/01/php-preg_match_all/" rel="prev" title="php 正则去掉字符串中非汉字字符串">
-                php 正则去掉字符串中非汉字字符串 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,6 +631,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">错误分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-text">解决方案1 – Dynamic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-text">解决方案2 – Compressed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-text">解决方案3 – 单表一文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
