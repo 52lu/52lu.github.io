@@ -12,6 +12,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[fatal: Pathspec 'xxx' is in submodule for php yaf vendor]]></title>
+    <url>%2F2018%2F08%2F13%2Ffatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor%2F</url>
+    <content type="text"><![CDATA[使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git add。使用git status查看，没有任何提交，后手动删除重新copy了文件，再次使用git status： 1modified: vendor/phpgangsta/googleauthenticator/PHPGangsta/GoogleAuthenticator.php (modified content) git add后只增加了文件夹，但是没有文件。手动Add:1234git vendor/phpgangsta/googleauthenticator/PHPGangsta/GoogleAuthenticator.php报出错误信息： fatal: Pathspec &apos;xxx&apos; is in submodule 解决方法 发现vendor/phpgangsta/googleauthenticator/PHPGangsta/下 有.git文件 所以使用下面命令： 12git rm -rf --cached vendor/phpgangsta/googleauthenticator/PHPGangstagit add vendor/phpgangsta/* 然后正常提交。]]></content>
+      <categories>
+        <category>php</category>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+        <tag>yaf</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[RabbitMQ安装方法总结]]></title>
     <url>%2F2018%2F08%2F01%2Frabbit-mq-install%2F</url>
     <content type="text"><![CDATA[具体安装如下： 一：安装Erlang：12345678 # rpm --import http://binaries.erlang-solutions.com/debian/erlang_solutions.asc # cd /etc/yum.repos.d/ # wget http://binaries.erlang-solutions.com/rpm/centos/erlang_solutions.repo # yum install esl-erlang 二：安装esl-erlang-compat：12345# cd /tmp/ # wget https://raw.github.com/jasonmcintosh/esl-erlang-compat/master/rpmbuild/RPMS/noarch/esl-erlang-compat-R14B-1.el6.noarch.rpm # yum install esl-erlang-compat-R14B-1.el6.noarch.rpm 三：安装RabbitMQ 12345# cd /tmp # wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.2/rabbitmq-server-3.6.2-1.noarch.rpm # yum install rabbitmq-server-3.6.2-1.noarch.rpm 到此，RabbitMQ基本安装完成了。 四：RabbitMQ页面监控系统RabbitMQ提供了一个web的监控页面系统，这个系统是以Plugin的方式进行调用的。在Documentation下的Server下的Management是关于配置这个插件的。地址：http://www.rabbitmq.com/management.html这个管理插件是包含在RabbitMQ发行包里的，所以只需激活即可。 命令：1# rabbitmq-plugins enable rabbitmq_management 五：配置登陆用户 123# rabbitmqctl add_user leyue leyue100# rabbitmqctl set_user_tags leyue administrator# rabbitmqctl set_permissions -p / leyue &quot;.*&quot; &quot;.*&quot; &quot;.*&quot; 浏览器地址栏输入：http://localhost:15672 用户名登陆 RabbitMQ服务启动、关闭、重启12345# service rabbitmq-server start //开启# service rabbitmq-server stop //关闭#service rabbitmq-server restart //重启 具体使用，待续….]]></content>
