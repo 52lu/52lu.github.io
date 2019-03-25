@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux docker 搭建禅道]]></title>
+    <url>%2F2019%2F02%2F14%2FLinux%20docker%20%E6%90%AD%E5%BB%BA%E7%A6%85%E9%81%93%2F</url>
+    <content type="text"><![CDATA[一、下载地址禅道开源版：http://dl.cnezsoft.com/zentao/docker/docker_zentao.zip 数据库用户名：root,默认密码： 123456。运行时，可以设置 MYSQL_ROOT_PASSWORD变量来更改密码。 可挂载目录 /app/zentaopms:该目录为禅道目录，里面包含禅道代码及附件上传目录。 /var/lib/mysql:该目录为数据库的数据目录。 二、安装使用注意：需要关闭下selinux 1、构建镜像 下载安装包，解压缩。 进入docker_zentao目录，执行命令 docker build -t [镜像名称] [Dockerfile所在目录]1docker build -t zentao ./ 2、运行镜像1docker run --name [容器名称] -p [主机端口]:80 -v [主机代码目录]:/app/zentaopms -v [主机数据目录]:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=[数据库密码] -d [镜像名]:latest 例如创建 /data/www /data/data 目录。 执行命令：12docker run --name zentao -p 80:80 -v /data/www:/app/zentaopms -v /data/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d zentao:latest运行成功 3、安装禅道 浏览器访问 http://ip，显示禅道安装页面，安装禅道。 原文参考]]></content>
+      <categories>
+        <category>项目管理</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>禅道</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[question for git]]></title>
+    <url>%2F2018%2F11%2F23%2Fquestion-for-git%2F</url>
+    <content type="text"><![CDATA[Q1 解决git pull/push每次都需要输入密码问题解决办法: 进入你的项目目录，输入： git config –global credential.helper store Q2 git无法pull仓库refusing to merge unrelated histories 解决方法: git pull –allow-unrelated-histories]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[crontab 无运行日志文件或不按时执行]]></title>
+    <url>%2F2018%2F10%2F03%2Fcrontab-%E6%97%A0%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E6%88%96%E4%B8%8D%E6%8C%89%E6%97%B6%E6%89%A7%E8%A1%8C%2F</url>
+    <content type="text"><![CDATA[Centos7 crontab 没有按时执行任务，并且在/var/log/ 没有cron日志文件 1.没有日志文件解决方法： 1# yum install rsyslog 2.没有按时执行解决方法： 1234567# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime//然后重启下面服务 # service crond restart# service rsyslog restart]]></content>
+      <categories>
+        <category>crond</category>
+      </categories>
+      <tags>
+        <tag>crond</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Row size too large (> 8126) for mysql]]></title>
     <url>%2F2018%2F09%2F11%2FRow-size-too-large-8126-for-mysql%2F</url>
     <content type="text"><![CDATA[问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.错误分析根据报错信息，mysql提示是行的数据过大，应该将一些字段类型声明为TEXT或者BLOB，再或者将ROW_FORMAT(行格式)设置为DYNAMIC或者COMPRESSED。根据这个信息，我们查看一下mysql数据库的一些变量参数信息：1234567891011121314151617# 查看所有表的状态show table status;+--------+--------+---------+------------+------+----------------+-------------+| Name | Engine | Version | Row_format | Rows | Avg_row_length | Data_length |+--------+--------+---------+------------+------+----------------+-------------+| t_test | InnoDB | 10 | Dynamic | 0 | 0 | 16384 |+--------+--------+---------+------------+------+----------------+-------------+# 查看当前数据库innodb引擎的文件格式show variables like &apos;%innodb_file_format%&apos;;+--------------------------+-----------+| Variable_name | Value |+--------------------------+-----------+| innodb_file_format | Barracuda || innodb_file_format_check | ON || innodb_file_format_max | Barracuda |+--------------------------+-----------+ mysql的innodb引擎存储blob/text类型字段的行为，取决于三个因素：字段大小、整行(row)大小、innodb行格式。 innodb引擎支持的文件格式包括Antelope(羚羊)、Barracuda(梭子鱼): Antelope提供Redundant（冗长）、Compact（紧凑）文件格式 Barracuda除此之外提供Dynamic(动态)和 Compressed(压缩) Antelope格式的innodb引擎会尽可能地将整行数据存储在一个innodb page上，并且一个InnoDB page存储多行数据(至少是2行)，一个innodb page大约是16k，所以行大小限制为(16k - page header- page trailer) / 2。如果行中有可变长度字段(blob/text/varchar)，并且整行大小超过行大小限制，InnoDB会将字段其余数据页外存储(off-page)。这种情况下(Redundant或Compact)，每个可变长度字段(blob/text/varchar)的前768字节存储在innodb page内的行中，其余部分存储在页外。 导致innodb的1118错误的原因：1、多个可变长度字段；2、每个字段的值超过768(不是定义的字段大小，而是字段值的大小)；3、innodb引擎不是在定义表的时候判断，而是每次插入操作的时候判断。 Barracuda格式的innodb引擎，当ROW_FORMAT设置为DYNAMIC只使用一个20字节的指针作为可变长度类型，并且优先选择较小的字段存储在innodb page上。并且可以给blob增加前缀索引(prefix index)，将前缀索引建立在page外的blob上而不是page内。ROW_FORMAT设置为COMPRESSED时，innodb引擎的对可变长度字段的存储策略类似，并且总是压缩不在page内的数据，即使没有设置KEY_BLOCK_SIZE，也没有启用正常数据和索引的压缩。 innodb在存储blob时，page内部和外部的blob其实时不共享的。每个blob在页外都有16k分配，即使blob只有1个字节大小。如果每行有多个blob，可能会导致数据库效率比较低。所以最好是一行只定义一个blob来组合数据，并且压缩改数据，text类型同理 ==解决方案== 解决方案1 – Dynamic将innodb引擎的文件格式设置为Barracuda，并且将行格式设置为DYNAMIC。 123SET GLOBAL innodb_file_format=Barracuda;ALTER TABLE [tableName] ENGINE=InnoDB ROW_FORMAT=DYNAMIC; 解决方案2 – Compressed将innodb引擎的文件格式设置为Barracuda，将行格式设置为COMPRESSED，并且设置缓冲池索引块大小。一般压缩效果明显，压缩率在30%-40%左右，但是会影响存储效率。 123SET GLOBAL innodb_file_format=Barracuda;ALTER TABLE [tableName] ENGINE=InnoDB ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8， 解决方案3 – 单表一文件每张表一个文件，不建议使用。对于单行多可变长度字段的表，效果可以，但是对于其他表浪费存储空间。123innodb_file_format=Barracudainnodb_file_per_table=1]]></content>
@@ -32,8 +67,8 @@
         <category>rabbitmq</category>
       </categories>
       <tags>
-        <tag>rabbitmq</tag>
         <tag>linux</tag>
+        <tag>rabbitmq</tag>
       </tags>
   </entry>
   <entry>

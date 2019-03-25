@@ -3,12 +3,22 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 刘庆辉
-subtitle:
-description:
-author: John Doe
+title: QingHui's Blog
+subtitle: I'm not a Cobain, So try harder.
+description: 好记性不如烂笔头。
+author: Mr.Liu
 language: zh-Hans
 timezone:
+
+
+
+#文章目录
+toc:
+  enable: true
+  maxDepth: 3 //表示目录深度为3，即最多生成三级目录
+  slugify: false
+  number: false
+
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -72,3 +82,17 @@ deploy:
   type: git
   repo: git@github.com:MrLiuqh/liuqh.github.io.git
   barnch: hexo
+
+#search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 100
+
+# 网易云音乐
+wangyiCloudMusic:
+  enable: true
+#  成都
+#  url: //music.163.com/outchain/player?type=2&id=436514312&auto=1&height=66
+  url: //music.163.com/outchain/player?type=2&id=449578837&auto=1&height=66
