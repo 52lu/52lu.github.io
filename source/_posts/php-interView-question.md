@@ -672,7 +672,7 @@ b. fastcgi 用tcp方式跟远程机子上的进程或本地进程建立连接要
  }
 ```
 
-### 6.2 [php排序算法汇总](https://mrliuqh.github.io/2018/01/12/php%E7%AE%97%E6%B3%95%E6%B1%87%E6%80%BB/)
+### 6.2 [php排序算法汇总](https://mrliuqh.github.io/2018/01/12/php-sort/)
 
 ### 6.3 遍历一个文件夹下的所有文件和子文件夹
 
