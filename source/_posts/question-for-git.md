@@ -1,8 +1,6 @@
 ---
 title: Git相关的问题
 date: 2016-11-23
-tags:
- - git
 categories:
  - git
 ---

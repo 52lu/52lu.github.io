@@ -3,10 +3,8 @@ title: php 面试题
 date: 2017-09-17 11:12:02
 tags:
  - php
- - 面试题
- 
 categories:
- - php
+ - 面试题
 ---
 
 ## 1、基础

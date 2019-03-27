@@ -5,7 +5,7 @@ tags:
  - rabbitmq
  - linux
 categories:
- - rabbitmq 
+ - 消息队列 
 ---
 
 具体安装如下：

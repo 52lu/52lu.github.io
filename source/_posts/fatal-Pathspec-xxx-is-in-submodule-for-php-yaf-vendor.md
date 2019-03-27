@@ -4,9 +4,8 @@ date: 2018-08-13 11:33:58
 tags:
  - php
  - yaf
- - git 
 categories:
-- git
+ - git
 ---
 ### 使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git add。
 
