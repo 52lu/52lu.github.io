@@ -15,7 +15,7 @@ categories:
 
 ![双向链表图](https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list_two.png)
 
-
+<!--more-->
 ### 2. 什么是循环链表?
 >循环链表指的是首节点和末节点被连接在一起的链表，这种方式在单向和双向链表中皆可实现。循环链表的无边界使得在这样的链表上设计算法会比普通链表更加容易。对于新加入的节点应该是在第一个节点之前还是最后一个节点之后可以根据实际要求灵活处理。
 ![循环链表图](https://mrliuqh.github.io/directionsImg/dataStructure/cycle_list.png)

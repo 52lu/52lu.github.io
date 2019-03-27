@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list_two.png">
 <meta property="og:image" content="https://mrliuqh.github.io/directionsImg/dataStructure/cycle_list.png">
-<meta property="og:updated_time" content="2019-03-27T09:58:12.702Z">
+<meta property="og:updated_time" content="2019-03-27T10:07:02.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="双向链表、循环链">
 <meta name="twitter:description" content="1. 什么是双向链表? 双向链表(双链表)又叫双面链表,双向链表中不仅有指向后一个节点的指针，还有指向前一个节点的指针。这样可以从任何一个节点访问前一个节点，当然也可以访问后一个节点，以至整个链表。一般是在需要大批量的另外储存数据在链表中的位置的时候用。双向链表也可以配合下面的其他链表的扩展使用。  由于另外储存了指向链表内容的指针，并且可能会修改相邻的节点，有的时候第一个节点可能会被删除或者在之">
@@ -400,6 +400,7 @@
 </blockquote>
 <p><code>由于另外储存了指向链表内容的指针，并且可能会修改相邻的节点，有的时候第一个节点可能会被删除或者在之前添加一个新的节点。这时候就要修改指向首个节点的指针。有一种方便的可以消除这种特殊情况的方法是在最后一个节点之后、第一个节点之前储存一个永远不会被删除或者移动的虚拟节点，形成一个下面说的循环链表。这个虚拟节点之后的节点就是真正的第一个节点。这种情况通常可以用这个虚拟节点直接表示这个链表，对于把链表单独的存在数组里的情况，也可以直接用这个数组表示链表并用第0个或者第-1个（如果编译器支持）节点固定的表示这个虚拟节点。</code></p>
 <p><img src="https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list_two.png" alt="双向链表图"></p>
+<a id="more"></a>
 <h3 id="2-什么是循环链表"><a href="#2-什么是循环链表" class="headerlink" title="2. 什么是循环链表?"></a>2. 什么是循环链表?</h3><blockquote>
 <p>循环链表指的是首节点和末节点被连接在一起的链表，这种方式在单向和双向链表中皆可实现。循环链表的无边界使得在这样的链表上设计算法会比普通链表更加容易。对于新加入的节点应该是在第一个节点之前还是最后一个节点之后可以根据实际要求灵活处理。<br><img src="https://mrliuqh.github.io/directionsImg/dataStructure/cycle_list.png" alt="循环链表图"></p>
 </blockquote>
