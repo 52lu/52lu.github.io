@@ -300,6 +300,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/nginx-optimization/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/demo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QingHui's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/28/nginx-optimization/" itemprop="url">nginx 配置调优</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-28T20:57:02+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">nginx</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-nginx-conf-配置文件"><a href="#1-nginx-conf-配置文件" class="headerlink" title="1. nginx.conf 配置文件"></a>1. nginx.conf 配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#运行的用户</span><br><span class="line">user www-data;</span><br><span class="line">pid /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line">#定义了nginx对外提供web服务时的worder进程数，CPU核的数量、存储数据的硬盘数量及负载模式</span><br><span class="line">worker_processes auto; </span><br><span class="line"></span><br><span class="line">#更改worker进程的最大打开文件数限制,比&apos;ulimit -a&apos;多。解决&quot;too many open files&quot;</span><br><span class="line">worker_rlimit_nofile 100000; </span><br><span class="line">events &#123;</span><br><span class="line">    #worker进程同时打开的最大连接数</span><br><span class="line">    worker_connections 65536; </span><br><span class="line">    #当收到一个新连接通知后接受尽可能多的连接</span><br><span class="line">    multi_accept on; </span><br><span class="line">    #设置用于复用客户端线程的轮询方法,epoll需要linux2.6+</span><br><span class="line">    use epoll; </span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    access_log off; #设置nginx是否将存储访问日志。关闭这个选项可以让读取磁盘IO操作更快(aka,YOLO)</span><br><span class="line">    error_log /var/log/nginx/error.log crit; #告诉nginx只能记录严重的错误</span><br><span class="line">    </span><br><span class="line">  #HTTP和TCP优化</span><br><span class="line">    keepalive_timeout 10; #给客户端分配keep-alive链接超时时间。服务器将在这个超时时间过后关闭链接</span><br><span class="line">    keepalive_requests 1024;#限制了一个 HTTP 长连接最多可以处理完成的最大请求数, 默认是 100。当连接处理完成的请求数达到最大请求数后，将关闭连接。</span><br><span class="line">    tcp_nopush on; #在一个数据包里发送所有头文件，而不一个接一个的发送</span><br><span class="line">    tcp_nodelay on; #nginx不要缓存数据，而是一段一段的发送--当需要及时发送数据时，就应该给应用设置这个属性，这样发送一小块数据信息时就不能立即得到返回值。</span><br><span class="line">    </span><br><span class="line">  #Buffers size优化</span><br><span class="line">    client_body_buffer_size  128k;#处理客户端缓冲区大小。 大多数客户端缓冲区都来自POST方法表单提交。128k通常是此设置的不错选择。</span><br><span class="line">    client_max_body_size  10m;#置最大body缓冲区大小。如果请求中的大小超过配置的值，则会将413（请求实体过大）错误返回给客户端。 不过浏览器无法正确显示413错误。 将大小设置为0将禁用对客户机请求正文大小的检查</span><br><span class="line">    client_header_buffer_size    1k; #处理客户端头大小。 默认情况下，1k通常是一个合理的选择。</span><br><span class="line">    large_client_header_buffers  4 4k; #设置客户端头的缓冲区的最大数量和大小。 4个报头与4k缓冲区应该足够了。</span><br><span class="line">    output_buffers  1 32k;#置用于从磁盘读取响应的缓冲区的数量和大小。 如果可能，客户端数据的传输将被推迟，直到Nginx至少具有要发送的数据的字节数的集合大小。零值禁止推迟数据传输。</span><br><span class="line">    postpone_output  1460;#指定Nginx发送给客户端最小的数值，如果可能的话，没有数据会发送，直到达到此值</span><br><span class="line">    </span><br><span class="line">   #超时</span><br><span class="line">    client_header_timeout 10; #设置请求头超时时间，建议低</span><br><span class="line">    client_body_timeout 10; #请求体(各自)的超时时间</span><br><span class="line">    reset_timedout_connection on; #关闭不响应的客户端连接。这将会释放那个客户端所占有的内存空间</span><br><span class="line">    send_timeout 10; #指定客户端的响应超时时间</span><br><span class="line">    </span><br><span class="line">  #静态资源服务</span><br><span class="line">    open_file_cache max=100000 inactive=20s; #打开缓存的同时也指定了缓存最大数目，以及缓存的时间</span><br><span class="line">    open_file_cache_valid 30s; #在open_file_cache中指定检测正确信息的间隔时间</span><br><span class="line">    open_file_cache_min_uses 2; #定义了open_file_cache中指令参数不活动时间期间里最小的文件数</span><br><span class="line">    open_file_cache_errors on; #指定了当搜索一个文件时是否缓存错误信息，也包括再次给配置中添加文件</span><br><span class="line">    </span><br><span class="line">  #Gzip压缩内容</span><br><span class="line">    gzip on; #开启gzip压缩</span><br><span class="line">    gzip_disable &quot;msie6&quot;; #低版本兼容</span><br><span class="line">    gzip_proxied any; #允许或者禁止压缩基于请求和响应的响应流。我们设置为any，意味着将会压缩所有的请求</span><br><span class="line">    gzip_static on; #告诉nginx在压缩资源之前，先查找是否有预先gzip处理过的资源</span><br><span class="line">    gzip_min_length 1000; #设置对数据启用压缩的最少字节数</span><br><span class="line">    gzip_comp_level 6; #压缩级别,1-10越高越消耗CPU，但是压缩越好</span><br><span class="line">    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript; #设置需要压缩的数据格式</span><br><span class="line">  </span><br><span class="line">  #其他优化</span><br><span class="line">    limit_conn_zone $binary_remote_addr zone=addr:5m; #设置用于保存各种key（比如当前连接数）的共享内存的参数。5m就是5兆字节，这个值应该被设置的足够大以存储（32K*5）32byte状态或者（16K*5）64byte状态。</span><br><span class="line">    limit_conn addr 100; #给定的key设置最大连接数。这里key是addr，我们设置的值是100，也就是说我们允许每一个IP地址最多同时打开有100个连接。</span><br><span class="line">    server_tokens off; #关闭nginx版本号</span><br><span class="line">    sendfile on; #sendfile()可以在磁盘和TCP socket之间互相拷贝数据(或任意两个文件描述符)。Pre-sendfile是传送数据之前在用户空间申请数据缓冲区。之后用read()将数据从文件拷贝到这个缓冲区，write()将缓冲区数据写入网络。sendfile()是立即将数据从磁盘读到OS缓存。因为这种拷贝是在内核完成的，sendfile()要比组合read()和write()以及打开关闭丢弃缓冲更加有效(更多有关于sendfile)</span><br><span class="line">    </span><br><span class="line">    default_type text/html; #设置文件默认MIME-type</span><br><span class="line">    include /etc/nginx/mime.types; #只是一个在当前文件中包含另一个文件内容的指令。</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">    include /etc/nginx/sites-enabled/*;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-nginx-pid文件"><a href="#2-nginx-pid文件" class="headerlink" title="2.nginx.pid文件"></a>2.nginx.pid文件</h2><h3 id="2-1-什么是-var-run-nginx-pid文件"><a href="#2-1-什么是-var-run-nginx-pid文件" class="headerlink" title="2.1 什么是 var/run/nginx.pid文件?"></a>2.1 什么是 var/run/nginx.pid文件?</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/28/nginx-optimization/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/Lisked-List-two/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1663,155 +1813,6 @@
 
 
     
-      
-
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/demo.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QingHui's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/" itemprop="url">MacBook brew yaf error: unknown type name 'HASHKIT_API'</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T19:47:18+08:00">
-                2018-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1864,7 +1865,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1875,7 +1876,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1886,7 +1887,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
