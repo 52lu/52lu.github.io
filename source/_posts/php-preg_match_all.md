@@ -1,6 +1,6 @@
 ---
 title: php 正则去掉字符串中非汉字字符串
-date: 2017-03-09 10:05:37
+date: 2015-03-09 10:05:37
 tags:
  - php
 categories:
