@@ -21,3 +21,5 @@ authFile/
 www/cata/*
 *.txt
 *.docx
+db*.json
+gitpush.sh
