@@ -1,5 +1,5 @@
 ---
-title: GO-程序结构
+title: Go程序结构
 date: 2018-04-03 16:48:41
 tags:
  - go

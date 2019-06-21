@@ -1,5 +1,5 @@
 ---
-title:  GO-数据类型
+title:  Go数据类型
 date: 2018-04-04 11:25:29
 tags:
  - go
