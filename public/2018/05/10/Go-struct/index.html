@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="镜像,">
+  <meta name="keywords" content="go,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1.创建一个简单的Node.js 应用镜像 创建一个本地目录 1makedir helloword  编写应用代码server.js,代码保存到 “helloword/“文件下 12345678var http = require(&amp;apos;http&amp;apos;);var handleRequest = function(request, response) &amp;#123;  console.lo">
-<meta name="keywords" content="镜像">
+<meta name="description" content="结构体（struct）是Go支持面向对象编程特性的基础  1.声明结构体结构体的定义只是一种内存布局的描述，只有当结构体实例化时，才会真正地分配内存。因此必须在定义结构体并实例化后才能使用结构体的字段。 实例化就是根据结构体定义的格式创建一份与格式一致的内存区域，结构体实例与实例间的内存是完全独立的。 1.1 基本语法1234type 结构体名称 struct &amp;#123;   field ty">
+<meta name="keywords" content="go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="创建自己的镜像">
-<meta property="og:url" content="http://yoursite.com/2019/05/21/create-self-Image/index.html">
+<meta property="og:title" content="Go结构体使用">
+<meta property="og:url" content="http://yoursite.com/2018/05/10/Go-struct/index.html">
 <meta property="og:site_name" content="QingHui&#39;s Blog">
-<meta property="og:description" content="1.创建一个简单的Node.js 应用镜像 创建一个本地目录 1makedir helloword  编写应用代码server.js,代码保存到 “helloword/“文件下 12345678var http = require(&amp;apos;http&amp;apos;);var handleRequest = function(request, response) &amp;#123;  console.lo">
+<meta property="og:description" content="结构体（struct）是Go支持面向对象编程特性的基础  1.声明结构体结构体的定义只是一种内存布局的描述，只有当结构体实例化时，才会真正地分配内存。因此必须在定义结构体并实例化后才能使用结构体的字段。 实例化就是根据结构体定义的格式创建一份与格式一致的内存区域，结构体实例与实例间的内存是完全独立的。 1.1 基本语法1234type 结构体名称 struct &amp;#123;   field ty">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-21T10:22:13.905Z">
+<meta property="og:updated_time" content="2019-06-25T10:26:48.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="创建自己的镜像">
-<meta name="twitter:description" content="1.创建一个简单的Node.js 应用镜像 创建一个本地目录 1makedir helloword  编写应用代码server.js,代码保存到 “helloword/“文件下 12345678var http = require(&amp;apos;http&amp;apos;);var handleRequest = function(request, response) &amp;#123;  console.lo">
+<meta name="twitter:title" content="Go结构体使用">
+<meta name="twitter:description" content="结构体（struct）是Go支持面向对象编程特性的基础  1.声明结构体结构体的定义只是一种内存布局的描述，只有当结构体实例化时，才会真正地分配内存。因此必须在定义结构体并实例化后才能使用结构体的字段。 实例化就是根据结构体定义的格式创建一份与格式一致的内存区域，结构体实例与实例间的内存是完全独立的。 1.1 基本语法1234type 结构体名称 struct &amp;#123;   field ty">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/21/create-self-Image/">
+  <link rel="canonical" href="http://yoursite.com/2018/05/10/Go-struct/">
 
 
 
 
 
-  <title>创建自己的镜像 | QingHui's Blog</title>
+  <title>Go结构体使用 | QingHui's Blog</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/create-self-Image/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/Go-struct/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">创建自己的镜像</h1>
+          <h1 class="post-title" itemprop="name headline">Go结构体使用</h1>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-21T16:27:11+08:00">
-                2019-05-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T11:31:57+08:00">
+                2018-05-10
               </time>
             
 
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/docker/" itemprop="url" rel="index">
-                    <span itemprop="name">docker</span>
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
                   </a>
                 </span>
 
@@ -392,50 +392,65 @@
       
 
       
-        <h3 id="1-创建一个简单的Node-js-应用镜像"><a href="#1-创建一个简单的Node-js-应用镜像" class="headerlink" title="1.创建一个简单的Node.js 应用镜像"></a>1.创建一个简单的Node.js 应用镜像</h3><ul>
-<li><p>创建一个本地目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">makedir helloword</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编写应用代码server.js,代码保存到 “helloword/“文件下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line">var handleRequest = function(request, response) &#123;</span><br><span class="line">  console.log(&apos;Received request for URL: &apos; + request.url);</span><br><span class="line">  response.writeHead(200);</span><br><span class="line">  response.end(&apos;Hello World!&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">var www = http.createServer(handleRequest);</span><br><span class="line">www.listen(8080);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <blockquote>
+<p>结构体（struct）是Go支持面向对象编程特性的基础</p>
+</blockquote>
+<h3 id="1-声明结构体"><a href="#1-声明结构体" class="headerlink" title="1.声明结构体"></a>1.声明结构体</h3><p><code>结构体的定义只是一种内存布局的描述，只有当结构体实例化时，才会真正地分配内存。因此必须在定义结构体并实例化后才能使用结构体的字段。
+实例化就是根据结构体定义的格式创建一份与格式一致的内存区域，结构体实例与实例间的内存是完全独立的。</code></p>
+<h4 id="1-1-基本语法"><a href="#1-1-基本语法" class="headerlink" title="1.1 基本语法"></a>1.1 基本语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type 结构体名称 struct &#123;</span><br><span class="line">   field type</span><br><span class="line">   field type </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><font color="red">字段直接没有逗号（,）</font></p>
+</blockquote>
 <ul>
-<li><p>编写Dockerfile文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM node:4.4</span><br><span class="line">EXPOSE 8080</span><br><span class="line">COPY server.js .</span><br><span class="line">CMD node server.js</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建新镜像，给它起一个名字</p>
+<li>field: 从概念或叫法上称: 结构体字段、属性 </li>
+<li>type：一般是基本数据类型、数组,也可是引用类型</li>
+</ul>
 <a id="more"></a>
-<p><code>使用命令: docker build [OPTIONS] PATH | URL | -</code></p>
+<ul>
+<li><h5 id="同类型变量可以写在一行"><a href="#同类型变量可以写在一行" class="headerlink" title="同类型变量可以写在一行"></a>同类型变量可以写在一行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type Human struct &#123;</span><br><span class="line">	name string</span><br><span class="line">	age,sex,height int</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><code>--tag, -t: 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">➜ docker build -t liuqh/hellonde:v1 .</span><br><span class="line">Sending build context to Docker daemon  3.072kB</span><br><span class="line">Step 1/4 : FROM node:4.4</span><br><span class="line">4.4: Pulling from library/node</span><br><span class="line">357ea8c3d80b: Pull complete</span><br><span class="line">52befadefd24: Pull complete</span><br><span class="line">3c0732d5313c: Pull complete</span><br><span class="line">ceb711c7e301: Pull complete</span><br><span class="line">868b1d0e2aad: Pull complete</span><br><span class="line">3a438db159a5: Pull complete</span><br><span class="line">Digest: sha256:7b657ccf24be2c8bab969b215e6853bc87a0d2fbe0896d5305cc87122f5360d0</span><br><span class="line">Status: Downloaded newer image for node:4.4</span><br><span class="line"> ---&gt; 93b396996a16</span><br><span class="line">Step 2/4 : EXPOSE 8080</span><br><span class="line"> ---&gt; Running in a7798374f671</span><br><span class="line">Removing intermediate container a7798374f671</span><br><span class="line"> ---&gt; 0c394b4854fa</span><br><span class="line">Step 3/4 : COPY server.js .</span><br><span class="line"> ---&gt; cb0dd1a3ffed</span><br><span class="line">Step 4/4 : CMD node server.js</span><br><span class="line"> ---&gt; Running in 7d1ec9e39d79</span><br><span class="line">Removing intermediate container 7d1ec9e39d79</span><br><span class="line"> ---&gt; db149c04d3fa</span><br><span class="line">Successfully built db149c04d3fa</span><br><span class="line">Successfully tagged liuqh/hellonde:v1</span><br></pre></td></tr></table></figure>
+<h3 id="2-结构体实例化"><a href="#2-结构体实例化" class="headerlink" title="2.结构体实例化"></a>2.结构体实例化</h3><h4 id="2-1-基本实例化形式（使用关键字-var）"><a href="#2-1-基本实例化形式（使用关键字-var）" class="headerlink" title="2.1 基本实例化形式（使用关键字: var）"></a>2.1 基本实例化形式（使用关键字: var）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">type Girl struct &#123;</span><br><span class="line">	Name  string </span><br><span class="line">&#125;</span><br><span class="line">func UseStruct() &#123;</span><br><span class="line">	//使用关键字var</span><br><span class="line">	var g Girl</span><br><span class="line">	g.Name = &quot;小芳&quot;</span><br><span class="line">	fmt.Println(g) // 输出: &#123;小芳 0 0 0&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><span style="color:red">注意命令后面的圆点</span></p>
+<p>上述变量 g 为结构体的实例</p>
 </blockquote>
-<ul>
-<li>查看本地镜像，会发现自己建议的镜像<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜ docker images</span><br><span class="line">REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">liuqh/hellonde         v1                  db149c04d3fa        12 seconds ago      648MB</span><br><span class="line">laradock_nginx         latest              fb8945ae0cb8        11 days ago         27.6MB</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>运行容器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  docker run -d -p 8080:8080 --name hello-word liuqh/hellonde:v1</span><br><span class="line">f18a619dafb3e333cd3592ce5e8e7b373d622c81fe968558307970f22cb1a92a</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在浏览器输入 <a href="http://127.0.0.1:8080" target="_blank" rel="noopener">http://127.0.0.1:8080</a></p>
-</li>
-</ul>
-<h3 id="2-镜像上传至dockerHub"><a href="#2-镜像上传至dockerHub" class="headerlink" title="2.镜像上传至dockerHub"></a>2.镜像上传至<a href="https://hub.docker.com" target="_blank" rel="noopener">dockerHub</a></h3><p><code>前提是有自己的帐号，没有请去注册。</code></p>
-<ul>
-<li>将容器commit 成镜像</li>
-</ul>
-<p><code>使用命令 docker commit &lt;exiting-Container&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜ docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                            NAMES</span><br><span class="line">f18a619dafb3        liuqh/hellonde:v1   &quot;/bin/sh -c &apos;node se…&quot;   3 seconds ago       Up 2 seconds        0.0.0.0:8080-&gt;8080/tcp                                           hello-word</span><br><span class="line"></span><br><span class="line">➜ docker commit f18a619dafb3 liuqinghui/helloword</span><br><span class="line">sha256:efb1301fb0fdd607b4e0ff2c34e3d36c890c665a14abef1bf82316ec05938491</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-2-创建指针类型的结构体（使用关键字-new）"><a href="#2-2-创建指针类型的结构体（使用关键字-new）" class="headerlink" title="2.2 创建指针类型的结构体（使用关键字: new）"></a>2.2 创建指针类型的结构体（使用关键字: new）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">type Girl struct &#123;</span><br><span class="line">	Name  string </span><br><span class="line">&#125;</span><br><span class="line">func UseStruct() &#123;</span><br><span class="line">  // 使用new</span><br><span class="line">	g1 := new(Girl)</span><br><span class="line">	g1.Name = &quot;小芳&quot;</span><br><span class="line">	fmt.Println(g1) // 输出: &amp;&#123;小芳 0 0 0&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><code>如果是已经存在的镜像则使用:docker tag &lt;existing-image&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]</code></p>
+<p>Girl类型被实例化后保存到g1变量中，g1的类型为*Girl，属于指针</p>
 </blockquote>
-<p><code>这里的&lt;tag&gt;不指定就是latest。</code></p>
-<ul>
-<li>push 镜像到docker hub的仓库<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 登录 docker hub</span><br><span class="line">➜ docker login</span><br><span class="line">Login with your Docker ID to push and pull images from Docker Hub. If you don&apos;t have a Docker ID, head over to https://hub.docker.com to create one.</span><br><span class="line">Username: liuqinghui</span><br><span class="line">Password:</span><br><span class="line">Login Succeeded</span><br><span class="line"></span><br><span class="line"># docker push 镜像到docker hub 的仓库</span><br><span class="line">➜ docker push liuqinghui/helloword:v1</span><br><span class="line">The push refers to repository [docker.io/liuqinghui/helloword]</span><br><span class="line">99393065d499: Pushed</span><br><span class="line">20a6f9d228c0: Mounted from library/node</span><br><span class="line">80c332ac5101: Mounted from library/node</span><br><span class="line">04dc8c446a38: Mounted from library/node</span><br><span class="line">1050aff7cfff: Mounted from library/node</span><br><span class="line">66d8e5ee400c: Mounted from library/node</span><br><span class="line">2f71b45e4e25: Mounted from library/node</span><br><span class="line">v1: digest: sha256:b567d7fbcfe5d1987d2bd6fd8f8633f11ca32c666868cb6366a5d0ae3380a9fe size: 1794</span><br></pre></td></tr></table></figure></li>
+<blockquote>
+<p><font color="red">经过new实例化的结构体实例在成员赋值上与基本实例化的写法一</font></p>
+</blockquote>
+<h4 id="2-3-去结构的地址实例化（使用-amp-）"><a href="#2-3-去结构的地址实例化（使用-amp-）" class="headerlink" title="2.3 去结构的地址实例化（使用: &amp;）"></a>2.3 去结构的地址实例化（使用: &amp;）</h4><p><strong>在Go语言中，对结构体进行“&amp;”取地址操作时，视为对该类型进行一次new的实例化操作</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">type Girl struct &#123;</span><br><span class="line">	Name  string </span><br><span class="line">&#125;</span><br><span class="line">func UseStruct() &#123;</span><br><span class="line">  // 使用&amp;</span><br><span class="line">	g2 := &amp;Girl&#123;&#125;</span><br><span class="line">	g2.Name = &quot;小芳&quot;</span><br><span class="line">	fmt.Println(g2) // 输出: &amp;&#123;小芳 0 0 0&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-初始化结构体字段用例"><a href="#3-初始化结构体字段用例" class="headerlink" title="3. 初始化结构体字段用例"></a>3. 初始化结构体字段用例</h3><h4 id="3-1-递归填充"><a href="#3-1-递归填充" class="headerlink" title="3.1 递归填充"></a>3.1 递归填充</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">type Family struct &#123;</span><br><span class="line">	name  string</span><br><span class="line">	child *Family</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func UseStruct() &#123;</span><br><span class="line">	p := Family&#123;</span><br><span class="line">		name: &quot;爷爷&quot;,</span><br><span class="line">		child: &amp;Family&#123;</span><br><span class="line">			name: &quot;爸爸&quot;,</span><br><span class="line">			child: &amp;Family&#123;</span><br><span class="line">				name: &quot;我&quot;,</span><br><span class="line">			&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(p.name) // 爷爷</span><br><span class="line">	fmt.Println(p.child.name) //爸爸 </span><br><span class="line">	fmt.Println(p.child.child.name) // 我</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-多值初始化"><a href="#3-2-多值初始化" class="headerlink" title="3.2 多值初始化"></a>3.2 多值初始化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">type Girl struct &#123;</span><br><span class="line">	Name   string </span><br><span class="line">	Age    int</span><br><span class="line">	Height int</span><br><span class="line">	Weight float32</span><br><span class="line">&#125;</span><br><span class="line">func CreateStruct() &#123;</span><br><span class="line">    // 顺序填充</span><br><span class="line">	g1 := Girl&#123;&quot;小花&quot;, 18, 170, 55.4&#125;</span><br><span class="line">	fmt.Println(g1) // &#123;小花 18 170 55.4&#125;</span><br><span class="line">	</span><br><span class="line">	// 指定字段填充</span><br><span class="line">	g := Girl&#123;Name:&quot;小雨&quot;, Age:19&#125;</span><br><span class="line">	fmt.Println(g) // &#123;小雨 19 0 0&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-匿名结构体初始化"><a href="#3-2-匿名结构体初始化" class="headerlink" title="3.2 匿名结构体初始化"></a>3.2 匿名结构体初始化</h4><p><code>结构体可以包含一个或多个 匿名（或内嵌）字段，即这些字段没有显式的名字，只有字段的类型是必须的，此时类型就是字段的名字。匿名字段本身可以是一个结构体类型，即 结构体可以包含内嵌结构体</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">type Human struct &#123;</span><br><span class="line">	Name     string</span><br><span class="line">	Age, Sex int</span><br><span class="line">&#125;</span><br><span class="line">type Girl struct &#123;</span><br><span class="line">	Human //匿名字段</span><br><span class="line">	Like string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	p := Girl&#123;Human&#123;Name: &quot;小芳&quot;, Age: 18&#125;, &quot;唱歌&quot;&#125;</span><br><span class="line">	fmt.Println(p)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-带标签的结构体"><a href="#4-带标签的结构体" class="headerlink" title="4. 带标签的结构体"></a>4. 带标签的结构体</h3><p><code>以是文档或其他的重要标记。标签的内容不可以在一般的编程中使用，只有reflect(反射) 能获取它。</code></p>
+<h4 id="4-1-使用示例"><a href="#4-1-使用示例" class="headerlink" title="4.1 使用示例"></a>4.1 使用示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;reflect&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type SchoolTag struct &#123;</span><br><span class="line">	Name    string `school name`</span><br><span class="line">	Address string `school address`</span><br><span class="line">	Tel     string `school tel`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	schTag := SchoolTag&#123;&quot;名牌大学&quot;, &quot;天朝1号&quot;, &quot;010-1234560&quot;&#125;</span><br><span class="line">	count := reflect.ValueOf(schTag).NumField()</span><br><span class="line">	for i := 0; i &lt; count; i++ &#123;</span><br><span class="line">		fmt.Printf(&quot;%v\n&quot;,reflect.TypeOf(schTag).Field(i).Tag)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-结构体比较"><a href="#5-结构体比较" class="headerlink" title="5. 结构体比较"></a>5. 结构体比较</h3><p><code>如果结构体的所有成员变量都可以比较，那么这个结构体就是可比较的。两个结构体的比较用 == 或者 != 其中== 按照顺序比较两个结构体变量的成员</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">type Point struct &#123;</span><br><span class="line">	X, Y int</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">	p1 := Point&#123;1,2&#125;</span><br><span class="line">	p2 := Point&#123;1,3&#125;</span><br><span class="line">	//表达式1</span><br><span class="line">	fmt.Println(p1.X == p2.X &amp;&amp; p1.Y == p2.Y) //false</span><br><span class="line">	//表达式2</span><br><span class="line">	fmt.Println(p1 == p2) //false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>表达式1和表达式2 是等价的</p>
+</blockquote>
+<p><strong>可比较的结构体都可以作为map的键类型</strong></p>
+<p>示例（统计某个链接的点击次数):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">type UrlCount struct &#123;</span><br><span class="line">	Controller, Action string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	m := make(map[UrlCount]int)</span><br><span class="line">	for i := 0; i &lt; 5; i++ &#123;</span><br><span class="line">		m[UrlCount&#123;&quot;home&quot;, &quot;index&quot;&#125;]++</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(m) // map[&#123;home index&#125;:5]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-结构体特性"><a href="#6-结构体特性" class="headerlink" title="6 结构体特性"></a>6 结构体特性</h3><ul>
+<li><p>在创建一个结构体变量后，如果没有给字段赋值，都对应一个零值(默认值)</p>
+</li>
+<li><p>结构体是值类型，默认为值拷贝</p>
+</li>
+<li>字段名必须唯一</li>
+<li>结构体的所有字段在内存中是连续的</li>
+<li><p>结构体是用户单独定义的类型，和其它类型进行转换时需要有完全相同的字段(名字、个数和类型)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">type A struct &#123;</span><br><span class="line">	X, Y int</span><br><span class="line">&#125;</span><br><span class="line">type B struct &#123;</span><br><span class="line">	X, Y int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var a A</span><br><span class="line">	var b B</span><br><span class="line">	a = A(b) // 类型转换时，需要有完全相同的字段(名字、个数和类型)</span><br><span class="line">	fmt.Printf(&quot;%T \n&quot;,a)</span><br><span class="line">	fmt.Printf(&quot;%T \n&quot;,b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结构体进行 type 重新定义(相当于取别名)，Go 认为是新的数据类型，但是相互间可以强转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">type Human struct &#123;</span><br><span class="line">	Name string</span><br><span class="line">	Age  int</span><br><span class="line">&#125;</span><br><span class="line">type Boy Human</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var h Human</span><br><span class="line">	var b Boy</span><br><span class="line">	//这么写错误,原因:Go认为Boy是新的数据类型</span><br><span class="line">	// h == b</span><br><span class="line">	//可以相互间强转</span><br><span class="line">	b = Boy(h)</span><br><span class="line">	h = Human(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-结构体和结构体变量-实例-的区别和联系"><a href="#7-结构体和结构体变量-实例-的区别和联系" class="headerlink" title="7.结构体和结构体变量(实例)的区别和联系"></a>7.结构体和结构体变量(实例)的区别和联系</h3><ul>
+<li>结构体是自定义的数据类型，代表一类事物.</li>
+<li>结构体变量(实例)是具体的，实际的，代表一个具体变量</li>
 </ul>
 
       
@@ -483,7 +498,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/镜像/" rel="tag"># 镜像</a>
+            <a href="/tags/go/" rel="tag"># go</a>
           
         </div>
       
@@ -496,13 +511,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+                <a href="/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/" rel="prev" title="MacBook brew yaf error: unknown type name 'HASHKIT_API'">
+               MacBook brew yaf error: unknown type name 'HASHKIT_API' <i class="fa fa-chevron-left"></i>
+               </a>
+            
 
           </div>
           <span class="post-nav-divider"></span>
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/28/nginx-optimization/" rel="next" title="nginx 配置调优">
-                <i class="fa fa-chevron-right"></i> nginx 配置调优
+              <a href="/2018/05/07/Go并发使用/" rel="next" title="Go并发使用">
+                <i class="fa fa-chevron-right"></i> Go并发使用
               </a>
             
           </div>
@@ -664,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建一个简单的Node-js-应用镜像"><span class="nav-text">1.创建一个简单的Node.js 应用镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-镜像上传至dockerHub"><span class="nav-text">2.镜像上传至dockerHub</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-声明结构体"><span class="nav-text">1.声明结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-基本语法"><span class="nav-text">1.1 基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#同类型变量可以写在一行"><span class="nav-text">同类型变量可以写在一行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-结构体实例化"><span class="nav-text">2.结构体实例化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-基本实例化形式（使用关键字-var）"><span class="nav-text">2.1 基本实例化形式（使用关键字: var）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-创建指针类型的结构体（使用关键字-new）"><span class="nav-text">2.2 创建指针类型的结构体（使用关键字: new）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-去结构的地址实例化（使用-amp-）"><span class="nav-text">2.3 去结构的地址实例化（使用: &amp;）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-初始化结构体字段用例"><span class="nav-text">3. 初始化结构体字段用例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-递归填充"><span class="nav-text">3.1 递归填充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-多值初始化"><span class="nav-text">3.2 多值初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-匿名结构体初始化"><span class="nav-text">3.2 匿名结构体初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-带标签的结构体"><span class="nav-text">4. 带标签的结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-使用示例"><span class="nav-text">4.1 使用示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-结构体比较"><span class="nav-text">5. 结构体比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-结构体特性"><span class="nav-text">6 结构体特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-结构体和结构体变量-实例-的区别和联系"><span class="nav-text">7.结构体和结构体变量(实例)的区别和联系</span></a></li></ol></div>
             
 
           </div>
