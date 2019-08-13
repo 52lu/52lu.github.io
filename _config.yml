@@ -81,7 +81,7 @@ theme: 3-hexo
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:MrLiuqh/liuqh.github.io.git
+  repo: https://github.com/MrLiuqh/MrLiuqh.github.io.git
   barnch: hexo
 
 #search
