@@ -6,7 +6,7 @@
 title: QingHui's Blog
 subtitle: I'm not a Cobain, So try harder.
 description: 好记性不如烂笔头。
-author: Mr.Liu
+author: 刘庆辉
 language: zh-Hans
 timezone:
 
@@ -22,7 +22,7 @@ toc:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://mrliuqh.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -48,7 +48,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
@@ -74,7 +74,8 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 #theme: landscape
-theme: next
+#theme: next
+theme: 3-hexo
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

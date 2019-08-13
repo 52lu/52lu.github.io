@@ -3,9 +3,8 @@ title: RabbitMQ安装方法总结
 date: 2018-08-03
 tags:
  - rabbitmq
- - linux
 categories:
- - 消息队列 
+ - 队列 
 ---
 
 具体安装如下：

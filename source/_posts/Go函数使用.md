@@ -4,10 +4,9 @@ date: 2018-04-08 11:31:57
 tags:
  - go
 categories:
- - go
+ - 后端
 ---
 
-[toc]
 函数使用
 > 函数是Go语言里面的核心设计，它通过关键字func来声明，它的格式如下。
 
@@ -44,9 +43,12 @@ func funcName(input ...type) (output1 type1, output2 type2) {
    return output1 type1, output2 type2
  }
 ```
->    注意，这些参数的类型全部是type。在函数体中，变量input是一个type的slice。
+
+> 注意，这些参数的类型全部是type。在函数体中，变量input是一个type的slice。
+
 
 - 使用示例
+
 ```
 package main
 

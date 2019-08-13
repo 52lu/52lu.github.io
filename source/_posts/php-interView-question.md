@@ -3,8 +3,9 @@ title: php 面试题
 date: 2017-09-17 11:12:02
 tags:
  - php
-categories:
  - 面试题
+categories:
+ - 后端
 ---
 
 ## 1、基础

@@ -2,9 +2,9 @@
 title: PHP并发请求
 date: 2019-03-22 12:19:23
 tags:
- - php
+ - php并发请求
 categories:
- - 并发
+ - 后端
 ---
 
 > <front color="red">进程是资源分配的最小单位，线程是CPU调度的最小单位</front>

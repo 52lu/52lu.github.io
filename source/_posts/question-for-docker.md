@@ -4,7 +4,7 @@ date: 2018-05-03 15:54:34
 tags:
  - docker
 categories:
- - docker
+ - bug
 ---
 
 

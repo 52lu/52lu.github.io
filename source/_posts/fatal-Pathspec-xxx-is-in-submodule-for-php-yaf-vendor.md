@@ -2,10 +2,9 @@
 title: 'fatal: Pathspec ''xxx'' is in submodule for php yaf vendor'
 date: 2018-08-13 11:33:58
 tags:
- - php
- - yaf
-categories:
  - git
+categories:
+ - bug
 ---
 ### 使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git add。
 
@@ -27,10 +26,13 @@ fatal: Pathspec 'xxx' is in submodule
 ```
 <!--more-->
 ### 解决方法
+
 - 发现vendor/phpgangsta/googleauthenticator/PHPGangsta/下 有.git文件 
--  所以使用下面命令： 
+-  所以使用下面命令：
+ 
 ```
 git rm -rf --cached vendor/phpgangsta/googleauthenticator/PHPGangsta
 git add vendor/phpgangsta/*
 ```
+
 然后正常提交。

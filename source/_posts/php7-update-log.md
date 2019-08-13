@@ -2,8 +2,9 @@
 title: php7更新记录
 date: 2018-10-06 
 tags:
-categories:
  - php
+categories:
+ - 后端
 ---
 
 ## 一.PHP5.6.x 移植PHP7.0.x

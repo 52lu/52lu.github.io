@@ -3,8 +3,9 @@ title: 'MacBook brew yaf error: unknown type name ''HASHKIT_API'''
 date: 2018-07-31 19:47:18
 tags:
  - mac
+ - php
 categories:
- - php 
+ - bug 
  
 ---
 
