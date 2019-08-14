@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>单向链表 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" 单向链表 ">
+  <meta name="description" content="单向链表 | QingHui&#39;s Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://mrliuqh.github.io/about/index.html">
+<meta property="og:site_name" content="QingHui&#39;s Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-13T11:40:06.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="about">
+
+
+<link rel="icon" href="/images/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/sublime.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/images/avatar.jpg">
+</a>
+<div class="author">
+    <span>刘庆辉</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/MrLiuqh" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:liuqinghui1991@163.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=543248135" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(26)</small></div></li>
+    
+        
+            
+            <li><div data-rel="后端">后端<small>(11)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux">linux<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="bug">bug<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="docker">docker<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="DB">DB<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="nginx">nginx<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="队列">队列<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="26">
+<input type="hidden" id="yelog_site_word_count" value="39.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://www.laruence.com">风雪之隅</a></li>
+            
+            <li><a target="_blank" href="http://www.ruanyifeng.com/blog/algorithm">阮一峰</a></li>
+            
+            <li><a target="_blank" href="https://youzhixueyuan.com/history-articles.html">优知学院</a></li>
+            
+            <li><a target="_blank" href="https://learnku.com">LearnKu</a></li>
+            
+            <li><a target="_blank" href="https://www.ibm.com/developerworks/cn/topics">IBM</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">go</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">单向链表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">禅道</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">双链表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">循环链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">镜像</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">mac</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">crond</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">php并发请求</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">SQL优化</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">mysql8</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">调优</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">面试题</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">nfs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">php-fpm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">rabbitmq</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a class="bug " href="/2019/08/03/php-mysql8-bug/" data-tag="php,mysql8" data-author="">
+            <span class="post-title" title="php-mysql8-bug">php-mysql8-bug</span>
+            <span class="post-date" title="2019-08-03 10:16:09">2019/08/03</span>
+        </a>
+        
+        <a class="DB " href="/2019/06/03/mysql-explan/" data-tag="SQL优化" data-author="">
+            <span class="post-title" title="explan使用分析">explan使用分析</span>
+            <span class="post-date" title="2019-06-03 18:53:53">2019/06/03</span>
+        </a>
+        
+        <a class="docker " href="/2019/05/21/create-self-Image/" data-tag="镜像" data-author="">
+            <span class="post-title" title="创建自己的镜像">创建自己的镜像</span>
+            <span class="post-date" title="2019-05-21 16:27:11">2019/05/21</span>
+        </a>
+        
+        <a class="nginx " href="/2019/03/28/nginx-optimization/" data-tag="调优" data-author="">
+            <span class="post-title" title="nginx 配置调优">nginx 配置调优</span>
+            <span class="post-date" title="2019-03-28 20:57:02">2019/03/28</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019/03/27/Lisked-List-two/" data-tag="双链表,循环链" data-author="">
+            <span class="post-title" title="双向链表、循环链">双向链表、循环链</span>
+            <span class="post-date" title="2019-03-27 17:34:29">2019/03/27</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019/03/25/Linked-List/" data-tag="单向链表" data-author="">
+            <span class="post-title" title="单向链表">单向链表</span>
+            <span class="post-date" title="2019-03-25 19:15:35">2019/03/25</span>
+        </a>
+        
+        <a class="后端 " href="/2019/03/22/multiRequest/" data-tag="php并发请求" data-author="">
+            <span class="post-title" title="PHP并发请求">PHP并发请求</span>
+            <span class="post-date" title="2019-03-22 12:19:23">2019/03/22</span>
+        </a>
+        
+        <a class="后端 " href="/2019/03/10/phpFpm/" data-tag="php-fpm" data-author="">
+            <span class="post-title" title="php-fpm配置详情及优化">php-fpm配置详情及优化</span>
+            <span class="post-date" title="2019-03-10 16:36:05">2019/03/10</span>
+        </a>
+        
+        <a class="后端 " href="/2018/10/06/php7-update-log/" data-tag="php" data-author="">
+            <span class="post-title" title="php7更新记录">php7更新记录</span>
+            <span class="post-date" title="2018-10-06 00:00:00">2018/10/06</span>
+        </a>
+        
+        <a class="bug " href="/2018/09/11/Row-size-too-large-8126-for-mysql/" data-tag="mysql" data-author="">
+            <span class="post-title" title="Row size too large (&gt; 8126) for mysql">Row size too large (&gt; 8126) for mysql</span>
+            <span class="post-date" title="2018-09-11 11:14:07">2018/09/11</span>
+        </a>
+        
+        <a class="bug " href="/2018/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/" data-tag="git" data-author="">
+            <span class="post-title" title="fatal: Pathspec &#39;xxx&#39; is in submodule for php yaf vendor">fatal: Pathspec &#39;xxx&#39; is in submodule for php yaf vendor</span>
+            <span class="post-date" title="2018-08-13 11:33:58">2018/08/13</span>
+        </a>
+        
+        <a class="队列 " href="/2018/08/03/rabbit-mq-install/" data-tag="rabbitmq" data-author="">
+            <span class="post-title" title="RabbitMQ安装方法总结">RabbitMQ安装方法总结</span>
+            <span class="post-date" title="2018-08-03 00:00:00">2018/08/03</span>
+        </a>
+        
+        <a class="bug " href="/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/" data-tag="mac,php" data-author="">
+            <span class="post-title" title="MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;">MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;</span>
+            <span class="post-date" title="2018-07-31 19:47:18">2018/07/31</span>
+        </a>
+        
+        <a class="后端 " href="/2018/05/07/Go并发使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go并发使用">Go并发使用</span>
+            <span class="post-date" title="2018-05-07 18:20:22">2018/05/07</span>
+        </a>
+        
+        <a class="bug " href="/2018/05/03/question-for-docker/" data-tag="docker" data-author="">
+            <span class="post-title" title="docker 使用中遇到的问题">docker 使用中遇到的问题</span>
+            <span class="post-date" title="2018-05-03 15:54:34">2018/05/03</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/08/Go函数使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go函数使用">Go函数使用</span>
+            <span class="post-date" title="2018-04-08 11:31:57">2018/04/08</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/06/Go字符串操作/" data-tag="go" data-author="">
+            <span class="post-title" title="Go字符串操作">Go字符串操作</span>
+            <span class="post-date" title="2018-04-06 00:00:00">2018/04/06</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/04/go-data-type/" data-tag="go" data-author="">
+            <span class="post-title" title="Go数据类型">Go数据类型</span>
+            <span class="post-date" title="2018-04-04 11:25:29">2018/04/04</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/03/go-learn-base/" data-tag="go" data-author="">
+            <span class="post-title" title="Go程序结构">Go程序结构</span>
+            <span class="post-date" title="2018-04-03 16:48:41">2018/04/03</span>
+        </a>
+        
+        <a class="后端 " href="/2018/01/12/php-sort/" data-tag="php,面试题,算法" data-author="">
+            <span class="post-title" title="php排序算法汇总">php排序算法汇总</span>
+            <span class="post-date" title="2018-01-12 10:12:07">2018/01/12</span>
+        </a>
+        
+        <a class="后端 " href="/2017/09/17/php-interView-question/" data-tag="php,面试题" data-author="">
+            <span class="post-title" title="php 面试题">php 面试题</span>
+            <span class="post-date" title="2017-09-17 11:12:02">2017/09/17</span>
+        </a>
+        
+        <a class="linux " href="/2017/01/14/Linux-docker-chandao/" data-tag="禅道" data-author="">
+            <span class="post-title" title="Linux docker 搭建禅道">Linux docker 搭建禅道</span>
+            <span class="post-date" title="2017-01-14 00:00:00">2017/01/14</span>
+        </a>
+        
+        <a class="bug " href="/2016/11/23/question-for-git/" data-tag="git" data-author="">
+            <span class="post-title" title="Git相关的问题">Git相关的问题</span>
+            <span class="post-date" title="2016-11-23 00:00:00">2016/11/23</span>
+        </a>
+        
+        <a class="linux " href="/2016/04/19/nfs-file-sharing/" data-tag="nfs" data-author="">
+            <span class="post-title" title="Linux 搭建nfs文件共享">Linux 搭建nfs文件共享</span>
+            <span class="post-date" title="2016-04-19 18:41:53">2016/04/19</span>
+        </a>
+        
+        <a class="bug " href="/2015/10/03/crontab-run-error-time/" data-tag="crond" data-author="">
+            <span class="post-title" title="crontab 无运行日志文件或不按时执行">crontab 无运行日志文件或不按时执行</span>
+            <span class="post-date" title="2015-10-03 11:42:44">2015/10/03</span>
+        </a>
+        
+        <a class="后端 " href="/2015/03/09/php-preg_match_all/" data-tag="php" data-author="">
+            <span class="post-title" title="php 正则去掉字符串中非汉字字符串">php 正则去掉字符串中非汉字字符串</span>
+            <span class="post-date" title="2015-03-09 10:05:37">2015/03/09</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-Linked-List" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">单向链表</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="数据结构">数据结构</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">单向链表</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2019-03-25 19:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是链表"><span class="toc-text">1. 什么是链表?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-链表的组成部分"><span class="toc-text">2. 链表的组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数组和链"><span class="toc-text">3. 数组和链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-数组与链表的优缺点"><span class="toc-text">4. 数组与链表的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-链表类型"><span class="toc-text">5. 链表类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-单向链表"><span class="toc-text">6. 单向链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-代码（PHP）实现单向链表"><span class="toc-text">7. 代码（PHP）实现单向链表</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-5 i,
+    .toc-level-5 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-什么是链表"><a href="#1-什么是链表" class="headerlink" title="1. 什么是链表?"></a>1. 什么是链表?</h3><blockquote>
+<p>链表（Linked list）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针(Pointer)。由于不必须按顺序存储，链表在插入的时候可以达到O(1)的复杂度，比另一种线性表<a href="https://zh.wikipedia.org/wiki/%E9%A1%BA%E5%BA%8F%E8%A1%A8" target="_blank" rel="noopener">顺序表</a>快得多，但是查找一个节点或者访问特定编号的节点则需要O(n)的时间，而顺序表相应的时间复杂度分别是O(logn)和O(1)。</p>
+</blockquote>
+<h3 id="2-链表的组成部分"><a href="#2-链表的组成部分" class="headerlink" title="2. 链表的组成部分"></a>2. 链表的组成部分</h3><blockquote>
+<p>链表通常由一连串节点组成，每个节点包含任意的实例数据（信息域 ）和一或两个用来指向上一个/或下一个节点的位置的链接（链域）</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="3-数组和链"><a href="#3-数组和链" class="headerlink" title="3. 数组和链"></a>3. 数组和链</h3><ul>
+<li>链表结构可以克服数组链表需要预先知道数据大小的缺点，链表结构可以充分利用计算机内存空间，实现灵活的内存动态管理</li>
+</ul>
+<h3 id="4-数组与链表的优缺点"><a href="#4-数组与链表的优缺点" class="headerlink" title="4. 数组与链表的优缺点"></a>4. 数组与链表的优缺点</h3><ol>
+<li>存取方式上，数组可以顺序存取或者随机存取，而链表只能顺序存取；</li>
+<li>存储位置上，数组逻辑上相邻的元素在物理存储位置上也相邻，而链表不一定；　</li>
+<li>存储空间上，链表由于带有指针域，存储密度不如数组大；　</li>
+<li>按序号查找时，数组可以随机访问，时间复杂度为O(1)，而链表不支持随机访问，平均需要O(n)；　</li>
+<li>按值查找时，若数组无序，数组和链表时间复杂度均为O(n)，但是当数组有序时，可以采用折半查找将时间复杂度降为O(logn)；</li>
+<li>插入和删除时，数组平均需要移动n/2个元素，而链表只需修改指针即可；</li>
+<li>空间分配方面：<blockquote>
+<p>数组在静态存储分配情形下，存储元素数量受限制，动态存储分配情形下，虽然存储空间可以扩充，但需要移动大量元素，导致操作效率降低，而且如果内存中没有更大块连续存储空间将导致分配失败；<br>　　链表存储的节点空间只在需要的时候申请分配，只要内存中有空间就可以分配，操作比较灵活高效； </p>
+</blockquote>
+</li>
+<li>经典数据结构涵盖了多种抽象数据类型（ADT），其中包括栈、队列、有序列表、排序表、哈希表及分散表、树、优先队列、集合和图等。对于每种情况，都可以选用数组或某一种链表数据结构来实现其抽象数据类型（ADT）。由于数组和链表几乎是建立所有ADT的基础，所以称数组与链表为基本数据结构</li>
+</ol>
+<h3 id="5-链表类型"><a href="#5-链表类型" class="headerlink" title="5. 链表类型"></a>5. 链表类型</h3><ul>
+<li>单向链表</li>
+<li><a href="">双向链表</a></li>
+<li><a href="">循环链表</a></li>
+</ul>
+<h3 id="6-单向链表"><a href="#6-单向链表" class="headerlink" title="6. 单向链表"></a>6. 单向链表</h3><blockquote>
+<p>链表中最简单的一种是单向链表，它包含两个域，一个信息域和一个指针域。这个链接指向列表中的下一个节点，而最后一个节点则指向一个空值。</p>
+</blockquote>
+<p><code>一个单向链表的节点被分成两个部分。第一个部分保存或者显示关于节点的信息，第二个部分存储下一个节点的地址。单向链表只可向一个方向遍历。</code></p>
+<p><img src="https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list.png" alt="单向链表图"></p>
+<h3 id="7-代码（PHP）实现单向链表"><a href="#7-代码（PHP）实现单向链表" class="headerlink" title="7. 代码（PHP）实现单向链表"></a>7. 代码（PHP）实现单向链表</h3><pre><code class="php">&lt;?php
+
+/**
+ * Class Node
+ */
+class Node
+{
+    /**
+     *
+     * @var
+     */
+    private $Data;//数据集
+    /**
+     *
+     * @var
+     */
+    private $Next;//下一个节点
+
+    /**
+     * Node constructor.
+     * @param $next
+     * @param $data
+     */
+    public function __construct($data, $next)
+    {
+        $this-&gt;setData($data);
+        $this-&gt;setNext($next);
+
+    }
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * @param $data
+     */
+    public function setData($data)
+    {
+        $this-&gt;Data = $data;
+    }
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * @return mixed
+     */
+    public function getData()
+    {
+        return $this-&gt;Data;
+    }
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * @param $next
+     */
+    public function setNext($next)
+    {
+        $this-&gt;Next = $next;
+    }
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * @return mixed
+     */
+    public function getNext()
+    {
+        return $this-&gt;Next;
+    }
+
+}
+
+/**
+ * Class LinkList
+ */
+class LinkList
+{
+    /**
+     *
+     * @var
+     */
+    private $header;//链表头部信息
+    /**
+     *
+     * @var
+     */
+    private $len;//链表长度
+
+
+    /**
+     * LinkList constructor.
+     */
+    public function __construct()
+    {
+        $this-&gt;setHeader(new Node(null, null));
+        $this-&gt;len = 0;
+    }
+
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * @param Node $node
+     */
+    public function setHeader(Node $node)
+    {
+        $this-&gt;header = $node;
+    }
+
+    /**
+     *  Functional description : 获取当前节点
+     *  Programmer : Mr.Liu
+     * @return Node
+     */
+    public function getHeader()
+    : Node
+    {
+        return $this-&gt;header;
+    }
+
+
+    /**
+     *  Functional description : 获取链表长度
+     *  Programmer : Mr.Liu
+     * @return mixed
+     */
+    public function getLen()
+    : int
+    {
+        return $this-&gt;len;
+    }
+
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * @param $data
+     */
+    public function add(string $data)
+    {
+        $node = $this-&gt;getHeader();
+        //查找没有子节点的节点
+        while ($node-&gt;getNext() != null) {
+            $node = $node-&gt;getNext();
+        }
+        //找到后设置其下级节点
+        $node-&gt;setNext(new Node($data, null));
+
+        //链表长度递增
+        $this-&gt;len++;
+    }
+
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * @param Node $currentNode
+     * @param Node $prevNode
+     *
+     * 示例：A-B-C ==&gt; A-C
+     * @return bool
+     */
+    private function delLink(Node $currentNode, Node $prevNode)
+    {
+        $prevNode-&gt;setNext($currentNode-&gt;getNext());
+        $this-&gt;len--;
+        return true;
+    }
+
+    /**
+     *  Functional description : 根据节点的数据进行删除
+     *  Programmer : Mr.Liu
+     * @param $data
+     */
+    public function delByData($data)
+    {
+        $node     = $this-&gt;getHeader();
+        $prevNode = $node;
+        //查找没有数据一致的节点
+        while ($node-&gt;getData() != $data) {
+            $prevNode = $node;
+            $node     = $node-&gt;getNext();
+        }
+        //删除(把要删的节点A下的子节点位置移到A节点，从而删除)
+        $this-&gt;delLink($node, $prevNode);
+    }
+
+
+    /**
+     *  Functional description : 删除第一个节点0~N
+     *  Programmer : Mr.Liu
+     * @param int $index
+     * @return bool
+     */
+    public function delByIndex(int $index)
+    {
+        $node = $prevNode = $this-&gt;getHeader();
+        $i    = 0;
+        if ($i &gt; $this-&gt;getLen() -1 ){
+            //节点超
+            return false;
+        }
+        while ($i != $index) {
+            if ($node-&gt;getNext() == null) {
+                return false;
+            }
+            $prevNode = $node;
+            $node     = $node-&gt;getNext();
+            $i++;
+        }
+        return $this-&gt;delLink($node, $prevNode);
+    }
+
+    /**
+     *  Functional description : 获取链表上所有数据
+     *  Programmer : Mr.Liu
+     * @return array
+     */
+    public function getLinkData()
+    {
+        $node = $this-&gt;getHeader();
+        $list = [];
+
+        //根节点处理
+        if ($node-&gt;getData() != null) {
+            $list[] = $node-&gt;getData();
+        }
+
+        //从下一个节点开始获取数据
+        $node = $node-&gt;getNext();
+        if ($node-&gt;getData() == null) {
+            return $list;
+        }
+        while ($node-&gt;getData() != null &amp;&amp; $node-&gt;getNext() != null) {
+            $list[] = $node-&gt;getData();
+            $node   = $node-&gt;getNext();
+        }
+        return $list;
+    }
+
+
+    /**
+     *  Functional description :
+     *  Programmer : Mr.Liu
+     * 添加D到1示例：A-B-C ==&gt; A-D-B-C
+     * @param int $index
+     * @param string $data
+     * @return bool
+     */
+    public function addByIndex(int $index,string $data){
+        $node  = $this-&gt;getHeader();
+        $i=0;
+        while ($i != $index){
+            if ($node-&gt;getNext() == null) {
+                return false;
+            }
+            $node = $node-&gt;getNext();
+            $i++;
+
+        }
+        //进行添加
+        $node-&gt;setNext(new Node($data,$node-&gt;getNext()));
+        $this-&gt;len++;
+        return true;
+    }
+
+}
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>单向链表</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-03-25 19:15</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/03/25/Linked-List/" title="单向链表">https://mrliuqh.github.io/2019/03/25/Linked-List/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '2c2fa69918d1332db190',
+            clientSecret: '331f6fa0fb5d55a2f042f449c656bed6e33e7f7f',
+            repo: 'MrLiuqh.github.io',
+            owner: 'MrLiuqh',
+            admin: ['MrLiuqh'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Mr.Liu</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#go','#单向链表','#禅道','#双链表','#循环链','#mysql','#镜像','#mac','#php','#crond','#git','#php并发请求','#SQL优化','#mysql8','#调优','#面试题','#算法','#docker','#nfs','#php-fpm','#rabbitmq',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
