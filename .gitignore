@@ -23,3 +23,5 @@ www/cata/*
 *.docx
 db*.json
 gitpush.sh
+public/*
+.deploy_git
