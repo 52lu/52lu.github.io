@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>docker 使用中遇到的问题 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" docker ">
-  <meta name="description" content="docker 使用中遇到的问题 | QingHui&#39;s Blog">
+  <title>php-mysql8-bug | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" php , mysql8 ">
+  <meta name="description" content="php-mysql8-bug | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -478,9 +478,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-question-for-docker" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-php-mysql8-bug" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">docker 使用中遇到的问题</h1>
+        <h1 class="article-title">php-mysql8-bug</h1>
     
     <div class="article-meta">
         
@@ -495,19 +495,21 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">docker</a>
+            <a href="javascript:" class="color4">php</a>
+            
+            <a href="javascript:" class="color2">mysql8</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2018-05-03 15:54</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-14 12:10:42">2019-08-03 10:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1k</span>
+        <span>字数:189</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -537,7 +539,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#问题1-gt-E-Unable-to-fetch-some-archives-maybe-run-apt-get-update-or-try-with-–fix-missing"><span class="toc-text">问题1&gt;E: Unable to fetch some archives, maybe run apt-get update or try with –fix-missing?</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#问题2-gt-ERROR-Service-‘redis’-failed-to-build-OCI-runtime-create-failed-container-linux-go-344-starting-container-process-caused-“process-linux-go-293-copying-bootstrap-data-to-pipe-caused-”write-init-p-broken-pipe-””-unknown"><span class="toc-text">问题2&gt;ERROR: Service ‘redis’ failed to build: OCI runtime create failed: container_linux.go:344: starting container process caused “process_linux.go:293: copying bootstrap data to pipe caused \”write init-p: broken pipe\””: unknown</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#问题3-gt-Unable-to-find-expected-entry-‘main-binary-amd64-Packages’"><span class="toc-text">问题3&gt; Unable to find expected entry ‘main/binary-amd64/Packages’</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#问题4-gt-docker-Error-response-from-daemon-Cannot-link-toto-laradock-mysql-1-as-it-does-not-belong-to-the-default-network"><span class="toc-text">问题4&gt; docker: Error response from daemon: Cannot link toto /laradock_mysql_1, as it does not belong to the default network</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#问题5-gt-Centos7-Failed-to-get-D-Bus-connection-Operation-not-permitted"><span class="toc-text">问题5 &gt; Centos7 Failed to get D-Bus connection: Operation not permitted</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#报错：PDO-construct-Server-sent-charset-255-unknown-to-the-client-Please-report-to-the-developers"><span class="toc-text">报错：PDO::__construct(): Server sent charset (255) unknown to the client. Please, report to the developers</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#报错：PDO-construct-The-server-requested-authentication-method-unknown-to-the-client-caching-sha2-password"><span class="toc-text">报错：PDO::__construct(): The server requested authentication method unknown to the client [caching_sha2_password]</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -552,82 +554,23 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="问题1-gt-E-Unable-to-fetch-some-archives-maybe-run-apt-get-update-or-try-with-–fix-missing"><a href="#问题1-gt-E-Unable-to-fetch-some-archives-maybe-run-apt-get-update-or-try-with-–fix-missing" class="headerlink" title="问题1&gt;E: Unable to fetch some archives, maybe run apt-get update or try with –fix-missing?"></a>问题1&gt;E: Unable to fetch some archives, maybe run apt-get update or try with –fix-missing?</h5><p>具体报错：</p>
-<pre><code>E: Fetched 1837 kB in 21s (84.9 kB/s)
-Failed to fetch http://security.debian.org/pool/updates/main/p/php5/php5-common_5.6.33+dfsg-0+deb8u1_amd64.deb  404  Not Found
+        <h4 id="报错：PDO-construct-Server-sent-charset-255-unknown-to-the-client-Please-report-to-the-developers"><a href="#报错：PDO-construct-Server-sent-charset-255-unknown-to-the-client-Please-report-to-the-developers" class="headerlink" title="报错：PDO::__construct(): Server sent charset (255) unknown to the client. Please, report to the developers"></a>报错：PDO::__construct(): Server sent charset (255) unknown to the client. Please, report to the developers</h4><p>根据网上资料显示，是由于Mysql8.0将默认的字符集改为了utfmb4，因此和客户端（不仅仅是PHP）的通信无法识别，我们需要更改my.cnf来指定字符集。</p>
+<pre><code class="$xslt">[client]
+default-character-set=utf8
 
-E: Failed to fetch http://security.debian.org/pool/updates/main/p/php5/php5-cli_5.6.33+dfsg-0+deb8u1_amd64.deb  404  Not Found
+[mysql]
+default-character-set=utf8
 
-E: Failed to fetch http://security.debian.org/pool/updates/main/p/php5/php-pear_5.6.33+dfsg-0+deb8u1_all.deb  404  Not Found
+[mysqld]
+collation-server = utf8_unicode_ci
+character-set-server = utf8
 
-E: Failed to fetch http://security.debian.org/pool/updates/main/p/php5/php5-readline_5.6.33+dfsg-0+deb8u1_amd64.deb  404  Not Found
-
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
-ERROR: Service &#39;php-fpm&#39; failed to build: The command &#39;/bin/sh -c if [ ${INSTALL_SOAP} = true ]; then     rm /etc/apt/preferences.d/no-debian-php      &amp;&amp; apt-get -y install libxml2-dev php-soap      &amp;&amp; docker-php-ext-install soap ;fi&#39; returned a non-zero code: 100
-
-</code></pre><a id="more"></a>
-<blockquote>
-<p>在相应的扩展中添加「 apt-get update 」如下：</p>
-</blockquote>
-<p><span style="color:green">解决方案:</span></p>
-<pre><code>ARG INSTALL_SOAP=false
-
-RUN if [ ${INSTALL_SOAP} = true ]; then \
-    rm /etc/apt/preferences.d/no-debian-php  \
-    &amp;&amp; apt-get update -y \
-    &amp;&amp; apt-get -y install libxml2-dev php-soap  \
-    &amp;&amp; docker-php-ext-install soap \
-;fi
-</code></pre><!--##### 问题2> E: Some index files failed to download. They have been ignored, or old ones used instead-->
-<h5 id="问题2-gt-ERROR-Service-‘redis’-failed-to-build-OCI-runtime-create-failed-container-linux-go-344-starting-container-process-caused-“process-linux-go-293-copying-bootstrap-data-to-pipe-caused-”write-init-p-broken-pipe-””-unknown"><a href="#问题2-gt-ERROR-Service-‘redis’-failed-to-build-OCI-runtime-create-failed-container-linux-go-344-starting-container-process-caused-“process-linux-go-293-copying-bootstrap-data-to-pipe-caused-”write-init-p-broken-pipe-””-unknown" class="headerlink" title="问题2&gt;ERROR: Service ‘redis’ failed to build: OCI runtime create failed: container_linux.go:344: starting container process caused “process_linux.go:293: copying bootstrap data to pipe caused \”write init-p: broken pipe\””: unknown"></a>问题2&gt;ERROR: Service ‘redis’ failed to build: OCI runtime create failed: container_linux.go:344: starting container process caused “process_linux.go:293: copying bootstrap data to pipe caused \”write init-p: broken pipe\””: unknown</h5><p><span style="color:green">解决方案:</span></p>
-<ul>
-<li>通过容器降级<pre><code>sudo yum downgrade -y containerd.io-1.2.2-3.el7
-</code></pre></li>
-</ul>
-<h5 id="问题3-gt-Unable-to-find-expected-entry-‘main-binary-amd64-Packages’"><a href="#问题3-gt-Unable-to-find-expected-entry-‘main-binary-amd64-Packages’" class="headerlink" title="问题3&gt; Unable to find expected entry ‘main/binary-amd64/Packages’"></a>问题3&gt; Unable to find expected entry ‘main/binary-amd64/Packages’</h5><p><strong>Unable to locate package</strong><br>apt 需要换成国内源</p>
-<pre><code>Step 94/98 : RUN apt-get update &amp;&amp; apt-get install -y software-properties-common &amp;&amp; add-apt-repository -y ppa:alex-p/tesseract-ocr
- ---&gt; Running in 252ccd15262a
-Get:1 http://security.debian.org jessie/updates InRelease [44.9 kB]
-Ign http://deb.debian.org jessie InRelease
-Get:2 http://deb.debian.org jessie-updates InRelease [7340 B]
-Get:3 http://deb.debian.org jessie Release.gpg [2420 B]
-Get:4 http://deb.debian.org jessie Release [148 kB]
-Get:5 http://security.debian.org jessie/updates/main amd64 Packages [832 kB]
-Get:6 http://deb.debian.org jessie/main amd64 Packages [9098 kB]
-Get:7 http://security.debian.org jessie/updates/main amd64 Packages [832 kB]
-
-Fetched 10.1 MB in 10min 9s (16.6 kB/s)
-W: Failed to fetch http://deb.debian.org/debian/dists/jessie-updates/InRelease  Unable to find expected entry &#39;main/binary-amd64/Packages&#39; in Release file (Wrong sources.list entry or malformed file)
-
-E: Some index files failed to download. They have been ignored, or old ones used instead.
-ERROR: Service &#39;php-fpm&#39; failed to build: The command &#39;/bin/sh -c apt-get update &amp;&amp; apt-get install -y software-properties-common &amp;&amp; add-apt-repository -y ppa:alex-p/tesseract-ocr&#39; returned a non-zero code: 100
-
-</code></pre><p><span style="color:green">解决方案:</span><br>在对应的命令行前加上：</p>
-<pre><code>RUN printf &quot; #deb包\n deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse\n deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse\n deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse\n deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse\n ##测试版源\n deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse\n # 源码\n deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse\n deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse\n deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse\n deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse\n ##测试版源\n deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse\n&quot; &gt; /etc/apt/sources.list
-</code></pre><h5 id="问题4-gt-docker-Error-response-from-daemon-Cannot-link-toto-laradock-mysql-1-as-it-does-not-belong-to-the-default-network"><a href="#问题4-gt-docker-Error-response-from-daemon-Cannot-link-toto-laradock-mysql-1-as-it-does-not-belong-to-the-default-network" class="headerlink" title="问题4&gt; docker: Error response from daemon: Cannot link toto /laradock_mysql_1, as it does not belong to the default network"></a>问题4&gt; docker: Error response from daemon: Cannot link toto /laradock_mysql_1, as it does not belong to the default network</h5><ul>
-<li>查看网络<pre><code>NETWORK ID          NAME                               DRIVER              SCOPE
-c8dfb8a44422        bridge                             bridge              local
-0fe587efe71f        chaincode-docker-devmode_default   bridge              local
-3d3c9e4de651        e2e_default                        bridge              local
-dce17f3c06ca        ethereum-docker_default            bridge              local
-0eca3f311ce7        host                               host                local
-57912953f3e5        laradock_backend                   bridge              local
-35be8b9a0f70        laradock_default                   bridge              local
-d3e733ccb976        laradock_frontend                  bridge              local
-d67e463037d2        none                               null                local
-</code></pre><span style="color:red">原因分析:</span><br>造成问题的原因是 Docker-Compose命名约定造成。<blockquote>
-<p>使用docker-compose时，您的网络名称是根据docker-compose“项目名称”决定的，该项目名称基于其所在目录的名称。您可以使用-project-name标志覆盖项目名称或 COMPOSE_PROJECT_NAME环境变量。 我的docker-compose.yml文件位于一个名为dock的目录中，这就是为什么docker-compose在创建正在运行的容器实例时选择了dock_default！</p>
-</blockquote>
-</li>
-</ul>
-<p><span style="color:green">解决方案:</span>：run 命令后增加–net参数，根据docker-compose 网络</p>
-<h5 id="问题5-gt-Centos7-Failed-to-get-D-Bus-connection-Operation-not-permitted"><a href="#问题5-gt-Centos7-Failed-to-get-D-Bus-connection-Operation-not-permitted" class="headerlink" title="问题5 &gt; Centos7 Failed to get D-Bus connection: Operation not permitted"></a>问题5 &gt; Centos7 Failed to get D-Bus connection: Operation not permitted</h5><p><span style="color:red">原因分析:</span></p>
-<blockquote>
-<p>大约在0.6版，privileged被引入docker。<br>使用该参数，container内的root拥有真正的root权限。<br>否则，container内的root只是外部的一个普通用户权限</p>
-</blockquote>
-<p><span style="color:green">解决方案:</span></p>
-<pre><code> # docker run -d --name centos7 --privileged=true centos:7 /usr/sbin/init
 </code></pre>
+<h4 id="报错：PDO-construct-The-server-requested-authentication-method-unknown-to-the-client-caching-sha2-password"><a href="#报错：PDO-construct-The-server-requested-authentication-method-unknown-to-the-client-caching-sha2-password" class="headerlink" title="报错：PDO::__construct(): The server requested authentication method unknown to the client [caching_sha2_password]"></a>报错：PDO::__construct(): The server requested authentication method unknown to the client [caching_sha2_password]</h4><p>根据<a href="https://stackoverflow.com/questions/49083573/php-7-2-2-mysql-8-0-pdo-gives-authentication-method-unknown-to-the-client-ca" target="_blank" rel="noopener">网上资料</a>显示，是由于用户身份认证的加密方式不兼容导致的，mysql8.0中默认方式为caching_sha2_password，引起老版本兼容性问题，老版本加密方式为mysql_native_password。</p>
+<p>新建用老版加密方式初始化密码的用户即可：</p>
+<pre><code class="$xslt">CREATE USER username@localhost identified with mysql_native_password by &#39;password&#39;;
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -640,12 +583,12 @@ d67e463037d2        none                               null                local
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>docker 使用中遇到的问题</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1k</span></p>
+    <p><span class="copy-title">文章标题:</span>php-mysql8-bug</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">189</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2018-05-03, 15:54:34</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-13, 19:40:06</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/05/03/question-for-docker/" title="docker 使用中遇到的问题">https://mrliuqh.github.io/2018/05/03/question-for-docker/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-03, 10:16:09</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-14, 12:10:42</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/03/php-mysql8-bug/" title="php-mysql8-bug">https://mrliuqh.github.io/2019/08/03/php-mysql8-bug/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>

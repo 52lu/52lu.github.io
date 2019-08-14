@@ -9,22 +9,19 @@ categories:
 
 ### Centos7 crontab 没有按时执行任务，并且在/var/log/ 没有cron日志文件
 
-
-- 1.没有日志文件解决方法：
-```$xslt
+#### 1.没有日志文件解决方法：
+```
 # yum install rsyslog 
 ```
 
 
-- 2.没有按时执行解决方法：
-```$xslt
+#### 2.没有按时执行解决方法:
+```
 
 # cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-//然后重启下面服务 
-
+# 然后重启下面服务 
 # service crond restart
 # service rsyslog restart
-
 ```
 

@@ -97,6 +97,7 @@ go 函数名 ( 参数列表 )
 ><font color=red>使用go关键字创建goroutine时，被调用函数的返回值会被忽略。</font>如果需要在goroutine中返回数据，则需要通过通道（channel）把数据从goroutine中作为返回值传出。
 
 - ######  使用示例
+
 ```
 package main
 
@@ -156,6 +157,7 @@ go func( 参数列表 ){
 
 
 - ######  使用示例
+
 ```
 package main
 
@@ -201,7 +203,7 @@ runtime.GOMAXPROCS( 逻辑CPU)
  `单纯地将函数并发执行是没有意义的。函数与函数间需要交换数据才能体现并发执行函数的意义。虽然可以使用共享内存进行数据交换，但是共享内存在不同的goroutine中容易发生竞态问题。为了保证数据交换的正确性，必须使用互斥量对内存进行加锁，这种做法势必造成性能问题。Go语言提倡使用通信的方法代替共享内存，这里通信的方法就是使用通道`
  
  
-  ##### 5.1.1 goroutine与channel的通信图
+##### 5.1.1 goroutine与channel的通信图
  
  ![](https://mrliuqh.github.io/directionsImg/go/goroutine%E4%B8%8Echannel%E7%9A%84%E9%80%9A%E4%BF%A1.png)
  
@@ -223,8 +225,9 @@ runtime.GOMAXPROCS( 逻辑CPU)
 ```
 - 数据类型：通道内传输的元素类型。
 - 通道实例：通过make创建的通道句柄。
-- 
-- ######使用示例
+
+###### 使用示例
+
 ```
 // 创建一个整型类型的通道
 intch := make(chan int)  
@@ -252,6 +255,7 @@ structch := make(chan ＊Mystruct)
 - 通道实例：被创建出的通道实例。
 
 - ###### 使用示例
+
 ```
 func main() {
 	//创建可以存放 3 map 类型通道
@@ -374,6 +378,7 @@ func main() {
 
 - channel中只能存放指定的数据类型
 - 空接口类型的通道能接收任意参数
+
 ```
 interfaceCh := make(chan interface{}, 4)
 //发送字符串
@@ -392,6 +397,7 @@ for data := range interfaceCh {
     fmt.Println(data)
 }
 ```
+
 - 发送将持续阻塞直到数据被接收
 
 - 通过range函数遍历通道接收数据时，要再发送完数据到通道后，用Close()函数显示的关闭通道，否则range函数就不会结束

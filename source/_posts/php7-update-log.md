@@ -10,9 +10,8 @@ categories:
 ## 一.PHP5.6.x 移植PHP7.0.x
 
 ### 1、PHP7.0.x 新特性
-
 - #### 1.1 太空船操作符（组合比较符） (<=>)
->太空船操作符用于比较两个表达式，当$a小于、等于或大于$b时它分别返回-1、0或1，比较规则延续常规比较规则。<font color='red'>对象不能进行比较</font>。
+太空船操作符用于比较两个表达式，当$a小于、等于或大于$b时它分别返回-1、0或1，比较规则延续常规比较规则。<font color='red'>对象不能进行比较</font>。
 
 ```php
 <?php
@@ -35,7 +34,7 @@ echo "b" <=> "a"; // 1
 ```
 <!--more-->
 - #### 1.2 null合并运算符
->由于日常使用中存在大量同时使用三元表达式和 isset()的情况， 我们添加了null合并运算符 (??) 这个语法糖。如果变量存在且值不为NULL， 它就会返回自身的值，否则返回它的第二个操作数。
+由于日常使用中存在大量同时使用三元表达式和 isset()的情况， 我们添加了null合并运算符 (??) 这个语法糖。如果变量存在且值不为NULL， 它就会返回自身的值，否则返回它的第二个操作数。
 
 ```php
 <?php
@@ -48,9 +47,10 @@ $a = isset($_GET['a']) ?? 'none';
 ```
 
 - #### 1.3 变量类型声明
-> 变量类型声明有两种模式。一种是强制的，和严格的。允许使用下列类型参数int、string、float、bool
+变量类型声明有两种模式。一种是强制的，和严格的。允许使用下列类型参数int、string、float、bool
 
 **非严格模式**
+
 ```php
 <?php
 
@@ -81,7 +81,8 @@ var_dump(add('2', 3));
 
 - #### 1.4 返回值类型声明
 
->增加了返回类型声明，类似参数类型。这样更方便的控制函数的返回值.在函数定义的后面加上:类型名即可
+增加了返回类型声明，类似参数类型。这样更方便的控制函数的返回值.在函数定义的后面加上:类型名即可
+
 ```php
 <?php
 function fun(int $a): array
@@ -93,7 +94,8 @@ fun(3);//Fatal error
 ```
 
 - #### 1.5 匿名类
->php7允许new class {} 创建一个匿名的对象。
+php7允许new class {} 创建一个匿名的对象。
+
 ```php
 <?php
 //php7以前
@@ -117,7 +119,7 @@ $util->setLogger(new class {
 
 ```
 - #### 1.6 Unicode codepoint 转译语法
->这接受一个以16进制形式的 Unicode codepoint，并打印出一个双引号或heredoc包围的 UTF-8 编码格式的字符串。 可以接受任何有效的 codepoint，并且开头的 0 是可以省略的
+这接受一个以16进制形式的 Unicode codepoint，并打印出一个双引号或heredoc包围的 UTF-8 编码格式的字符串。 可以接受任何有效的 codepoint，并且开头的 0 是可以省略的
 
 ```php
 <?php
@@ -127,7 +129,8 @@ echo "\u{9999}";// 香
 ```
 
 - ####  1.7 Closure::call
-> 闭包绑定 简短干练的暂时绑定一个方法到对象上闭包并调用它。
+闭包绑定 简短干练的暂时绑定一个方法到对象上闭包并调用它。
+
 ```php
 <?php
 class A {private $x = 1;}
@@ -143,7 +146,8 @@ echo $getX->call(new A);
 ```
 - #### 1.8 带过滤的unserialize
 
-> 提供更安全的方式解包不可靠的数据。它通过白名单的方式来防止潜在的代码注入
+提供更安全的方式解包不可靠的数据。它通过白名单的方式来防止潜在的代码注入
+
 ```php
 <?php
 // 将所有的对象都转换为 __PHP_Incomplete_Class 对象
@@ -158,7 +162,7 @@ $data = unserialize($foo, ["allowed_classes" => true]);
 ```
 
 - #### 1.9 IntlChar类
->新增加的 [IntlChar](http://php.net/manual/zh/class.intlchar.php) 类旨在暴露出更多的 ICU 功能。这个类自身定义了许多静态方法用于操作多字符集的 unicode 字符。
+新增加的 [IntlChar](http://php.net/manual/zh/class.intlchar.php) 类旨在暴露出更多的 ICU 功能。这个类自身定义了许多静态方法用于操作多字符集的 unicode 字符。
 
 ```php
 <?php
@@ -166,10 +170,10 @@ printf('%x', IntlChar::CODEPOINT_MAX);//10ffff
 echo IntlChar::charName('@');//COMMERCIAL AT
 var_dump(IntlChar::ispunct('!'));//bool(true)
 ```
-> 若要使用此类，请先安装Intl扩展
+`若要使用此类，请先安装Intl扩展`
 
 - #### 1.10 预期
-> 预期是向后兼用并增强之前的 [assert()](http://php.net/manual/zh/function.assert.php) 的方法。 它使得在生产环境中启用断言为零成本，并且提供当断言失败时抛出特定异常的能力。
+ 预期是向后兼用并增强之前的 [assert()](http://php.net/manual/zh/function.assert.php) 的方法。 它使得在生产环境中启用断言为零成本，并且提供当断言失败时抛出特定异常的能力。
 
 ```php
 <?php
@@ -184,7 +188,7 @@ assert(false, new CustomError('Some error message'));
 ```
 
 - #### 1.11 命名空间按组导入
->从同一个命名空间下导入的类、函数、常量支持按组一次导入
+从同一个命名空间下导入的类、函数、常量支持按组一次导入
 
 ```php
 <?php
@@ -197,7 +201,7 @@ use app\model{A,B}
 ```
 
 - #### 1.12 生成器支持返回表达式
-> 此特性基于 PHP 5.5 版本中引入的生成器特性构建的。 它允许在生成器函数中通过使用 return 语法来返回一个表达式 （但是不允许返回引用值）， 可以通过调用 Generator::getReturn() 方法来获取生成器的返回值， 但是这个方法只能在生成器完成产生工作以后调用一次。
+此特性基于 PHP 5.5 版本中引入的生成器特性构建的。 它允许在生成器函数中通过使用 return 语法来返回一个表达式 （但是不允许返回引用值）， 可以通过调用 Generator::getReturn() 方法来获取生成器的返回值， 但是这个方法只能在生成器完成产生工作以后调用一次。
 
 ```php
 <?php
@@ -223,7 +227,8 @@ echo $gen->getReturn(), PHP_EOL;
 */
 ```
 - #### 1.13 生成器委派
->现在，只需在最外层生成其中使用 yield from， 就可以把一个生成器自动委派给其他的生成器， Traversable 对象或者 array。
+现在，只需在最外层生成其中使用 yield from， 就可以把一个生成器自动委派给其他的生成器， Traversable 对象或者 array。
+
 ```php
 <?php
 
@@ -255,12 +260,14 @@ foreach (gen() as $val)
 ```
 
 - #### 1.14 整数除法函数intdiv
+
 ```php
 <?php
 var_dump(intdiv(10,3)); //3
 ```
+
 - #### 1.15 会话选项设置
-> session_start() 可以加入一个数组覆盖php.ini的配置
+session_start() 可以加入一个数组覆盖php.ini的配置
 
 ```php
 <?php
@@ -271,7 +278,7 @@ session_start([
 
 ```
 - #### 1.16 preg_replace_callback_array
-> 在 PHP7 之前，当使用 [preg_replace_callback()](http://php.net/manual/zh/function.preg-replace-callback.php) 函数的时候， 由于针对每个正则表达式都要执行回调函数，可能导致过多的分支代码。 而使用新加的 [preg_replace_callback_array()](http://php.net/manual/zh/function.preg-replace-callback-array.php) 函数， 可以使得代码更加简洁。
+ 在 PHP7 之前，当使用 [preg_replace_callback()](http://php.net/manual/zh/function.preg-replace-callback.php) 函数的时候， 由于针对每个正则表达式都要执行回调函数，可能导致过多的分支代码。 而使用新加的 [preg_replace_callback_array()](http://php.net/manual/zh/function.preg-replace-callback-array.php) 函数， 可以使得代码更加简洁。
 
 ```php
 <?php
@@ -330,7 +337,7 @@ preg_replace_callback_array(
 );
 ```
 - #### 1.17 随机数、随机字符函数
-> 新加入两个跨平台的函数： [random_bytes(http://php.net/manual/zh/function.random-bytes.php)]() 和 [random_int()](http://php.net/manual/zh/function.random-int.php) 用来产生高安全级别的随机字符串和随机整数。
+新加入两个跨平台的函数： [random_bytes(http://php.net/manual/zh/function.random-bytes.php)]() 和 [random_int()](http://php.net/manual/zh/function.random-int.php) 用来产生高安全级别的随机字符串和随机整数。
 
 ```php
 <?php
@@ -350,7 +357,7 @@ define('ALLOWED_IMAGE_EXTENSIONS', ['jpg', 'jpeg', 'gif', 'png']);
 
 ### 2、PHP7.0.x 新变化
 - #### 2.1 错误和异常处理相关的变更
-> 在PHP7 中，很多致命错误以及可恢复的致命错误，都被转换为异常来处理了。 这些异常继承自 Error 类，此类实现了 Throwable 接口 （所有异常都实现了这个基础接口）。
+在PHP7 中，很多致命错误以及可恢复的致命错误，都被转换为异常来处理了。 这些异常继承自 Error 类，此类实现了 Throwable 接口 （所有异常都实现了这个基础接口）。
 
 
 `这也意味着，当发生错误的时候，以前代码中的一些错误处理的代码将无法被触发。 因为在 PHP7 版本中，已经使用抛出异常的错误处理机制了。（如果代码中没有捕获 Error 异常，那么会引发致命错误）`
@@ -376,6 +383,7 @@ function handler(Throwable $e) { ... }
 
 
 - #### 2.2 list() 会按照原来的顺序进行赋值。不再是逆序了
+
 ```php
 list($a,$b,$c) = [1,2,3];
 //PHP5
@@ -399,7 +407,7 @@ list(,,) = $a;
 list($x, list(), $y) = $a;
 ```
 - #### 2.3 foreach不再改变内部数组指针
-> 在PHP7之前，当数组通过 foreach 迭代时，数组指针会移动。现在开始，不再如此，见下面代码
+ 在PHP7之前，当数组通过 foreach 迭代时，数组指针会移动。现在开始，不再如此，见下面代码
 
 ```php
 <?php
@@ -421,6 +429,7 @@ int(0);
 
 - #### 2.4 十六进制字符串不再被认为是数字
 > 含十六进制字符串不再被认为是数字
+
 ```php
 <?php
 var_dump(is_numeric("0x123"));
@@ -439,7 +448,7 @@ bool(false);
 
 - #### 3.1 PHP4风格的构造函数（方法名和类名一样）将被弃用，并在将来移除。
 
-> PHP4 风格的构造函数（方法名和类名一样）将被弃用，并在将来移除。 如果在类中仅使用了 PHP4 风格的构造函数，PHP7 会产生 E_DEPRECATED 警告。 如果还定义了 __construct() 方法则不受影响。
+PHP4 风格的构造函数（方法名和类名一样）将被弃用，并在将来移除。 如果在类中仅使用了 PHP4 风格的构造函数，PHP7 会产生 E_DEPRECATED 警告。 如果还定义了 __construct() 方法则不受影响。
 
 ```php
 <?php
@@ -451,11 +460,12 @@ class foo {
 
 ```
 以上例程会输出：
-> Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; foo has a deprecated constructor in example.php on line 3
+` Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; foo has a deprecated constructor in example.php on line 3`
 
 
 - #### 3.2 静态调用非静态的方法
->废弃了 静态（Static） 调用未声明成 static 的方法，未来可能会彻底移除该功能。
+废弃了 静态（Static） 调用未声明成 static 的方法，未来可能会彻底移除该功能。
+
 ```php
 <?php
 class foo {
@@ -467,7 +477,7 @@ class foo {
 foo::bar();
 ```
 以上例程会输出：
-> Deprecated: Non-static method foo::bar() should not be called statically in - on line 8 I am not static!
+` Deprecated: Non-static method foo::bar() should not be called statically in - on line 8 I am not static!`
 
 [查看更多PHP7.0.x 弃用的功能](http://php.net/manual/zh/migration70.deprecated.php)
 
@@ -501,7 +511,7 @@ foo::bar();
 
  ### 1、PHP7.1.x 新特性
 - #### 1.1 可为空(Nullables)类型
->参数以及返回值的类型现在可以通过在类型前加上一个问号使之允许为空。 当启用这个特性时，传入的参数或者函数返回的结果要么是给定的类型，要么是null 。
+参数以及返回值的类型现在可以通过在类型前加上一个问号使之允许为空。 当启用这个特性时，传入的参数或者函数返回的结果要么是给定的类型，要么是null 。
 
 ```php
 <?php
@@ -525,7 +535,7 @@ Uncaught Error: Too few arguments to function test(), 0 passed in...
 ```
 
 - #### 1.2 Void 函数
->一个新的返回值类型void被引入。 返回值声明为 void 类型的方法要么干脆省去 return 语句，要么使用一个空的 return 语句。 对于 void 函数来说，NULL 不是一个合法的返回值
+一个新的返回值类型void被引入。 返回值声明为 void 类型的方法要么干脆省去 return 语句，要么使用一个空的 return 语句。 对于 void 函数来说，NULL 不是一个合法的返回值
 
 ```php
 <?php
@@ -551,10 +561,10 @@ null
 int(2)
 int(1)
 ```
->试图去获取一个 void 方法的返回值会得到 NULL ，并且不会产生任何警告。这么做的原因是不想影响更高层次的方法。
+试图去获取一个 void 方法的返回值会得到 NULL ，并且不会产生任何警告。这么做的原因是不想影响更高层次的方法。
 
 - #### 1.3 类常量可见性
-> 现在起支持设置类常量的可见性(public、protected、private)。
+ 现在起支持设置类常量的可见性(public、protected、private)。
 
 ```php
 <?php
@@ -567,7 +577,8 @@ class ConstDemo
 }
 ```
 - #### 1.4 短数组语法（[]）
->短数组语法（[]）现在作为list()语法的一个备选项，可以用于将数组的值赋给一些变量（包括在foreach中）。
+短数组语法（[]）现在作为list()语法的一个备选项，可以用于将数组的值赋给一些变量（包括在foreach中）。
+
 ```php
 <?php
 $data = [
@@ -592,7 +603,7 @@ foreach ($data as [$id, $name]) {
 }
 ```
 - #### 1.5 iterable伪类
->现在引入了一个新的被称为iterable的伪类 (与[callable](http://php.net/manual/zh/language.types.callable.php)类似)。 这可以被用在参数或者返回值类型中，它代表接受数组或者实现了Traversable接口的对象。 至于子类，当用作参数时，子类可以收紧父类的iterable类型到array 或一个实现了Traversable的对象。对于返回值，子类可以拓宽父类的 array或对象返回值类型到iterable。
+现在引入了一个新的被称为iterable的伪类 (与[callable](http://php.net/manual/zh/language.types.callable.php)类似)。 这可以被用在参数或者返回值类型中，它代表接受数组或者实现了Traversable接口的对象。 至于子类，当用作参数时，子类可以收紧父类的iterable类型到array 或一个实现了Traversable的对象。对于返回值，子类可以拓宽父类的 array或对象返回值类型到iterable。
 
 ```php
 <?php
@@ -605,7 +616,7 @@ function iterator(iterable $iter)
 ```
 
 - #### 1.6 多异常捕获处理
-> 一个catch语句块现在可以通过管道字符(|)来实现多个异常的捕获。 这对于需要同时处理来自不同类的不同异常时很有用。
+ 一个catch语句块现在可以通过管道字符(|)来实现多个异常的捕获。 这对于需要同时处理来自不同类的不同异常时很有用。
 
 ```php
 <?php
@@ -617,7 +628,7 @@ try {
 
 ```
 - #### 1.7 list支持键名
-> 现在list()和它的新的[]语法支持在它内部去指定键名。这意味着它可以将任意类型的数组 都赋值给一些变量（与短数组语法类似）
+ 现在list()和它的新的[]语法支持在它内部去指定键名。这意味着它可以将任意类型的数组 都赋值给一些变量（与短数组语法类似）
 
 ```php
 <?php
@@ -644,7 +655,7 @@ foreach ($data as ["id" => $id, "name" => $name]) {
 ```
 
 - #### 1.8 支持为负的字符串偏移量
->现在所有支持偏移量的[字符串操作函数](http://php.net/manual/zh/book.strings.php) 都支持接受负数作为偏移量，包括通过[]或{}操作字符串下标。在这种情况下，一个负数的偏移量会被理解为一个从字符串结尾开始的偏移量。
+现在所有支持偏移量的[字符串操作函数](http://php.net/manual/zh/book.strings.php) 都支持接受负数作为偏移量，包括通过[]或{}操作字符串下标。在这种情况下，一个负数的偏移量会被理解为一个从字符串结尾开始的偏移量。
 
 ```php
 <?php
@@ -658,7 +669,8 @@ echo "The last character of '$string' is '$string[-1]'.\n";
 ```
 
 - #### 1.9 将callables转为闭包
-> [Closure](http://php.net/manual/zh/class.closure.php)新增了一个静态方法fromCallable()，用于将callable快速地 转为一个Closure 对象。
+[Closure](http://php.net/manual/zh/class.closure.php)新增了一个静态方法fromCallable()，用于将callable快速地 转为一个Closure 对象。
+
 ```php
 <?php
 class Test
@@ -700,7 +712,8 @@ $privFunc('some value');
  
 - #### 1.1 增加新的类型object
  `这种新的对象类型, object, 引进了可用于逆变（contravariant）参数输入和协变（covariant）返回任何对象类型。`
- ```php
+ 
+```php
 <?php
 
 function test(object $obj) : object
@@ -719,6 +732,7 @@ zend_extension=opcache
 
 - #### 1.3 允许重写抽象方法
 `当一个抽象类继承于另外一个抽象类的时候，继承后的抽象类可以重写被继承的抽象类的抽象方法`
+
 ```php
 <?php
 abstract class A
@@ -745,12 +759,14 @@ abstract class B extends A
 - PDO::ATTR_DEFAULT_STR_PARAM
 
 这些常量通过PDO::PARAM_STR利用位运算OR进行计算：
+
 ```php
 <?php
 $db->quote('über', PDO::PARAM_STR | PDO::PARAM_STR_NATL);
 ```
 - #### 1.5 允许分组命名空间的尾部逗号
 <font size="2">命名空间可以在PHP7.2中使用尾随逗号进行分组引入。</font>
+
 ```php
 <?php
 
@@ -764,16 +780,19 @@ use Foo\Bar\{
 
 ### 2、PHP7.2.x 新变化
 - #### 2.1 number_format 返回值
+
 ```php
 <?php
 var_dump(number_format(-0.01)); // now outputs string(1) "0" instead of string(2) "-0"
 ```
 - #### 2.2 get_class()不再允许null。
+
 ```php
 <?php
 var_dump(get_class(null)); // warning
 ```
 - #### 2.3 count 作用在不是 Countable Types 将发生warning
+
 ```php
 <?php
 //PHP7.2
@@ -802,6 +821,7 @@ int(2)
 ```
 - #### 2.4 不带引号的字符串
 `在之前不带引号的字符串是不存在的全局常量，转化成他们自身的字符串。现在将会产生waring。`
+
 ```php
 <?php
 
