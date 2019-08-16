@@ -7,11 +7,6 @@ categories:
   - linux
 ---
 
-  
-## scp 使用
-```
-# scp -P 8083 朝阳中心医院.png  root@218.60.147.172:/data/web/lnsw12320
-```
 
 ## 关闭服务
 
