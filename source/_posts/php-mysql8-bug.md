@@ -2,8 +2,7 @@
 title: php-mysql8-bug
 date: 2019-08-03 10:16:09
 tags:
- - mysql8
- - php
+ - mysql
 categories:
  - bug
 ---
