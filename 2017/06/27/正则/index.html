@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>Linux常用命令行整理 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" 命令行 ">
-  <meta name="description" content="Linux常用命令行整理 | QingHui&#39;s Blog">
+  <title>正则 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="正则 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -569,9 +569,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Linux常用命令行整理" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-正则" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">Linux常用命令行整理</h1>
+        <h1 class="article-title">正则</h1>
     
     <div class="article-meta">
         
@@ -579,26 +579,20 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="linux">linux</a>
+                <a href="javascript:" data-rel="正则">正则</a>
             
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">命令行</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-08-16 12:47:46">2017-06-27 18:34</time>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-16 12:26:06">2015-06-19 17:24</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>字数:1.8k</span>
+        <span>字数:1.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -628,7 +622,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关闭服务"><span class="toc-text">关闭服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统"><span class="toc-text">系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资源"><span class="toc-text">资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘和分区"><span class="toc-text">磁盘和分区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络"><span class="toc-text">网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程"><span class="toc-text">进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户"><span class="toc-text">用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务"><span class="toc-text">服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序"><span class="toc-text">程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行-php代码"><span class="toc-text">执行 php代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩-解压"><span class="toc-text">压缩/解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#curl命令请求"><span class="toc-text">curl命令请求</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#指定http代理IP和端口"><span class="toc-text">指定http代理IP和端口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#more-proc-cpuinfo-grep-“physical-id”-uniq-wc-l"><span class="toc-text">more /proc/cpuinfo |grep “physical id”|uniq|wc -l</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo-grep-processor"><span class="toc-text">cat /proc/cpuinfo | grep processor</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo-grep-“cores”-uniq"><span class="toc-text">cat /proc/cpuinfo |grep “cores”|uniq</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo-grep-MHz-uniq"><span class="toc-text">cat /proc/cpuinfo |grep MHz|uniq</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo"><span class="toc-text">cat /proc/cpuinfo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo-grep-“processor”-wc-l"><span class="toc-text">cat /proc/cpuinfo | grep “processor” | wc -l</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo-grep-“physical-id”-sort-uniq-wc-l"><span class="toc-text">cat /proc/cpuinfo | grep “physical id” | sort | uniq | wc -l</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo-grep-“cpu-cores”-wc-l"><span class="toc-text">cat /proc/cpuinfo | grep “cpu cores” | wc -l</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cat-proc-cpuinfo-grep-“siblings”"><span class="toc-text">cat /proc/cpuinfo | grep “siblings”</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配语法规则"><span class="toc-text">匹配语法规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊字符"><span class="toc-text">特殊字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#限定符"><span class="toc-text">限定符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#匹配组"><span class="toc-text">匹配组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#正则表达式中-i-g-ig-gi-m的区别和含义"><span class="toc-text">正则表达式中/i,/g,/ig,/gi,/m的区别和含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用实例"><span class="toc-text">应用实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#匹配两个字符串A与B中间的字符串包含A与B："><span class="toc-text">匹配两个字符串A与B中间的字符串包含A与B：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#匹配两个字符串A与B中间的字符串包含A但是不包含B："><span class="toc-text">匹配两个字符串A与B中间的字符串包含A但是不包含B：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#匹配两个字符串A与B中间的字符串且不包含A与B："><span class="toc-text">匹配两个字符串A与B中间的字符串且不包含A与B：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#校验数字的表达式"><span class="toc-text">校验数字的表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#校验字符的表达式"><span class="toc-text">校验字符的表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊需求表达式"><span class="toc-text">特殊需求表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#所有的超链接的href和链接文字"><span class="toc-text">所有的超链接的href和链接文字</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -640,197 +634,118 @@
         display: none !important;
     }
 </style>
-</li></div>
+</div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关闭服务"><a href="#关闭服务" class="headerlink" title="关闭服务"></a>关闭服务</h2><pre><code>☐ 根据端口号进行关闭
-
-kill -9 $(netstat -nlp | grep :9501 | awk &#39;{print $7}&#39; | awk -F&quot;/&quot; &#39;{ print $1 }&#39;)
-
-☐ 根据服务名称进行关闭
-
-kill -9 $(ps aux|grep swoole|grep -v grep|awk &#39;{print $2}&#39;)
-</code></pre><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><pre><code>☐ grep
-grep -i pattern files ：不区分大小写地搜索。默认情况区分大小写，
-grep -l pattern files ：只列出匹配的文件名， 
-grep -L pattern files ：列出不匹配的文件名， 
-grep -w pattern files ：只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’）， 
-grep -C number pattern files ：匹配的上下文分别显示[number]行，
-grep pattern1 | pattern2 files ：显示匹配 pattern1 或 pattern2 的行，
-grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行。 
-这里还有些用于搜索的特殊符号：
-​
-\&lt; 和 \&gt; 分别标注单词的开始与结尾。
-​
-例如： 
-grep man * 会匹配 ‘Batman’、‘manic’、‘man’等， 
-grep &#39;\&lt;man&#39; * 匹配‘manic’和‘man’，但不是‘Batman’，
-grep &#39;\&lt;man\&gt;&#39; 只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。 
-&#39;^&#39;：指匹配的字符串在行首， 
-&#39;$&#39;：指匹配的字符串在行尾•
-
-☐ find
-
-1.自动删除n天前日志
-     find 对应目录 -mtime +天数 -name &quot;文件名&quot; -exec rm -rf {} \;
-
-2.找到大于指定大小的文件：
-
- find / -type f -size +10G
-
-# find / -path &quot;/media/xww&quot; -type f -size +10G
-</code></pre><h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><pre><code># uname -a               # 查看内核/操作系统/CPU信息
-# head -n 1 /etc/issue   # 查看操作系统版本
-# cat /proc/cpuinfo      # 查看CPU信息
-# hostname               # 查看计算机名
-# lspci -tv              # 列出所有PCI设备
-# lsusb -tv              # 列出所有USB设备
-# lsmod                  # 列出加载的内核模块
-# env                    # 查看环境变量
-
-</code></pre><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><pre><code>
-# free -m                # 查看内存使用量和交换区使用量
-# df -h                  # 查看各分区使用情况
-# du -sh &lt;目录名&gt;        # 查看指定目录的大小
-# grep MemTotal /proc/meminfo   # 查看内存总量
-# grep MemFree /proc/meminfo    # 查看空闲内存量
-# uptime                 # 查看系统运行时间、用户数、负载
-# cat /proc/loadavg      # 查看系统负载
-# du -s /usr/* | sort -rn #这是按字节排序
-# du -sh /usr/* | sort -rn #这是按兆（M）来排序
-# du -s /usr/* | sort -rn | head #选出排在前面的10个
-# du -s /usr/* | sort -rn | tail #选出排在后面的10个
-</code></pre><h2 id="磁盘和分区"><a href="#磁盘和分区" class="headerlink" title="磁盘和分区"></a>磁盘和分区</h2><pre><code># mount | column -t      # 查看挂接的分区状态
-# fdisk -l               # 查看所有分区
-# swapon -s              # 查看所有交换分区
-# hdparm -i /dev/hda     # 查看磁盘参数(仅适用于IDE设备)
-# dmesg | grep IDE       # 查看启动时IDE设备检测状况
-</code></pre><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><pre><code># ifconfig               # 查看所有网络接口的属性
-# iptables -L            # 查看防火墙设置
-# route -n               # 查看路由表
-# netstat -lntp          # 查看所有监听端口
-# netstat -antp          # 查看所有已经建立的连接
-# netstat -s             # 查看网络统计信息
-</code></pre><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><pre><code># ps -ef                 # 查看所有进程
-# top                    # 实时显示进程状态
-</code></pre><h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><pre><code># w                      # 查看活动用户
-# id &lt;用户名&gt;            # 查看指定用户信息
-# last                   # 查看用户登录日志
-# cut -d: -f1 /etc/passwd   # 查看系统所有用户
-# cut -d: -f1 /etc/group    # 查看系统所有组
-# crontab -l             # 查看当前用户的计划任务
-</code></pre><h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><pre><code># chkconfig --list       # 列出所有系统服务
-# chkconfig --list | grep on    # 列出所有启动的系统服务
-</code></pre><h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2><pre><code># rpm -qa                # 查看所有安装的软件包
-</code></pre><h2 id="执行-php代码"><a href="#执行-php代码" class="headerlink" title="执行 php代码"></a>执行 php代码</h2><pre><code># php -r &#39;print_r($_SERVER);&#39;
-# php -r &#39;echo date(&#39;Ymdhis&#39;);&#39;
-</code></pre><h2 id="压缩-解压"><a href="#压缩-解压" class="headerlink" title="压缩/解压"></a>压缩/解压</h2><pre><code>tar命令
-# tar zxvf FileName.tar # 解包
-# tar czvf FileName.tar DirName #　打包
-gz命令
-　# 解压1： gunzip FileName.gz 
-　# 解压2：gzip -d FileName.gz
-　# 压缩：gzip FileName
-
-　       #　====.tar.gz 和 .tgz ====
-　#　解压：tar zxvf FileName.tar.gz 　
-　#　压缩：tar zcvf FileName.tar.gz DirName 　
-    # 压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 ... 　
-bz2命令
-　#　解压1：bzip2 -d FileName.bz2
-　#　解压2：bunzip2 FileName.bz2
-　#　压缩： bzip2 -z FileName
-　#　======.tar.bz2 =====
-　#　解压：tar jxvf FileName.tar.bz2
-　#　压缩：tar jcvf FileName.tar.bz2 DirName
-
-bz命令
-#　　解压1：bzip2 -d FileName.bz
-#　　解压2：bunzip2 FileName.bz
-#　　压缩：未知
-#　　====== .tar.bz =====
-#　　解压：tar jxvf FileName.tar.bz
-Z命令
-#　　解压：uncompress FileName.Z
-#　　压缩：compress FileName
-​
-#　=====　.tar.Z ======
-#　　解压：tar Zxvf FileName.tar.Z
-#　　压缩：tar Zcvf FileName.tar.Z DirName
-zip命令
-　#　解压：unzip FileName.zip
-　#　压缩：zip FileName.zip DirName
-</code></pre><h2 id="curl命令请求"><a href="#curl命令请求" class="headerlink" title="curl命令请求"></a>curl命令请求</h2><blockquote>
-<p><em>linux curl命令可以使用下面参数设置http(s)代理、socks代理，已经设置它们的用户名、密码以及认证方式</em></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> -x host:port<br> -x [protocol://[user:pwd@]host[:port]<br>–proxy [protocol://[user:pwd@]host[:port]<br></td>
-<td>使用HTTP代理访问；如果未指定端口，默认使用8080端口;<br>protocol默认为http_proxy，其他可能的值包括：<br>http_proxy、HTTPS_PROXY、socks4、socks4a、socks5；<br>如：<br>–proxy 8.8.8.8:8080；<br>-x “http_proxy://aiezu:<a href="mailto:123@aiezu.com" target="_blank" rel="noopener">123@aiezu.com</a>:80”</td>
-</tr>
-<tr>
-<td>–socks4 &lt;host[:port]&gt;<br>–socks4a &lt;host[:port]&gt;<br>–socks5 &lt;host[:port]&gt;<br></td>
-<td>使用SOCKS4代理；<br>使用SOCKS4A代理；<br>使用SOCKS5代理；<br>此参数会覆盖“-x”参数；<br></td>
-</tr>
-<tr>
-<td>–proxy-anyauth<br>–proxy-basic<br>–proxy-diges<br>–proxy-negotiate<br>–proxy-ntlm<br></td>
-<td>代理认证方式，参考：<br> –anyauth <br> –basic <br> –diges <br> –negotiate <br> –ntlm <br></td>
-</tr>
-<tr>
-<td>-U <a href="user:password" target="_blank" rel="noopener">user:password</a> <br>–proxy-user <a href="user:password" target="_blank" rel="noopener">user:password</a></td>
-<td>设置代理的用户名和密码；</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Linux curl命令设置代理举例：<blockquote>
-<p>1、linux curl命令设置http代理：<br><code>`</code></p>
-</blockquote>
-<h1 id="指定http代理IP和端口"><a href="#指定http代理IP和端口" class="headerlink" title="指定http代理IP和端口"></a>指定http代理IP和端口</h1>curl -x 113.185.19.192:80 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a><br>curl –proxy 113.185.19.192:80 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></li>
+        <h3 id="匹配语法规则"><a href="#匹配语法规则" class="headerlink" title="匹配语法规则"></a>匹配语法规则</h3><ul>
+<li><h4 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h4><img src="https://mrliuqh.github.io/directionsImg/regular/special.png" alt=""></li>
+<li><h4 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h4><p><img src="https://mrliuqh.github.io/directionsImg/regular/limitStr.png" alt=""></p>
+</li>
+<li><h4 id="匹配组"><a href="#匹配组" class="headerlink" title="匹配组"></a>匹配组</h4><p><img src="https://mrliuqh.github.io/directionsImg/regular/group1.png" alt=""></p>
+</li>
+<li><h4 id="正则表达式中-i-g-ig-gi-m的区别和含义"><a href="#正则表达式中-i-g-ig-gi-m的区别和含义" class="headerlink" title="正则表达式中/i,/g,/ig,/gi,/m的区别和含义"></a>正则表达式中/i,/g,/ig,/gi,/m的区别和含义</h4><pre><code>/i (忽略大小写)
+/g (全文查找出现的所有匹配字符)
+/m (多行查找)
+/gi(全文查找、忽略大小写)
+/ig(全文查找、忽略大小写)
+</code></pre></li>
 </ul>
-<p>#指定为http代理<br>curl -x http_proxy://113.185.19.192:80 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<p>#指定为https代理<br>curl -x HTTPS_PROXY://113.185.19.192:80 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<p>#指定代理用户名和密码，basic认证方式<br>curl -x aiezu:<a href="mailto:123456@113.185.19.192" target="_blank" rel="noopener">123456@113.185.19.192</a>:80 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a><br>curl -x 113.185.19.192:80 -U aiezu:123456 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a><br>curl -x 113.185.19.192:80 –proxy-user aiezu:123456 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<p>#指定代理用户名和密码，ntlm认证方式<br>curl -x 113.185.19.192:80 -U aiezu:123456 –proxy-ntlm <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<p>#指定代理协议、用户名和密码，basic认证方式<br>curl -x http_proxy://aiezu:<a href="mailto:123456@113.185.19.192" target="_blank" rel="noopener">123456@113.185.19.192</a>:80 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<pre><code>&gt;2、Linux curl命令设置socks代理：
-</code></pre><p>#使用socks4代理，无需认证方式<br>curl –socks4 122.192.32.76:7280 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a><br>curl -x socks4://122.192.32.76:7280 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<p>#使用socks4a代理，无需认证方式<br>curl –socks4a 122.192.32.76:7280 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a><br>curl -x socks4a://122.192.32.76:7280 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<p>#使用socks5代理，basic认证方式<br>curl –socks5 122.192.32.76:7280 -U aiezu:123456 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a><br>curl -x socks5://aiezu:<a href="mailto:123456@122.192.32.76" target="_blank" rel="noopener">123456@122.192.32.76</a>:7280 <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<p>#使用socks5代理，basic认证方式，ntlm认证方式<br>curl -x socks5://aiezu:<a href="mailto:123456@122.192.32.76" target="_blank" rel="noopener">123456@122.192.32.76</a>:7280 –proxy-ntlm <a href="http://aiezu.com/test.php" target="_blank" rel="noopener">http://aiezu.com/test.php</a></p>
-<pre><code>
-## 查看 CPU 核数
-</code></pre><p>几个cpu</p>
-<h1 id="more-proc-cpuinfo-grep-“physical-id”-uniq-wc-l"><a href="#more-proc-cpuinfo-grep-“physical-id”-uniq-wc-l" class="headerlink" title="more /proc/cpuinfo |grep “physical id”|uniq|wc -l"></a>more /proc/cpuinfo |grep “physical id”|uniq|wc -l</h1><p>每个cpu是几核（假设cpu配置相同）</p>
-<h1 id="cat-proc-cpuinfo-grep-processor"><a href="#cat-proc-cpuinfo-grep-processor" class="headerlink" title="cat /proc/cpuinfo | grep processor"></a>cat /proc/cpuinfo | grep processor</h1><ol>
-<li>查看物理CPU的个数</li>
-</ol>
-<p>#cat /proc/cpuinfo |grep “physical id”|sort |uniq|wc -l</p>
-<ol start="2">
-<li>查看逻辑CPU的个数</li>
-</ol>
-<p>#cat /proc/cpuinfo |grep “processor”|wc -l</p>
-<ol start="3">
-<li>查看CPU是几核</li>
-</ol>
-<h1 id="cat-proc-cpuinfo-grep-“cores”-uniq"><a href="#cat-proc-cpuinfo-grep-“cores”-uniq" class="headerlink" title="cat /proc/cpuinfo |grep “cores”|uniq"></a>cat /proc/cpuinfo |grep “cores”|uniq</h1><ol start="4">
-<li>查看CPU的主频</li>
-</ol>
-<h1 id="cat-proc-cpuinfo-grep-MHz-uniq"><a href="#cat-proc-cpuinfo-grep-MHz-uniq" class="headerlink" title="cat /proc/cpuinfo |grep MHz|uniq"></a>cat /proc/cpuinfo |grep MHz|uniq</h1><p>  ● 获得CPU的详细信息：</p>
-<h1 id="cat-proc-cpuinfo"><a href="#cat-proc-cpuinfo" class="headerlink" title="cat /proc/cpuinfo"></a>cat /proc/cpuinfo</h1><p>  ● 用命令判断几个物理CPU，几个核等：逻辑CPU个数：</p>
-<h1 id="cat-proc-cpuinfo-grep-“processor”-wc-l"><a href="#cat-proc-cpuinfo-grep-“processor”-wc-l" class="headerlink" title="cat /proc/cpuinfo | grep “processor” | wc -l"></a>cat /proc/cpuinfo | grep “processor” | wc -l</h1><p>  ● 物理CPU个数：</p>
-<h1 id="cat-proc-cpuinfo-grep-“physical-id”-sort-uniq-wc-l"><a href="#cat-proc-cpuinfo-grep-“physical-id”-sort-uniq-wc-l" class="headerlink" title="cat /proc/cpuinfo | grep “physical id” | sort | uniq | wc -l"></a>cat /proc/cpuinfo | grep “physical id” | sort | uniq | wc -l</h1><p>  ● 每个物理CPU中Core的个数：</p>
-<h1 id="cat-proc-cpuinfo-grep-“cpu-cores”-wc-l"><a href="#cat-proc-cpuinfo-grep-“cpu-cores”-wc-l" class="headerlink" title="cat /proc/cpuinfo | grep “cpu cores” | wc -l"></a>cat /proc/cpuinfo | grep “cpu cores” | wc -l</h1><p>5 . 判断是否为超线程？<br>     &gt;&gt;&gt; 如果有两个逻辑CPU具有相同的”core id”，那么超线程是打开的。</p>
-<p>  ● 每个物理CPU中逻辑CPU(可能是core, threads或both)的个数：</p>
-<h1 id="cat-proc-cpuinfo-grep-“siblings”"><a href="#cat-proc-cpuinfo-grep-“siblings”" class="headerlink" title="cat /proc/cpuinfo | grep “siblings”"></a>cat /proc/cpuinfo | grep “siblings”</h1><p><code>`</code></p>
+<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><ul>
+<li><h4 id="匹配两个字符串A与B中间的字符串包含A与B："><a href="#匹配两个字符串A与B中间的字符串包含A与B：" class="headerlink" title="匹配两个字符串A与B中间的字符串包含A与B："></a>匹配两个字符串A与B中间的字符串包含A与B：</h4><pre><code>表达式: A.*?B
+示例: Abaidu.comB
+结果: Awww.apizl.comB
+</code></pre></li>
+<li><h4 id="匹配两个字符串A与B中间的字符串包含A但是不包含B："><a href="#匹配两个字符串A与B中间的字符串包含A但是不包含B：" class="headerlink" title="匹配两个字符串A与B中间的字符串包含A但是不包含B："></a>匹配两个字符串A与B中间的字符串包含A但是不包含B：</h4><pre><code>表达式: A.*?(?=B)
+示例: Awww.apizl.comB
+结果: Awww.apizl.com
+</code></pre></li>
+<li><h4 id="匹配两个字符串A与B中间的字符串且不包含A与B："><a href="#匹配两个字符串A与B中间的字符串且不包含A与B：" class="headerlink" title="匹配两个字符串A与B中间的字符串且不包含A与B："></a>匹配两个字符串A与B中间的字符串且不包含A与B：</h4><pre><code>表达式: (?&lt;=A).*?(?=B)
+示例: Awww.baidu.comB
+结果: www.baidu.com
+</code></pre></li>
+<li><h4 id="校验数字的表达式"><a href="#校验数字的表达式" class="headerlink" title="校验数字的表达式"></a>校验数字的表达式</h4></li>
+</ul>
+<pre><code> 1. 数字：^[0-9]*$
+ 2. n位的数字：^\d{n}$
+ 3. 至少n位的数字：^\d{n,}$
+ 4. m-n位的数字：^\d{m,n}$
+ 5. 零和非零开头的数字：^(0|[1-9][0-9]*)$
+ 6. 非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$
+ 7. 带1-2位小数的正数或负数：^(\-)?\d+(\.\d{1,2})?$
+ 8. 正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$
+ 9. 有两位小数的正实数：^[0-9]+(.[0-9]{2})?$
+10. 有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$
+11. 非零的正整数：^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$
+12. 非零的负整数：^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$
+13. 非负整数：^\d+$ 或 ^[1-9]\d*|0$
+14. 非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$
+15. 非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$
+16. 非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$
+17. 正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$
+18. 负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$
+19. 浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$
+</code></pre><ul>
+<li><h4 id="校验字符的表达式"><a href="#校验字符的表达式" class="headerlink" title="校验字符的表达式"></a>校验字符的表达式</h4><pre><code>1.汉字：^[\u4e00-\u9fa5]{0,}$
+2.英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$
+3.长度为3-20的所有字符：^.{3,20}$
+4.由26个英文字母组成的字符串：^[A-Za-z]+$
+5.由26个大写英文字母组成的字符串：^[A-Z]+$
+6.由26个小写英文字母组成的字符串：^[a-z]+$
+7.由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$
+8.由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w{3,20}$
+9.中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$
+10.中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$
+11.可以输入含有^%&amp;&#39;,;=?$\&quot;等字符：[^%&amp;&#39;,;=?$\x22]+
+12.禁止输入含有~的字符：[^~\x22]+
+</code></pre></li>
+<li><h4 id="特殊需求表达式"><a href="#特殊需求表达式" class="headerlink" title="特殊需求表达式"></a>特殊需求表达式</h4></li>
+</ul>
+<pre><code> 1. Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+ 2. 域名：[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?
+ 3. InternetURL：[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$
+ 4. 手机号码：^(13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9]|19[0-9])\d{8}$ (由于工信部放号段不定时，所以建议使用泛解析 ^([1][3,4,5,6,7,8,9])\d{9}$)
+ 5. 电话号码(&quot;XXX-XXXXXXX&quot;、&quot;XXXX-XXXXXXXX&quot;、&quot;XXX-XXXXXXX&quot;、&quot;XXX-XXXXXXXX&quot;、&quot;XXXXXXX&quot;和&quot;XXXXXXXX)：^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$ 
+ 6. 国内电话号码(0511-4405222、021-87888822)：\d{3}-\d{8}|\d{4}-\d{7} 
+ 7. 18位身份证号码(数字、字母x结尾)：^((\d{18})|([0-9x]{18})|([0-9X]{18}))$
+ 8. 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$
+ 9. 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w{5,17}$
+10. 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$  
+11. 日期格式：^\d{4}-\d{1,2}-\d{1,2}
+12. 一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$
+13. 一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$ 
 
+
+14. 钱的输入格式：
+15.    1.有四种钱的表示形式我们可以接受:&quot;10000.00&quot; 和 &quot;10,000.00&quot;, 和没有 &quot;分&quot; 的 &quot;10000&quot; 和 &quot;10,000&quot;：^[1-9][0-9]*$ 
+16.    2.这表示任意一个不以0开头的数字,但是,这也意味着一个字符&quot;0&quot;不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$ 
+17.    3.一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$ 
+18.    4.这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$ 
+19.    5.必须说明的是,小数点后面至少应该有1位数,所以&quot;10.&quot;是不通过的,但是 &quot;10&quot; 和 &quot;10.2&quot; 是通过的：^[0-9]+(.[0-9]{2})?$ 
+20.    6.这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]{1,2})?$ 
+21.    7.这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$ 
+22.    8.1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$ 
+23.    备注：这就是最终结果了,别忘了&quot;+&quot;可以用&quot;*&quot;替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里
+
+
+24. xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$
+25. 中文字符的正则表达式：[\u4e00-\u9fa5]
+26. 双字节字符：[^\x00-\xff]    (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))
+27. 空白行的正则表达式：\n\s*\r    (可以用来删除空白行)
+28. HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;    (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)
+29. 首尾空白字符的正则表达式：^\s*|\s*$或(^\s*)|(\s*$)    (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)
+30. 腾讯QQ号：[1-9][0-9]{4,}    (腾讯QQ号从10000开始)
+31. 中国邮政编码：[1-9]\d{5}(?!\d)    (中国邮政编码为6位数字)
+32. IP地址：\d+\.\d+\.\d+\.\d+    (提取IP地址时有用)
+33. IP地址：((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))    (由@飞龙三少 提供,感谢共享)
+</code></pre><ul>
+<li><h4 id="所有的超链接的href和链接文字"><a href="#所有的超链接的href和链接文字" class="headerlink" title="所有的超链接的href和链接文字"></a>所有的超链接的href和链接文字</h4></li>
+</ul>
+<pre><code>&lt;a.+?href=\&quot;(.+?)\&quot;.*&gt;(.+)&lt;/a&gt;
+
+单独href ： &lt;a.+?href=\&quot;(.+?)\&quot;.*&gt;
+
+单独连接文字：&gt;(.+)&lt;/a&gt;
+</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -843,11 +758,11 @@ zip命令
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Linux常用命令行整理</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.8k</span></p>
+    <p><span class="copy-title">文章标题:</span>正则</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.9k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2015-06-19 17:24</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2015/06/19/Linux常用命令行整理/" title="Linux常用命令行整理">https://mrliuqh.github.io/2015/06/19/Linux常用命令行整理/</a>
+    <p><span class="copy-title">发布时间:</span>2017-06-27 18:34</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2017/06/27/正则/" title="正则">https://mrliuqh.github.io/2017/06/27/正则/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
