@@ -136,7 +136,7 @@
     
         
             
-            <li><div data-rel="linux">linux<small>(5)</small></div>
+            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
                 
             </li>
             
@@ -144,7 +144,7 @@
     
         
             
-            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
+            <li><div data-rel="linux">linux<small>(5)</small></div>
                 
             </li>
             
@@ -160,7 +160,7 @@
     
         
             
-            <li><div data-rel="nginx">nginx<small>(2)</small></div>
+            <li><div data-rel="docker">docker<small>(3)</small></div>
                 
             </li>
             
@@ -168,7 +168,7 @@
     
         
             
-            <li><div data-rel="docker">docker<small>(3)</small></div>
+            <li><div data-rel="nginx">nginx<small>(2)</small></div>
                 
             </li>
             
@@ -279,11 +279,19 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">单向链表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">禅道</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">单向链表</a>
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">命令行</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -292,14 +300,6 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">循环链</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">命令行</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -315,11 +315,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">crond</a>
+        <a href="javascript:" class="color4">git</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">git</a>
+        <a href="javascript:" class="color1">crond</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -339,19 +339,19 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">算法</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">面试题</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">docker</a>
+        <a href="javascript:" class="color3">算法</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">php-fpm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -482,7 +482,7 @@
             <span class="post-date" title="2018-04-03 16:48:41">2018/04/03</span>
         </a>
         
-        <a class="后端 " href="/2018/01/12/php-sort/" data-tag="php,算法,面试题" data-author="">
+        <a class="后端 " href="/2018/01/12/php-sort/" data-tag="php,面试题,算法" data-author="">
             <span class="post-title" title="php排序算法汇总">php排序算法汇总</span>
             <span class="post-date" title="2018-01-12 10:12:07">2018/01/12</span>
         </a>
@@ -593,7 +593,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2018-09-11 11:14</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-16 12:49:28">2018-09-11 11:14</time>
         
     </div>
     <div class="article-meta">
@@ -676,7 +676,7 @@ show variables like &#39;%innodb_file_format%&#39;;
 </blockquote>
 <p>Barracuda格式的innodb引擎，当ROW_FORMAT设置为DYNAMIC只使用一个20字节的指针作为可变长度类型，并且优先选择较小的字段存储在innodb page上。并且可以给blob增加前缀索引(prefix index)，将前缀索引建立在page外的blob上而不是page内。ROW_FORMAT设置为COMPRESSED时，innodb引擎的对可变长度字段的存储策略类似，并且总是压缩不在page内的数据，即使没有设置KEY_BLOCK_SIZE，也没有启用正常数据和索引的压缩。</p>
 <p>innodb在存储blob时，page内部和外部的blob其实时不共享的。每个blob在页外都有16k分配，即使blob只有1个字节大小。如果每行有多个blob，可能会导致数据库效率比较低。所以最好是一行只定义一个blob来组合数据，并且压缩改数据，text类型同理</p>
-<p>==解决方案==</p>
+<p><code>解决方案</code></p>
 <h3 id="解决方案1-–-Dynamic"><a href="#解决方案1-–-Dynamic" class="headerlink" title="解决方案1 – Dynamic"></a>解决方案1 – Dynamic</h3><p>将innodb引擎的文件格式设置为Barracuda，并且将行格式设置为DYNAMIC。</p>
 <pre><code>SET GLOBAL innodb_file_format=Barracuda;
 
@@ -790,7 +790,7 @@ innodb_file_per_table=1
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#禅道','#单向链表','#双链表','#循环链','#命令行','#mysql','#mac','#php','#镜像','#crond','#git','#docker命令','#php并发请求','#SQL优化','#nfs','#算法','#面试题','#docker','#php-fpm','#rabbitmq','#容器',],
+            'data': ['#go','#单向链表','#禅道','#mysql','#命令行','#双链表','#循环链','#mac','#php','#镜像','#git','#crond','#docker命令','#php并发请求','#SQL优化','#nfs','#面试题','#算法','#php-fpm','#docker','#rabbitmq','#容器',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
