@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>php 正则去掉字符串中非汉字字符串 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" php ">
-  <meta name="description" content="php 正则去掉字符串中非汉字字符串 | QingHui&#39;s Blog">
+  <title>docker命令整理 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" docker命令 ">
+  <meta name="description" content="docker命令整理 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -517,9 +517,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-php-preg_match_all" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-docker-command" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">php 正则去掉字符串中非汉字字符串</h1>
+        <h1 class="article-title">docker命令整理</h1>
     
     <div class="article-meta">
         
@@ -527,26 +527,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="后端">后端</a>
+                <a href="javascript:" data-rel="docker">docker</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">php</a>
+            <a href="javascript:" class="color4">docker命令</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2015-03-09 10:05</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-16 11:31:47">2018-08-13 10:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:42</span>
+        <span>字数:659</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -576,7 +576,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-基本信息查看"><span class="toc-text">1.基本信息查看</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-镜像使用"><span class="toc-text">2.镜像使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-搜索镜像"><span class="toc-text">2.1 搜索镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-下载镜像"><span class="toc-text">2.2 下载镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-查看镜像"><span class="toc-text">2.3 查看镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-使用镜像创建容器"><span class="toc-text">2.4 使用镜像创建容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-删除为none的镜像"><span class="toc-text">2.5 删除为none的镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-容器使用"><span class="toc-text">3.容器使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-查看容器"><span class="toc-text">3.1 查看容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-启动容器"><span class="toc-text">3.2 启动容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-进入容器"><span class="toc-text">3.3 进入容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-删除容器"><span class="toc-text">3.4 删除容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-查看容器IP"><span class="toc-text">3.5 查看容器IP</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -591,19 +591,80 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>直接上代码示例：</p>
-<pre><code class="$xslt">
-$str=&#39;2016，北京欢迎您 from around you..&#39;;
+        <h2 id="1-基本信息查看"><a href="#1-基本信息查看" class="headerlink" title="1.基本信息查看"></a>1.基本信息查看</h2><pre><code># 查看docker的版本号，包括客户端、服务端、依赖的Go等
+$ docker version
 
-preg_match_all(&#39;/[\x{4e00}-\x{9fff}]+/u&#39;, $str, $matches);
+# 查看系统(docker)层面信息，包括管理的images, containers数等
+$ docker info 
+</code></pre><h2 id="2-镜像使用"><a href="#2-镜像使用" class="headerlink" title="2.镜像使用"></a>2.镜像使用</h2><h3 id="2-1-搜索镜像"><a href="#2-1-搜索镜像" class="headerlink" title="2.1 搜索镜像"></a>2.1 搜索镜像</h3><pre><code># 在docker index中搜索image
+$ docker search &lt;image&gt; 
+</code></pre><h3 id="2-2-下载镜像"><a href="#2-2-下载镜像" class="headerlink" title="2.2 下载镜像"></a>2.2 下载镜像</h3><pre><code># 从docker registry server 中下拉image
+$ docker pull &lt;image&gt;  
+</code></pre><h3 id="2-3-查看镜像"><a href="#2-3-查看镜像" class="headerlink" title="2.3 查看镜像"></a>2.3 查看镜像</h3><pre><code>$ docker images： # 列出images
+$ docker images -a # 列出所有的images（包含历史）
+$ docker rmi  &lt;image ID&gt;： # 删除一个或多个image
+</code></pre><h3 id="2-4-使用镜像创建容器"><a href="#2-4-使用镜像创建容器" class="headerlink" title="2.4 使用镜像创建容器"></a>2.4 使用镜像创建容器</h3><pre><code>$ docker run -i -t sauloal/ubuntu14.04
 
-$str = join(&#39;&#39;, $matches[0]);
+# 创建一个容器，让其中运行 bash 应用，退出后容器关闭
+$ docker run -i -t sauloal/ubuntu14.04 /bin/bash
 
+#创建一个名称centos_aways的容器，自动重启，--restart参数：always始终重启；on-failure退出状态非0时重启；默认为，no不重启
+$ docker run -itd --name centos_aways --restart=always centos 
+</code></pre><h3 id="2-5-删除为none的镜像"><a href="#2-5-删除为none的镜像" class="headerlink" title="2.5 删除为none的镜像"></a>2.5 删除为none的镜像</h3><p>Dockerfile 代码更新频繁，自然docker build构建同名镜像也频繁的很，产生了众多名为none的无用镜像。<br>分别执行以下三行可清除:</p>
+<pre><code>$ docker ps -a | grep &quot;Exited&quot; | awk &#39;{print $1 }&#39;|xargs docker stop
+
+$ docker ps -a | grep &quot;Exited&quot; | awk &#39;{print $1 }&#39;|xargs docker rm
+
+$ docker images|grep none|awk &#39;{print $3 }&#39;|xargs docker rmi
+
+</code></pre><h2 id="3-容器使用"><a href="#3-容器使用" class="headerlink" title="3.容器使用"></a>3.容器使用</h2><h3 id="3-1-查看容器"><a href="#3-1-查看容器" class="headerlink" title="3.1 查看容器"></a>3.1 查看容器</h3><pre><code>$ docker ps ：列出当前所有正在运行的container
+$ docker ps -l ：列出最近一次启动的container
+$ docker ps -a ：列出所有的container（包含历史，即运行过的container）
+$ docker ps -q ：列出最近一次运行的container ID
+</code></pre><h3 id="3-2-启动容器"><a href="#3-2-启动容器" class="headerlink" title="3.2 启动容器"></a>3.2 启动容器</h3><pre><code>#：开启/停止/重启container
+$ docker start/stop/restart &lt;container&gt; 
+
+#：再次运行某个container （包括历史container）
+$ docker start [container_id]
+</code></pre><h3 id="3-3-进入容器"><a href="#3-3-进入容器" class="headerlink" title="3.3 进入容器"></a>3.3 进入容器</h3><pre><code>$ docker exec -it [container_id] /bin/bash
+
+#：映射 HOST 端口到容器，方便外部访问容器内服务，host_port 可以省略，省略表示把 container_port 映射到一个动态端口。
+$ docker run -i -t -p &lt;host_port:contain_port&gt;
+</code></pre><h3 id="3-4-删除容器"><a href="#3-4-删除容器" class="headerlink" title="3.4 删除容器"></a>3.4 删除容器</h3><pre><code>#：删除一个或多个container
+$ docker rm &lt;container...&gt; 
+
+#：删除所有的container
+$ docker rm `docker ps -a -q`
+
+#：同上, 删除所有的container
+$ docker ps -a -q | xargs docker rm
+
+# 停止所有容器，删除所有容器
+$ docker kill $(docker ps -q) 
+$ docker rm $(docker ps -a -q)
+
+</code></pre><h3 id="3-5-查看容器IP"><a href="#3-5-查看容器IP" class="headerlink" title="3.5 查看容器IP"></a>3.5 查看容器IP</h3><ul>
+<li>进入容器内部后<pre><code>cat /etc/hosts
+</code></pre></li>
+<li>使用命令<pre><code>docker inspect &lt;container id&gt; 
+# 或 
+docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; container_name_or_id
+</code></pre></li>
+<li>获取所有容器名称及其IP</li>
+</ul>
+<blockquote>
+
+$ docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+
+</blockquote>
+<pre><code>workdock_nginx_1 - 192.168.0.8172.31.0.3
+workdock_php-fpm_1 - 192.168.0.7
+workdock_workspace_1 - 192.168.0.6172.31.0.2
+workdock_redis_1 - 192.168.0.5
+workdock_mysql_1 - 192.168.0.2
+workdock_mongo_1 - 192.168.0.4
+workdock_docker-in-docker_1 - 192.168.0.3
 </code></pre>
-<p>输出</p>
-<pre><code class="$xslt">北京欢迎您
-</code></pre>
-
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -616,11 +677,11 @@ $str = join(&#39;&#39;, $matches[0]);
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>php 正则去掉字符串中非汉字字符串</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">42</span></p>
+    <p><span class="copy-title">文章标题:</span>docker命令整理</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">659</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2015-03-09 10:05</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2015/03/09/php-preg_match_all/" title="php 正则去掉字符串中非汉字字符串">https://mrliuqh.github.io/2015/03/09/php-preg_match_all/</a>
+    <p><span class="copy-title">发布时间:</span>2018-08-13 10:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/08/13/docker-command/" title="docker命令整理">https://mrliuqh.github.io/2018/08/13/docker-command/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>

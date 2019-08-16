@@ -135,6 +135,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[docker命令整理]]></title>
+    <url>%2F2018%2F08%2F13%2Fdocker-command%2F</url>
+    <content type="text"><![CDATA[1.基本信息查看# 查看docker的版本号，包括客户端、服务端、依赖的Go等 $ docker version # 查看系统(docker)层面信息，包括管理的images, containers数等 $ docker info 2.镜像使用2.1 搜索镜像# 在docker index中搜索image $ docker search &lt;image&gt; 2.2 下载镜像# 从docker registry server 中下拉image $ docker pull &lt;image&gt; 2.3 查看镜像$ docker images： # 列出images $ docker images -a # 列出所有的images（包含历史） $ docker rmi &lt;image ID&gt;： # 删除一个或多个image 2.4 使用镜像创建容器$ docker run -i -t sauloal/ubuntu14.04 # 创建一个容器，让其中运行 bash 应用，退出后容器关闭 $ docker run -i -t sauloal/ubuntu14.04 /bin/bash #创建一个名称centos_aways的容器，自动重启，--restart参数：always始终重启；on-failure退出状态非0时重启；默认为，no不重启 $ docker run -itd --name centos_aways --restart=always centos 2.5 删除为none的镜像Dockerfile 代码更新频繁，自然docker build构建同名镜像也频繁的很，产生了众多名为none的无用镜像。分别执行以下三行可清除: $ docker ps -a | grep &quot;Exited&quot; | awk &#39;{print $1 }&#39;|xargs docker stop $ docker ps -a | grep &quot;Exited&quot; | awk &#39;{print $1 }&#39;|xargs docker rm $ docker images|grep none|awk &#39;{print $3 }&#39;|xargs docker rmi 3.容器使用3.1 查看容器$ docker ps ：列出当前所有正在运行的container $ docker ps -l ：列出最近一次启动的container $ docker ps -a ：列出所有的container（包含历史，即运行过的container） $ docker ps -q ：列出最近一次运行的container ID 3.2 启动容器#：开启/停止/重启container $ docker start/stop/restart &lt;container&gt; #：再次运行某个container （包括历史container） $ docker start [container_id] 3.3 进入容器$ docker exec -it [container_id] /bin/bash #：映射 HOST 端口到容器，方便外部访问容器内服务，host_port 可以省略，省略表示把 container_port 映射到一个动态端口。 $ docker run -i -t -p &lt;host_port:contain_port&gt; 3.4 删除容器#：删除一个或多个container $ docker rm &lt;container...&gt; #：删除所有的container $ docker rm `docker ps -a -q` #：同上, 删除所有的container $ docker ps -a -q | xargs docker rm # 停止所有容器，删除所有容器 $ docker kill $(docker ps -q) $ docker rm $(docker ps -a -q) 3.5 查看容器IP 进入容器内部后cat /etc/hosts 使用命令docker inspect &lt;container id&gt; # 或 docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; container_name_or_id 获取所有容器名称及其IP $ docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq) workdock_nginx_1 - 192.168.0.8172.31.0.3 workdock_php-fpm_1 - 192.168.0.7 workdock_workspace_1 - 192.168.0.6172.31.0.2 workdock_redis_1 - 192.168.0.5 workdock_mysql_1 - 192.168.0.2 workdock_mongo_1 - 192.168.0.4 workdock_docker-in-docker_1 - 192.168.0.3]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[RabbitMQ安装方法总结]]></title>
     <url>%2F2018%2F08%2F03%2Frabbit-mq-install%2F</url>
     <content type="text"><![CDATA[具体安装如下： 一：安装Erlang： # rpm --import http://binaries.erlang-solutions.com/debian/erlang_solutions.asc # cd /etc/yum.repos.d/ # wget http://binaries.erlang-solutions.com/rpm/centos/erlang_solutions.repo # yum install esl-erlang 二：安装esl-erlang-compat：# cd /tmp/ # wget https://raw.github.com/jasonmcintosh/esl-erlang-compat/master/rpmbuild/RPMS/noarch/esl-erlang-compat-R14B-1.el6.noarch.rpm # yum install esl-erlang-compat-R14B-1.el6.noarch.rpm 三：安装RabbitMQ # cd /tmp # wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.2/rabbitmq-server-3.6.2-1.noarch.rpm # yum install rabbitmq-server-3.6.2-1.noarch.rpm 到此，RabbitMQ基本安装完成了。 四：RabbitMQ页面监控系统RabbitMQ提供了一个web的监控页面系统，这个系统是以Plugin的方式进行调用的。在Documentation下的Server下的Management是关于配置这个插件的。地址：http://www.rabbitmq.com/management.html这个管理插件是包含在RabbitMQ发行包里的，所以只需激活即可。 命令： # rabbitmq-plugins enable rabbitmq_management 五：配置登陆用户# rabbitmqctl add_user leyue leyue100 # rabbitmqctl set_user_tags leyue administrator # rabbitmqctl set_permissions -p / leyue &quot;.*&quot; &quot;.*&quot; &quot;.*&quot; 浏览器地址栏输入：http://localhost:15672 用户名登陆 RabbitMQ服务启动、关闭、重启 # service rabbitmq-server start //开启 # service rabbitmq-server stop //关闭 #service rabbitmq-server restart //重启 具体使用，待续….]]></content>
@@ -232,8 +243,8 @@
       </categories>
       <tags>
         <tag>php</tag>
-        <tag>面试题</tag>
         <tag>算法</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -268,6 +279,17 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[行业术语]]></title>
+    <url>%2F2016%2F08%2F16%2F%E8%A1%8C%E4%B8%9A%E6%9C%AF%E8%AF%AD%2F</url>
+    <content type="text"><![CDATA[什么是QPS，TPS，吞吐量 TPS Transactions Per Second（每秒传输的事物处理个数），即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用户数据库访问。（业务TPS = CAPS × 每个呼叫平均TPS） TPS是软件测试结果的测量单位。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数。一般的，评价系统性能均以每秒钟完成的技术交易的数量来衡量。系统整体处理能力取决于处理能力最低模块的TPS值。 QPS 每秒查询率QPS是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准，在因特网上，作为域名系统服务器的机器的性能经常用每秒查询率来衡量。 对应fetches/sec，即每秒的响应请求数，也即是最大吞吐能力。 存储单位1B(Byte 字节)=8bit， 1KB (Kilobyte 千字节)=1024B， 1MB (Megabyte 兆字节 简称“兆”)=1024KB， 1GB (Gigabyte 吉字节 又称“千兆”)=1024MB， 1TB (Trillionbyte 万亿字节 太字节)=1024GB，其中1024=2^10 ( 2 的10次方)， 1PB（Petabyte 千万亿字节 拍字节）=1024TB， 1EB（Exabyte 百亿亿字节 艾字节）=1024PB， 1ZB (Zettabyte 十万亿亿字节 泽字节)= 1024 EB, 1YB (Yottabyte 一亿亿亿字节 尧字节)= 1024 ZB, 1BB (Brontobyte 一千亿亿亿字节)= 1024 YB. 注：“兆”为百万级数量单位。 附：进制单位全称及译音 yotta, [尧]它, Y. 10^21, zetta, [泽]它, Z. 10^18, exa, [艾]可萨, E. 10^15, peta, [拍]它, P. 10^12, tera, [太]拉, T. 10^9, giga, [级]咖, G. 10^6, mega, [兆]，M. 10^3 PV (page view) - 页面浏览量或点击量 页面浏览量或点击量，是衡量一个网站或网页用户访问量。具体的说，PV值就是所有访问者在24小时（0点到24点）内看了某个网站多少个页面或某个网页多少次。PV是指页面刷新的次数，每一次页面刷新，就算做一次PV流量 UV (unique visitor)- 独立访客数 指访问某个站点或点击某个网页的不同IP地址的人数。在同一天内，UV只记录第一次进入网站的具有独立IP的访问者，在同一天内再次访问该网站则不计数。UV提供了一定时间内不同观众数量的统计指标，而没有反应出网站的全面活动]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>术语</tag>
       </tags>
   </entry>
   <entry>

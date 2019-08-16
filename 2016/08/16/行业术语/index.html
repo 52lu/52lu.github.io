@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>php 正则去掉字符串中非汉字字符串 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" php ">
-  <meta name="description" content="php 正则去掉字符串中非汉字字符串 | QingHui&#39;s Blog">
+  <title>行业术语 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" 术语 ">
+  <meta name="description" content="行业术语 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -517,9 +517,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-php-preg_match_all" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-行业术语" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">php 正则去掉字符串中非汉字字符串</h1>
+        <h1 class="article-title">行业术语</h1>
     
     <div class="article-meta">
         
@@ -527,26 +527,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="后端">后端</a>
+                <a href="javascript:" data-rel="其他">其他</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">php</a>
+            <a href="javascript:" class="color3">术语</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2015-03-09 10:05</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-16 10:37:02">2016-08-16 10:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:42</span>
+        <span>字数:678</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -576,7 +576,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TPS"><span class="toc-text">TPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QPS"><span class="toc-text">QPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储单位"><span class="toc-text">存储单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PV-page-view-页面浏览量或点击量"><span class="toc-text">PV (page view) - 页面浏览量或点击量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UV-unique-visitor-独立访客数"><span class="toc-text">UV (unique visitor)- 独立访客数</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -591,18 +591,43 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>直接上代码示例：</p>
-<pre><code class="$xslt">
-$str=&#39;2016，北京欢迎您 from around you..&#39;;
+        <ul>
+<li><a href="https://www.jianshu.com/p/2fff42a9dfcf" target="_blank" rel="noopener">什么是QPS，TPS，吞吐量</a></li>
+</ul>
+<h3 id="TPS"><a href="#TPS" class="headerlink" title="TPS"></a>TPS</h3><blockquote>
+<p>Transactions Per Second（每秒传输的事物处理个数），即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用户数据库访问。（业务TPS = CAPS × 每个呼叫平均TPS）</p>
+</blockquote>
+<p>TPS是软件测试结果的测量单位。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数。一般的，评价系统性能均以每秒钟完成的技术交易的数量来衡量。系统整体处理能力取决于处理能力最低模块的TPS值。</p>
+<h3 id="QPS"><a href="#QPS" class="headerlink" title="QPS"></a>QPS</h3><blockquote>
+<p>每秒查询率QPS是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准，在因特网上，作为域名系统服务器的机器的性能经常用每秒查询率来衡量。</p>
+</blockquote>
+<p><code>对应fetches/sec，即每秒的响应请求数，也即是最大吞吐能力。</code></p>
+<h3 id="存储单位"><a href="#存储单位" class="headerlink" title="存储单位"></a>存储单位</h3><pre><code>1B(Byte 字节)=8bit，
+1KB (Kilobyte 千字节)=1024B， 
+1MB (Megabyte 兆字节 简称“兆”)=1024KB， 
+1GB (Gigabyte 吉字节 又称“千兆”)=1024MB， 
+1TB (Trillionbyte 万亿字节 太字节)=1024GB，其中1024=2^10 ( 2 的10次方)， 
+1PB（Petabyte 千万亿字节 拍字节）=1024TB， 
+1EB（Exabyte 百亿亿字节 艾字节）=1024PB， 
+1ZB (Zettabyte 十万亿亿字节 泽字节)= 1024 EB, 
+1YB (Yottabyte 一亿亿亿字节 尧字节)= 1024 ZB, 
+1BB (Brontobyte 一千亿亿亿字节)= 1024 YB.
 
-preg_match_all(&#39;/[\x{4e00}-\x{9fff}]+/u&#39;, $str, $matches);
-
-$str = join(&#39;&#39;, $matches[0]);
-
-</code></pre>
-<p>输出</p>
-<pre><code class="$xslt">北京欢迎您
-</code></pre>
+注：“兆”为百万级数量单位。 
+附：进制单位全称及译音 
+yotta, [尧]它, Y. 10^21, 
+zetta, [泽]它, Z. 10^18, 
+exa, [艾]可萨, E. 10^15, 
+peta, [拍]它, P. 10^12, 
+tera, [太]拉, T. 10^9, 
+giga, [级]咖, G. 10^6, 
+mega, [兆]，M. 10^3
+</code></pre><h3 id="PV-page-view-页面浏览量或点击量"><a href="#PV-page-view-页面浏览量或点击量" class="headerlink" title="PV (page view) - 页面浏览量或点击量"></a>PV (page view) - 页面浏览量或点击量</h3><blockquote>
+<p>页面浏览量或点击量，是衡量一个网站或网页用户访问量。具体的说，PV值就是所有访问者在24小时（0点到24点）内看了某个<br>网站多少个页面或某个网页多少次。PV是指页面刷新的次数，每一次页面刷新，就算做一次PV流量</p>
+</blockquote>
+<h3 id="UV-unique-visitor-独立访客数"><a href="#UV-unique-visitor-独立访客数" class="headerlink" title="UV (unique visitor)- 独立访客数"></a>UV (unique visitor)- 独立访客数</h3><blockquote>
+<p>指访问某个站点或点击某个网页的不同IP地址的人数。在同一天内，UV只记录第一次进入网站的具有独立IP<br>的访问者，在同一天内再次访问该网站则不计数。UV提供了一定时间内不同观众数量的统计指标，而没有反应出网站的全面活动</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -616,11 +641,11 @@ $str = join(&#39;&#39;, $matches[0]);
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>php 正则去掉字符串中非汉字字符串</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">42</span></p>
+    <p><span class="copy-title">文章标题:</span>行业术语</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">678</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2015-03-09 10:05</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2015/03/09/php-preg_match_all/" title="php 正则去掉字符串中非汉字字符串">https://mrliuqh.github.io/2015/03/09/php-preg_match_all/</a>
+    <p><span class="copy-title">发布时间:</span>2016-08-16 10:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2016/08/16/行业术语/" title="行业术语">https://mrliuqh.github.io/2016/08/16/行业术语/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
