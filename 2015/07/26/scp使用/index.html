@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>Go函数使用 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" go ">
-  <meta name="description" content="Go函数使用 | QingHui&#39;s Blog">
+  <title>scp使用 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" 命令行 ">
+  <meta name="description" content="scp使用 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -541,9 +541,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Go函数使用" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-scp使用" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">Go函数使用</h1>
+        <h1 class="article-title">scp使用</h1>
     
     <div class="article-meta">
         
@@ -551,26 +551,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="后端">后端</a>
+                <a href="javascript:" data-rel="linux">linux</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">go</a>
+            <a href="javascript:" class="color4">命令行</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2018-04-08 11:31</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-16 12:30:16">2015-07-26 19:26</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.1k</span>
+        <span>字数:663</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -600,7 +600,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-函数声明"><span class="toc-text">1. 函数声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-接收变参的函数"><span class="toc-text">2. 接收变参的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-参数传递"><span class="toc-text">3.  参数传递</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-按值传递使用示例"><span class="toc-text">3.1  按值传递使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-按引用使用示例"><span class="toc-text">3.2  按引用使用示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-延迟语句（defer）的使用"><span class="toc-text">4.延迟语句（defer）的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-使用示例"><span class="toc-text">4.1 使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-函数中使用多个defer"><span class="toc-text">4.2 函数中使用多个defer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-函数作为值、类型"><span class="toc-text">5.函数作为值、类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-使用示例"><span class="toc-text">5.1 使用示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-匿名函数"><span class="toc-text">6.匿名函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-使用示例"><span class="toc-text">6.1 使用示例</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-命令格式："><span class="toc-text">1.命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-命令功能："><span class="toc-text">2.命令功能：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-命令参数："><span class="toc-text">3.命令参数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使用示例"><span class="toc-text">4.使用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-从服务器下载整个目录"><span class="toc-text">4.1 从服务器下载整个目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-上传目录到服务器"><span class="toc-text">4.2 上传目录到服务器</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -615,203 +615,56 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>函数使用</p>
-<blockquote>
-<p>函数是Go语言里面的核心设计，它通过关键字func来声明，它的格式如下。</p>
+        <p>scp是secure copy的简写，用于在Linux下进行远程拷贝文件的命令，和它类似的命令有cp，不过cp只是在本机进行拷贝不能跨服务器，而且scp传输是加密的。可能会稍微影响一下速度。当你服务器硬盘变为只读 read only system时，用scp可以帮你把文件移出来。另外，scp还非常不占资源，不会提高多少系统负荷，在这一点上，rsync就远远不及它了。虽然 rsync比scp会快一点，但当小文件众多的情况下，rsync会导致硬盘I/O非常高，而scp基本不影响系统正常使用。</p>
+<h2 id="1-命令格式："><a href="#1-命令格式：" class="headerlink" title="1.命令格式："></a>1.命令格式：</h2><pre><code>scp [参数] [原路径] [目标路径]
+</code></pre><h2 id="2-命令功能："><a href="#2-命令功能：" class="headerlink" title="2.命令功能："></a>2.命令功能：</h2><p>scp是 secure copy的缩写, scp是linux系统下基于ssh登陆进行安全的远程文件拷贝命令。linux的scp命令可以在linux服务器之间复制文件和目录。</p>
+<h2 id="3-命令参数："><a href="#3-命令参数：" class="headerlink" title="3.命令参数："></a>3.命令参数：</h2><pre><code>-1  强制scp命令使用协议ssh1  
+
+-2  强制scp命令使用协议ssh2  
+
+-4  强制scp命令只使用IPv4寻址  
+
+-6  强制scp命令只使用IPv6寻址  
+
+-B  使用批处理模式（传输过程中不询问传输口令或短语）  
+
+-C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）  
+
+-p 保留原文件的修改时间，访问时间和访问权限。  
+
+-q  不显示传输进度条。  
+
+-r  递归复制整个目录。  
+
+-v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。   
+
+-c cipher  以cipher将数据传输进行加密，这个选项将直接传递给ssh。   
+
+-F ssh_config  指定一个替代的ssh配置文件，此参数直接传递给ssh。  
+
+-i identity_file  从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。    
+
+-l limit  限定用户所能使用的带宽，以Kbit/s为单位。     
+
+-o ssh_option  如果习惯于使用ssh_config(5)中的参数传递方式，   
+
+-P port  注意是大写的P, port是指定数据传输用到的端口号   
+
+-S program  指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。
+</code></pre><h2 id="4-使用示例"><a href="#4-使用示例" class="headerlink" title="4.使用示例"></a>4.使用示例</h2><h3 id="4-1-从服务器下载整个目录"><a href="#4-1-从服务器下载整个目录" class="headerlink" title="4.1 从服务器下载整个目录"></a>4.1 从服务器下载整个目录</h3><blockquote>
+<p>scp -r username@servername:remote_dir/ /tmp/local_dir </p>
 </blockquote>
-<h3 id="1-函数声明"><a href="#1-函数声明" class="headerlink" title="1. 函数声明"></a>1. 函数声明</h3><pre><code>func funcName(input1 type1, input2 type2) (output1 type1, output2 type2) {
-   //这里是处理逻辑代码
-
-   //返回多个值 
-
-   return value1, value2
- }
-</code></pre><ul>
-<li>关键字func用来声明一个函数funcName。</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>函数可以有一个或者多个参数，每个参数后面带有类型，通过“,”分隔函数可以返回多个值。</p>
-</li>
-<li><p>返回值声明了两个变量output1和output2，如果你不想声明也可以，就保留两个类型声明。</p>
-</li>
-<li><p>如果只有一个返回值且不声明返回值变量，那么你可以省略“包括返回值”的括号</p>
-</li>
-<li><p>如果没有返回值，就直接省略最后的返回信息。</p>
-</li>
-<li><p>如果有返回值，那么必须在函数的外层添加return语句。</p>
-</li>
-</ul>
-<h3 id="2-接收变参的函数"><a href="#2-接收变参的函数" class="headerlink" title="2. 接收变参的函数"></a>2. 接收变参的函数</h3><pre><code>func funcName(input ...type) (output1 type1, output2 type2) {
-   //这里是处理逻辑代码
-
-   //返回多个值 
-
-   return output1 type1, output2 type2
- }
-</code></pre><blockquote>
-<p>注意，这些参数的类型全部是type。在函数体中，变量input是一个type的slice。</p>
-</blockquote>
-<ul>
-<li>使用示例</li>
-</ul>
-<pre><code>package main
-
-import &quot;fmt&quot;
-
-func main() {
-   result := joinStr(&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;)
-   fmt.Println(result) // hello
-}
-
-func joinStr(input ...string) (strRes string) {
-   for _, v := range input {
-      strRes += v
-   }
-   return
-}
-</code></pre><h3 id="3-参数传递"><a href="#3-参数传递" class="headerlink" title="3.  参数传递"></a>3.  参数传递</h3><blockquote>
-<p>Go 默认使用按值传递参数,也就是传递参数的副本。函数接收参数副本之后，在使用变量的过程中可能对副本的值进行更改，但不会影响到原来的变量。如果想要影响到原来的变量，则需要传指针。<font color="red">需要注意的是:切片（slice）、字典（map）、接口（interface）、通道（channel）这样的引用类型都是默认使用引用传递（即使没有显示的指出指针）</font></p>
-</blockquote>
-<h4 id="3-1-按值传递使用示例"><a href="#3-1-按值传递使用示例" class="headerlink" title="3.1  按值传递使用示例"></a>3.1  按值传递使用示例</h4><pre><code>package main
-
-import &quot;fmt&quot;
-
-func main() {
-   str := &quot;good morning&quot;
-   updateStr(str)
-   fmt.Println(str) // good morning
-}
-func updateStr(str string) string {
-   str = &quot;good evening&quot;
-   return str
-}
-</code></pre><h4 id="3-2-按引用使用示例"><a href="#3-2-按引用使用示例" class="headerlink" title="3.2  按引用使用示例"></a>3.2  按引用使用示例</h4><pre><code>package main
-
-import &quot;fmt&quot;
-
-func main() {
-   str := &quot;good morning&quot;
-   updateStr(&amp;str)
-   fmt.Println(str)  // good evening
-}
-func updateStr(str *string) string {
-   *str = &quot;good evening&quot;
-   return *str
-}
-</code></pre><h3 id="4-延迟语句（defer）的使用"><a href="#4-延迟语句（defer）的使用" class="headerlink" title="4.延迟语句（defer）的使用"></a>4.延迟语句（defer）的使用</h3><blockquote>
-<p>Go语言中有种不错的设计，即延迟（defer）语句，你可以在函数中添加多个defer语句。当函数执行到最后时，这些 defer 语句会按照逆序执行，最后该函数返回。特别是当你在进行一些打开资源的操作时，遇到错误需要提前返回，在返回前你需要关闭相应的资源，不然很容易造成资源泄露等问题。</p>
-</blockquote>
-<h4 id="4-1-使用示例"><a href="#4-1-使用示例" class="headerlink" title="4.1 使用示例"></a>4.1 使用示例</h4><pre><code>package main
-
-import (
-    &quot;fmt&quot;
-    &quot;os&quot;
-    &quot;io/ioutil&quot;
-)
-
-func main() {
-    filePath := &quot;/Users/liuqh/Desktop/test.json&quot;
-    str := openFile(filePath)
-    fmt.Println(str) 
-    //输出以下内容
-    //defer 被调用了
-    //文件里的内容
-}
-
-func openFile(filePath string) string {
-    //打开文件
-    file, err := os.Open(filePath)
-    if err != nil {
-        fmt.Println(&quot;open file err&quot;)
-    }
-    //利用defer 关闭文件
-    defer testDefer(file)
-    content, err := ioutil.ReadAll(file)
-    if err != nil {
-        fmt.Println(&quot;read file err&quot;)
-    }
-    return string(content)
-}
-
-func testDefer(file *os.File) {
-    fmt.Println(&quot;defer 被调用了&quot;)
-    file.Close()
-}
-</code></pre><h4 id="4-2-函数中使用多个defer"><a href="#4-2-函数中使用多个defer" class="headerlink" title="4.2 函数中使用多个defer"></a>4.2 函数中使用多个defer</h4><blockquote>
-<p>如果有一个函数中有多个地方调用defer,那么defer采用后进先出(逆序执行)</p>
-</blockquote>
-<pre><code>package main
-
-import (
-    &quot;fmt&quot;
-)
-
-func main() {
-    testDefer() // 5 4 3 2 1
-}
-
-func testDefer() {
-    for i := 1; i &lt; 6; i++ {
-        defer fmt.Println(i)
-    }
-}
-</code></pre><h3 id="5-函数作为值、类型"><a href="#5-函数作为值、类型" class="headerlink" title="5.函数作为值、类型"></a>5.函数作为值、类型</h3><blockquote>
-<p>在Go语言中函数也是一种变量，我们可以通过type来定义它，它的类型就是所有拥有相同的参数，相同的返回值。</p>
-</blockquote>
-<pre><code class="go">type typeName func(input1 inputType1,input2 inputType2[,...])(result1 resultType1 [, ...])
+<p>例如：</p>
+<pre><code class="$xslt">scp -r codinglog@192.168.0.101 /home/kimi/test  /tmp/local_dir
 </code></pre>
-<h4 id="5-1-使用示例"><a href="#5-1-使用示例" class="headerlink" title="5.1 使用示例"></a>5.1 使用示例</h4><pre><code>package main
-
-import &quot;fmt&quot;
-
-type testInt func(int) bool
-
-func main() {
-    numSlice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-    odd := filter(numSlice, isOdd)
-    event := filter(numSlice, isEvent)
-    fmt.Println(odd) // [2 4 6 8]
-    fmt.Println(event) // [1 3 5 7 9]
-}
-
-func isOdd(num int) bool {
-    if num%2 == 0 {
-        return true
-    }
-    return false
-}
-
-func isEvent(num int) bool {
-    if num%2 == 0 {
-        return false
-    }
-    return true
-}
-
-func filter(arg []int, funcName testInt) []int {
-    var result []int
-    for _, v := range arg {
-        if funcName(v) {
-            result = append(result, v)
-        }
-    }
-    return result
-}
-
-</code></pre><h3 id="6-匿名函数"><a href="#6-匿名函数" class="headerlink" title="6.匿名函数"></a>6.匿名函数</h3><p>既没有名称的函数</p>
-<h4 id="6-1-使用示例"><a href="#6-1-使用示例" class="headerlink" title="6.1 使用示例"></a>6.1 使用示例</h4><pre><code>package main
-
-import &quot;fmt&quot;
-
-func main()  {
-    f := func(a,b int) int{
-        i := a + b
-        return i
-    }
-    fmt.Println(f(1,4)) // 5 
-}
+<h3 id="4-2-上传目录到服务器"><a href="#4-2-上传目录到服务器" class="headerlink" title="4.2 上传目录到服务器"></a>4.2 上传目录到服务器</h3><blockquote>
+<p>scp  -r /tmp/local_dir username@servername:remote_dir</p>
+</blockquote>
+<p>例如：</p>
+<pre><code class="$xslt"># 把当前目录下的test目录上传到服务器/var/www 目录下
+scp -r test codinglog@192.168.0.101:/var/www/   
 </code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -824,11 +677,11 @@ func main()  {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Go函数使用</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">文章标题:</span>scp使用</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">663</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2018-04-08 11:31</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/04/08/Go函数使用/" title="Go函数使用">https://mrliuqh.github.io/2018/04/08/Go函数使用/</a>
+    <p><span class="copy-title">发布时间:</span>2015-07-26 19:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2015/07/26/scp使用/" title="scp使用">https://mrliuqh.github.io/2015/07/26/scp使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
