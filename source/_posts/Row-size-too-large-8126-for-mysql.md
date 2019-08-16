@@ -46,7 +46,7 @@ Barracuda格式的innodb引擎，当ROW_FORMAT设置为DYNAMIC只使用一个20�
 
 innodb在存储blob时，page内部和外部的blob其实时不共享的。每个blob在页外都有16k分配，即使blob只有1个字节大小。如果每行有多个blob，可能会导致数据库效率比较低。所以最好是一行只定义一个blob来组合数据，并且压缩改数据，text类型同理
 
-==解决方案==
+`解决方案`
 
 ### 解决方案1 – Dynamic
 将innodb引擎的文件格式设置为Barracuda，并且将行格式设置为DYNAMIC。
