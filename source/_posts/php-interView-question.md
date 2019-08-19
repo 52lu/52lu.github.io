@@ -367,6 +367,32 @@ web网站的http服务一般都用短连接。因为长连接对于服务器来�
 - yield是生成器函数的核心关键字，
 - 使用场景：协程可以用在，异步网络 IO 的时候，使其成为非阻塞的，
 
+使用示例:
+```
+<?php
+header("content-type:text/html;charset=utf-8");
+function readTxt()
+{
+    # code...
+    $handle = fopen("./test.txt", 'rb');
+
+    while (feof($handle)===false) {
+        # code...
+        yield fgets($handle);
+    }
+
+    fclose($handle);
+}
+
+foreach (readTxt() as $key => $value) {
+    # code...
+    echo $value.'<br/>';
+}
+```
+
+>使用生成器读取文件，第一次读取了第一行，第二次读取了第二行，以此类推，每次被加载到内存中的文字只有一行，大大的减小了内存的使用
+
+
 [在PHP中使用协程实现多任务调度](http://www.laruence.com/2015/05/28/3038.html)
 
 ### 2.2 session共享方案
@@ -379,6 +405,78 @@ web网站的http服务一般都用短连接。因为长连接对于服务器来�
 `自动加载的原理，就是在我们new一个class的时候，PHP系统如果找不到你这个类，就会去自动调用本文件中的__autoload($class_name)方法，我们new的这个class_name 就成为这个方法的参数。所以我们就可以在这个方法中根据我们需要new class_name的各种判断和划分就去require对应的路径类文件，从而实现自动加载。`
 
 **弃用原因**:因是PHP不允许函数重名，所以一个项目中仅能出现一个__autoload函数。自己写的代码保证只有一个__autoload函数虽然有点难但也能做到，要是第三方库也定义了__autoload，那就很头疼了。__autoload的后继者是[spl_autoload_register](http://php.net/manual/zh/function.spl-autoload-register.php)函数
+
+
+### 2.4 Zval结构
+
+- PHP5 Zval结构
+```
+struct _zval_struct {
+     union {
+          long lval;
+          double dval;
+          struct {
+               char *val;
+               int len;
+          } str;
+          HashTable *ht;
+          zend_object_value obj;
+          zend_ast *ast;
+     } value;
+     zend_uint refcount__gc;
+     zend_uchar type;
+     zend_uchar is_ref__gc;
+};
+```
+
+
+
+
+
+
+- PHP7 Zval结构
+``` 
+struct _zval_struct {
+     union {
+          zend_long         lval;             /* long value */
+          double            dval;             /* double value */
+          zend_refcounted  *counted;
+          zend_string      *str;
+          zend_array       *arr;
+          zend_object      *obj;
+          zend_resource    *res;
+          zend_reference   *ref;
+          zend_ast_ref     *ast;
+          zval             *zv;
+          void             *ptr;
+          zend_class_entry *ce;
+          zend_function    *func;
+          struct {
+               uint32_t w1;
+               uint32_t w2;
+          } ww;
+     } value;
+    union {
+        struct {
+            ZEND_ENDIAN_LOHI_4(
+                zend_uchar    type,         /* active type */
+                zend_uchar    type_flags,
+                zend_uchar    const_flags,
+                zend_uchar    reserved)     /* call info for EX(This) */
+        } v;
+        uint32_t type_info;
+    } u1;
+    union {
+        uint32_t     var_flags;
+        uint32_t     next;                 /* hash collision chain */
+        uint32_t     cache_slot;           /* literal cache slot */
+        uint32_t     lineno;               /* line number (for ast nodes) */
+        uint32_t     num_args;             /* arguments number for EX(This) */
+        uint32_t     fe_pos;               /* foreach position */
+        uint32_t     fe_iter_idx;          /* foreach iterator index */
+    } u2;
+};
+```
 
 
 ## 3、数据库
@@ -1036,35 +1134,29 @@ $newCar->show();
 ## 8、数据结构
 ### 8.1 堆、栈、队列的区别
 - 堆
-
 **堆中主要存放用new构造的对象和数组**
-
 优势：可以动态的分配内存的大小，生存期也不必事先告诉编译器，因为它是在运行时动态分配内存的。
 缺点：由于要在运行时动态分配内存，存取速度比较慢
 
 
 - 栈
-
 **栈中主要存放一些基本类型的变量和对象引用类型。**
 优势：存取速度比较快，仅次于寄存器，栈数据可以共享。
 缺点：栈中的数据大小和生存周期必须是确定的，缺乏灵活性。
 
 
 - 队列
-
 **设计程序中常用的一种数据结构，采用“先进先出”的存储结构，类似于队列。**
-
 数据元素只能从队尾进入，从队首取出。在此队列中，数据元素可以随意增减，
 但是数据元素的次序不会更改。每次都是取出队首的元素，后面的元素会整体向前移动一位。队列遍历数据的速度要快的多
 
 
 
 ### 8.2 什么是哈希表？
-`哈希表（Hash table，也叫散列表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。`
+哈希表（Hash table，也叫散列表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
 
-`哈希表hashtable(key，value) 的做法其实很简单，就是把Key通过一个固定的算法函数既所谓的哈希函数转换成一个整型数字，然后就将该数字对数组长度进行取余，取余结果就当作数组的下标，将value存储在以该数字为下标的数组空间里。
+哈希表hashtable(key，value) 的做法其实很简单，就是把Key通过一个固定的算法函数既所谓的哈希函数转换成一个整型数字，然后就将该数字对数组长度进行取余，取余结果就当作数组的下标，将value存储在以该数字为下标的数组空间里。
      而当使用哈希表进行查询的时候，就是再次使用哈希函数将key转换为对应的数组下标，并定位到该空间获取value，如此一来，就可以充分利用到数组的定位性能进行数据定位
-`
 
 
 
