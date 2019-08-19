@@ -136,7 +136,7 @@
     
         
             
-            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
+            <li><div data-rel="linux">linux<small>(5)</small></div>
                 
             </li>
             
@@ -144,7 +144,7 @@
     
         
             
-            <li><div data-rel="linux">linux<small>(5)</small></div>
+            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
                 
             </li>
             
@@ -225,7 +225,7 @@
     <div><a class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="38">
-<input type="hidden" id="yelog_site_word_count" value="54.1k">
+<input type="hidden" id="yelog_site_word_count" value="54.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -281,11 +281,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">单向链表</a>
+        <a href="javascript:" class="color3">禅道</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">禅道</a>
+        <a href="javascript:" class="color5">单向链表</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -301,15 +301,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">mac</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">php</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -321,11 +321,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">crond</a>
+        <a href="javascript:" class="color4">docker命令</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">docker命令</a>
+        <a href="javascript:" class="color1">crond</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -337,11 +337,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">SQL优化</a>
+        <a href="javascript:" class="color4">nfs</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">nfs</a>
+        <a href="javascript:" class="color1">SQL优化</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -606,12 +606,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-19 18:25:59">2017-09-17 11:12</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-19 19:33:43">2017-09-17 11:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:12.7k</span>
+        <span>字数:13.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1002,7 +1002,11 @@ foreach (readTxt() as $key =&gt; $value) {
    zend_uchar type;
    zend_uchar is_ref__gc;
 };
-</code></pre></li>
+</code></pre><strong> <font color="blue">PHP5 Zval结构存在的问题:</font> </strong></li>
+<li>整个结构体的大小是(在64位系统)24个字节, 而zval.value联合体中zend_object_value是最大的长板, 它导致整个value需要16个字节。</li>
+<li>结构体中的每一个字段都有明确的定义, 没有预留任何的自定义字段,在存储一些和zval相关的信息的时候，不得不采用其他方式来扩充zval</li>
+<li>PHP的zval大部分都是按值传递,但有俩个例外(对象和资源),它们永远都是按引用传递，这样就造成一个问题, 对象和资源在除了zval中的引用计数以外, 还需要一个全局的引用计数, 这样才能保证内存可以回收。<code>在PHP5的时代, 以对象为例, 它有俩套引用计数, 一个是zval中的, 另外一个是obj自身的计数。非此之外，需要多次读取内存, 才能获取到真正的objec对象本身</code></li>
+<li>PHP5的时代调用MAKE_STD_ZVAL会在堆内存上分配一个临时变量</li>
 </ul>
 <ul>
 <li>PHP7 Zval结构<pre><code>struct _zval_struct {
@@ -1045,8 +1049,12 @@ foreach (readTxt() as $key =&gt; $value) {
       uint32_t     fe_iter_idx;          /* foreach iterator index */
   } u2;
 };
-</code></pre></li>
+</code></pre><strong> <font color="blue">PHP7对Zval结构优化:</font> </strong></li>
+<li>整个结构体内部都是联合体，这个新的zval在64位环境下,现在只需要16个字节(2个指针size), 它主要分为俩个部分, value和扩充字段, 而扩充字段又分为u1和u2俩个部分, 其中u1是type info, u2是各种辅助字段.</li>
+<li>在PHP7中，移除了MAKE_STD_ZVAL/ALLOC_ZVAL宏, 不再支持存堆内存上申请zval. 函数内部使用的zval要么来自外面输入, 要么使用在栈上分配的临时zval.</li>
+<li>抽象的来说, PHP7中的zval, 已经变成了一个值指针, 要么保存着原始值, 要么保存着指向一个保存原始值的指针. 也就是说现在的zval相当于PHP5的时候的zval<em>. 只不过相比于zval</em>, 直接存储zval, 我们可以省掉一次指针解引用, 从而提高缓存友好性.</li>
 </ul>
+<p><a href="http://www.laruence.com/2018/04/08/3170.html" target="_blank" rel="noopener">深入理解PHP7内核之zval</a></p>
 <h2 id="3、数据库"><a href="#3、数据库" class="headerlink" title="3、数据库"></a>3、数据库</h2><h3 id="3-1-Mysql的存储引擎-MyISAM和InnoDB的区别。"><a href="#3-1-Mysql的存储引擎-MyISAM和InnoDB的区别。" class="headerlink" title="3.1 Mysql的存储引擎,MyISAM和InnoDB的区别。"></a>3.1 Mysql的存储引擎,MyISAM和InnoDB的区别。</h3><ul>
 <li>MyISAM类型不支持事务处理等高级处理，而InnoDB类型支持.</li>
 <li>MyISAM类型的表强调的是性能，其执行数度比InnoDB类型更快.</li>
@@ -1670,7 +1678,7 @@ $newCar-&gt;show();
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>php面试题</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">12.7k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">13.2k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
     <p><span class="copy-title">发布时间:</span>2017-09-17 11:12</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2017/09/17/php-interView-question/" title="php面试题">https://mrliuqh.github.io/2017/09/17/php-interView-question/</a>
@@ -1755,7 +1763,7 @@ $newCar-&gt;show();
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#单向链表','#禅道','#双链表','#循环链','#命令行','#mac','#php','#mysql','#镜像','#git','#crond','#docker命令','#http','#php并发请求','#SQL优化','#nfs','#面试题','#算法','#php-fpm','#docker','#rabbitmq','#容器',],
+            'data': ['#go','#禅道','#单向链表','#双链表','#循环链','#命令行','#mysql','#mac','#php','#镜像','#git','#docker命令','#crond','#http','#php并发请求','#nfs','#SQL优化','#面试题','#算法','#php-fpm','#docker','#rabbitmq','#容器',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
