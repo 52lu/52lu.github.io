@@ -1,5 +1,5 @@
 ---
-title: php 面试题
+title: php面试题
 date: 2017-09-17 11:12:02
 tags:
  - php
@@ -12,10 +12,11 @@ categories:
 
 
 ### 1.1 cookie与session的区别
-- 存储位置：session存储于服务器，cookie存储于浏览器
+- 存储位置：session存储于服务器，cookie存储于客户端
 - 安全性：session安全性比cookie高
-- session为‘会话服务’，在使用时需要开启服务，cookie不需要开启，可以直接用
-<!--more-->
+- 存放的形式：Session是以对象的形式保存在服务器，Cookie以字符串的形式保存在客户端
+- 用途：Cookies适合做保存用户的个人设置,爱好等,Session适合做客户的身份验证
+- session为'会话服务'，在使用时需要开启服务，cookie不需要开启，可以直接用
 
 ### 1.2 禁用 cookie 后 session 还能用吗?
 
@@ -78,7 +79,7 @@ categories:
 
 - include:有返回值，而require没有(可能因为如此require的速度比include快)
 
-><front color='red'>注意:包含文件不存在或者语法错误的时候,require是致命的,include不是</front>
+><font color='red'>注意:包含文件不存在或者语法错误的时候,require是致命的,include不是</font>
 
 
 
@@ -213,10 +214,10 @@ function strrev($str){
 ```
 > strrev函数对英文很好用,直接可以实现字符串翻转,但是面对中文会出现乱码
 
-### 1.14 在HTTP 1.0中，状态码401 的含义是____；如果返回 "找不到文件" 的提示，则可用header函数，其语句为____。
+### 1.14 在HTTP 1.0中，状态码401 的含义是? 如果返回 "找不到文件" 的提示，则可用header函数，其语句为?
 ```
 答：401表示未授权; header("HTTP/1.0 404 Not Found");
-[见参考手册》函数参考》HTTP函数》header]
+
 ```
 
 ### 1.15 isset、empty和is_null的区别?
@@ -225,7 +226,7 @@ function strrev($str){
 - is_null 判断变量是否为NULL
 
 ### 1.16 self、static、$this 的区别?
-- self 和 __CLASS__，都是对当前类的ip静态引用，取决于定义当前方法所在的类。也就是说，self写在哪个类里面,它引用的就是谁。
+- self 和 \_\_CLASS__，都是对当前类的ip静态引用，取决于定义当前方法所在的类。也就是说，self写在哪个类里面,它引用的就是谁。
 - $this 指向的是实际调用时的对象，也就是说，实际运行过程中，谁调用了类的属性或方法，$this 指向的就是哪个对象。但 $this 不能访问类的静态属性和常量，且 $this 不能存在于静态方法中。
 - static 关键字除了可以声明类的静态成员（属性和方法）外，还有一个非常重要的作用就是后期静态绑定。
 - self可以用于访问类的静态属性、静态方法和常量，但self指向的是当前定义所在的类，这是 self 的限制。
@@ -327,12 +328,70 @@ Array
 )
 
 ```
+### 1.23 长连接、短连接的区别和使用
 
+涵义说明:
+- 长连接：client方与server方先建立连接，连接建立后不断开，然后再进行报文发送和接收。这种方式下由于通讯连接一直存在。此种方式常用于P2P通信。
+- 短连接：Client方与server每进行一次报文收发交易时才进行通讯连接，交易完毕后立即断开连接。此方式常用于一点对多点通讯。C/S通信。
+
+
+使用时机:
+- 长连接使用场景:
+短连接多用于操作频繁，点对点的通讯，而且连接数不能太多的情况。每个TCP连 接的建立都需要三次握手，每个TCP连接的断开要四次握手。如果每次操作都要建立连接然后再操作的话处理速度会降低，所以每次操作下次操作时直接发送数据 就可以了，不用再建立TCP连接。例如：数据库的连接用长连接，如果用短连接频繁的通信会造成socket错误，频繁的socket创建也是对资源的浪费。
+
+- 短连接使用场景:
+web网站的http服务一般都用短连接。因为长连接对于服务器来说要耗费一定 的资源。像web网站这么频繁的成千上万甚至上亿客户端的连接用短连接更省一些资源。试想如果都用长连接，而且同时用成千上万的用户，每个用户都占有一个 连接的话，可想而知服务器的压力有多大。所以并发量大，但是每个用户又不需频繁操作的情况下需要短连接。
+
+
+### 1.24 如何防止盗链？
+
+- 不定期更名文件或者目录
+
+- 加入水印
+- 限制引用页
+原理:服务器获取用户提交信息的网站地址，然后和真正的服务端的地址相比较， 如果一致则表明是站内提交，或者为自己信任的站点提交，否则视为盗链。实现时可以使用HTTP_REFERER 和htaccess 文件(需要启用mod_Rewrite)，结合正则表达式去匹配用户的每一个访问请求。
+
+- 文件伪装
+文件伪装是目前用得最多的一种反盗链技术，一般会结合服务器端动态脚本 (PHP/JSP/ASP)。实际上用户请求的文件地址，只是一个经过伪装的脚本文件，这个脚本文件会对用户的请求作认证,一般会检查 Session，Cookie 或HTTP_REFERER 作为判断是否为盗链的依据。而真实的文件实际隐藏在用户不能够访问的地方，只有用户通过验证以后才会返回给用户
+
+- 加密认证
+这种反盗链方式，先从客户端获取用户信息，然后根据这个信息和用户请求的文件名 字一起加密成字符串(Session ID)作为身份验证。只有当认证成功以后，服务端才会把用户需要的文件传送给客户。一般我们会把加密的Session ID 作为URL 参数的一部分传递给服务器，由于这个Session ID 和用户的信息挂钩，所以别人就算是盗取了链接，该Session ID 也无法通过身份认证，从而达到反盗链的目的。这种方式对于分布式盗链非常有效。
+
+- 随机附加码
+每次,在页面里生成一个附加码,并存在数据库里,和对应的图片相关,访问图片时和此附加码对比,相同则输出图片,否则输出404图片
+
+>[查看阿里云防盗链方案](https://www.alibabacloud.com/help/zh/doc-detail/31937.htm)
 
 ## 2、进阶
 ### 2.1 yield 是什么，说个使用场景
 - yield是生成器函数的核心关键字，
 - 使用场景：协程可以用在，异步网络 IO 的时候，使其成为非阻塞的，
+
+使用示例:
+```
+<?php
+header("content-type:text/html;charset=utf-8");
+function readTxt()
+{
+    # code...
+    $handle = fopen("./test.txt", 'rb');
+
+    while (feof($handle)===false) {
+        # code...
+        yield fgets($handle);
+    }
+
+    fclose($handle);
+}
+
+foreach (readTxt() as $key => $value) {
+    # code...
+    echo $value.'<br/>';
+}
+```
+
+>使用生成器读取文件，第一次读取了第一行，第二次读取了第二行，以此类推，每次被加载到内存中的文字只有一行，大大的减小了内存的使用
+
 
 [在PHP中使用协程实现多任务调度](http://www.laruence.com/2015/05/28/3038.html)
 
@@ -347,6 +406,85 @@ Array
 
 **弃用原因**:因是PHP不允许函数重名，所以一个项目中仅能出现一个__autoload函数。自己写的代码保证只有一个__autoload函数虽然有点难但也能做到，要是第三方库也定义了__autoload，那就很头疼了。__autoload的后继者是[spl_autoload_register](http://php.net/manual/zh/function.spl-autoload-register.php)函数
 
+
+### 2.4 Zval结构
+
+- PHP5 Zval结构
+```
+struct _zval_struct {
+     union {
+          long lval;
+          double dval;
+          struct {
+               char *val;
+               int len;
+          } str;
+          HashTable *ht;
+          zend_object_value obj;
+          zend_ast *ast;
+     } value;
+     zend_uint refcount__gc;
+     zend_uchar type;
+     zend_uchar is_ref__gc;
+};
+```
+** <font color='blue' >PHP5 Zval结构存在的问题:</font> **
+- 整个结构体的大小是(在64位系统)24个字节, 而zval.value联合体中zend_object_value是最大的长板, 它导致整个value需要16个字节。
+- 结构体中的每一个字段都有明确的定义, 没有预留任何的自定义字段,在存储一些和zval相关的信息的时候，不得不采用其他方式来扩充zval
+- PHP的zval大部分都是按值传递,但有俩个例外(对象和资源),它们永远都是按引用传递，这样就造成一个问题, 对象和资源在除了zval中的引用计数以外, 还需要一个全局的引用计数, 这样才能保证内存可以回收。`在PHP5的时代, 以对象为例, 它有俩套引用计数, 一个是zval中的, 另外一个是obj自身的计数。非此之外，需要多次读取内存, 才能获取到真正的objec对象本身`
+- PHP5的时代调用MAKE_STD_ZVAL会在堆内存上分配一个临时变量
+
+
+
+- PHP7 Zval结构
+``` 
+struct _zval_struct {
+     union {
+          zend_long         lval;             /* long value */
+          double            dval;             /* double value */
+          zend_refcounted  *counted;
+          zend_string      *str;
+          zend_array       *arr;
+          zend_object      *obj;
+          zend_resource    *res;
+          zend_reference   *ref;
+          zend_ast_ref     *ast;
+          zval             *zv;
+          void             *ptr;
+          zend_class_entry *ce;
+          zend_function    *func;
+          struct {
+               uint32_t w1;
+               uint32_t w2;
+          } ww;
+     } value;
+    union {
+        struct {
+            ZEND_ENDIAN_LOHI_4(
+                zend_uchar    type,         /* active type */
+                zend_uchar    type_flags,
+                zend_uchar    const_flags,
+                zend_uchar    reserved)     /* call info for EX(This) */
+        } v;
+        uint32_t type_info;
+    } u1;
+    union {
+        uint32_t     var_flags;
+        uint32_t     next;                 /* hash collision chain */
+        uint32_t     cache_slot;           /* literal cache slot */
+        uint32_t     lineno;               /* line number (for ast nodes) */
+        uint32_t     num_args;             /* arguments number for EX(This) */
+        uint32_t     fe_pos;               /* foreach position */
+        uint32_t     fe_iter_idx;          /* foreach iterator index */
+    } u2;
+};
+```
+** <font color='blue' >PHP7对Zval结构优化:</font> **
+- 整个结构体内部都是联合体，这个新的zval在64位环境下,现在只需要16个字节(2个指针size), 它主要分为俩个部分, value和扩充字段, 而扩充字段又分为u1和u2俩个部分, 其中u1是type info, u2是各种辅助字段.
+- 在PHP7中，移除了MAKE_STD_ZVAL/ALLOC_ZVAL宏, 不再支持存堆内存上申请zval. 函数内部使用的zval要么来自外面输入, 要么使用在栈上分配的临时zval.
+- 抽象的来说, PHP7中的zval, 已经变成了一个值指针, 要么保存着原始值, 要么保存着指向一个保存原始值的指针. 也就是说现在的zval相当于PHP5的时候的zval*. 只不过相比于zval*, 直接存储zval, 我们可以省掉一次指针解引用, 从而提高缓存友好性.
+
+[深入理解PHP7内核之zval](http://www.laruence.com/2018/04/08/3170.html)
 
 ## 3、数据库
 
@@ -432,7 +570,7 @@ mysql_query("UNLOCK TABLES");
 
    - 索引并不是越多越好，索引固然可以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率，因为 insert 或 update 时有可能会重建索引，一个表的索引数最好不要超过6个。
    
-   - 任何地方都不要使用 select \* from t ，用具体的字段列表代替“\*”，不要返回用不到的任何字段。
+   - 任何地方都不要使用 select \* from t ，用具体的字段列表代替"\*”，不要返回用不到的任何字段。
    
    - 通过explain查询和分析SQL的执行计划
  ![image](https://mrliuqh.github.io/directionsImg/mysql/explain.png)
@@ -555,7 +693,7 @@ replace into tbl_name(col_name, ...) select ...
 replace into tbl_name set col_name=value, ...
 ```
 
->前两种形式用的多些。其中 “into” 关键字可以省略，不过最好加上 “into”，这样意思更加直观。另外，对于那些没有给予值的列，MySQL 将自动为这些列赋上默认值
+>前两种形式用的多些。其中 "into” 关键字可以省略，不过最好加上 "into”，这样意思更加直观。另外，对于那些没有给予值的列，MySQL 将自动为这些列赋上默认值
 
 
 ### 3.10 数据库操作事务的四大特性
@@ -1003,35 +1141,29 @@ $newCar->show();
 ## 8、数据结构
 ### 8.1 堆、栈、队列的区别
 - 堆
-
 **堆中主要存放用new构造的对象和数组**
-
 优势：可以动态的分配内存的大小，生存期也不必事先告诉编译器，因为它是在运行时动态分配内存的。
 缺点：由于要在运行时动态分配内存，存取速度比较慢
 
 
 - 栈
-
 **栈中主要存放一些基本类型的变量和对象引用类型。**
 优势：存取速度比较快，仅次于寄存器，栈数据可以共享。
 缺点：栈中的数据大小和生存周期必须是确定的，缺乏灵活性。
 
 
 - 队列
-
-**设计程序中常用的一种数据结构，采用“先进先出”的存储结构，类似于队列。**
-
+**设计程序中常用的一种数据结构，采用"先进先出”的存储结构，类似于队列。**
 数据元素只能从队尾进入，从队首取出。在此队列中，数据元素可以随意增减，
 但是数据元素的次序不会更改。每次都是取出队首的元素，后面的元素会整体向前移动一位。队列遍历数据的速度要快的多
 
 
 
 ### 8.2 什么是哈希表？
-`哈希表（Hash table，也叫散列表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。`
+哈希表（Hash table，也叫散列表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
 
-`哈希表hashtable(key，value) 的做法其实很简单，就是把Key通过一个固定的算法函数既所谓的哈希函数转换成一个整型数字，然后就将该数字对数组长度进行取余，取余结果就当作数组的下标，将value存储在以该数字为下标的数组空间里。
+哈希表hashtable(key，value) 的做法其实很简单，就是把Key通过一个固定的算法函数既所谓的哈希函数转换成一个整型数字，然后就将该数字对数组长度进行取余，取余结果就当作数组的下标，将value存储在以该数字为下标的数组空间里。
      而当使用哈希表进行查询的时候，就是再次使用哈希函数将key转换为对应的数组下标，并定位到该空间获取value，如此一来，就可以充分利用到数组的定位性能进行数据定位
-`
 
 
 
@@ -1073,7 +1205,7 @@ function write(){
     echo $foo + $bar;
 ?>
 ```
-> 执行这段代码，会打印出数字2。从内存的角度来分析一下这段代码“可能”是这样执行的： 分配一块内存给foo变量，里面存储一个1； 再分配一块内存给bar变量，也存一个1，最后计算出结果输出。 事实上，我们发现foo和bar变量因为值相同，完全可以使用同一块内存，这样，内存的使用就节省了一个1， 并且，还省去了分配内存和管理内存地址的计算开销。 没错，很多涉及到内存管理的系统，都实现了这种相同值共享内存的策略：写时复制
+> 执行这段代码，会打印出数字2。从内存的角度来分析一下这段代码"可能”是这样执行的： 分配一块内存给foo变量，里面存储一个1； 再分配一块内存给bar变量，也存一个1，最后计算出结果输出。 事实上，我们发现foo和bar变量因为值相同，完全可以使用同一块内存，这样，内存的使用就节省了一个1， 并且，还省去了分配内存和管理内存地址的计算开销。 没错，很多涉及到内存管理的系统，都实现了这种相同值共享内存的策略：写时复制
 
 [详情参考](http://www.php-internals.com/book/?p=chapt06/06-06-copy-on-write)
 
