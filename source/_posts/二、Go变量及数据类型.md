@@ -10,6 +10,7 @@ categories:
 ##  变量声明
 - 使用var关键字
 > var 变量名 变量类型  = [变量值]
+
 ```
 //定义多个变量
 var vname1,vname2,vname3 type
@@ -22,6 +23,7 @@ var vname1,vname2,vname3 = v1,v2,v3
 ```
 
 - 使用 := 
+
 ```
 //定义变量,并初始化
 vname1 := 1
@@ -33,6 +35,7 @@ vname1 := 1
 ```
 - 分组声明
 在Go语言中，同时声明多个常量、变量，或者导入多个包时，可采用分组的方式进行声明
+
 ```
 // 同时导入多个包
 import (
@@ -168,7 +171,8 @@ var slice []int //创建一个空的slice，cap和len都是0
 
  ### map
 可以使用内建函数 make 也可以使用 map 关键字来定义 Map:
- ```
+
+```
  /* 声明变量，默认 map 是 nil */
 var myMap map[keyType]valueType
 
