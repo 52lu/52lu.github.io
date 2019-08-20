@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>双向链表、循环链 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" 双链表 , 循环链 ">
-  <meta name="description" content="双向链表、循环链 | QingHui&#39;s Blog">
+  <title>四、Go结构体使用 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" go ">
+  <meta name="description" content="四、Go结构体使用 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -585,9 +585,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Lisked-List-two" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-四、结构体使用" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">双向链表、循环链</h1>
+        <h1 class="article-title">四、Go结构体使用</h1>
     
     <div class="article-meta">
         
@@ -595,23 +595,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据结构">数据结构</a>
+                <a href="javascript:" data-rel="后端">后端</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">双链表</a>
-            
-            <a href="javascript:" class="color4">循环链</a>
+            <a href="javascript:" class="color3">go</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2019-03-27 17:34</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-20 19:05:01">2018-04-09 18:54</time>
         
     </div>
     <div class="article-meta">
@@ -646,7 +644,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是双向链表"><span class="toc-text">1. 什么是双向链表?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-什么是循环链表"><span class="toc-text">2. 什么是循环链表?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-单向链表与双向链表优缺点"><span class="toc-text">3. 单向链表与双向链表优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-单向链表"><span class="toc-text">3.1 单向链表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-双向链表"><span class="toc-text">3.2 双向链表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-代码（PHP）实现双向链表"><span class="toc-text">4. 代码（PHP）实现双向链表</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-声明结构体"><span class="toc-text">1.声明结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-基本语法"><span class="toc-text">1.1 基本语法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-结构体实例化"><span class="toc-text">2.结构体实例化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-基本实例化形式（使用关键字-var）"><span class="toc-text">2.1 基本实例化形式（使用关键字: var）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-创建指针类型的结构体（使用关键字-new）"><span class="toc-text">2.2 创建指针类型的结构体（使用关键字: new）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-取结构的地址实例化（使用-amp-）"><span class="toc-text">2.3 取结构的地址实例化（使用: &amp;）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-初始化结构体字段用例"><span class="toc-text">3. 初始化结构体字段用例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-递归填充"><span class="toc-text">3.1 递归填充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-多值初始化"><span class="toc-text">3.2 多值初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-匿名结构体初始化"><span class="toc-text">3.3 匿名结构体初始化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-带标签的结构体"><span class="toc-text">4. 带标签的结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-使用示例"><span class="toc-text">4.1 使用示例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-结构体比较"><span class="toc-text">5. 结构体比较</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-结构体特性"><span class="toc-text">6.结构体特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-结构体和结构体变量-实例-的区别和联系"><span class="toc-text">7.结构体和结构体变量(实例)的区别和联系</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -661,326 +659,198 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-什么是双向链表"><a href="#1-什么是双向链表" class="headerlink" title="1. 什么是双向链表?"></a>1. 什么是双向链表?</h3><blockquote>
-<p>双向链表(双链表)又叫双面链表,双向链表中不仅有指向后一个节点的指针，还有指向前一个节点的指针。这样可以从任何一个节点访问前一个节点，当然也可以访问后一个节点，以至整个链表。一般是在需要大批量的另外储存数据在链表中的位置的时候用。双向链表也可以配合下面的其他链表的扩展使用。</p>
+        <blockquote>
+<p>结构体（struct）是Go支持面向对象编程特性的基础</p>
 </blockquote>
-<p><code>由于另外储存了指向链表内容的指针，并且可能会修改相邻的节点，有的时候第一个节点可能会被删除或者在之前添加一个新的节点。这时候就要修改指向首个节点的指针。有一种方便的可以消除这种特殊情况的方法是在最后一个节点之后、第一个节点之前储存一个永远不会被删除或者移动的虚拟节点，形成一个下面说的循环链表。这个虚拟节点之后的节点就是真正的第一个节点。这种情况通常可以用这个虚拟节点直接表示这个链表，对于把链表单独的存在数组里的情况，也可以直接用这个数组表示链表并用第0个或者第-1个（如果编译器支持）节点固定的表示这个虚拟节点。</code></p>
-<p><img src="https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list_two.png" alt="双向链表图"></p>
-<a id="more"></a>
-<h3 id="2-什么是循环链表"><a href="#2-什么是循环链表" class="headerlink" title="2. 什么是循环链表?"></a>2. 什么是循环链表?</h3><blockquote>
-<p>循环链表指的是首节点和末节点被连接在一起的链表，这种方式在单向和双向链表中皆可实现。循环链表的无边界使得在这样的链表上设计算法会比普通链表更加容易。对于新加入的节点应该是在第一个节点之前还是最后一个节点之后可以根据实际要求灵活处理。<br><img src="https://mrliuqh.github.io/directionsImg/dataStructure/cycle_list.png" alt="循环链表图"></p>
+<h1 id="1-声明结构体"><a href="#1-声明结构体" class="headerlink" title="1.声明结构体"></a>1.声明结构体</h1><p><code>结构体的定义只是一种内存布局的描述，只有当结构体实例化时，才会真正地分配内存。因此必须在定义结构体并实例化后才能使用结构体的字段。
+实例化就是根据结构体定义的格式创建一份与格式一致的内存区域，结构体实例与实例间的内存是完全独立的。</code></p>
+<h2 id="1-1-基本语法"><a href="#1-1-基本语法" class="headerlink" title="1.1 基本语法"></a>1.1 基本语法</h2><pre><code>type 结构体名称 struct {
+   field type
+   field type 
+}
+</code></pre><blockquote>
+<p><font color="red">字段直接没有逗号（,）</font></p>
 </blockquote>
-<h3 id="3-单向链表与双向链表优缺点"><a href="#3-单向链表与双向链表优缺点" class="headerlink" title="3. 单向链表与双向链表优缺点"></a>3. 单向链表与双向链表优缺点</h3><h4 id="3-1-单向链表"><a href="#3-1-单向链表" class="headerlink" title="3.1 单向链表"></a>3.1 单向链表</h4><p><strong>优点：</strong></p>
 <ul>
-<li>单向链表增加删除节点简单。遍历时候不会死循环。（双向也不会死循环，循环链表忘了进行控制的话很容易进入死循环）</li>
+<li>field: 从概念或叫法上称: 结构体字段、属性 </li>
+<li>type：一般是基本数据类型、数组,也可是引用类型</li>
 </ul>
-<p><strong>缺点：</strong></p>
 <ul>
-<li>只能从头到尾遍历。只能找到后继，无法找到前驱，也就是只能前进。</li>
+<li>同类型变量可以写在一行<pre><code>type Human struct {
+ name string
+ age,sex,height int
+}
+</code></pre></li>
 </ul>
-<h4 id="3-2-双向链表"><a href="#3-2-双向链表" class="headerlink" title="3.2 双向链表"></a>3.2 双向链表</h4><p><strong>优点：</strong></p>
-<ul>
-<li>可以找到前驱和后继，可进可退。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>增加删除节点复杂（其实就复杂一点点）</li>
-</ul>
-<h3 id="4-代码（PHP）实现双向链表"><a href="#4-代码（PHP）实现双向链表" class="headerlink" title="4. 代码（PHP）实现双向链表"></a>4. 代码（PHP）实现双向链表</h3><pre><code class="php">&lt;?php
-/**
- * Class Node
- */
-class Node
-{
-    /**
-     *
-     * @var
-     */
-    private $Data;//数据集
-    /**
-     *
-     * @var
-     */
-    private $Prev;//上一个节点
-    /**
-     *
-     * @var
-     */
-    private $Next;//下一个节点
-
-    /**
-     * Node constructor.
-     * @param $next
-     * @param $data
-     * @param $prev
-     */
-    public function __construct($data, $next,$prev)
-    {
-        $this-&gt;setData($data);
-        $this-&gt;setNext($next);
-        $this-&gt;setPrev($prev);
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param $data
-     */
-    public function setData($data)
-    {
-        $this-&gt;Data = $data;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getData()
-    {
-        return $this-&gt;Data;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param $next
-     */
-    public function setNext($next)
-    {
-        $this-&gt;Next = $next;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getNext()
-    {
-        return $this-&gt;Next;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param $prev
-     */
-    public function setPrev($prev)
-    {
-        $this-&gt;Prev = $prev;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getPrev()
-    {
-        return $this-&gt;Prev;
-    }
-
+<h1 id="2-结构体实例化"><a href="#2-结构体实例化" class="headerlink" title="2.结构体实例化"></a>2.结构体实例化</h1><h2 id="2-1-基本实例化形式（使用关键字-var）"><a href="#2-1-基本实例化形式（使用关键字-var）" class="headerlink" title="2.1 基本实例化形式（使用关键字: var）"></a>2.1 基本实例化形式（使用关键字: var）</h2><pre><code>type Girl struct {
+    Name  string 
+}
+func UseStruct() {
+    //使用关键字var
+    var g Girl
+    g.Name = &quot;小芳&quot;
+    fmt.Println(g) // 输出: {小芳 0 0 0}
+}
+</code></pre><blockquote>
+<p>上述变量 g 为结构体的实例</p>
+</blockquote>
+<h2 id="2-2-创建指针类型的结构体（使用关键字-new）"><a href="#2-2-创建指针类型的结构体（使用关键字-new）" class="headerlink" title="2.2 创建指针类型的结构体（使用关键字: new）"></a>2.2 创建指针类型的结构体（使用关键字: new）</h2><pre><code>type Girl struct {
+    Name  string 
+}
+func UseStruct() {
+  // 使用new
+    g1 := new(Girl)
+    g1.Name = &quot;小芳&quot;
+    fmt.Println(g1) // 输出: &amp;{小芳 0 0 0}
+}
+</code></pre><blockquote>
+<p>Girl类型被实例化后保存到g1变量中，g1的类型为*Girl，属于指针</p>
+</blockquote>
+<blockquote>
+<font color="red">经过new实例化的结构体实例在成员赋值上与基本实例化的写法一</font>
+</blockquote>
+<h2 id="2-3-取结构的地址实例化（使用-amp-）"><a href="#2-3-取结构的地址实例化（使用-amp-）" class="headerlink" title="2.3 取结构的地址实例化（使用: &amp;）"></a>2.3 取结构的地址实例化（使用: &amp;）</h2><p><strong>在Go语言中，对结构体进行“&amp;”取地址操作时，视为对该类型进行一次new的实例化操作</strong></p>
+<pre><code>type Girl struct {
+    Name  string 
+}
+func UseStruct() {
+  // 使用&amp;
+    g2 := &amp;Girl{}
+    g2.Name = &quot;小芳&quot;
+    fmt.Println(g2) // 输出: &amp;{小芳 0 0 0}
+}
+</code></pre><h1 id="3-初始化结构体字段用例"><a href="#3-初始化结构体字段用例" class="headerlink" title="3. 初始化结构体字段用例"></a>3. 初始化结构体字段用例</h1><h2 id="3-1-递归填充"><a href="#3-1-递归填充" class="headerlink" title="3.1 递归填充"></a>3.1 递归填充</h2><pre><code>type Family struct {
+    name  string
+    child *Family
 }
 
-/**
- * Class LinkList
- */
-class LinkList
-{
-    /**
-     *
-     * @var
-     */
-    private $header;
-
-    /**
-     *
-     * @var
-     */
-    private $len;//链表长度
-
-
-    /**
-     * LinkList constructor.
-     */
-    public function __construct()
-    {
-        //初始化根节点
-        $this-&gt;setHeader(new Node(null, null,null));
-        $this-&gt;len = 0;
+func UseStruct() {
+    p := Family{
+        name: &quot;爷爷&quot;,
+        child: &amp;Family{
+            name: &quot;爸爸&quot;,
+            child: &amp;Family{
+                name: &quot;我&quot;,
+            },
+        },
     }
-
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param Node $node
-     */
-    public function setHeader(Node $node)
-    {
-        $this-&gt;header = $node;
-    }
-
-    /**
-     *  Functional description : 获取头部节点
-     *  Programmer : Mr.Liu
-     * @return Node
-     */
-    public function getHeader()
-    : Node
-    {
-        return $this-&gt;header;
-    }
-
-
-    /**
-     *  Functional description : 获取链表长度
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getLen()
-    : int
-    {
-        return $this-&gt;len;
-    }
-
-
-    /**
-     *  Functional description : 末尾追加
-     *  Programmer : Mr.Liu
-     * @param $data
-     */
-    public function append($data)
-    {
-        $node = $this-&gt;getHeader();
-        //查找没有子节点的节点
-        while ($node-&gt;getNext() != null) {
-            $node = $node-&gt;getNext();
-        }
-        //找到后设置其下级节点
-        $node-&gt;setNext(new Node($data, null,$node));
-        //链表长度递增
-        $this-&gt;len++;
-    }
-
-
-    /**
-     *  Functional description : 头部添加
-     *  Programmer : Mr.Liu
-     * @param $data
-     */
-    public function addFirst($data){
-        $rootNode = $this-&gt;getHeader();
-        //查找没有子节点的节点(根节点)
-        while ($rootNode-&gt;getPrev() != null) {
-            $rootNode = $rootNode-&gt;getPrev();
-        }
-        //Root-A-B-C Root-D-A-B-C
-        $oldFirst = $rootNode-&gt;getNext();
-        $newFirst = new Node($data,$oldFirst,$rootNode);
-        $oldFirst-&gt;setPrev($newFirst);
-        $rootNode-&gt;setNext($newFirst);
-        $this-&gt;len++;
-    }
-
-    /**
-     *  Functional description : 根据指定位置添加
-     *  Programmer : Mr.Liu
-     * @param int $index
-     * @param $data
-     */
-    public function insertByIndex(int $index,$data){
-        $key = 1;
-        //尾部添加
-        if ($this-&gt;getLen() &lt; $index){
-            $this-&gt;append($data);
-            return;
-        }
-        //头部添加
-        if ($index == 1){
-            $this-&gt;addFirst($data);
-            return;
-        }
-
-        $node = $this-&gt;getHeader();
-        while ($key &lt; $index){
-            $node = $node-&gt;getNext();
-            $key++;
-        }
-        //中间添加 如：添加D到A和B之间 A-B-C  ---&gt; A-D-B-C
-        $node-&gt;setNext(new Node($data,$node-&gt;getNext(),$node));
-        $this-&gt;len++;
-    }
-
-
-    /**
-     *  Functional description : 删除第一个节点
-     *  Programmer : Mr.Liu
-     */
-    public function delFirst(){
-        $rootNode = $this-&gt;getHeader();
-        while ($rootNode-&gt;getPrev() !=null){
-            $rootNode = $rootNode-&gt;getPrev();
-        }
-        //删除：ROOT-A-B-C  --&gt;  ROOT-B-C
-        $firstNode = $rootNode-&gt;getNext();
-        $secondNode = $firstNode-&gt;getNext();
-        $rootNode-&gt;setNext($secondNode);
-        $secondNode-&gt;setPrev($rootNode);
-        $this-&gt;len--;
-    }
-
-    /**
-     *  Functional description : 删除最后一个节点
-     *  Programmer : Mr.Liu
-     */
-    public function delLast(){
-        $node = $this-&gt;getHeader();
-        while ($node-&gt;getNext() !=null){
-            $node = $node-&gt;getNext();
-        }
-        //删除：ROOT-A-B-C  --&gt;  ROOT-A-B
-        $newLastNode = $node-&gt;getPrev();
-        $newLastNode-&gt;setNext(null);
-        $this-&gt;len--;
-    }
-
-
-    /**
-     *  Functional description : 反转双向链表
-     *  Programmer : Mr.Liu
-     * @return void
-     */
-    public function reverse(){
-        if ($this-&gt;getHeader() != null){
-            return ;
-        }
-
-        //除去根节点后的节点
-        $currentNode = $this-&gt;getHeader()-&gt;getNext();
-        //后一个节点
-        $next=null;
-        $prev=null;//根节点,当前为null
-        //rootNode-&gt;0-&gt;1-&gt;2-&gt;3 --&gt;  3-&gt;2-&gt;1-&gt;0
-        //查找最后一个
-        while ($currentNode != null){
-            //用一个变量暂时存储后一节点，因为一旦前面反转，就断链了
-            $next = $currentNode-&gt;getNext();
-            //将前一节点作为当前节点的后一节点，是为反转
-            $currentNode-&gt;setNext($prev);
-            $currentNode-&gt;setPrev($next);
-
-            #指针后移
-            $prev = $currentNode;
-            $currentNode = $next;
-
-        }
-        return $prev;
-    }
-
+    fmt.Println(p.name) // 爷爷
+    fmt.Println(p.child.name) //爸爸 
+    fmt.Println(p.child.child.name) // 我
 }
-</code></pre>
+</code></pre><h2 id="3-2-多值初始化"><a href="#3-2-多值初始化" class="headerlink" title="3.2 多值初始化"></a>3.2 多值初始化</h2><pre><code>type Girl struct {
+    Name   string 
+    Age    int
+    Height int
+    Weight float32
+}
+func CreateStruct() {
+    // 顺序填充
+    g1 := Girl{&quot;小花&quot;, 18, 170, 55.4}
+    fmt.Println(g1) // {小花 18 170 55.4}
+
+    // 指定字段填充
+    g := Girl{Name:&quot;小雨&quot;, Age:19}
+    fmt.Println(g) // {小雨 19 0 0}
+} 
+</code></pre><h2 id="3-3-匿名结构体初始化"><a href="#3-3-匿名结构体初始化" class="headerlink" title="3.3 匿名结构体初始化"></a>3.3 匿名结构体初始化</h2><p><code>结构体可以包含一个或多个 匿名（或内嵌）字段，即这些字段没有显式的名字，只有字段的类型是必须的，此时类型就是字段的名字。匿名字段本身可以是一个结构体类型，即 结构体可以包含内嵌结构体</code></p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Human struct {
+    Name     string
+    Age, Sex int
+}
+type Girl struct {
+    Human //匿名字段
+    Like string
+}
+
+func main() {
+    p := Girl{Human{Name: &quot;小芳&quot;, Age: 18}, &quot;唱歌&quot;}
+    fmt.Println(p)
+}
+
+</code></pre><h1 id="4-带标签的结构体"><a href="#4-带标签的结构体" class="headerlink" title="4. 带标签的结构体"></a>4. 带标签的结构体</h1><p><code>struct 的每个字段上，可以写上一个 tag, 该 tag可以通过反射机制获取，常见的使用场景就是序 列化和反序列化。</code></p>
+<h2 id="4-1-使用示例"><a href="#4-1-使用示例" class="headerlink" title="4.1 使用示例"></a>4.1 使用示例</h2><pre><code>package main
+
+import (
+    &quot;reflect&quot;
+    &quot;fmt&quot;
+)
+
+type SchoolTag struct {
+    Name    string `school name`
+    Address string `school address`
+    Tel     string `school tel`
+}
+
+func main() {
+    schTag := SchoolTag{&quot;名牌大学&quot;, &quot;天朝1号&quot;, &quot;010-1234560&quot;}
+    count := reflect.ValueOf(schTag).NumField()
+    for i := 0; i &lt; count; i++ {
+        fmt.Printf(&quot;%v\n&quot;,reflect.TypeOf(schTag).Field(i).Tag)
+    }
+}
+
+</code></pre><h1 id="5-结构体比较"><a href="#5-结构体比较" class="headerlink" title="5. 结构体比较"></a>5. 结构体比较</h1><p><code>如果结构体的所有成员变量都可以比较，那么这个结构体就是可比较的。两个结构体的比较用 == 或者 != 其中== 按照顺序比较两个结构体变量的成员</code></p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Point struct {
+    X, Y int
+}
+func main() {
+    p1 := Point{1,2}
+    p2 := Point{1,3}
+    //表达式1
+    fmt.Println(p1.X == p2.X &amp;&amp; p1.Y == p2.Y) //false
+    //表达式2
+    fmt.Println(p1 == p2) //false
+}
+</code></pre><blockquote>
+<p>表达式1和表达式2 是等价的</p>
+</blockquote>
+<p><strong>可比较的结构体都可以作为map的键类型</strong></p>
+<p>示例（统计某个链接的点击次数):</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type UrlCount struct {
+    Controller, Action string
+}
+
+func main() {
+    m := make(map[UrlCount]int)
+    for i := 0; i &lt; 5; i++ {
+        m[UrlCount{&quot;home&quot;, &quot;index&quot;}]++
+    }
+    fmt.Println(m) // map[{home index}:5]
+}
+
+</code></pre><h1 id="6-结构体特性"><a href="#6-结构体特性" class="headerlink" title="6.结构体特性"></a>6.结构体特性</h1><ul>
+<li><p>在创建一个结构体变量后，如果没有给字段赋值，都对应一个零值(默认值)</p>
+</li>
+<li><p>结构体是值类型，默认为值拷贝</p>
+</li>
+<li>字段名必须唯一</li>
+<li>结构体的所有字段在内存中是连续的</li>
+<li>结构体是用户单独定义的类型，和其它类型进行转换时需要有完全相同的字段(名字、个数和类型)<br><code>`</code><br>package main</li>
+</ul>
+<p>import “fmt”</p>
+<p>type A struct {<br>    X, Y int<br>}<br>type B struct {<br>    X, Y int<br>}</p>
+<p>func main() {<br>    var a A<br>    var b B<br>    a = A(b) // 类型转换时，需要有完全相同的字段(名字、个数和类型)<br>    fmt.Printf(“%T \n”,a)<br>    fmt.Printf(“%T \n”,b)<br>}</p>
+<pre><code>- 结构体进行 type 重新定义(相当于取别名)，Go 认为是新的数据类型，但是相互间可以强转
+</code></pre><p>package main</p>
+<p>type Human struct {<br>    Name string<br>    Age  int<br>}<br>type Boy Human</p>
+<p>func main() {<br>    var h Human<br>    var b Boy<br>    //这么写错误,原因:Go认为Boy是新的数据类型<br>    // h == b<br>    //可以相互间强转<br>    b = Boy(h)<br>    h = Human(b)<br>}<br><code>`</code></p>
+<h1 id="7-结构体和结构体变量-实例-的区别和联系"><a href="#7-结构体和结构体变量-实例-的区别和联系" class="headerlink" title="7.结构体和结构体变量(实例)的区别和联系"></a>7.结构体和结构体变量(实例)的区别和联系</h1><ul>
+<li>结构体是自定义的数据类型，代表一类事物.</li>
+<li>结构体变量(实例)是具体的，实际的，代表一个具体变量</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -994,11 +864,11 @@ class LinkList
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>双向链表、循环链</p>
+    <p><span class="copy-title">文章标题:</span>四、Go结构体使用</p>
     <p><span class="copy-title">文章字数:</span><span class="post-count">1.4k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-03-27 17:34</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/03/27/Lisked-List-two/" title="双向链表、循环链">https://mrliuqh.github.io/2019/03/27/Lisked-List-two/</a>
+    <p><span class="copy-title">发布时间:</span>2018-04-09 18:54</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/04/09/四、结构体使用/" title="四、Go结构体使用">https://mrliuqh.github.io/2018/04/09/四、结构体使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
