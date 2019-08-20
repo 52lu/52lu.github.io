@@ -7,13 +7,13 @@
   <meta name="description" content="二、Go变量及数据类型 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://mrliuqh.github.io/about/index.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://mrliuqh.github.io/categories/index.html">
 <meta property="og:site_name" content="QingHui&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-13T11:40:06.641Z">
+<meta property="og:updated_time" content="2019-08-13T11:40:06.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="categories">
 
 
 <link rel="icon" href="/images/avatar.jpg">
@@ -152,14 +152,6 @@
     
         
             
-            <li><div data-rel="nginx">nginx<small>(2)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="bug">bug<small>(7)</small></div>
                 
             </li>
@@ -177,6 +169,14 @@
         
             
             <li><div data-rel="DB">DB<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="nginx">nginx<small>(2)</small></div>
                 
             </li>
             
@@ -285,15 +285,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">禅道</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">双链表</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">循环链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">禅道</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -317,15 +317,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">crond</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">git</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">docker命令</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">crond</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -604,7 +604,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-20 15:49:31">2018-04-03 15:46</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-20 16:17:41">2018-04-03 15:46</time>
         
     </div>
     <div class="article-meta">
@@ -735,11 +735,9 @@ const Prex = &quot;Go_&quot;
 </code></pre><h2 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><pre><code>语法: var 数组变量名 [数组长度]T
 
 说明：
-    ● 数组变量名：数组声明及使用时的变量名。
-    ● 元素数量：数组的元素数量。
-    可以是一个表达式，但最终通过编译期计算的结果必须是整型数值。
-    也就是说，元素数量不能含有到运行时才能确认大小的数值。
-    ● T可以是任意基本类型，包括T为数组本身。但类型为数组本身时，可以实现多维数组
+    1.数组变量名：数组声明及使用时的变量名。
+    2.元素数量：数组的元素数量。可以是一个表达式，但最终通过编译期计算的结果必须是整型数值。也就是说，元素数量不能含有到运行时才能确认大小的数值。
+    3. T可以是任意基本类型，包括T为数组本身。但类型为数组本身时，可以实现多维数组
 
 示例：
 var arr [3]int  //默认初始化0
@@ -915,7 +913,7 @@ user.age = 20
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#单向链表','#禅道','#双链表','#循环链','#命令行','#mac','#php','#镜像','#mysql','#crond','#git','#docker命令','#http','#php并发请求','#SQL优化','#nfs','#面试题','#算法','#php-fpm','#docker','#rabbitmq','#容器',],
+            'data': ['#go','#单向链表','#双链表','#循环链','#禅道','#命令行','#mac','#php','#镜像','#mysql','#git','#docker命令','#crond','#http','#php并发请求','#SQL优化','#nfs','#面试题','#算法','#php-fpm','#docker','#rabbitmq','#容器',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
