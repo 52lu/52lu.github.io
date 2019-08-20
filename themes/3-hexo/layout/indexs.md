@@ -9,6 +9,6 @@
 - 页面全局快捷键
 ![](https://mrliuqh.github.io/directionsImg/other/3-hexo-hotkey.png)
 
-- 搜索支持文章标题、标签(#标签)、作者(@作者)
+- 搜索支持文章标题、标签(#标签)
 
 - pad/手机等移动端适配
