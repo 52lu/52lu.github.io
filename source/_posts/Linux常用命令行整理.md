@@ -2,7 +2,7 @@
 title: Linux常用命令行整理
 date: 2015-06-19 17:24:14
 tags:
-  - 命令行
+  - linux
 categories:
   - linux
 ---

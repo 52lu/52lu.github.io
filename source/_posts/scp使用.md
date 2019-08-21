@@ -2,7 +2,7 @@
 title: scp使用
 date: 2015-07-26 19:26:20
 tags:
-  - 命令行
+  - linux
 categories:
   - linux
 ---

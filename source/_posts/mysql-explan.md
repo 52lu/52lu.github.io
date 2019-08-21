@@ -2,7 +2,7 @@
 title: explan使用分析
 date: 2019-06-03 18:53:53
 tags: 
- - SQL优化
+ - mysql
 categories:
  - DB 
 ---

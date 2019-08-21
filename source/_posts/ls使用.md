@@ -2,7 +2,7 @@
 title: ls使用
 date: 2015-08-13 12:21:14
 tags:
- - 命令行
+ - linux
 categories:
  - linux
 ---
