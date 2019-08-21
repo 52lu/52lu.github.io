@@ -281,4 +281,36 @@ can calk
 - 第39行，实例化人类结构。
 - 第41行，调用人类能使用的功能，如行走。
 
+# 4. 注意事项
 
+- 对于一个具体类型T，部分方法的接收者是T，而且其他方法的接收者是*T。同时我对类型`T的变量`直接调用接收者是*T的方法是合法的，编译器隐私的帮你完成了取址的操作。但是不能直接通过类型调用
+
+```
+type DataWrite interface {
+	Write(data interface{}) error
+}
+
+type fileHandle struct {
+
+}
+
+func (f *fileHandle)Write(data interface{}) error  {
+	fmt.Println("文件写入中....")
+	return nil
+}
+
+func RunInterface()  {
+	// 通过变量可以直接调用接收者是*T
+    var f fileHandle
+	var _ = f.Write("...")
+
+	// 不能直接调用接收者是*T
+	// var _ = fileHandle{}.Write("..")
+	/*
+	此处代码会报错：
+	...: cannot call pointer method on fileHandle literal
+	...: cannot take the address of fileHandle literal
+	*/
+
+}
+```
