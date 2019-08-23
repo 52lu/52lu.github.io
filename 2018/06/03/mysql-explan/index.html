@@ -168,7 +168,7 @@
     
         
             
-            <li><div data-rel="docker">docker<small>(3)</small></div>
+            <li><div data-rel="DB">DB<small>(2)</small></div>
                 
             </li>
             
@@ -176,7 +176,7 @@
     
         
             
-            <li><div data-rel="DB">DB<small>(2)</small></div>
+            <li><div data-rel="docker">docker<small>(3)</small></div>
                 
             </li>
             
@@ -208,7 +208,7 @@
     
         
             
-            <li><div data-rel="正则">正则<small>(1)</small></div>
+            <li><div data-rel="并发">并发<small>(1)</small></div>
                 
             </li>
             
@@ -216,7 +216,7 @@
     
         
             
-            <li><div data-rel="并发">并发<small>(1)</small></div>
+            <li><div data-rel="正则">正则<small>(1)</small></div>
                 
             </li>
             
@@ -299,7 +299,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">镜像</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -311,19 +319,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">镜像</a>
+        <a href="javascript:" class="color1">crond</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color2">docker</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">crond</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -367,11 +367,6 @@
         <a class="bug " href="/2019/08/03/php-mysql8-bug/" data-tag="mysql" data-author="">
             <span class="post-title" title="php-mysql8-bug">php-mysql8-bug</span>
             <span class="post-date" title="2019-08-03 10:16:09">2019/08/03</span>
-        </a>
-        
-        <a class="DB " href="/2019/06/03/mysql-explan/" data-tag="mysql" data-author="">
-            <span class="post-title" title="explan使用分析">explan使用分析</span>
-            <span class="post-date" title="2019-06-03 18:53:53">2019/06/03</span>
         </a>
         
         <a class="docker " href="/2019/05/21/create-self-Image/" data-tag="镜像" data-author="">
@@ -447,6 +442,11 @@
         <a class="docker " href="/2018/07/12/查看容器日志/" data-tag="docker" data-author="">
             <span class="post-title" title="查看容器日志">查看容器日志</span>
             <span class="post-date" title="2018-07-12 11:33:31">2018/07/12</span>
+        </a>
+        
+        <a class="DB " href="/2018/06/03/mysql-explan/" data-tag="mysql" data-author="">
+            <span class="post-title" title="explan使用分析">explan使用分析</span>
+            <span class="post-date" title="2018-06-03 18:53:53">2018/06/03</span>
         </a>
         
         <a class="后端 " href="/2018/05/08/八、Go通道/" data-tag="go" data-author="">
@@ -615,7 +615,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-21 15:03:12">2019-06-03 18:53</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-23 14:00:36">2018-06-03 18:53</time>
         
     </div>
     <div class="article-meta">
@@ -728,8 +728,8 @@
     <p><span class="copy-title">文章标题:</span>explan使用分析</p>
     <p><span class="copy-title">文章字数:</span><span class="post-count">546</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-06-03 18:53</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/06/03/mysql-explan/" title="explan使用分析">https://mrliuqh.github.io/2019/06/03/mysql-explan/</a>
+    <p><span class="copy-title">发布时间:</span>2018-06-03 18:53</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/06/03/mysql-explan/" title="explan使用分析">https://mrliuqh.github.io/2018/06/03/mysql-explan/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
@@ -811,7 +811,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#禅道','#数据结构','#linux','#mac','#php','#mysql','#镜像','#docker','#crond','#git','#http','#nfs','#算法','#面试题','#rabbitmq','#并发',],
+            'data': ['#go','#禅道','#数据结构','#mysql','#linux','#镜像','#mac','#php','#crond','#docker','#git','#http','#nfs','#算法','#面试题','#rabbitmq','#并发',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
