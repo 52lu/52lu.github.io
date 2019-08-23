@@ -1,5 +1,5 @@
 ---
-title: 五、Go方法
+title: Go-5.方法
 date: 2018-04-11 14:47:17
 tags:
  - go 

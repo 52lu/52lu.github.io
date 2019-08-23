@@ -1,5 +1,5 @@
 ---
-title: 七、Go并发使用
+title: Go-7.并发使用
 date: 2018-05-07 18:20:22
 tags:
  - go
