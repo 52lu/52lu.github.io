@@ -7,13 +7,13 @@
   <meta name="description" content="php面试题 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://mrliuqh.github.io/categories/index.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://mrliuqh.github.io/about/index.html">
 <meta property="og:site_name" content="QingHui&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-13T11:40:06.642Z">
+<meta property="og:updated_time" content="2019-08-13T11:40:06.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="about">
 
 
 <link rel="icon" href="/images/avatar.jpg">
@@ -160,6 +160,14 @@
     
         
             
+            <li><div data-rel="bug">bug<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="docker">docker<small>(3)</small></div>
                 
             </li>
@@ -169,14 +177,6 @@
         
             
             <li><div data-rel="DB">DB<small>(2)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="bug">bug<small>(7)</small></div>
                 
             </li>
             
@@ -295,19 +295,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">linux</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">数据结构</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">docker</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
+        <a href="javascript:" class="color1">linux</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -319,7 +311,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">crond</a>
+        <a href="javascript:" class="color1">mysql</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -331,6 +323,14 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">crond</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">http</a>
     </li>
     
@@ -339,11 +339,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">算法</a>
+        <a href="javascript:" class="color4">面试题</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">面试题</a>
+        <a href="javascript:" class="color3">算法</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -499,7 +499,7 @@
             <span class="post-date" title="2018-04-03 15:46:01">2018/04/03</span>
         </a>
         
-        <a class="后端 " href="/2018/01/12/php-sort/" data-tag="php,算法,面试题" data-author="">
+        <a class="后端 " href="/2018/01/12/php-sort/" data-tag="php,面试题,算法" data-author="">
             <span class="post-title" title="php排序算法汇总">php排序算法汇总</span>
             <span class="post-date" title="2018-01-12 10:12:07">2018/01/12</span>
         </a>
@@ -617,7 +617,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-20 12:15:11">2017-09-17 11:12</time>
+        创建时间:<time class="date" title="更新时间: 2019-09-10 16:33:32">2017-09-17 11:12</time>
         
     </div>
     <div class="article-meta">
@@ -1081,15 +1081,13 @@ foreach (readTxt() as $key =&gt; $value) {
 <li>Load Table From Master 操作对InnoDB是不起作用的，解决方法是首先把InnoDB表改成MyISAM表，导入数据后再改成InnoDB表，但是对于使用的额外的InnoDB特性(例如外键)的表不适用.</li>
 <li>MyISAM支持表锁，InnoDB支持行锁。</li>
 </ul>
-<h3 id="3-2-delete-drop-truncate区别"><a href="#3-2-delete-drop-truncate区别" class="headerlink" title="3.2 delete drop truncate区别"></a>3.2 delete drop truncate区别</h3><pre><code>- truncate 和 delete只删除数据，不删除表结构 ,drop删除表结构，并且释放所占的空间。
-- 删除数据的速度，一般来说: drop&gt; truncate &gt; delete
-- delete属于DML语言，需要事务管理，commit之后才能生效。drop和truncate属于DDL语言，操作立刻生效，不可回滚
-
-- 使用场合：
-  1.当你不再需要该表时， 用drop;
-  2.当你仍要保留该表，但要删除所有记录时， 用truncate;
-  3.当你要删除部分记录时（always with a where clause), 用 delete.
-</code></pre><blockquote>
+<h3 id="3-2-delete-drop-truncate区别"><a href="#3-2-delete-drop-truncate区别" class="headerlink" title="3.2 delete drop truncate区别"></a>3.2 delete drop truncate区别</h3><ul>
+<li>truncate 和 delete只删除数据，不删除表结构 ,drop删除表结构，并且释放所占的空间。</li>
+<li>删除数据的速度，一般来说: drop&gt; truncate &gt; delete</li>
+<li>delete属于DML语言，需要事务管理，commit之后才能生效。drop和truncate属于DDL语言，操作立刻生效，不可回滚</li>
+</ul>
+<p><strong>使用场合</strong>：<br>  1.当你不再需要该表时， 用drop;<br>  2.当你仍要保留该表，但要删除所有记录时， 用truncate;<br>  3.当你要删除部分记录时（always with a where clause), 用 delete.</p>
+<blockquote>
 <p>对于有主外键关系的表，不能使用truncate而应该使用不带where子句的delete语句，由于truncate不记录在日志中，不能够激活触发器</p>
 </blockquote>
 <h3 id="3-3-优化MYSQL数据库的方法"><a href="#3-3-优化MYSQL数据库的方法" class="headerlink" title="3.3 优化MYSQL数据库的方法"></a>3.3 优化MYSQL数据库的方法</h3><ul>
@@ -1774,7 +1772,7 @@ $newCar-&gt;show();
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#禅道','#linux','#数据结构','#docker','#mysql','#mac','#php','#crond','#镜像','#git','#http','#nfs','#算法','#面试题','#rabbitmq','#并发',],
+            'data': ['#go','#禅道','#数据结构','#linux','#mac','#php','#mysql','#镜像','#git','#crond','#docker','#http','#nfs','#面试题','#算法','#rabbitmq','#并发',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
