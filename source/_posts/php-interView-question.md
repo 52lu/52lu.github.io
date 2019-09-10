@@ -503,16 +503,16 @@ struct _zval_struct {
 
 
 ### 3.2 delete drop truncate区别
-```
+
 - truncate 和 delete只删除数据，不删除表结构 ,drop删除表结构，并且释放所占的空间。
 - 删除数据的速度，一般来说: drop> truncate > delete
 - delete属于DML语言，需要事务管理，commit之后才能生效。drop和truncate属于DDL语言，操作立刻生效，不可回滚
 
-- 使用场合：
+**使用场合**：
   1.当你不再需要该表时， 用drop;
   2.当你仍要保留该表，但要删除所有记录时， 用truncate;
   3.当你要删除部分记录时（always with a where clause), 用 delete.
-```
+
 > 对于有主外键关系的表，不能使用truncate而应该使用不带where子句的delete语句，由于truncate不记录在日志中，不能够激活触发器
 
 ### 3.3 优化MYSQL数据库的方法
