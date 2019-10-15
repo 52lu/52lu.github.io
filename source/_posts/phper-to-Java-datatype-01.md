@@ -1,5 +1,5 @@
 ---
-title: phper学习Java笔记-01
+title: 学Java笔记-原始数据类型及运算
 date: 2019-10-12 17:45:29
 tags: 
  - Java
