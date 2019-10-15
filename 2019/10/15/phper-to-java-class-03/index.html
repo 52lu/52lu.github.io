@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>学Java笔记-类 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="学Java笔记-类 | QingHui&#39;s Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://mrliuqh.github.io/categories/index.html">
+<meta property="og:site_name" content="QingHui&#39;s Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-13T11:40:06.642Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="categories">
+
+
+<link rel="icon" href="/images/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/sublime.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/images/avatar.jpg">
+</a>
+<div class="author">
+    <span>刘庆辉</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/MrLiuqh" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:liuqinghui1991@163.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=543248135" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(48)</small></div></li>
+    
+        
+            
+            <li><div data-rel="后端">后端<small>(20)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="linux">linux<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="nginx">nginx<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="bug">bug<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="DB">DB<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="docker">docker<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="git">git<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="其他">其他<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="队列">队列<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="正则">正则<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="并发">并发<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="48">
+<input type="hidden" id="yelog_site_word_count" value="71.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://www.laruence.com">风雪之隅</a></li>
+            
+            <li><a target="_blank" href="http://www.ruanyifeng.com/blog/algorithm">阮一峰</a></li>
+            
+            <li><a target="_blank" href="https://youzhixueyuan.com/history-articles.html">优知学院</a></li>
+            
+            <li><a target="_blank" href="https://learnku.com">LearnKu</a></li>
+            
+            <li><a target="_blank" href="https://www.ibm.com/developerworks/cn/topics">IBM</a></li>
+            
+            <li><a target="_blank" href="http://blog.sina.com.cn/s/articlelist_3283485963_0_1.html">藏书者</a></li>
+            
+            <li><a target="_blank" href="https://developer.aliyun.com">阿里云开发者社区</a></li>
+            
+            <li><a target="_blank" href="https://www.open-open.com">深度开源</a></li>
+            
+            <li><a target="_blank" href="https://www.ctolib.com">CTOLib码库</a></li>
+            
+            <li><a target="_blank" href="https://segmentfault.com">Segmentfault</a></li>
+            
+            <li><a target="_blank" href="https://leetcode-cn.com">LeetCode</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">go</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">禅道</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">mac</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">crond</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">镜像</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">http</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">nfs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">面试题</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">rabbitmq</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">并发</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a class="后端 " href="/2019/10/15/phper-to-java-annotation-05/" data-tag="" data-author="">
+            <span class="post-title" title="学Java笔记-注解">学Java笔记-注解</span>
+            <span class="post-date" title="2019-10-15 19:28:52">2019/10/15</span>
+        </a>
+        
+        <a class="后端 " href="/2019/10/15/phper-to-java-class-03/" data-tag="" data-author="">
+            <span class="post-title" title="学Java笔记-类">学Java笔记-类</span>
+            <span class="post-date" title="2019-10-15 19:24:46">2019/10/15</span>
+        </a>
+        
+        <a class="后端 " href="/2019/10/15/phper-to-java-enum-04/" data-tag="" data-author="">
+            <span class="post-title" title="学Java笔记-枚举">学Java笔记-枚举</span>
+            <span class="post-date" title="2019-10-15 19:24:46">2019/10/15</span>
+        </a>
+        
+        <a class="后端 " href="/2019/10/14/phper-to-Java-array-02/" data-tag="Java" data-author="">
+            <span class="post-title" title="学Java笔记-数组">学Java笔记-数组</span>
+            <span class="post-date" title="2019-10-14 16:46:19">2019/10/14</span>
+        </a>
+        
+        <a class="后端 " href="/2019/10/12/phper-to-Java-datatype-01/" data-tag="Java" data-author="">
+            <span class="post-title" title="学Java笔记-原始数据类型及运算">学Java笔记-原始数据类型及运算</span>
+            <span class="post-date" title="2019-10-12 17:45:29">2019/10/12</span>
+        </a>
+        
+        <a class="bug " href="/2019/08/03/php-mysql8-bug/" data-tag="mysql" data-author="">
+            <span class="post-title" title="php-mysql8-bug">php-mysql8-bug</span>
+            <span class="post-date" title="2019-08-03 10:16:09">2019/08/03</span>
+        </a>
+        
+        <a class="docker " href="/2019/05/21/create-self-Image/" data-tag="镜像" data-author="">
+            <span class="post-title" title="创建自己的镜像">创建自己的镜像</span>
+            <span class="post-date" title="2019-05-21 16:27:11">2019/05/21</span>
+        </a>
+        
+        <a class="DB " href="/2019/04/15/SQL优化/" data-tag="mysql" data-author="">
+            <span class="post-title" title="SQL优化">SQL优化</span>
+            <span class="post-date" title="2019-04-15 19:43:22">2019/04/15</span>
+        </a>
+        
+        <a class="nginx " href="/2019/03/28/nginx-optimization/" data-tag="" data-author="">
+            <span class="post-title" title="nginx 配置调优">nginx 配置调优</span>
+            <span class="post-date" title="2019-03-28 20:57:02">2019/03/28</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019/03/27/Lisked-List-two/" data-tag="数据结构" data-author="">
+            <span class="post-title" title="双向链表、循环链">双向链表、循环链</span>
+            <span class="post-date" title="2019-03-27 17:34:29">2019/03/27</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019/03/25/Linked-List/" data-tag="数据结构" data-author="">
+            <span class="post-title" title="单向链表">单向链表</span>
+            <span class="post-date" title="2019-03-25 19:15:35">2019/03/25</span>
+        </a>
+        
+        <a class="后端 " href="/2019/03/22/multiRequest/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP并发请求">PHP并发请求</span>
+            <span class="post-date" title="2019-03-22 12:19:23">2019/03/22</span>
+        </a>
+        
+        <a class="后端 " href="/2019/03/10/phpFpm/" data-tag="php" data-author="">
+            <span class="post-title" title="php-fpm配置详情及优化">php-fpm配置详情及优化</span>
+            <span class="post-date" title="2019-03-10 16:36:05">2019/03/10</span>
+        </a>
+        
+        <a class="后端 " href="/2018/10/06/php7-update-log/" data-tag="php" data-author="">
+            <span class="post-title" title="php7更新记录">php7更新记录</span>
+            <span class="post-date" title="2018-10-06 00:00:00">2018/10/06</span>
+        </a>
+        
+        <a class="bug " href="/2018/09/11/Row-size-too-large-8126-for-mysql/" data-tag="mysql" data-author="">
+            <span class="post-title" title="Row size too large (&gt; 8126) for mysql">Row size too large (&gt; 8126) for mysql</span>
+            <span class="post-date" title="2018-09-11 11:14:07">2018/09/11</span>
+        </a>
+        
+        <a class="bug " href="/2018/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/" data-tag="git" data-author="">
+            <span class="post-title" title="fatal: Pathspec &#39;xxx&#39; is in submodule for php yaf vendor">fatal: Pathspec &#39;xxx&#39; is in submodule for php yaf vendor</span>
+            <span class="post-date" title="2018-08-13 11:33:58">2018/08/13</span>
+        </a>
+        
+        <a class="docker " href="/2018/08/13/docker-command/" data-tag="docker" data-author="">
+            <span class="post-title" title="docker命令整理">docker命令整理</span>
+            <span class="post-date" title="2018-08-13 10:33:29">2018/08/13</span>
+        </a>
+        
+        <a class="队列 " href="/2018/08/03/rabbit-mq-install/" data-tag="rabbitmq" data-author="">
+            <span class="post-title" title="RabbitMQ安装方法总结">RabbitMQ安装方法总结</span>
+            <span class="post-date" title="2018-08-03 00:00:00">2018/08/03</span>
+        </a>
+        
+        <a class="bug " href="/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/" data-tag="mac,php" data-author="">
+            <span class="post-title" title="MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;">MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;</span>
+            <span class="post-date" title="2018-07-31 19:47:18">2018/07/31</span>
+        </a>
+        
+        <a class="并发 " href="/2018/07/13/进程、线程、协程/" data-tag="并发" data-author="">
+            <span class="post-title" title="进程、线程、协程">进程、线程、协程</span>
+            <span class="post-date" title="2018-07-13 13:48:27">2018/07/13</span>
+        </a>
+        
+        <a class="docker " href="/2018/07/12/查看容器日志/" data-tag="docker" data-author="">
+            <span class="post-title" title="查看容器日志">查看容器日志</span>
+            <span class="post-date" title="2018-07-12 11:33:31">2018/07/12</span>
+        </a>
+        
+        <a class="DB " href="/2018/06/03/mysql-explan/" data-tag="mysql" data-author="">
+            <span class="post-title" title="explan使用分析">explan使用分析</span>
+            <span class="post-date" title="2018-06-03 18:53:53">2018/06/03</span>
+        </a>
+        
+        <a class="后端 " href="/2018/05/08/Go-8.通道/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-8.通道">Go-8.通道</span>
+            <span class="post-date" title="2018-05-08 13:53:15">2018/05/08</span>
+        </a>
+        
+        <a class="后端 " href="/2018/05/07/Go-7.并发使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-7.并发使用">Go-7.并发使用</span>
+            <span class="post-date" title="2018-05-07 18:20:22">2018/05/07</span>
+        </a>
+        
+        <a class="bug " href="/2018/05/03/question-for-docker/" data-tag="docker" data-author="">
+            <span class="post-title" title="docker 使用中遇到的问题">docker 使用中遇到的问题</span>
+            <span class="post-date" title="2018-05-03 15:54:34">2018/05/03</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/14/Go-6.接口/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-6.接口">Go-6.接口</span>
+            <span class="post-date" title="2018-04-14 18:54:35">2018/04/14</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/11/Go-5.方法/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-5.方法">Go-5.方法</span>
+            <span class="post-date" title="2018-04-11 14:47:17">2018/04/11</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/09/Go-4.结构体使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-4.结构体使用">Go-4.结构体使用</span>
+            <span class="post-date" title="2018-04-09 18:54:38">2018/04/09</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/08/Go-3.函数使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-3.函数使用">Go-3.函数使用</span>
+            <span class="post-date" title="2018-04-08 11:31:57">2018/04/08</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/06/Go字符串操作/" data-tag="go" data-author="">
+            <span class="post-title" title="Go字符串操作">Go字符串操作</span>
+            <span class="post-date" title="2018-04-06 00:00:00">2018/04/06</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/03/Go-1.程序结构/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-1.程序结构">Go-1.程序结构</span>
+            <span class="post-date" title="2018-04-03 16:48:41">2018/04/03</span>
+        </a>
+        
+        <a class="后端 " href="/2018/04/03/Go-2.变量及数据类型/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-2.变量及数据类型">Go-2.变量及数据类型</span>
+            <span class="post-date" title="2018-04-03 15:46:01">2018/04/03</span>
+        </a>
+        
+        <a class="后端 " href="/2018/01/12/php-sort/" data-tag="php,算法,面试题" data-author="">
+            <span class="post-title" title="php排序算法汇总">php排序算法汇总</span>
+            <span class="post-date" title="2018-01-12 10:12:07">2018/01/12</span>
+        </a>
+        
+        <a class="后端 " href="/2017/09/17/php-interView-question/" data-tag="php,面试题" data-author="">
+            <span class="post-title" title="php面试题">php面试题</span>
+            <span class="post-date" title="2017-09-17 11:12:02">2017/09/17</span>
+        </a>
+        
+        <a class="正则 " href="/2017/06/27/正则/" data-tag="" data-author="">
+            <span class="post-title" title="正则">正则</span>
+            <span class="post-date" title="2017-06-27 18:34:57">2017/06/27</span>
+        </a>
+        
+        <a class="git " href="/2017/05/21/git批量上线脚本/" data-tag="" data-author="">
+            <span class="post-title" title="git批量上线脚本">git批量上线脚本</span>
+            <span class="post-date" title="2017-05-21 19:44:05">2017/05/21</span>
+        </a>
+        
+        <a class="nginx " href="/2017/04/17/Nginx-反向代理/" data-tag="" data-author="">
+            <span class="post-title" title="Nginx 反向代理">Nginx 反向代理</span>
+            <span class="post-date" title="2017-04-17 12:32:56">2017/04/17</span>
+        </a>
+        
+        <a class="linux " href="/2017/01/14/Linux-docker-chandao/" data-tag="禅道" data-author="">
+            <span class="post-title" title="Linux docker 搭建禅道">Linux docker 搭建禅道</span>
+            <span class="post-date" title="2017-01-14 00:00:00">2017/01/14</span>
+        </a>
+        
+        <a class="bug " href="/2016/11/23/question-for-git/" data-tag="git" data-author="">
+            <span class="post-title" title="Git相关的问题">Git相关的问题</span>
+            <span class="post-date" title="2016-11-23 00:00:00">2016/11/23</span>
+        </a>
+        
+        <a class="其他 " href="/2016/08/16/行业术语/" data-tag="" data-author="">
+            <span class="post-title" title="行业术语">行业术语</span>
+            <span class="post-date" title="2016-08-16 10:33:29">2016/08/16</span>
+        </a>
+        
+        <a class="其他 " href="/2016/07/23/http头部属性/" data-tag="http" data-author="">
+            <span class="post-title" title="http头部属性">http头部属性</span>
+            <span class="post-date" title="2016-07-23 11:36:42">2016/07/23</span>
+        </a>
+        
+        <a class="其他 " href="/2016/07/14/http状态码/" data-tag="http" data-author="">
+            <span class="post-title" title="http状态码">http状态码</span>
+            <span class="post-date" title="2016-07-14 14:31:28">2016/07/14</span>
+        </a>
+        
+        <a class="linux " href="/2016/04/19/nfs-file-sharing/" data-tag="nfs" data-author="">
+            <span class="post-title" title="Linux 搭建nfs文件共享">Linux 搭建nfs文件共享</span>
+            <span class="post-date" title="2016-04-19 18:41:53">2016/04/19</span>
+        </a>
+        
+        <a class="bug " href="/2015/10/03/crontab-run-error-time/" data-tag="crond" data-author="">
+            <span class="post-title" title="crontab 无运行日志文件或不按时执行">crontab 无运行日志文件或不按时执行</span>
+            <span class="post-date" title="2015-10-03 11:42:44">2015/10/03</span>
+        </a>
+        
+        <a class="linux " href="/2015/08/13/ls使用/" data-tag="linux" data-author="">
+            <span class="post-title" title="ls使用">ls使用</span>
+            <span class="post-date" title="2015-08-13 12:21:14">2015/08/13</span>
+        </a>
+        
+        <a class="linux " href="/2015/07/26/scp使用/" data-tag="linux" data-author="">
+            <span class="post-title" title="scp使用">scp使用</span>
+            <span class="post-date" title="2015-07-26 19:26:20">2015/07/26</span>
+        </a>
+        
+        <a class="linux " href="/2015/06/19/Linux常用命令行整理/" data-tag="linux" data-author="">
+            <span class="post-title" title="Linux常用命令行整理">Linux常用命令行整理</span>
+            <span class="post-date" title="2015-06-19 17:24:14">2015/06/19</span>
+        </a>
+        
+        <a class="后端 " href="/2015/03/09/php-preg_match_all/" data-tag="php" data-author="">
+            <span class="post-title" title="php 正则去掉字符串中非汉字字符串">php 正则去掉字符串中非汉字字符串</span>
+            <span class="post-date" title="2015-03-09 10:05:37">2015/03/09</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-phper-to-java-class-03" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">学Java笔记-类</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="后端">后端</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-10-15 19:24:46">2019-10-15 19:24</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-类"><span class="toc-text">1.类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-定义MyClass类"><span class="toc-text">1.1 定义MyClass类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-调用MyClass类"><span class="toc-text">1.2 调用MyClass类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-实例化调用"><span class="toc-text">1.2.1 实例化调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-静态调用"><span class="toc-text">1.2.2 静态调用</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-5 i,
+    .toc-level-5 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-类"><a href="#1-类" class="headerlink" title="1.类"></a>1.类</h1><p><strong>类的定义</strong></p>
+<pre><code>[修饰符] class 类名 {
+    // 零或多个构造器定义...
+
+
+    // 零或多个Field...
+
+    // 零或多个方法...
+}
+</code></pre><ul>
+<li>修饰符: 如public，private及许多其他修饰符</li>
+<li>类名，并且按惯例首字母要大写。</li>
+<li>父类（超类）的名称，都要在前面加上关键字extends。一个类只能继承自一个父类。</li>
+<li>被该类实现的接口列表（用逗号进行分隔），在接口前面加上关键字implements。一个类可以实现多个接口。</li>
+<li>类体，用花括号{}包围。</li>
+</ul>
+<h2 id="1-1-定义MyClass类"><a href="#1-1-定义MyClass类" class="headerlink" title="1.1 定义MyClass类"></a>1.1 定义MyClass类</h2><pre><code>public class MyClass {
+    /**
+    * @Description: 静态常量
+    */
+    public final static Double PI = 3.1415;
+
+    /**
+     * @Description: 名称（成员变量）
+     */
+    private String name;
+
+    /**
+     * @Description: 设置名称（成员方法）
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+    /**
+     * @description: 获取名称（成员方法）
+     **/
+    public String getName() {
+        return this.name;
+    }
+    /**
+     * @Description: 无参构造方法
+     */
+    public MyClass() {
+        System.out.println(&quot;无参构造方法....&quot;);
+    }
+
+    public static void staticMethod(){
+        System.out.println(&quot;这是个静态方法&quot;);
+    }
+    /**
+     * @description:有参构造方法
+     **/
+    public MyClass(String name) {
+        this.name = name;
+        System.out.println(&quot;有参构造方法....&quot;);
+    }
+}
+</code></pre><h2 id="1-2-调用MyClass类"><a href="#1-2-调用MyClass类" class="headerlink" title="1.2 调用MyClass类"></a>1.2 调用MyClass类</h2><h3 id="1-2-1-实例化调用"><a href="#1-2-1-实例化调用" class="headerlink" title="1.2.1 实例化调用"></a>1.2.1 实例化调用</h3><pre><code>MyClass classTest = new MyClass();
+classTest.setName(&quot;小明&quot;);
+String name = classTest.getName();
+System.out.println(name);
+
+/*输出:
+无参构造方法....
+小明
+*/
+</code></pre><h3 id="1-2-2-静态调用"><a href="#1-2-2-静态调用" class="headerlink" title="1.2.2 静态调用"></a>1.2.2 静态调用</h3><pre><code>//调用静态成员
+System.out.println(MyClass.PI);
+//调用静态方法
+MyClass.staticMethod();
+
+/*输出:
+无参构造方法....
+小明
+*/
+</code></pre><blockquote>
+<font color="006400">虽然静态成员也可以使用”对象.静态成员”的形式进行调用，但通常不建议用这样的形式，因为这样容易混淆静态成员和非静态成员。</font>
+</blockquote>
+<ul>
+<li>测试有参构造方法<br><code>`</code><br>MyClass classTest2 = new MyClass(“张三”);<br>System.out.println(classTest2.getName());</li>
+</ul>
+<p>/<em>输出:<br>有参构造方法….<br>张三
+</em>/</p>
+<pre><code>
+## 1.3 类方法分析
+</code></pre><p>[修饰符] 返回类型 方法名称(方法参数列表){<br>    // 方法体<br>} </p>
+<pre><code>- 返回类型: 方法所返回的数据值的数据类型，若方法不返回值，用void
+
+
+### 1.3.1 方法重载
+Java语言支持“重载”方法，并且Java能够根据不同的“方法签名”来区分重载的方法。这意味着在一个类中，可以有相同名称但具有不同参数列表的方法（当然会有一些限定条件，这将在“接口和继承”中讨论）。
+
+**代码示例**
+</code></pre><p>public class DrawDate{</p>
+<pre><code>//声明绘制字符串的方法
+public void draw(String s){          
+    // ...
+}
+//声明绘制整数的方法
+public void draw(int i){
+    // ...
+}
+ //声明绘制双精度小数的方法
+public void draw(double f){
+    // ...
+}
+//声明绘制一个整数和一个小数的方法
+public void draw(int i , double f){   
+    // ...
+}
+</code></pre><p>}</p>
+<pre><code>### 1.3.2 传递任意数量的参数
+
+可以使用“可变参数”来传递任意数量的值到一个方法。当程序员不知道有多少个特定类型的参数要被传递给方法时，使用可变参数。可变参数是手工创建一个数组的简洁方法。
+要使用可变参数，在最后一个参数的类型后面跟上省略号“…”，然后是一个空格，再接着是参数名。具有这种可变参数的方法可以接收任意数量的该类型的参数，包括空参数。例如下面代码：
+
+</code></pre><p>public Polygon polygonFrom(Point… corners) {<br>    //corners参数被当作数组处理，可以调用数组属性length获得长度<br>    int numberOfSides = corners.length;<br>    //声明两个变量<br>    double squareOfSide1, lengthOfSide1;<br>    squareOfSide1 = (corners[1].x - corners[0].x)<em>(corners[1].x - corners[0].x) + (corners[1].y - corners[0].y)</em>(corners[1].y - corners[0].y) ;<br>    lengthOfSide1 = Math.sqrt(squareOfSide1); //调用Math类的静态方法求平方根<br>    …<br>}</p>
+<pre><code>&gt; 可以看出来，在上面这个方法中，corners被当做数组使用。调用这个方法时，既可以使用一个数组，也可以使用一系列的参数。不管使用哪种形式，方法中的代码都会将参数作为一个数组对待。
+
+
+
+## 1.5 构造器
+
+**语法**
+</code></pre><p>public 类名称(方法参数列表){<br>    // 方法体<br>} </p>
+<pre><code>- 构造器与类同名 
+- 每个类可以有一个以上的构造器 
+- 构造器可以有 0 个、1 个或多个参数 
+- 构造器没有返回值 
+- 构造器总是伴随着 new 操作一起调用
+
+### 1.5.1 无参构造器
+</code></pre><pre><code>/**
+* @description:无参构造器
+ **/
+public MyClass() {
+    System.out.println(&quot;无参构造器....&quot;);
+}
+</code></pre><pre><code>
+### 1.5.2 有参构造器
+</code></pre><pre><code>/**
+ * @description:有参构造器
+ **/
+public MyClass(String name) {
+    this.name = name;
+    System.out.println(&quot;有参构造器....&quot;);
+}
+</code></pre><p><code>`</code></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>学Java笔记-类</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-10-15 19:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/15/phper-to-java-class-03/" title="学Java笔记-类">https://mrliuqh.github.io/2019/10/15/phper-to-java-class-03/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '2c2fa69918d1332db190',
+            clientSecret: '331f6fa0fb5d55a2f042f449c656bed6e33e7f7f',
+            repo: 'MrLiuqh.github.io',
+            owner: 'MrLiuqh',
+            admin: ['MrLiuqh'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2015-2019 Mr.Liu</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#go','#数据结构','#linux','#禅道','#mysql','#mac','#php','#docker','#crond','#git','#镜像','#http','#nfs','#算法','#面试题','#Java','#rabbitmq','#并发',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
