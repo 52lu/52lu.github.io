@@ -363,8 +363,7 @@ Pair<String>[] table = new Pair<String>[10]; //error
 
 
 ### 7.x总结
-Java的泛型是采用擦拭法实现的；
-擦拭法决定了泛型<T>：
+Java的泛型是采用擦拭法实现的；擦拭法决定了泛型`<T>`：
 - 不能是基本类型，例如：int；
 - 不能获取带泛型类型的Class，例如：Pair<String>.class；
 - 不能判断带泛型类型的类型，例如：x instanceof Pair<String>；
