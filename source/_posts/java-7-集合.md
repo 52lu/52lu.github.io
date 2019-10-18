@@ -1,5 +1,5 @@
 ---
-title: java-7-集合
+title: 学Java笔记-集合
 date: 2019-10-18 14:07:42
 tags:
  - Java
