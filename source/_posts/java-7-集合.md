@@ -18,29 +18,34 @@ Java集合大致可分为Set、List和Map三种体系，
 ## 3.集合和数组的区别
 集合类和数组不一样，数组元素既可以是基本类型的值，也可以是对象（实际上保存的是对象的引用变量）；而集合里只能保存对象（实际上只是保存对象的引用变量，但通常习惯上认为集合里保存的是对象）。
 
-**1. 存储元素角度:**
+### 3.1 存储元素角度:
 - 数组: 可以保存基本类型的值和是`对象`。
 - 集合: 只能保存`对象`。
 
 > <font color=red>数组和集合中保存对象，实际上只是保存对象的引用变量</font>
 
-**2. 长度角度:**
+### 3.2. 长度角度:
 数组的长度是固定的，集合的长度是可变的。
 
-## 4.集合分类的关系
-<font color=green>Java的集合类主要由两个接口派生而出：Collection和Map</font>，Collection和Map是Java集合框架的根接口，这两个接口又包含了一些子接口或实现类。
 
-**Collection接口、子接口及其实现类的继承树**
+## 4.集合分类的关系
+Java的集合类主要由两个接口派生而出：Collection和Map，Collection和Map是Java集合框架的根接口，这两个接口又包含了一些子接口或实现类。
+
+
+### 4.1 Collection接口、子接口及其实现类的继承树
 ![](https://mrliuqh.github.io/directionsImg/java/collection-extends-tree.jpeg)
+
 `粗线圈出的Set和List接口是Collection接口派生的两个子接口，它们分别代表了无序集合和有序集合；Queue是Java提供的队列实现，有点类似于List`
 
+### 4.2  Map接口、子接口及其实现类的继承树
 
-**Map接口、子接口及其实现类的继承树**
 ![](https://mrliuqh.github.io/directionsImg/java/map-tree.jpg)
+
 
 
 ## 5.集合读存
 ### 5.1 存储
+
 我们可以把Java的所有集合分成三大类，
 - Set集合类似于一个罐子，把一个对象添加到Set集合时，Set集合无法记住添加这个元素的顺序，所以Set里的元素不能重复（否则系统无法准确识别这个元素）；
 - List集合非常像一个数组，它可以记住每次添加元素的顺序，只是List的长度可变。
@@ -65,6 +70,7 @@ Collection接口是List、Set和Queue接口的父接口，该接口里定义的�
 ### 7.1 操作集合方法列表
 Collection接口操作集合元素的方法
 - boolean add(Object o)：该方法用于向集合里添加一个元素。如果集合对象被添加操作改变了，则返回true。
+
 ```
 public static void TestAdd(){
   // 定义一个list集合
@@ -82,7 +88,9 @@ true
 true
 */
 ```
+
 - boolean addAll(Collection c)：该方法把集合c里的所有元素添加到指定集合里。如果集合对象被添加操作改变了，则返回true。
+
 ```
 public static void TestAddAll(){
   ArrayList<String> strList = new ArrayList<>();
@@ -102,6 +110,7 @@ public static void TestAddAll(){
 */
 ```
 - void clear()：清除集合里的所有元素，将集合长度变为0。
+
 ```
 public static void TestClear(){
   ArrayList<String> strList = new ArrayList<>();
@@ -120,8 +129,6 @@ Clear后的strList:[]
 */
 ```
 - boolean contains(Object o)：返回集合里是否包含指定元素。
-
-
 - boolean containsAll(Collection c)：返回集合里是否包含集合c里的所有元素。
 - boolean isEmpty()：返回集合是否为空。当集合长度为0时返回true，否则返回false。
 - Iterator iterator()：返回一个Iterator对象，用于遍历集合里的元素。
