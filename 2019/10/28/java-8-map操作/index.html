@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>学Java笔记-原始数据类型及运算 | QingHui&#39;s Blog</title>
+  <title>学Java笔记-map操作 | QingHui&#39;s Blog</title>
   <meta name="keywords" content=" Java ">
-  <meta name="description" content="学Java笔记-原始数据类型及运算 | QingHui&#39;s Blog">
+  <meta name="description" content="学Java笔记-map操作 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="tags">
@@ -635,9 +635,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java-1-数据类型及运算" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-java-8-map操作" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">学Java笔记-原始数据类型及运算</h1>
+        <h1 class="article-title">学Java笔记-map操作</h1>
     
     <div class="article-meta">
         
@@ -659,12 +659,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-10-15 19:24:46">2019-10-12 17:45</time>
+        创建时间:<time class="date" title="更新时间: 2019-10-28 12:06:49">2019-10-28 11:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.2k</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -694,7 +694,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-变量和常量"><span class="toc-text">1.变量和常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-关键字"><span class="toc-text">1.1 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-变量"><span class="toc-text">1.2 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-变量声明"><span class="toc-text">1.2.1 变量声明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单一变量声明"><span class="toc-text">单一变量声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多个变量声明"><span class="toc-text">多个变量声明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-常量"><span class="toc-text">1.3 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-常量声明"><span class="toc-text">1.3.1 常量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-批量声明"><span class="toc-text">1.3.2 批量声明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-命名规则"><span class="toc-text">1.4 命名规则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-数据类型"><span class="toc-text">2.数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-整数类型"><span class="toc-text">2.1 整数类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-浮点类型"><span class="toc-text">2.2 浮点类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-字符类型"><span class="toc-text">2.3 字符类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-逻辑类型（布尔类型）"><span class="toc-text">2.4 逻辑类型（布尔类型）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-数据类型转换"><span class="toc-text">3.数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-自动（隐式）类型转换"><span class="toc-text">3.1 自动（隐式）类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-混合数据类型运算"><span class="toc-text">3.2 混合数据类型运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-强制（显式）类型转换"><span class="toc-text">3.2 强制（显式）类型转换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-运算符"><span class="toc-text">4.运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-算术运算符"><span class="toc-text">4.1 算术运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-赋值运算符"><span class="toc-text">4.2 赋值运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-关系运算符"><span class="toc-text">4.3 关系运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-位运算符"><span class="toc-text">4.4 位运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-逻辑运算符"><span class="toc-text">4.5 逻辑运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-三元运算符"><span class="toc-text">4.6 三元运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-运算符优先级"><span class="toc-text">4.7 运算符优先级</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-声明及初始化Map"><span class="toc-text">1.声明及初始化Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-先定义-后赋值"><span class="toc-text">1.1 先定义,后赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-双括号初始化法"><span class="toc-text">1.2 双括号初始化法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-使用初始块"><span class="toc-text">1.3 使用初始块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-遍历Map"><span class="toc-text">2.遍历Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-key-gt-value"><span class="toc-text">2.1 key=&gt;value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-遍历keys或values"><span class="toc-text">2.2 遍历keys或values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-使用Iterator遍历"><span class="toc-text">2.3 使用Iterator遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-使用泛型"><span class="toc-text">2.3.1 使用泛型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-不使用泛型"><span class="toc-text">2.3.2 不使用泛型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-通过键找值遍历（效率低）"><span class="toc-text">2.4 通过键找值遍历（效率低）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-map接口方法使用"><span class="toc-text">3.map接口方法使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-void-clear-删除该Map对象中的所有key-value对"><span class="toc-text">3.1 void clear():删除该Map对象中的所有key-value对</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-boolean-containsKey-Object-key"><span class="toc-text">3.2 boolean containsKey(Object key)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-boolean-containsValue-Object-value"><span class="toc-text">3.3 boolean containsValue(Object value)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Set-entrySet"><span class="toc-text">3.4 Set entrySet()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-Object-get-Object-key"><span class="toc-text">3.5  Object get(Object key)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-boolean-isEmpty"><span class="toc-text">3.6 boolean isEmpty()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-Set-keySet"><span class="toc-text">3.7 Set keySet()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-Object-put-Object-key-Object-value"><span class="toc-text">3.8 Object put(Object key, Object value):</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-void-putAll-Map-m"><span class="toc-text">3.9 void putAll(Map m)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-Object-remove-Object-key"><span class="toc-text">3.10 Object remove(Object key)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11-int-size"><span class="toc-text">3.11 int size()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12-Collection-values"><span class="toc-text">3.12 Collection values()</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -709,171 +709,201 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-变量和常量"><a href="#1-变量和常量" class="headerlink" title="1.变量和常量"></a>1.变量和常量</h1><h2 id="1-1-关键字"><a href="#1-1-关键字" class="headerlink" title="1.1 关键字"></a>1.1 关键字</h2><p><strong>关键字不能作为变量名使用,以下表格中是java中的关键字列表</strong></p>
-<p><img src="https://mrliuqh.github.io/directionsImg/java/keyword.jpg" alt=""></p>
-<blockquote>
-<p>true、false、null不是关键字，是保留字，但是仍然不能用于命名标识符。保留字是为Java预留的关键字，它们虽然现在没有作为关键字，但在以后的升级版本中有可能作为关键字。</p>
-</blockquote>
-<h2 id="1-2-变量"><a href="#1-2-变量" class="headerlink" title="1.2 变量"></a>1.2 变量</h2><h3 id="1-2-1-变量声明"><a href="#1-2-1-变量声明" class="headerlink" title="1.2.1 变量声明"></a>1.2.1 变量声明</h3><h4 id="单一变量声明"><a href="#单一变量声明" class="headerlink" title="单一变量声明"></a>单一变量声明</h4><p><strong>① 先声明后赋值:</strong></p>
-<pre><code>变量类型 变量名
-</code></pre><p><em>实例</em></p>
-<pre><code>String studentName;
-studentName = &quot;小明&quot;;
-</code></pre><p><strong>② 声明及赋值:</strong></p>
-<pre><code>String studentName = &quot;小明&quot;;
-</code></pre><h4 id="多个变量声明"><a href="#多个变量声明" class="headerlink" title="多个变量声明"></a>多个变量声明</h4><pre><code>// 只声明
-String studentName, className;
+        <h1 id="1-声明及初始化Map"><a href="#1-声明及初始化Map" class="headerlink" title="1.声明及初始化Map"></a>1.声明及初始化Map</h1><h2 id="1-1-先定义-后赋值"><a href="#1-1-先定义-后赋值" class="headerlink" title="1.1 先定义,后赋值"></a>1.1 先定义,后赋值</h2><pre><code>Map&lt;String , Object&gt; map = new HashMap&lt;String , Object&gt;();
+map.put(&quot;key1&quot;, &quot;value1&quot;);
+map.put(&quot;key2&quot;, &quot;value2&quot;);
+map.put(&quot;keyN&quot;, &quot;valueN&quot;);
+</code></pre><h2 id="1-2-双括号初始化法"><a href="#1-2-双括号初始化法" class="headerlink" title="1.2 双括号初始化法"></a>1.2 双括号初始化法</h2><pre><code>Map&lt;String , String&gt; map = new HashMap&lt;String , Object&gt;(){{
+    put("key1", "value1");
+    put("key2", "value2");
+    put("keyN", "valueN");
+}};
+</code></pre><h2 id="1-3-使用初始块"><a href="#1-3-使用初始块" class="headerlink" title="1.3 使用初始块"></a>1.3 使用初始块</h2><pre><code>public class MyMap {
+     Map&lt;String,String&gt; maps;
+    // 使用初始块定义
+    {
+        maps = new HashMap&lt;&gt;();
+        maps.put(&quot;key1&quot;,&quot;value1&quot;);
+        maps.put(&quot;key2&quot;,&quot;value2&quot;);
+        maps.put(&quot;key3&quot;,&quot;value3&quot;);
+    }
 
-// 声明及赋值
-String studentName = &quot;小明&quot;, className =&quot;三年级&quot;;
-</code></pre><h2 id="1-3-常量"><a href="#1-3-常量" class="headerlink" title="1.3 常量"></a>1.3 常量</h2><p>常量分为字面常量和字符常量两种。</p>
-<ul>
-<li>字面常量：指的是如123、12.34、‘m’、true这样字面上本身就是一个固定值的数据。</li>
-<li>字符常量：指的是代表一个固定值的标识符。使用字符常量需要在程序中先声明后使用。</li>
-</ul>
-<h3 id="1-3-1-常量声明"><a href="#1-3-1-常量声明" class="headerlink" title="1.3.1 常量声明"></a>1.3.1 常量声明</h3><p>声明字符常量的语法如下。</p>
-<pre><code>final 常量类型  常量标识符=常量值；
-</code></pre><p><strong>① 声明及赋值:</strong></p>
-<pre><code>//声明一个float类型常量，并初始化为3.14
-final float PI = 3.14F; 
-
-//声明一个整型常量，并初始化为24
-final int STUENT_NUMBER = 24;  
-</code></pre><p><strong>② 先声明后赋值:</strong></p>
-<pre><code>final float PI;                     //声明一个float类型常量
-final int STUENT_NUMBER;           //声明一个整型常量
-PI = 3.14F;                         //初始化为3.14
-STUENT_NUMBER = 24;                 //初始化为24
-</code></pre><blockquote>
-<p>初始化以后，就不允许再在程序中对这些常量进行重新赋值，即不允许改变常量的值。</p>
-</blockquote>
-<h3 id="1-3-2-批量声明"><a href="#1-3-2-批量声明" class="headerlink" title="1.3.2 批量声明"></a>1.3.2 批量声明</h3><p>如果需要声明多个同一类型的常量，可以使用下面的语法：</p>
-<pre><code>final常量类型  常量标识符1,常量标识符2,常量标识符3，…;
-
-final常量类型  常量标识符1=常量值1,常量标识符2=常量值2,常量标识符3=常量值3;
-</code></pre><p><strong>实例</strong></p>
-<pre><code> //声明三个float类型的变量
-final float PI，PRICE，WEIGHT;  
-
-//声明三个float类型的变量，同时进行初始化
-final float PI=3.14F,price=13.86F,WEIGHT=86.32F;
-</code></pre><h2 id="1-4-命名规则"><a href="#1-4-命名规则" class="headerlink" title="1.4 命名规则"></a>1.4 命名规则</h2><ul>
-<li><p>一个标识符可以由几个单词连接而成，以表明它所代表的含义，如applePrice。</p>
-</li>
-<li><p>如果是类名，每个单词的首字母都要大写，其他字母则小写，如StudentInfo。</p>
-</li>
-<li>如果是方法名或者变量名，第一个单词的首字母小写，其他单词的首字母都要大写，如getStudentInfo()、studentName。</li>
-<li>如果是常量，所有单词的所有字母全部大写，如果由多个单词组成，通常情况下单词之间用下画线“_”分隔，如PI、MAX_VALUE。</li>
-<li>如果是包名，所有单词的所有字母全部小写，如examples.chapter02。</li>
-</ul>
-<h1 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2.数据类型"></a>2.数据类型</h1><p><img src="https://mrliuqh.github.io/directionsImg/java/basic_data_type.jpg" alt=""></p>
-<h2 id="2-1-整数类型"><a href="#2-1-整数类型" class="headerlink" title="2.1 整数类型"></a>2.1 整数类型</h2><p><b>整数类型取值范围</b><br><img src="https://mrliuqh.github.io/directionsImg/java/int_ranage.jpg" alt=""></p>
-<pre><code>byte age = 18;
-short number = 2300;
-long account = 8172651756L;
-</code></pre><blockquote>
-<p>在为long型常量或变量赋值时，需要在所赋值的后面加上一个字母”L”（或小写”l”），说明所赋的值为long型。如果所赋的值未超出int型的取值范围，也可以省略字母”L”（或小写”l”)</p>
-</blockquote>
-<pre><code>//所赋的值超出了int型的取值范围，必须在后面加上字母“L”
-long account = 3124567893L;
-
-//所赋的值未超出int型的取值范围，可以在后面加上字母“L”
-long account = 31245678L; 
-
-//所赋的值未超出int型的取值范围，可以省略字母“L”
-long account = 31245678;  
-
-
-// !但是下面的这种赋值方式是错误的。
-long account = 3124567893; //所赋的值超出了int型的取值范围，但是没有在后面加上字母“L”
-</code></pre><h2 id="2-2-浮点类型"><a href="#2-2-浮点类型" class="headerlink" title="2.2 浮点类型"></a>2.2 浮点类型</h2><p><b>浮点类型取值范围</b><br><img src="https://mrliuqh.github.io/directionsImg/java/float_ranage.jpg" alt=""></p>
-<p>如果要声明一个用来保存小数的变量，必须使用浮点类型;</p>
-<pre><code>//声明一个float类型的变量，并赋值
-float price = 326.85F;
-
-//声明一个double类型的变量，并赋值
-double height = 3836.8;
-double height = 3836.8D;
-</code></pre><blockquote>
-<p>在默认情况下，小数都被看作double型。若使用float型小数，则需要在其值后面添加F或f,否则编译时，会提示错误。因为不加上字母“F”或小写“f”时，默认的数值为double类型，把double类型的数值赋给float类型的变量，是不正确的。而在为double类型变量赋值时，后面的字母“D”或者“d”,可加可不加。</p>
-</blockquote>
-<h2 id="2-3-字符类型"><a href="#2-3-字符类型" class="headerlink" title="2.3 字符类型"></a>2.3 字符类型</h2><p>字符类型（char）用于存储单个字符，占用16位（两个字节）的内存空间,在定义字符型变量时，要以单引号表示,如’a’、’#’、’3’。而双引号则表示一个字符串;</p>
-<pre><code>//声明一个char类型的变量，用来存储性别信息
-char gender = &#39;男&#39;;
-
-//声明一个char类型的变量，用来存储符号&#39;*&#39;
-char star = &#39;*&#39;;
-
-//声明一个char类型的常量，用来存储圆周率符号&#39;π&#39;
-final char PI = &#39;π&#39;;       
-</code></pre><h2 id="2-4-逻辑类型（布尔类型）"><a href="#2-4-逻辑类型（布尔类型）" class="headerlink" title="2.4 逻辑类型（布尔类型）"></a>2.4 逻辑类型（布尔类型）</h2><p>声明逻辑类型常量或者变量，需要使用关键字 boolean,</p>
-<pre><code>boolean falg = false;
-</code></pre><h1 id="3-数据类型转换"><a href="#3-数据类型转换" class="headerlink" title="3.数据类型转换"></a>3.数据类型转换</h1><p><strong>数据类型级别与取值范围</strong><br><img src="https://mrliuqh.github.io/directionsImg/java/data_type_level.jpg" alt=""></p>
-<h2 id="3-1-自动（隐式）类型转换"><a href="#3-1-自动（隐式）类型转换" class="headerlink" title="3.1 自动（隐式）类型转换"></a>3.1 自动（隐式）类型转换</h2><p>在对变量进行赋值时，如果是将低级数据类型（相对取值范围较小的数据类型）的数据，赋给高级数据类型（相对取值范围较大的数据类型）的变量，这时Java会自动完成从低级类型向高级类型的转换。在原始数据类型中，除了boolean类型外，其他数据均可参与算术运算。</p>
-<p><strong>实例</strong></p>
-<pre><code>//定义float类型的变量，并赋值
-float price = 36; 
-
-//输出price变量的值：price=36.0
-System.out.println(&quot;price=&quot;+price);        
-
-</code></pre><p><code>可以看出，因为相对于float类型来说，整数36为int型，属于低级数据类型，所以Java自动将其转换为float类型的36.0</code></p>
-<blockquote>
-<p>将低类型的数据赋给高类型的变量时，Java会自动将低类型的数据转换为高类型的数据，然后赋值。</p>
-</blockquote>
-<h2 id="3-2-混合数据类型运算"><a href="#3-2-混合数据类型运算" class="headerlink" title="3.2 混合数据类型运算"></a>3.2 混合数据类型运算</h2><p>在不同类型的数据进行混合运算时，分为两种情况：</p>
-<ul>
-<li>只有byte、short或char类型的数据。<br>这种情况下，Java首先将byte或short或char类型转换为int类型，然后再参与运算，并且运算结果也是int型的</li>
-</ul>
-<p><em>例如：</em></p>
-<pre><code>public class Test3{
-    public static void main(String[] args){
-        byte      byteVar = 68;             //声明一个byte类型的字节变量
-        short  shortVar = 873;              //声明一个short类型的整型变量
-        char  charVar = ‘a’;               //声明一个char类型的字符变量
-        int  value = byteVar + shortVar + charVar;
-        System.out.println(“value = ” + value);//输出value的值：value=1038
+    public void printMap(){
+        System.out.println(maps);
+        // 输出:{key1=value1, key2=value2, key3=value3}
     }
 }
-</code></pre><ul>
-<li>含有int、long、float或double型的数据。<br>这种情况下，Java首先将所有低数据类型转换为表达式中数据类型最高的数据类型，然后再参与运算，并且运算结果也是表达式中最高的数据类型。</li>
-</ul>
-<p><em>例如：</em></p>
-<pre><code>public class Test4{
-    public static void main(String[] args){
-        //声明一个字节类型的变量
-        byte  byteVar = 68;
-        //声明一个int类型的变量
-        int   intVar = 873; 
-        //声明一个float类型的变量
-        float  floatVar = 128.5F; 
-        // 不同类型进行混合运算
-        double  value = byteVar + intVar + floatVar;
-        System.out.println(&quot;value = &quot; + value) // 输出:1069.5
-    }
+</code></pre><h1 id="2-遍历Map"><a href="#2-遍历Map" class="headerlink" title="2.遍历Map"></a>2.遍历Map</h1><h2 id="2-1-key-gt-value"><a href="#2-1-key-gt-value" class="headerlink" title="2.1 key=&gt;value"></a>2.1 key=&gt;value</h2><pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) { 
+  System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue()); 
 }
-</code></pre><h2 id="3-2-强制（显式）类型转换"><a href="#3-2-强制（显式）类型转换" class="headerlink" title="3.2 强制（显式）类型转换"></a>3.2 强制（显式）类型转换</h2><p>在对变量进行赋值时，如果是将高级数据类型的数据赋值给低级数据类型的变量，java 不会自动完成类型的转换，需要主动转换；</p>
-<pre><code>// 定义int类型的变量，并赋值double类型的36.5
-int count = 36.5;
-System.out.println(&quot;count=&quot;+count);
-</code></pre><p>上述代码在编译时会提示错误，因为将高级类型的数据36.5赋给了低级类型的变量count。</p>
-<p>可改为下面这种形式：</p>
-<pre><code>//强制类型转换
-int count = (int)36.5;  
+</code></pre><h2 id="2-2-遍历keys或values"><a href="#2-2-遍历keys或values" class="headerlink" title="2.2 遍历keys或values"></a>2.2 遍历keys或values</h2><pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+//遍历map中的键 
+for (Integer key : map.keySet()) { 
+  System.out.println(&quot;Key = &quot; + key); 
+} 
+//遍历map中的值 
+for (Integer value : map.values()) { 
+  System.out.println(&quot;Value = &quot; + value); 
+}
+</code></pre><h2 id="2-3-使用Iterator遍历"><a href="#2-3-使用Iterator遍历" class="headerlink" title="2.3 使用Iterator遍历"></a>2.3 使用Iterator遍历</h2><h3 id="2-3-1-使用泛型"><a href="#2-3-1-使用泛型" class="headerlink" title="2.3.1 使用泛型"></a>2.3.1 使用泛型</h3><pre><code>
+Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; entries = map.entrySet().iterator(); 
+while (entries.hasNext()) { 
+  Map.Entry&lt;Integer, Integer&gt; entry = entries.next(); 
+  System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue()); 
+}
 
-//输出count变量的值：count=36         
-System.out.println(&quot;count=&quot;+count);
-</code></pre><blockquote>
-<p>在上面的代码中，（int）显示为强制类型转换的语法，即在欲转换的数据或变量前面，用“（目的数据类型）”的形式，强制转换为括号中的目的数据类型。另外，在上面的示例中也可以看到，<font color="red">在进行强制类型转换时，进行了简单的截断而不是四舍五入（输出的是36，而不是37）。</font></p>
-</blockquote>
-<h1 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4.运算符"></a>4.运算符</h1><h2 id="4-1-算术运算符"><a href="#4-1-算术运算符" class="headerlink" title="4.1 算术运算符"></a>4.1 算术运算符</h2><p><img src="https://mrliuqh.github.io/directionsImg/java/arithmetic_operation.jpg" alt=""></p>
-<h2 id="4-2-赋值运算符"><a href="#4-2-赋值运算符" class="headerlink" title="4.2 赋值运算符"></a>4.2 赋值运算符</h2><p><img src="https://mrliuqh.github.io/directionsImg/java/assignment_operation.jpg" alt=""></p>
-<h2 id="4-3-关系运算符"><a href="#4-3-关系运算符" class="headerlink" title="4.3 关系运算符"></a>4.3 关系运算符</h2><p><img src="https://mrliuqh.github.io/directionsImg/java/relational_operation.jpg" alt=""></p>
-<h2 id="4-4-位运算符"><a href="#4-4-位运算符" class="headerlink" title="4.4 位运算符"></a>4.4 位运算符</h2><p><img src="https://mrliuqh.github.io/directionsImg/java/bit_operation.png" alt=""></p>
-<h2 id="4-5-逻辑运算符"><a href="#4-5-逻辑运算符" class="headerlink" title="4.5 逻辑运算符"></a>4.5 逻辑运算符</h2><p><img src="https://mrliuqh.github.io/directionsImg/java/logic_operation.png" alt=""></p>
-<h2 id="4-6-三元运算符"><a href="#4-6-三元运算符" class="headerlink" title="4.6 三元运算符"></a>4.6 三元运算符</h2><pre><code>逻辑表达式 ？ 表达式1（为true） : 表达式2 (为false) 
-</code></pre><h2 id="4-7-运算符优先级"><a href="#4-7-运算符优先级" class="headerlink" title="4.7 运算符优先级"></a>4.7 运算符优先级</h2><p><img src="https://mrliuqh.github.io/directionsImg/java/operator_precedence.jpg" alt=""></p>
 
+// 在keySet上
+
+Iterator&lt;String&gt; iterator = map.keySet().iterator();
+while (iterator.hasNext()) {
+    String key = iterator.next();
+    System.out.println(&quot;MyClass.testMap key=&quot; + key);
+}
+
+
+//在values上
+
+Iterator&lt;Integer&gt; iterator2 = map.values().iterator();
+while (iterator2.hasNext()){
+    Integer values = iterator2.next();
+    System.out.println(&quot;MyClass.testMap values=&quot;+values);
+}
+
+</code></pre><h3 id="2-3-2-不使用泛型"><a href="#2-3-2-不使用泛型" class="headerlink" title="2.3.2 不使用泛型"></a>2.3.2 不使用泛型</h3><pre><code>Map map = new HashMap(); 
+Iterator entries = map.entrySet().iterator(); 
+while (entries.hasNext()) { 
+  Map.Entry entry = (Map.Entry) entries.next(); 
+  Integer key = (Integer)entry.getKey(); 
+  Integer value = (Integer)entry.getValue(); 
+  System.out.println(&quot;Key = &quot; + key + &quot;, Value = &quot; + value); 
+}
+
+</code></pre><h2 id="2-4-通过键找值遍历（效率低）"><a href="#2-4-通过键找值遍历（效率低）" class="headerlink" title="2.4 通过键找值遍历（效率低）"></a>2.4 通过键找值遍历（效率低）</h2><pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+for (Integer key : map.keySet()) { 
+  Integer value = map.get(key); 
+  System.out.println(&quot;Key = &quot; + key + &quot;, Value = &quot; + value);
+}
+</code></pre><h1 id="3-map接口方法使用"><a href="#3-map接口方法使用" class="headerlink" title="3.map接口方法使用"></a>3.map接口方法使用</h1><h2 id="3-1-void-clear-删除该Map对象中的所有key-value对"><a href="#3-1-void-clear-删除该Map对象中的所有key-value对" class="headerlink" title="3.1 void clear():删除该Map对象中的所有key-value对"></a>3.1 void clear():删除该Map对象中的所有key-value对</h2><p><code>clear():删除该Map对象中的所有key-value对</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;clear前:&quot; + maps); 
+maps.clear();
+System.out.println(&quot;clear后:&quot; + maps);
+
+/**
+* 输出:
+ clear前:{key1=value1, key2=value2}
+ clear后:{}
+*/
+
+</code></pre><h2 id="3-2-boolean-containsKey-Object-key"><a href="#3-2-boolean-containsKey-Object-key" class="headerlink" title="3.2 boolean containsKey(Object key)"></a>3.2 boolean containsKey(Object key)</h2><p><code>containsKey(Object key):查询Map中是否包含指定的key，如果包含则返回true</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;判断key1是否存在:&quot; + maps.containsKey(&quot;key1&quot;));
+System.out.println(&quot;判断key8是否存在:&quot; + maps.containsKey(&quot;key8&quot;));
+/**
+* 输出:
+判断key1是否存在:true
+判断key8是否存在:false
+*/
+</code></pre><h2 id="3-3-boolean-containsValue-Object-value"><a href="#3-3-boolean-containsValue-Object-value" class="headerlink" title="3.3 boolean containsValue(Object value)"></a>3.3 boolean containsValue(Object value)</h2><p><code>查询Map中是否包含一个或多个value，如果包含则返回true。</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;判断value1是否存在:&quot; + maps.containsValue(&quot;value1&quot;));
+System.out.println(&quot;判断value8是否存在:&quot; + maps.containsValue(&quot;value8&quot;));
+
+/**
+* 输出:
+判断value1是否存在:true
+判断value8是否存在:false
+*/
+</code></pre><h2 id="3-4-Set-entrySet"><a href="#3-4-Set-entrySet" class="headerlink" title="3.4 Set entrySet()"></a>3.4 Set entrySet()</h2><p><code>Set entrySet():返回Map中包含的key-value对所组成的Set集合，每个集合元素都是Map.Entry （Entry是Map的内部类）对象。</code></p>
+<pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) { 
+  System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue()); 
+}
+</code></pre><h2 id="3-5-Object-get-Object-key"><a href="#3-5-Object-get-Object-key" class="headerlink" title="3.5  Object get(Object key)"></a>3.5  Object get(Object key)</h2><p><code>返回指定key所对应的value；如果此Map中不包含该key，则返回null。</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;key1的值:&quot; + maps.get(&quot;key1&quot;));
+System.out.println(&quot;key2的值:&quot; + maps.get(&quot;key2&quot;));
+
+/**
+* 输出:
+key1的值:value1
+key2的值:value2
+*/
+</code></pre><h2 id="3-6-boolean-isEmpty"><a href="#3-6-boolean-isEmpty" class="headerlink" title="3.6 boolean isEmpty()"></a>3.6 boolean isEmpty()</h2><p><code>查询该Map是否为空（即不包含任何key-value对），如果为空则返回true。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+Map&lt;String,String&gt;  map2 = new HashMap&lt;&gt;();
+System.out.println(&quot;map1是否为空:&quot; + map1.isEmpty());
+System.out.println(&quot;map2是否为空:&quot; + map2.isEmpty());
+
+/**
+* 输出:
+map1是否为空:false
+map2是否为空:true
+*/
+
+</code></pre><h2 id="3-7-Set-keySet"><a href="#3-7-Set-keySet" class="headerlink" title="3.7 Set keySet()"></a>3.7 Set keySet()</h2><p><code>返回该Map中所有key组成的Set集合。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;keySet结果:&quot; + map1.keySet());
+
+//  输出:keySet结果:[key1, key2]
+</code></pre><h2 id="3-8-Object-put-Object-key-Object-value"><a href="#3-8-Object-put-Object-key-Object-value" class="headerlink" title="3.8 Object put(Object key, Object value):"></a>3.8 Object put(Object key, Object value):</h2><p><code>添加一个key-value对，如果当前Map中已有一个与该key相等的key-value对，则新的key-value对会覆盖原来的key-value对。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key1&quot;,&quot;value11&quot;);
+System.out.println(&quot;keySet结果:&quot; + map1.keySet());
+
+//输出:map1结果:{key1=value11, key2=value2}
+</code></pre><h2 id="3-9-void-putAll-Map-m"><a href="#3-9-void-putAll-Map-m" class="headerlink" title="3.9 void putAll(Map m)"></a>3.9 void putAll(Map m)</h2><p><code>将指定Map中的key-value对复制到本Map中。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+Map&lt;String,String&gt;  map2 = new HashMap&lt;&gt;();
+map2.put(&quot;a&quot;,&quot;php&quot;);
+map2.put(&quot;key2&quot;,&quot;java&quot;);
+map1.putAll(map2);
+System.out.println(&quot;map1结果:&quot; + map1);
+
+//输出:{key1=value1, key2=java, a=php}
+</code></pre><h2 id="3-10-Object-remove-Object-key"><a href="#3-10-Object-remove-Object-key" class="headerlink" title="3.10 Object remove(Object key)"></a>3.10 Object remove(Object key)</h2><p><code>删除指定key所对应的key-value对，返回被删除key所关联的value，如果该key不存在，则返回null。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+map1.put(&quot;key3&quot;,&quot;value3&quot;);
+map1.remove(&quot;key2&quot;);
+System.out.println(&quot;map1结果:&quot; + map1);
+
+//输出:map1结果:{key1=value1, key3=value3}
+</code></pre><h2 id="3-11-int-size"><a href="#3-11-int-size" class="headerlink" title="3.11 int size()"></a>3.11 int size()</h2><p><code>返回该Map里的key-value对的个数。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+map1.put(&quot;key3&quot;,&quot;value3&quot;);
+System.out.println(&quot;map1的key-value对的个数:&quot; + map1.size());
+
+//输出:map1的key-value对的个数:3
+</code></pre><h2 id="3-12-Collection-values"><a href="#3-12-Collection-values" class="headerlink" title="3.12 Collection values()"></a>3.12 Collection values()</h2><p><code>返回该Map里所有value组成的Collection。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+map1.put(&quot;key3&quot;,&quot;value3&quot;);
+System.out.println(&quot;map1的value集合:&quot; + map1.values());
+//输出:map1的value集合:[value1, value2, value3]
+</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -886,11 +916,11 @@ System.out.println(&quot;count=&quot;+count);
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>学Java笔记-原始数据类型及运算</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">2.2k</span></p>
+    <p><span class="copy-title">文章标题:</span>学Java笔记-map操作</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-12 17:45</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/12/java-1-数据类型及运算/" title="学Java笔记-原始数据类型及运算">https://mrliuqh.github.io/2019/10/12/java-1-数据类型及运算/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-28 11:48</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/28/java-8-map操作/" title="学Java笔记-map操作">https://mrliuqh.github.io/2019/10/28/java-8-map操作/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
