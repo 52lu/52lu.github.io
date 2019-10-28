@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>php 正则去掉字符串中非汉字字符串 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" php ">
-  <meta name="description" content="php 正则去掉字符串中非汉字字符串 | QingHui&#39;s Blog">
+  <title>java-8-map操作 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" Java ">
+  <meta name="description" content="java-8-map操作 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
@@ -635,9 +635,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-php-preg_match_all" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-java-8-map操作" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">php 正则去掉字符串中非汉字字符串</h1>
+        <h1 class="article-title">java-8-map操作</h1>
     
     <div class="article-meta">
         
@@ -652,19 +652,19 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">php</a>
+            <a href="javascript:" class="color5">Java</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-13 19:40:06">2015-03-09 10:05</time>
+        创建时间:<time class="date" title="更新时间: 2019-10-28 11:49:38">2019-10-28 11:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:42</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -694,7 +694,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-声明及初始化Map"><span class="toc-text">1.声明及初始化Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-先定义-后赋值"><span class="toc-text">1.1 先定义,后赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-双括号初始化法"><span class="toc-text">1.2 双括号初始化法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-使用初始块"><span class="toc-text">1.3 使用初始块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-遍历Map"><span class="toc-text">2.遍历Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-key-gt-value"><span class="toc-text">2.1 key=&gt;value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-遍历keys或values"><span class="toc-text">2.2 遍历keys或values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-使用Iterator遍历"><span class="toc-text">2.3 使用Iterator遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-使用泛型"><span class="toc-text">2.3.1 使用泛型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-不使用泛型"><span class="toc-text">2.3.2 不使用泛型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-通过键找值遍历（效率低）"><span class="toc-text">2.4 通过键找值遍历（效率低）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-map接口方法使用"><span class="toc-text">3.map接口方法使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-void-clear-删除该Map对象中的所有key-value对"><span class="toc-text">3.1 void clear():删除该Map对象中的所有key-value对</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-boolean-containsKey-Object-key"><span class="toc-text">3.2 boolean containsKey(Object key)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-boolean-containsValue-Object-value"><span class="toc-text">3.3 boolean containsValue(Object value)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Set-entrySet"><span class="toc-text">3.4 Set entrySet()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-Object-get-Object-key"><span class="toc-text">3.5  Object get(Object key)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-boolean-isEmpty"><span class="toc-text">3.6 boolean isEmpty()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-Set-keySet"><span class="toc-text">3.7 Set keySet()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-Object-put-Object-key-Object-value"><span class="toc-text">3.8 Object put(Object key, Object value):</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-void-putAll-Map-m"><span class="toc-text">3.9 void putAll(Map m)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-Object-remove-Object-key"><span class="toc-text">3.10 Object remove(Object key)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11-int-size"><span class="toc-text">3.11 int size()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12-Collection-values"><span class="toc-text">3.12 Collection values()</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -709,19 +709,201 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>直接上代码示例：</p>
-<pre><code class="$xslt">
-$str=&#39;2016，北京欢迎您 from around you..&#39;;
+        <h1 id="1-声明及初始化Map"><a href="#1-声明及初始化Map" class="headerlink" title="1.声明及初始化Map"></a>1.声明及初始化Map</h1><h2 id="1-1-先定义-后赋值"><a href="#1-1-先定义-后赋值" class="headerlink" title="1.1 先定义,后赋值"></a>1.1 先定义,后赋值</h2><pre><code>Map&lt;String , Object&gt; map = new HashMap&lt;String , Object&gt;();
+map.put(&quot;key1&quot;, &quot;value1&quot;);
+map.put(&quot;key2&quot;, &quot;value2&quot;);
+map.put(&quot;keyN&quot;, &quot;valueN&quot;);
+</code></pre><h2 id="1-2-双括号初始化法"><a href="#1-2-双括号初始化法" class="headerlink" title="1.2 双括号初始化法"></a>1.2 双括号初始化法</h2><pre><code>Map&lt;String , String&gt; map = new HashMap&lt;String , Object&gt;(){{
+    put("key1", "value1");
+    put("key2", "value2");
+    put("keyN", "valueN");
+}};
+</code></pre><h2 id="1-3-使用初始块"><a href="#1-3-使用初始块" class="headerlink" title="1.3 使用初始块"></a>1.3 使用初始块</h2><pre><code>public class MyMap {
+     Map&lt;String,String&gt; maps;
+    // 使用初始块定义
+    {
+        maps = new HashMap&lt;&gt;();
+        maps.put(&quot;key1&quot;,&quot;value1&quot;);
+        maps.put(&quot;key2&quot;,&quot;value2&quot;);
+        maps.put(&quot;key3&quot;,&quot;value3&quot;);
+    }
 
-preg_match_all(&#39;/[\x{4e00}-\x{9fff}]+/u&#39;, $str, $matches);
+    public void printMap(){
+        System.out.println(maps);
+        // 输出:{key1=value1, key2=value2, key3=value3}
+    }
+}
+</code></pre><h1 id="2-遍历Map"><a href="#2-遍历Map" class="headerlink" title="2.遍历Map"></a>2.遍历Map</h1><h2 id="2-1-key-gt-value"><a href="#2-1-key-gt-value" class="headerlink" title="2.1 key=&gt;value"></a>2.1 key=&gt;value</h2><pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) { 
+  System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue()); 
+}
+</code></pre><h2 id="2-2-遍历keys或values"><a href="#2-2-遍历keys或values" class="headerlink" title="2.2 遍历keys或values"></a>2.2 遍历keys或values</h2><pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+//遍历map中的键 
+for (Integer key : map.keySet()) { 
+  System.out.println(&quot;Key = &quot; + key); 
+} 
+//遍历map中的值 
+for (Integer value : map.values()) { 
+  System.out.println(&quot;Value = &quot; + value); 
+}
+</code></pre><h2 id="2-3-使用Iterator遍历"><a href="#2-3-使用Iterator遍历" class="headerlink" title="2.3 使用Iterator遍历"></a>2.3 使用Iterator遍历</h2><h3 id="2-3-1-使用泛型"><a href="#2-3-1-使用泛型" class="headerlink" title="2.3.1 使用泛型"></a>2.3.1 使用泛型</h3><pre><code>
+Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; entries = map.entrySet().iterator(); 
+while (entries.hasNext()) { 
+  Map.Entry&lt;Integer, Integer&gt; entry = entries.next(); 
+  System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue()); 
+}
 
-$str = join(&#39;&#39;, $matches[0]);
 
+// 在keySet上
+
+Iterator&lt;String&gt; iterator = map.keySet().iterator();
+while (iterator.hasNext()) {
+    String key = iterator.next();
+    System.out.println(&quot;MyClass.testMap key=&quot; + key);
+}
+
+
+//在values上
+
+Iterator&lt;Integer&gt; iterator2 = map.values().iterator();
+while (iterator2.hasNext()){
+    Integer values = iterator2.next();
+    System.out.println(&quot;MyClass.testMap values=&quot;+values);
+}
+
+</code></pre><h3 id="2-3-2-不使用泛型"><a href="#2-3-2-不使用泛型" class="headerlink" title="2.3.2 不使用泛型"></a>2.3.2 不使用泛型</h3><pre><code>Map map = new HashMap(); 
+Iterator entries = map.entrySet().iterator(); 
+while (entries.hasNext()) { 
+  Map.Entry entry = (Map.Entry) entries.next(); 
+  Integer key = (Integer)entry.getKey(); 
+  Integer value = (Integer)entry.getValue(); 
+  System.out.println(&quot;Key = &quot; + key + &quot;, Value = &quot; + value); 
+}
+
+</code></pre><h2 id="2-4-通过键找值遍历（效率低）"><a href="#2-4-通过键找值遍历（效率低）" class="headerlink" title="2.4 通过键找值遍历（效率低）"></a>2.4 通过键找值遍历（效率低）</h2><pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+for (Integer key : map.keySet()) { 
+  Integer value = map.get(key); 
+  System.out.println(&quot;Key = &quot; + key + &quot;, Value = &quot; + value);
+}
+</code></pre><h1 id="3-map接口方法使用"><a href="#3-map接口方法使用" class="headerlink" title="3.map接口方法使用"></a>3.map接口方法使用</h1><h2 id="3-1-void-clear-删除该Map对象中的所有key-value对"><a href="#3-1-void-clear-删除该Map对象中的所有key-value对" class="headerlink" title="3.1 void clear():删除该Map对象中的所有key-value对"></a>3.1 void clear():删除该Map对象中的所有key-value对</h2><p><code>clear():删除该Map对象中的所有key-value对</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;clear前:&quot; + maps); 
+maps.clear();
+System.out.println(&quot;clear后:&quot; + maps);
+
+/**
+* 输出:
+ clear前:{key1=value1, key2=value2}
+ clear后:{}
+*/
+
+</code></pre><h2 id="3-2-boolean-containsKey-Object-key"><a href="#3-2-boolean-containsKey-Object-key" class="headerlink" title="3.2 boolean containsKey(Object key)"></a>3.2 boolean containsKey(Object key)</h2><p><code>containsKey(Object key):查询Map中是否包含指定的key，如果包含则返回true</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;判断key1是否存在:&quot; + maps.containsKey(&quot;key1&quot;));
+System.out.println(&quot;判断key8是否存在:&quot; + maps.containsKey(&quot;key8&quot;));
+/**
+* 输出:
+判断key1是否存在:true
+判断key8是否存在:false
+*/
+</code></pre><h2 id="3-3-boolean-containsValue-Object-value"><a href="#3-3-boolean-containsValue-Object-value" class="headerlink" title="3.3 boolean containsValue(Object value)"></a>3.3 boolean containsValue(Object value)</h2><p><code>查询Map中是否包含一个或多个value，如果包含则返回true。</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;判断value1是否存在:&quot; + maps.containsValue(&quot;value1&quot;));
+System.out.println(&quot;判断value8是否存在:&quot; + maps.containsValue(&quot;value8&quot;));
+
+/**
+* 输出:
+判断value1是否存在:true
+判断value8是否存在:false
+*/
+</code></pre><h2 id="3-4-Set-entrySet"><a href="#3-4-Set-entrySet" class="headerlink" title="3.4 Set entrySet()"></a>3.4 Set entrySet()</h2><p><code>Set entrySet():返回Map中包含的key-value对所组成的Set集合，每个集合元素都是Map.Entry （Entry是Map的内部类）对象。</code></p>
+<pre><code>Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;(); 
+for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) { 
+  System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue()); 
+}
+</code></pre><h2 id="3-5-Object-get-Object-key"><a href="#3-5-Object-get-Object-key" class="headerlink" title="3.5  Object get(Object key)"></a>3.5  Object get(Object key)</h2><p><code>返回指定key所对应的value；如果此Map中不包含该key，则返回null。</code></p>
+<pre><code>Map&lt;String,String&gt;  maps = new HashMap&lt;&gt;();
+maps.put(&quot;key1&quot;,&quot;value1&quot;);
+maps.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;key1的值:&quot; + maps.get(&quot;key1&quot;));
+System.out.println(&quot;key2的值:&quot; + maps.get(&quot;key2&quot;));
+
+/**
+* 输出:
+key1的值:value1
+key2的值:value2
+*/
+</code></pre><h2 id="3-6-boolean-isEmpty"><a href="#3-6-boolean-isEmpty" class="headerlink" title="3.6 boolean isEmpty()"></a>3.6 boolean isEmpty()</h2><p><code>查询该Map是否为空（即不包含任何key-value对），如果为空则返回true。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+Map&lt;String,String&gt;  map2 = new HashMap&lt;&gt;();
+System.out.println(&quot;map1是否为空:&quot; + map1.isEmpty());
+System.out.println(&quot;map2是否为空:&quot; + map2.isEmpty());
+
+/**
+* 输出:
+map1是否为空:false
+map2是否为空:true
+*/
+
+</code></pre><h2 id="3-7-Set-keySet"><a href="#3-7-Set-keySet" class="headerlink" title="3.7 Set keySet()"></a>3.7 Set keySet()</h2><p><code>返回该Map中所有key组成的Set集合。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+System.out.println(&quot;keySet结果:&quot; + map1.keySet());
+
+//  输出:keySet结果:[key1, key2]
+</code></pre><h2 id="3-8-Object-put-Object-key-Object-value"><a href="#3-8-Object-put-Object-key-Object-value" class="headerlink" title="3.8 Object put(Object key, Object value):"></a>3.8 Object put(Object key, Object value):</h2><p><code>添加一个key-value对，如果当前Map中已有一个与该key相等的key-value对，则新的key-value对会覆盖原来的key-value对。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key1&quot;,&quot;value11&quot;);
+System.out.println(&quot;keySet结果:&quot; + map1.keySet());
+
+//输出:map1结果:{key1=value11, key2=value2}
+</code></pre><h2 id="3-9-void-putAll-Map-m"><a href="#3-9-void-putAll-Map-m" class="headerlink" title="3.9 void putAll(Map m)"></a>3.9 void putAll(Map m)</h2><p><code>将指定Map中的key-value对复制到本Map中。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+Map&lt;String,String&gt;  map2 = new HashMap&lt;&gt;();
+map2.put(&quot;a&quot;,&quot;php&quot;);
+map2.put(&quot;key2&quot;,&quot;java&quot;);
+map1.putAll(map2);
+System.out.println(&quot;map1结果:&quot; + map1);
+
+//输出:{key1=value1, key2=java, a=php}
+</code></pre><h2 id="3-10-Object-remove-Object-key"><a href="#3-10-Object-remove-Object-key" class="headerlink" title="3.10 Object remove(Object key)"></a>3.10 Object remove(Object key)</h2><p><code>删除指定key所对应的key-value对，返回被删除key所关联的value，如果该key不存在，则返回null。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+map1.put(&quot;key3&quot;,&quot;value3&quot;);
+map1.remove(&quot;key2&quot;);
+System.out.println(&quot;map1结果:&quot; + map1);
+
+//输出:map1结果:{key1=value1, key3=value3}
+</code></pre><h2 id="3-11-int-size"><a href="#3-11-int-size" class="headerlink" title="3.11 int size()"></a>3.11 int size()</h2><p><code>返回该Map里的key-value对的个数。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+map1.put(&quot;key3&quot;,&quot;value3&quot;);
+System.out.println(&quot;map1的key-value对的个数:&quot; + map1.size());
+
+//输出:map1的key-value对的个数:3
+</code></pre><h2 id="3-12-Collection-values"><a href="#3-12-Collection-values" class="headerlink" title="3.12 Collection values()"></a>3.12 Collection values()</h2><p><code>返回该Map里所有value组成的Collection。</code></p>
+<pre><code>Map&lt;String,String&gt;  map1 = new HashMap&lt;&gt;();
+map1.put(&quot;key1&quot;,&quot;value1&quot;);
+map1.put(&quot;key2&quot;,&quot;value2&quot;);
+map1.put(&quot;key3&quot;,&quot;value3&quot;);
+System.out.println(&quot;map1的value集合:&quot; + map1.values());
+//输出:map1的value集合:[value1, value2, value3]
 </code></pre>
-<p>输出</p>
-<pre><code class="$xslt">北京欢迎您
-</code></pre>
-
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -734,11 +916,11 @@ $str = join(&#39;&#39;, $matches[0]);
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>php 正则去掉字符串中非汉字字符串</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">42</span></p>
+    <p><span class="copy-title">文章标题:</span>java-8-map操作</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2015-03-09 10:05</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2015/03/09/php-preg_match_all/" title="php 正则去掉字符串中非汉字字符串">https://mrliuqh.github.io/2015/03/09/php-preg_match_all/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-28 11:48</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/28/java-8-map操作/" title="java-8-map操作">https://mrliuqh.github.io/2019/10/28/java-8-map操作/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
