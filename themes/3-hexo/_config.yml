@@ -196,18 +196,18 @@ mathjax:
 # 友情链接
 friends:
 #  叶落阁: http://yelog.org/
-  风雪之隅: http://www.laruence.com
-  阮一峰: http://www.ruanyifeng.com/blog/algorithm
-  优知学院: https://youzhixueyuan.com/history-articles.html
-  LearnKu: https://learnku.com
   IBM: https://www.ibm.com/developerworks/cn/topics
-  藏书者: http://blog.sina.com.cn/s/articlelist_3283485963_0_1.html
+  优知学院: https://youzhixueyuan.com/history-articles.html
   阿里云开发者社区: https://developer.aliyun.com
+  Segmentfault: https://segmentfault.com
+  LearnKu: https://learnku.com
+  藏书者: http://blog.sina.com.cn/s/articlelist_3283485963_0_1.html
   深度开源: https://www.open-open.com
   CTOLib码库: https://www.ctolib.com
-  Segmentfault: https://segmentfault.com
   LeetCode: https://leetcode-cn.com
   码农之家: http://www.xz577.com/
+  风雪之隅: http://www.laruence.com
+  阮一峰: http://www.ruanyifeng.com/blog/algorithm
 
 ##########评论设置#############
 comment:
