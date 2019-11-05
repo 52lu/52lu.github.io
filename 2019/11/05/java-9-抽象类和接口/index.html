@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>双向链表、循环链 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" 数据结构 ">
-  <meta name="description" content="双向链表、循环链 | QingHui&#39;s Blog">
+  <title>学Java笔记-抽象类和接口 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content=" Java ">
+  <meta name="description" content="学Java笔记-抽象类和接口 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -642,9 +642,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Lisked-List-two" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-java-9-抽象类和接口" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">双向链表、循环链</h1>
+        <h1 class="article-title">学Java笔记-抽象类和接口</h1>
     
     <div class="article-meta">
         
@@ -652,26 +652,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据结构">数据结构</a>
+                <a href="javascript:" data-rel="后端">后端</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">数据结构</a>
+            <a href="javascript:" class="color5">Java</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-21 15:03:12">2019-03-27 17:34</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-05 19:12:25">2019-11-05 19:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.4k</span>
+        <span>字数:2.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -701,7 +701,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是双向链表"><span class="toc-text">1. 什么是双向链表?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-什么是循环链表"><span class="toc-text">2. 什么是循环链表?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-单向链表与双向链表优缺点"><span class="toc-text">3. 单向链表与双向链表优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-单向链表"><span class="toc-text">3.1 单向链表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-双向链表"><span class="toc-text">3.2 双向链表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-代码（PHP）实现双向链表"><span class="toc-text">4. 代码（PHP）实现双向链表</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-抽象类"><span class="toc-text">1.抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-抽象类概念"><span class="toc-text">1.1 抽象类概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-抽象类定义规则"><span class="toc-text">1.1.1 抽象类定义规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-抽象类声明"><span class="toc-text">1.2 抽象类声明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-抽象类的使用原则"><span class="toc-text">1.2.1 抽象类的使用原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-抽象类特征"><span class="toc-text">1.3 抽象类特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-抽象类中可以有构造方法"><span class="toc-text">1.3.1 抽象类中可以有构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-抽象类不能够使用final定义。"><span class="toc-text">1.3.2 抽象类不能够使用final定义。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-在外部抽象类上无法使用static声明"><span class="toc-text">1.3.3 在外部抽象类上无法使用static声明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-接口"><span class="toc-text">2. 接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-接口的基本概念"><span class="toc-text">2.1 接口的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-接口定义"><span class="toc-text">2.2 接口定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-接口使用原则"><span class="toc-text">2.3 接口使用原则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-抽象类和接口的区别"><span class="toc-text">3.抽象类和接口的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-共同点"><span class="toc-text">3.1 共同点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-不同点"><span class="toc-text">3.2 不同点</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -716,326 +716,207 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-什么是双向链表"><a href="#1-什么是双向链表" class="headerlink" title="1. 什么是双向链表?"></a>1. 什么是双向链表?</h3><blockquote>
-<p>双向链表(双链表)又叫双面链表,双向链表中不仅有指向后一个节点的指针，还有指向前一个节点的指针。这样可以从任何一个节点访问前一个节点，当然也可以访问后一个节点，以至整个链表。一般是在需要大批量的另外储存数据在链表中的位置的时候用。双向链表也可以配合下面的其他链表的扩展使用。</p>
-</blockquote>
-<p><code>由于另外储存了指向链表内容的指针，并且可能会修改相邻的节点，有的时候第一个节点可能会被删除或者在之前添加一个新的节点。这时候就要修改指向首个节点的指针。有一种方便的可以消除这种特殊情况的方法是在最后一个节点之后、第一个节点之前储存一个永远不会被删除或者移动的虚拟节点，形成一个下面说的循环链表。这个虚拟节点之后的节点就是真正的第一个节点。这种情况通常可以用这个虚拟节点直接表示这个链表，对于把链表单独的存在数组里的情况，也可以直接用这个数组表示链表并用第0个或者第-1个（如果编译器支持）节点固定的表示这个虚拟节点。</code></p>
-<p><img src="https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list_two.png" alt="双向链表图"></p>
-<a id="more"></a>
-<h3 id="2-什么是循环链表"><a href="#2-什么是循环链表" class="headerlink" title="2. 什么是循环链表?"></a>2. 什么是循环链表?</h3><blockquote>
-<p>循环链表指的是首节点和末节点被连接在一起的链表，这种方式在单向和双向链表中皆可实现。循环链表的无边界使得在这样的链表上设计算法会比普通链表更加容易。对于新加入的节点应该是在第一个节点之前还是最后一个节点之后可以根据实际要求灵活处理。<br><img src="https://mrliuqh.github.io/directionsImg/dataStructure/cycle_list.png" alt="循环链表图"></p>
-</blockquote>
-<h3 id="3-单向链表与双向链表优缺点"><a href="#3-单向链表与双向链表优缺点" class="headerlink" title="3. 单向链表与双向链表优缺点"></a>3. 单向链表与双向链表优缺点</h3><h4 id="3-1-单向链表"><a href="#3-1-单向链表" class="headerlink" title="3.1 单向链表"></a>3.1 单向链表</h4><p><strong>优点：</strong></p>
-<ul>
-<li>单向链表增加删除节点简单。遍历时候不会死循环。（双向也不会死循环，循环链表忘了进行控制的话很容易进入死循环）</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>只能从头到尾遍历。只能找到后继，无法找到前驱，也就是只能前进。</li>
-</ul>
-<h4 id="3-2-双向链表"><a href="#3-2-双向链表" class="headerlink" title="3.2 双向链表"></a>3.2 双向链表</h4><p><strong>优点：</strong></p>
-<ul>
-<li>可以找到前驱和后继，可进可退。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>增加删除节点复杂（其实就复杂一点点）</li>
-</ul>
-<h3 id="4-代码（PHP）实现双向链表"><a href="#4-代码（PHP）实现双向链表" class="headerlink" title="4. 代码（PHP）实现双向链表"></a>4. 代码（PHP）实现双向链表</h3><pre><code class="php">&lt;?php
-/**
- * Class Node
+        <p>[toc]</p>
+<h1 id="1-抽象类"><a href="#1-抽象类" class="headerlink" title="1.抽象类"></a>1.抽象类</h1><h2 id="1-1-抽象类概念"><a href="#1-1-抽象类概念" class="headerlink" title="1.1 抽象类概念"></a>1.1 抽象类概念</h2><p>抽象方法是只声明而未实现的方法，所有的抽象方法必须使用abstract关键字声明，包含抽象方法的类也必须使用abstract class声明。</p>
+<h3 id="1-1-1-抽象类定义规则"><a href="#1-1-1-抽象类定义规则" class="headerlink" title="1.1.1 抽象类定义规则"></a>1.1.1 抽象类定义规则</h3><ol>
+<li>抽象类和抽象方法都必须用abstract关键字来修饰；</li>
+<li>抽象类不能直接实例化，即不能使用new关键字去产生对象；</li>
+<li>抽象类定义时抽象方法只需声明，而不需实现；</li>
+<li>含有抽象方法的类必须被声明为抽象类，<font color="red">抽象类的子类必须覆写所有的抽象方法后才能被实例化，否则这个子类还是个抽象类。</font></li>
+</ol>
+<h2 id="1-2-抽象类声明"><a href="#1-2-抽象类声明" class="headerlink" title="1.2 抽象类声明"></a>1.2 抽象类声明</h2><pre><code>访问权限  abstract class 类名 {
+    // 声明成员变量
+    访问权限 变量类型 成员变量名;
+    // 声明一般方法
+    访问权限 返回类型 方法名(){
+        // ...
+    }
+    // 声明抽象方法
+    abstract 返回类型 方法名();
+}
+</code></pre><p><strong>实例</strong></p>
+<pre><code>/**
+ * description:
+ *
+ * @author : Mr.Liuqh
+ * @since : 2019-10-31 18:51
  */
-class Node
+public abstract class People {
+    // 声明成员变量
+    private String name;
+
+    // 声明一般方法
+    public String getName(){
+        return this.name;
+    }
+
+    // 声明抽象方法
+    abstract String like();
+}
+</code></pre><font color="green">由上可知:抽象类的定义就是比普通类多了一些抽象方法的定义而已。虽然定义了抽象类，但是抽象类却不能直接使用。</font>
+
+<blockquote>
+<font color="red"> People girl = new People(); // 这种调用会报错,People 是抽象的，无法实例化</font>
+</blockquote>
+<h3 id="1-2-1-抽象类的使用原则"><a href="#1-2-1-抽象类的使用原则" class="headerlink" title="1.2.1 抽象类的使用原则"></a>1.2.1 抽象类的使用原则</h3><p>如果说一个类的对象可以被实例化，那么就表示这个对象可以调用类中的属性或者是方法，但是抽象类中存在抽象方法，而抽象方法没有方法体，没有方法体的方法无法使用。</p>
+<p>对于抽象类的使用原则如下:</p>
+<ul>
+<li>抽象类必须有子类，子类使用extends继承抽象类，一个子类只能够继承一个抽象类；</li>
+<li>子类（如果不是抽象类）则必须覆写抽象类之中的全部抽象方法；</li>
+<li>若想实例化抽象类的对象，则可以使用子类进行对象的向上转型来完成。</li>
+</ul>
+<h2 id="1-3-抽象类特征"><a href="#1-3-抽象类特征" class="headerlink" title="1.3 抽象类特征"></a>1.3 抽象类特征</h2><h3 id="1-3-1-抽象类中可以有构造方法"><a href="#1-3-1-抽象类中可以有构造方法" class="headerlink" title="1.3.1 抽象类中可以有构造方法"></a>1.3.1 抽象类中可以有构造方法</h3><p>与一般类相同，在抽象类中也可以拥有构造方法，<font color="red">但是这些构造方法必须在子类中被调用，并且子类实例化对象的时候依然满足类继承的关系，</font>先默认调用父类的构造方法，而后再调用子类的构造方法，毕竟抽象类之中还是存在属性的，只不过这个抽象方法无法直接被外部实例化对象的时候所使用。</p>
+<p><strong>代码示例:</strong></p>
+<pre><code>//定义一抽象类Person
+abstract class Person
 {
-    /**
-     *
-     * @var
-     */
-    private $Data;//数据集
-    /**
-     *
-     * @var
-     */
-    private $Prev;//上一个节点
-    /**
-     *
-     * @var
-     */
-    private $Next;//下一个节点
-
-    /**
-     * Node constructor.
-     * @param $next
-     * @param $data
-     * @param $prev
-     */
-    public function __construct($data, $next,$prev)
+    String name;
+    int age;
+    String occupation;
+    public Person(String name,int age,String occupation) //定义构造函数
     {
-        $this-&gt;setData($data);
-        $this-&gt;setNext($next);
-        $this-&gt;setPrev($prev);
+        this.name=name;
+        this.age=age;
+        this.occupation=occupation;
     }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param $data
-     */
-    public function setData($data)
-    {
-        $this-&gt;Data = $data;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getData()
-    {
-        return $this-&gt;Data;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param $next
-     */
-    public function setNext($next)
-    {
-        $this-&gt;Next = $next;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getNext()
-    {
-        return $this-&gt;Next;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param $prev
-     */
-    public function setPrev($prev)
-    {
-        $this-&gt;Prev = $prev;
-    }
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getPrev()
-    {
-        return $this-&gt;Prev;
-    }
-
+    public abstract String talk();
+    //声明一个抽象方法
 }
 
-/**
- * Class LinkList
- */
-class LinkList
+//声明抽象类的子类
+class Student extends Person    
 {
-    /**
-     *
-     * @var
-     */
-    private $header;
-
-    /**
-     *
-     * @var
-     */
-    private $len;//链表长度
-
-
-    /**
-     * LinkList constructor.
-     */
-    public function __construct()
-    {
-        //初始化根节点
-        $this-&gt;setHeader(new Node(null, null,null));
-        $this-&gt;len = 0;
+    public Student(String name,int age,String occupation){
+        //在这里必须明确调用抽象类中的构造方法
+        super(name,age,occupation);
     }
 
-
-    /**
-     *  Functional description :
-     *  Programmer : Mr.Liu
-     * @param Node $node
-     */
-    public function setHeader(Node $node)
-    {
-        $this-&gt;header = $node;
+    //覆写talk()方法
+    public String talk() {
+        return &quot;学生——&gt;姓名：&quot;+this.name+&quot;，年龄：&quot;+this.age+&quot;，职业：&quot;+this.occupation+&quot;！&quot;;
     }
+}
 
-    /**
-     *  Functional description : 获取头部节点
-     *  Programmer : Mr.Liu
-     * @return Node
-     */
-    public function getHeader()
-    : Node
-    {
-        return $this-&gt;header;
+// 测试
+class AbstractConstructor
+{
+    public static void main(String[] args){
+        //创建对象s
+        Student s=new Student(&quot;张三&quot;,18,&quot;学生&quot;);
+
+        //调用被覆写过的方法
+        System.out.println(s.talk()); // 输出:学生——&gt;姓名：张三，年龄：18，职业：学生！ 
+
     }
+}
+</code></pre><blockquote>
+<p>从程序中可以看到，抽象类也可以像普通类一样，有构造方法、一般方法和属性，更重要的是还可以有一些抽象方法，需要子类去实现，而且在抽象类中声明构造方法后，在子类中必须明确调用。</p>
+</blockquote>
+<h3 id="1-3-2-抽象类不能够使用final定义。"><a href="#1-3-2-抽象类不能够使用final定义。" class="headerlink" title="1.3.2 抽象类不能够使用final定义。"></a>1.3.2 抽象类不能够使用final定义。</h3><p>使用final定义的类不能有子类，而抽象类使用的时候必须有子类，这是一个矛盾的问题，所以抽象类上不能出现final定义。</p>
+<h3 id="1-3-3-在外部抽象类上无法使用static声明"><a href="#1-3-3-在外部抽象类上无法使用static声明" class="headerlink" title="1.3.3 在外部抽象类上无法使用static声明"></a>1.3.3 在外部抽象类上无法使用static声明</h3><p>在外部抽象类上无法使用static声明，但是内部抽象类却可以使用static定义，使用static定义的内部抽象类就表示一个外部类。</p>
+<p><strong>代码</strong></p>
+<pre><code class="java">abstract class Book{
+    //抽象方法
+    public abstract void print();
+    //静态内部抽象类
+    static abstract class CD{
+      //抽象方法
+      public abstract void get();         
 
-
-    /**
-     *  Functional description : 获取链表长度
-     *  Programmer : Mr.Liu
-     * @return mixed
-     */
-    public function getLen()
-    : int
-    {
-        return $this-&gt;len;
     }
-
-
-    /**
-     *  Functional description : 末尾追加
-     *  Programmer : Mr.Liu
-     * @param $data
-     */
-    public function append($data)
-    {
-        $node = $this-&gt;getHeader();
-        //查找没有子节点的节点
-        while ($node-&gt;getNext() != null) {
-            $node = $node-&gt;getNext();
-        }
-        //找到后设置其下级节点
-        $node-&gt;setNext(new Node($data, null,$node));
-        //链表长度递增
-        $this-&gt;len++;
+}
+//继承抽象类
+class JavaCD extends Book.CD {
+    public void get(){
+        System.out.println(&quot;java学习&quot;);
     }
+}
 
-
-    /**
-     *  Functional description : 头部添加
-     *  Programmer : Mr.Liu
-     * @param $data
-     */
-    public function addFirst($data){
-        $rootNode = $this-&gt;getHeader();
-        //查找没有子节点的节点(根节点)
-        while ($rootNode-&gt;getPrev() != null) {
-            $rootNode = $rootNode-&gt;getPrev();
-        }
-        //Root-A-B-C Root-D-A-B-C
-        $oldFirst = $rootNode-&gt;getNext();
-        $newFirst = new Node($data,$oldFirst,$rootNode);
-        $oldFirst-&gt;setPrev($newFirst);
-        $rootNode-&gt;setNext($newFirst);
-        $this-&gt;len++;
+public class StaticInnerAbstractClass{
+    public static void main(String[]  args){
+        //实例化对象
+        Book.CD cd=new JavaCD();
+        cd.get(); // 输出:java学习
     }
-
-    /**
-     *  Functional description : 根据指定位置添加
-     *  Programmer : Mr.Liu
-     * @param int $index
-     * @param $data
-     */
-    public function insertByIndex(int $index,$data){
-        $key = 1;
-        //尾部添加
-        if ($this-&gt;getLen() &lt; $index){
-            $this-&gt;append($data);
-            return;
-        }
-        //头部添加
-        if ($index == 1){
-            $this-&gt;addFirst($data);
-            return;
-        }
-
-        $node = $this-&gt;getHeader();
-        while ($key &lt; $index){
-            $node = $node-&gt;getNext();
-            $key++;
-        }
-        //中间添加 如：添加D到A和B之间 A-B-C  ---&gt; A-D-B-C
-        $node-&gt;setNext(new Node($data,$node-&gt;getNext(),$node));
-        $this-&gt;len++;
-    }
-
-
-    /**
-     *  Functional description : 删除第一个节点
-     *  Programmer : Mr.Liu
-     */
-    public function delFirst(){
-        $rootNode = $this-&gt;getHeader();
-        while ($rootNode-&gt;getPrev() !=null){
-            $rootNode = $rootNode-&gt;getPrev();
-        }
-        //删除：ROOT-A-B-C  --&gt;  ROOT-B-C
-        $firstNode = $rootNode-&gt;getNext();
-        $secondNode = $firstNode-&gt;getNext();
-        $rootNode-&gt;setNext($secondNode);
-        $secondNode-&gt;setPrev($rootNode);
-        $this-&gt;len--;
-    }
-
-    /**
-     *  Functional description : 删除最后一个节点
-     *  Programmer : Mr.Liu
-     */
-    public function delLast(){
-        $node = $this-&gt;getHeader();
-        while ($node-&gt;getNext() !=null){
-            $node = $node-&gt;getNext();
-        }
-        //删除：ROOT-A-B-C  --&gt;  ROOT-A-B
-        $newLastNode = $node-&gt;getPrev();
-        $newLastNode-&gt;setNext(null);
-        $this-&gt;len--;
-    }
-
-
-    /**
-     *  Functional description : 反转双向链表
-     *  Programmer : Mr.Liu
-     * @return void
-     */
-    public function reverse(){
-        if ($this-&gt;getHeader() != null){
-            return ;
-        }
-
-        //除去根节点后的节点
-        $currentNode = $this-&gt;getHeader()-&gt;getNext();
-        //后一个节点
-        $next=null;
-        $prev=null;//根节点,当前为null
-        //rootNode-&gt;0-&gt;1-&gt;2-&gt;3 --&gt;  3-&gt;2-&gt;1-&gt;0
-        //查找最后一个
-        while ($currentNode != null){
-            //用一个变量暂时存储后一节点，因为一旦前面反转，就断链了
-            $next = $currentNode-&gt;getNext();
-            //将前一节点作为当前节点的后一节点，是为反转
-            $currentNode-&gt;setNext($prev);
-            $currentNode-&gt;setPrev($next);
-
-            #指针后移
-            $prev = $currentNode;
-            $currentNode = $next;
-
-        }
-        return $prev;
-    }
-
 }
 </code></pre>
+<h1 id="2-接口"><a href="#2-接口" class="headerlink" title="2. 接口"></a>2. 接口</h1><p>接口（interface）是Java所提供的另一种重要技术，是一种特殊的类，它的结构和抽象类非常相似，也具有数据成员与抽象方法，但它与抽象类又有不同，并且Java 8中又添加了新特性。</p>
+<h2 id="2-1-接口的基本概念"><a href="#2-1-接口的基本概念" class="headerlink" title="2.1 接口的基本概念"></a>2.1 接口的基本概念</h2><ul>
+<li>接口里的数据成员必须初始化，且数据成员均为常量，常见的是全局变量。</li>
+<li>接口里的方法为abstract，接口不能像抽象类一样定义一般的方法，需定义“抽象方法”。</li>
+</ul>
+<blockquote>
+<font color="orange">Java8中为避免在接口中添加新方法后要修改所有实现类，允许定义默认方法，即default方法，也可以称为Defender方法，或者虚拟扩展方法（Virtual extension methods)。<br>Default方法是指，在接口内部包含了一些默认的方法实现（也就是接口中可以包含方法体，这打破了Java之前版本对接口的语法限制），从而使得接口在进行扩展的时候，不会破坏与接口相关的实现类代码。</font>
+</blockquote>
+<h2 id="2-2-接口定义"><a href="#2-2-接口定义" class="headerlink" title="2.2 接口定义"></a>2.2 接口定义</h2><p>声明格式:</p>
+<pre><code>public interface 接口名称 {
+    //数据成员必须赋初值
+    final 数据类型 成员名称=常量；
+    //抽象方法，注意没有定义方法主体
+    abstract 返回数据类型 方法名称（参数…）；
+
+    //默认方法，包含方法体
+    default 返回值的数据类型方法名称（参数…）{
+        // 方法体...
+    }
+}
+</code></pre><p><strong>示例:</strong></p>
+<ul>
+<li><p>无默认方法的接口</p>
+<pre><code class="java">interface MyInterface{
+  // 数据成员必须赋初值
+  static final String NAME=&quot;Mr.Liu&quot; 
+  // 抽象方法
+  abstract String getName();
+}
+</code></pre>
+</li>
+<li><p>有默认方法的接口</p>
+<pre><code class="java">public interface MyInterface{
+  // 数据成员必须赋初值
+  static final String NAME=&quot;Mr.Liu&quot; 
+  // 抽象方法
+  abstract String getName();
+  // 默认方法
+  default  String say(){
+      System.out.println(&quot;Hello!&quot;)
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="2-3-接口使用原则"><a href="#2-3-接口使用原则" class="headerlink" title="2.3 接口使用原则"></a>2.3 接口使用原则</h2><ul>
+<li>接口必须有子类，子类依靠implements关键字可以同时实现多个接口；</li>
+<li><p>接口的子类（如果不是抽象类）则必须覆写接口之中的全部抽象方法；</p>
+</li>
+<li><p>接口可以利用对象多态性，利用子类实现对象的实例化。</p>
+</li>
+<li>接口与一般类一样，本身也具有数据成员与方法，但数据成员一定要赋初值，且此值不能再更改</li>
+<li><p>接口中除default方法外必须都是抽象方法，所以接口定义格式中，抽象方法声明的关键字abstract是可以省略的。</p>
+</li>
+<li><p>一个类实现多个接口时，若接口有默认方法，不能出现同名的默认方法</p>
+</li>
+<li>接口可以继承多个接口</li>
+</ul>
+<h1 id="3-抽象类和接口的区别"><a href="#3-抽象类和接口的区别" class="headerlink" title="3.抽象类和接口的区别"></a>3.抽象类和接口的区别</h1><p><img src="https://mrliuqh.github.io/directionsImg/java/abstractInterface.jpeg" alt=""><br><!--![](https://mrliuqh.github.io/directionsImg/java/hascode-rule.jpg)--></p>
+<h2 id="3-1-共同点"><a href="#3-1-共同点" class="headerlink" title="3.1 共同点"></a>3.1 共同点</h2><ul>
+<li><p>都是抽象类型</p>
+</li>
+<li><p>都可以有实现方法（以前接口不行）</p>
+</li>
+<li>都可以不需要实现类或者继承者去实现所有方法。（以前不行，现在接口中默认方法不需要实现者实现）</li>
+</ul>
+<h2 id="3-2-不同点"><a href="#3-2-不同点" class="headerlink" title="3.2 不同点"></a>3.2 不同点</h2><ul>
+<li>抽象类不可以多重继承，接口可以（无论是多重类型继承还是多重行为继承）</li>
+<li><p>抽象类和接口所反映出的设计理念不同。其实抽象类表示的是”is-a”关系，接口表示的是”like-a”关系</p>
+</li>
+<li><p>接口中定义的变量默认是public static final 型，且必须给其初值，所以实现类中不能重新定义，也不能改变其值；抽象类中的变量默认是 friendly 型，其值可以在子类中重新定义，也可以重新赋值</p>
+<blockquote>
+<p>如果一个类、类属变量及方法不以这三种修饰符来修饰，它就是friendly类型的，那么包内的任何类都可以访问它，而包外的任何类都不能访问它(包括包外继承了此类的子类)</p>
+</blockquote>
+</li>
+</ul>
+<p>总体来说，抽象类和接口在很大程度上都是可以互相替换使用的，但就是由于抽象类本身具备单继承局限，所以当抽象类和接口全部都可以使用的时候优先考虑接口，因为接口没有单继承局限，并且在Java8中接口可以设定默认方法，在一定程度上避免代码重复，利于后期的维护。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -1049,11 +930,11 @@ class LinkList
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>双向链表、循环链</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.4k</span></p>
+    <p><span class="copy-title">文章标题:</span>学Java笔记-抽象类和接口</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.2k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-03-27 17:34</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/03/27/Lisked-List-two/" title="双向链表、循环链">https://mrliuqh.github.io/2019/03/27/Lisked-List-two/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-05 19:11</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/05/java-9-抽象类和接口/" title="学Java笔记-抽象类和接口">https://mrliuqh.github.io/2019/11/05/java-9-抽象类和接口/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
