@@ -1,5 +1,5 @@
 ---
-title: nginx限流并发(防止CC、DDos攻击)
+title: nginx限流(防恶意请求)
 date: 2019-11-07 13:31:15
 tags:
 - 安全
