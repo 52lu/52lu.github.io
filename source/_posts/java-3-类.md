@@ -6,7 +6,9 @@ tags:
 categories:
  - 后端
 ---
-# 1.类
+
+
+# 1. 类
 **类的定义**
 ```
 [修饰符] class 类名 {
@@ -201,6 +203,193 @@ public 类名称(方法参数列表){
         this.name = name;
         System.out.println("有参构造器....");
     }
+```
+
+# 2. Object类
+Object类是Java一个比较特殊的类，Java中所有的类从根本上都继承自Object类。Object是Java中唯一没有父类的类。
+> 如果一个类没有使用extends关键字明确标识继承另外一个类，那么这个类就默认继承Object类
+
+## Object类中常用的方法
+![](https://mrliuqh.github.io/directionsImg/java/object-fun1.jpg)
+![](https://mrliuqh.github.io/directionsImg/java/object-fun2.jpg)
+
+# 3. 内部类
+所谓的内部类就是指在一个类的内部又定义了其他类的情况。如果在类Outer的内部再定义一个类Inner，此时类Inner就称为内部类，而类Outer则称为外部类。内部类可声明为public或private。当内部类声明为public或private时，对其访问的限制与成员变量和成员方法完全相同。
+
+
+## 3.1 定义
+``` java
+权限标示符 class 外部类名称{
+    ...
+    
+    权限标示符 class 内部类名称 {
+        ...
+    }
+}
+```
+
+**示例:**
+```
+// 外部类
+public class Outer{
+    // 外部类属性
+	int score=95;
+	
+	// 外部类方法，调用内部类方法
+	void inst(){
+		Inner in=new Inner();
+		in.display();
+	}
+	// 内部类
+	public class Inner{
+		//在内部类中声明name属性
+		String name="张三";
+		// 内部类方法
+		void display(){
+			//内部类访问外部类中的属性
+			System.out.println("成绩:score="+score);
+		}
+	}
+}
+
+// 测试使用
+public class ObjectInnerDemo{
+	public static void main(String[]args){
+		Outer outer=new Outer();
+		outer.inst(); //输出:成绩:score=95
+	}
+}
+```
+
+## 3.2 内部类主要作用
+- 内部类提供了更好的封装，可以把内部类隐藏在外部类之内，不允许同一个包中的其他类访问该类。
+
+- 内部类成员可以直接访问外部类的私有数据，因为内部类被当成其外部类成员，同一个类的成员之间可以相互访问。<font color=red>但外部类不能访问内部类的实现细节，例如内部类的成员变量</font>。
+- 匿名内部类适合用于创建那些仅需要一次的类
+
+
+## 3.3 使用static定义的内部类就是外部类
+如果使用static来修饰一个内部类，则这个内部类就属于外部类本身，而不属于外部类的某个对象。因此使用static修饰的内部类被称为类内部类，有的地方也称为静态内部类。
+
+
+> <font color=green>static关键字的作用是把类的成员变成类相关，而不是实例相关，即static修饰的成员属于整个类，而不属于单个对象。
+
+
+静态内部类可以包含静态成员，也可以包含非静态成员。根据静态成员不能访问非静态成员的规则，静态内部类不能访问外部类的实例成员，只能访问外部类的类成员。即使是静态内部类的实例方法也不能访问外部类的实例成员，只能访问外部类的静态成员。
+
+
+静态内部类是外部类的一个静态成员，因此外部类的静态方法、静态初始化也可以使用静态内部类来定义变量、创建对象等。
+
+<font>外部类依然不能直接访问静态内部类的成员，但可以使用静态内部类的类名作为调用者来访问静态内部类的类成员，也可以使用静态内部类对象作为调用者来访问静态内部类的实例成员。</font>
+
+
+**使用示例:**
+```
+class StaticInnerClassTest {
+    // 外部类实例成员
+    private int propl=5;
+    // 外部类静态成员
+    private static int prop2=9;
+    
+    void display() { 
+        StaticInnerClass in=new StaticInnerClass();
+        in.display();
+    }
+    // 静态内部类
+    static class StaticInnerClass {
+        //内部类里的静态成员
+        private static int age;
+        
+        public void display() {
+            //下面代码出现错误-静态内部类无法访问外部类的实例成员
+            // System.out.println(propl);
+            
+            //下面代码正常
+            System.out.println(prop2);
+        }
+    }
+}
+
+public class ObjectStaticDemo {
+    public static void main(String[]args) {
+        StaticInnerClassTest outer=new StaticInnerClassTest();
+        outer.display(); // 输出:9
+    }
+}
+```
+
+## 3.4 匿名内部类
+匿名内部类由于没有名字，所以它的创建方式也比较特别。创建格式如下。
+```
+new 父类构造器（参数列表）|实现接口（）{
+    //匿名内部类的类体部分
+}
+```
+> 匿名内部类我们必须要继承一个父类或者实现一个接口。同时它没有class关键字，这是因为匿名内部类是直接使用new来生成一个对象的引用。当然这个引用是隐式的。
+
+**使用示例**
+```java
+abstract class Bird {
+    private String name;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name=name;
+    }
+    public abstract int fly();
+}
+
+public class AnonymousInnerClass {
+
+    public void test(Bird bird) {
+        System.out.println(bird.getName()+"最高能飞"+bird.fly()+"米");
+    }
+    
+    public static void main(String[]args) {
+        // 声明一个名为 animal 的AnonymousInnerClass对象
+        AnonymousInnerClass animal=new AnonymousInnerClass();
+        
+        // 调用实例方法,并传入一个匿名对象
+        animal.test( new Bird() {
+            public int fly() {
+                return 1000;
+            }
+            public String getName() {
+                return"小鸟";
+            }
+        }
+    }
+}
+```
+
+**代码详解**
+
+`在AnonymousInnerClass类中，test()方法接受一个Bird类型的参数，同时我们知道一个抽象类是没有办法直接new的，我们必须要先有实现类才能new出来它的实现类实例。所以在main方法中直接使用匿名内部类来创建一个Bird实例。
+匿名内部类不能是抽象类，所以必须要实现它的抽象父类或者接口里面所有的抽象方法。`
+
+
+> 匿名内部类存在一个缺陷，就是它仅能被使用一次，创建匿名内部类时它会立即创建一个该类的实例，该类的定义会立即消失，所以匿名内部类不能够被重复使用。
+
+
+# 4. 匿名对象
+匿名对象，顾名思义就是没有明确的声明的对象。读者也可以简单地理解为只使用一次的对象，即没有任何一个具体的对象名称引用它
+
+**使用示例:**
+```
+class Person{
+	private String name="张三";
+	private int age=25;
+	public String talk(){
+		return"我是："+name+"，今年："+age+"岁";
+	}
+}
+public class AnonymousObject {
+	public static void main(String[]args) {
+	  // 使用匿名对象
+	  System.out.println(new Person().talk());
+	}
+}
 ```
 
 
