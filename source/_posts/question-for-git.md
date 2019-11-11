@@ -10,7 +10,7 @@ categories:
 ### Q1 解决git pull/push每次都需要输入密码问题
 
 解决办法:
-- 进入你的项目目录，输入：
+** 进入你的项目目录，输入：**
 ``` 
 git config --global credential.helper store
 ```
