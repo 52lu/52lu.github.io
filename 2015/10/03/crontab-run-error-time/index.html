@@ -168,7 +168,7 @@
     
         
             
-            <li><div data-rel="docker">docker<small>(3)</small></div>
+            <li><div data-rel="数据库">数据库<small>(2)</small></div>
                 
             </li>
             
@@ -176,7 +176,7 @@
     
         
             
-            <li><div data-rel="DB">DB<small>(2)</small></div>
+            <li><div data-rel="docker">docker<small>(3)</small></div>
                 
             </li>
             
@@ -200,14 +200,6 @@
     
         
             
-            <li><div data-rel="并发">并发<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="队列">队列<small>(1)</small></div>
                 
             </li>
@@ -217,6 +209,14 @@
         
             
             <li><div data-rel="正则">正则<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="并发">并发<small>(1)</small></div>
                 
             </li>
             
@@ -297,11 +297,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">数据结构</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">linux</a>
+        <a href="javascript:" class="color1">mysql</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -313,15 +317,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">镜像</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">git</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -330,6 +326,10 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -357,11 +357,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">并发</a>
+        <a href="javascript:" class="color4">rabbitmq</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">rabbitmq</a>
+        <a href="javascript:" class="color3">并发</a>
     </li>
     
     <div class="clearfix"></div>
@@ -439,7 +439,7 @@
             <span class="post-date" title="2019-05-21 16:27:11">2019/05/21</span>
         </a>
         
-        <a class="DB " href="/2019/04/15/SQL优化/" data-tag="mysql" data-author="">
+        <a class="数据库 " href="/2019/04/15/SQL优化/" data-tag="mysql" data-author="">
             <span class="post-title" title="SQL优化">SQL优化</span>
             <span class="post-date" title="2019-04-15 19:43:22">2019/04/15</span>
         </a>
@@ -509,7 +509,7 @@
             <span class="post-date" title="2018-07-12 11:33:31">2018/07/12</span>
         </a>
         
-        <a class="DB " href="/2018/06/03/mysql-explan/" data-tag="mysql" data-author="">
+        <a class="数据库 " href="/2018/06/03/mysql-explan/" data-tag="mysql" data-author="">
             <span class="post-title" title="explan使用分析">explan使用分析</span>
             <span class="post-date" title="2018-06-03 18:53:53">2018/06/03</span>
         </a>
@@ -836,7 +836,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#禅道','#数据结构','#linux','#mac','#php','#mysql','#镜像','#git','#crond','#docker','#http','#Java','#nfs','#安全','#算法','#面试题','#并发','#rabbitmq',],
+            'data': ['#go','#禅道','#linux','#数据结构','#mysql','#mac','#php','#镜像','#crond','#docker','#git','#http','#Java','#nfs','#安全','#算法','#面试题','#rabbitmq','#并发',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
