@@ -4,7 +4,7 @@ date: 2019-04-15 19:43:22
 tags:
  - mysql
 categories:
- - DB
+ - 数据库
 ---
 
 ## 1 优化步骤

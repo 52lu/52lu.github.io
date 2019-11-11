@@ -4,7 +4,7 @@ date: 2018-06-03 18:53:53
 tags: 
  - mysql
 categories:
- - DB 
+ - 数据库 
 ---
 
 ### Sql 示例
