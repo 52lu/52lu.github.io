@@ -4,7 +4,7 @@ date: 2019-08-03 10:16:09
 tags:
  - mysql
 categories:
- - bug
+ - 问题
 ---
 
 #### 报错：PDO::__construct(): Server sent charset (255) unknown to the client. Please, report to the developers

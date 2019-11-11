@@ -4,7 +4,7 @@ date: 2016-11-23
 tags:
  - git
 categories:
- - bug
+ - 问题
 ---
 
 ### Q1 解决git pull/push每次都需要输入密码问题

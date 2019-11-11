@@ -4,7 +4,7 @@ date: 2015-10-03 11:42:44
 tags:
   - crond
 categories:
-  - bug
+  - 问题
 ---
 
 ### Centos7 crontab 没有按时执行任务，并且在/var/log/ 没有cron日志文件

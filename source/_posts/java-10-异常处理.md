@@ -58,7 +58,7 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
 
 ```
 
-## 4.1 thorw关键
+## 4.2 thorw关键
 
 **使用示例**
 ```

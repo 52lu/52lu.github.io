@@ -4,7 +4,7 @@ date: 2018-09-11 11:14:07
 tags:
  - mysql
 categories:
- - bug
+ - 问题
 ---
 
 ### 问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (> 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.
