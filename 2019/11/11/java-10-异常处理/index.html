@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>Go-7.并发使用 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" go ">
-  <meta name="description" content="Go-7.并发使用 | QingHui&#39;s Blog">
+  <title>java-10-异常处理 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="java-10-异常处理 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -656,9 +656,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Go-7.并发使用" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-java-10-异常处理" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">Go-7.并发使用</h1>
+        <h1 class="article-title">java-10-异常处理</h1>
     
     <div class="article-meta">
         
@@ -671,21 +671,15 @@
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color3">go</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-11-11 18:14:35">2019-11-11 18:14</time>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-08-23 14:06:41">2018-05-07 18:20</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>字数:980</span>
+        <span>字数:696</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -715,7 +709,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-并发和并行"><span class="toc-text">1. 并发和并行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-并发"><span class="toc-text">1.1 并发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-并发的特点"><span class="toc-text">1.1.1 并发的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-并行"><span class="toc-text">1.2 并行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-并行的特点"><span class="toc-text">1.2.1 并行的特点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Go-协程和-Go-主线程"><span class="toc-text">2. Go 协程和 Go 主线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-关系介绍"><span class="toc-text">2.1 关系介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Go主进程和Go协程（goroutine）关系示意图"><span class="toc-text">2.2 Go主进程和Go协程（goroutine）关系示意图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Go协程的特点"><span class="toc-text">2.3 Go协程的特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Go协程（Goroutine）的使用"><span class="toc-text">3. Go协程（Goroutine）的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-使用方式"><span class="toc-text">3.1 使用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-普通函数创建goroutine"><span class="toc-text">3.1.1 普通函数创建goroutine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-匿名函数创建goroutine"><span class="toc-text">3.1.2 匿名函数创建goroutine</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-并发运行性能调整"><span class="toc-text">3.2 并发运行性能调整</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-设置运行的-cpu-数"><span class="toc-text">3.2.1 设置运行的 cpu 数</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-异常概述"><span class="toc-text">1. 异常概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-处理错误特点"><span class="toc-text">2. 处理错误特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-常见的异常"><span class="toc-text">3. 常见的异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-抛出异常"><span class="toc-text">4. 抛出异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-thorws关键"><span class="toc-text">4.1 thorws关键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-thorw关键"><span class="toc-text">4.1 thorw关键</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-捕捉异常"><span class="toc-text">5. 捕捉异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-try-catch"><span class="toc-text">5.1 try-catch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-try-catch-catch"><span class="toc-text">5.2 try-catch-catch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-try-finally"><span class="toc-text">5.3 try-finally</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-try-catch-finally"><span class="toc-text">5.4  try-catch-finally</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-异常类关系图"><span class="toc-text">6. 异常类关系图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-异常类型的继承关系"><span class="toc-text">6.1 异常类型的继承关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-RuntimeException和Exception的区别"><span class="toc-text">6.2 RuntimeException和Exception的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-自定义异常类"><span class="toc-text">7.自定义异常类</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -730,122 +724,125 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-并发和并行"><a href="#1-并发和并行" class="headerlink" title="1. 并发和并行"></a>1. 并发和并行</h1><h2 id="1-1-并发"><a href="#1-1-并发" class="headerlink" title="1.1 并发"></a>1.1 并发</h2><p>多线程程序在单核上运行，就是并发</p>
-<h3 id="1-1-1-并发的特点"><a href="#1-1-1-并发的特点" class="headerlink" title="1.1.1 并发的特点"></a>1.1.1 并发的特点</h3><ul>
-<li>多个任务作用在一个cpu</li>
-<li>从微观角度看，在一个时间点上，只有一个任务在执行</li>
-</ul>
-<h2 id="1-2-并行"><a href="#1-2-并行" class="headerlink" title="1.2 并行"></a>1.2 并行</h2><p>多线程程序在多核上运行，就是并行</p>
-<h3 id="1-2-1-并行的特点"><a href="#1-2-1-并行的特点" class="headerlink" title="1.2.1 并行的特点"></a>1.2.1 并行的特点</h3><ul>
-<li>多个任务作用在多个cpu</li>
-<li>从微观角度看，在一个时间点上，有多个任务在执行</li>
-</ul>
-<h1 id="2-Go-协程和-Go-主线程"><a href="#2-Go-协程和-Go-主线程" class="headerlink" title="2. Go 协程和 Go 主线程"></a>2. Go 协程和 Go 主线程</h1><h2 id="2-1-关系介绍"><a href="#2-1-关系介绍" class="headerlink" title="2.1 关系介绍"></a>2.1 关系介绍</h2><ul>
-<li>主线程是一个物理线程，直接作用在 cpu 上的。是重量级的，非常耗费 cpu 资源。</li>
-<li>协程从主线程开启的，是轻量级的线程，是逻辑态。对资源消耗相对小。</li>
-<li>Go的协程机制是重要的特点，可以轻松的开启上万个协程。其它编程语言的并发机制是一<br>般基于线程的，开启过多的线程，资源耗费大，这里就突显 Go在并发上的优势了</li>
-</ul>
-<h2 id="2-2-Go主进程和Go协程（goroutine）关系示意图"><a href="#2-2-Go主进程和Go协程（goroutine）关系示意图" class="headerlink" title="2.2 Go主进程和Go协程（goroutine）关系示意图"></a>2.2 Go主进程和Go协程（goroutine）关系示意图</h2><p><img src="https://mrliuqh.github.io/directionsImg/go/go%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B.png" alt=""></p>
-<h2 id="2-3-Go协程的特点"><a href="#2-3-Go协程的特点" class="headerlink" title="2.3 Go协程的特点"></a>2.3 Go协程的特点</h2><ul>
-<li>有独立的栈空间</li>
-<li>共享程序堆空间</li>
-<li>调度由用户控制</li>
-<li>协程是轻量级的线程</li>
-</ul>
-<h1 id="3-Go协程（Goroutine）的使用"><a href="#3-Go协程（Goroutine）的使用" class="headerlink" title="3. Go协程（Goroutine）的使用"></a>3. Go协程（Goroutine）的使用</h1><p>Go程序中使用go关键字为一个函数创建一个goroutine。一个函数可以被创建多个goroutine，一个goroutine必定对应一个函数。</p>
-<h2 id="3-1-使用方式"><a href="#3-1-使用方式" class="headerlink" title="3.1 使用方式"></a>3.1 使用方式</h2><h3 id="3-1-1-普通函数创建goroutine"><a href="#3-1-1-普通函数创建goroutine" class="headerlink" title="3.1.1 普通函数创建goroutine"></a>3.1.1 普通函数创建goroutine</h3><p><b>使用格式</b></p>
-<pre><code>go 函数名 ( 参数列表 )
-</code></pre><ul>
-<li>函数名：要调用的函数名。</li>
-<li>参数列表：调用函数需要传入的参数。<blockquote>
-<p><font color="red">使用go关键字创建goroutine时，被调用函数的返回值会被忽略。</font>如果需要在goroutine中返回数据，则需要通过通道（channel）把数据从goroutine中作为返回值传出。</p>
-</blockquote>
+        <h1 id="1-异常概述"><a href="#1-异常概述" class="headerlink" title="1. 异常概述"></a>1. 异常概述</h1><p>Java的异常处理机制也秉承着面向对象的基本思想。在Java中，所有的异常都是以类的类型存在。除了内置的异常类之外，Java也可以自定义异常类。此外，Java的异常处理机制也允许自定义抛出异常。</p>
+<h1 id="2-处理错误特点"><a href="#2-处理错误特点" class="headerlink" title="2. 处理错误特点"></a>2. 处理错误特点</h1><ul>
+<li>不需要打乱程序的结构，如果没有任何错误产生，那么程序的运行不受任何影响。</li>
+<li><p>不依靠方法的返回值来报告错误是否产生。</p>
+</li>
+<li><p>采用集中的方式处理错误，能够根据错误种类的不同来进行对应的错误处理操作。</p>
 </li>
 </ul>
-<p><b>使用示例</b></p>
-<pre><code>package main
+<h1 id="3-常见的异常"><a href="#3-常见的异常" class="headerlink" title="3. 常见的异常"></a>3. 常见的异常</h1><p><img src="https://mrliuqh.github.io/directionsImg/java/common-error-1.png" alt=""><br><img src="https://mrliuqh.github.io/directionsImg/java/common-error-2.png" alt=""></p>
+<h1 id="4-抛出异常"><a href="#4-抛出异常" class="headerlink" title="4. 抛出异常"></a>4. 抛出异常</h1><h2 id="4-1-thorws关键"><a href="#4-1-thorws关键" class="headerlink" title="4.1 thorws关键"></a>4.1 thorws关键</h2><p>在方法中使用thorws关键字抛出错误</p>
+<p><strong>语法</strong></p>
+<pre><code>[权限修饰符] 返回类型 方法名 throws 具体错误类{
+    ....
+}
+</code></pre><p><strong>示例</strong></p>
+<pre><code>public class Main {
 
-import (
-    &quot;fmt&quot;
-    &quot;time&quot;
-    &quot;strconv&quot;
-)
-
-func test() {
-    var i =1
-    for {
-        fmt.Println(&quot;&quot;+strconv.Itoa(i))
-        time.Sleep(time.Second)
-        i++
+    public static void main(String[] args) {
+        System.out.println(divsion(10,0));
+    }
+    /**
+     * description: 测试除法异常
+     **/
+    public static int  divsion(int a, int b ) throws ArithmeticException{
+        return  a / b ;
     }
 }
-func main() {
-    // 为一个普通函数创建goroutine
-    go test()
-    //接收用户输入,知道按Enter键时
-    var input string
-    //将用户输入内容写入input变量中，并返回，整个程序终止
-    fmt.Scanln(&amp;input)
 
-}
-</code></pre><p>输出：</p>
-<pre><code>1
-2
-3
-4
-5
-6
-...
+/** 
+* 输出:
 
-exit
-</code></pre><blockquote>
-<font color="red">所有goroutine在mian()函数结束时会一同结束</font>
-</blockquote>
-<h3 id="3-1-2-匿名函数创建goroutine"><a href="#3-1-2-匿名函数创建goroutine" class="headerlink" title="3.1.2 匿名函数创建goroutine"></a>3.1.2 匿名函数创建goroutine</h3><p><code>go关键字后也可以为匿名函数或闭包启动goroutine</code></p>
-<p><b>使用格式</b><br><code>使用匿名函数或闭包创建goroutine时，除了将函数定义部分写在go的后面之外，还需要加上匿名函数的调用参数</code></p>
-<pre><code>go func( 参数列表 ){
-         函数体
-}( 调用参数列表 )
-</code></pre><ul>
-<li>参数列表：函数体内的参数变量列表。</li>
-<li>函数体：匿名函数的代码。</li>
-<li>调用参数列表：启动goroutine时，需要向匿名函数传递的调用参数</li>
-</ul>
-<p><b>使用示例</b></p>
-<pre><code>package main
+Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by zero
+    at Main.divsion(Main.java:27)
+    at Main.main(Main.java:17)
+**/
 
-import (
-    &quot;fmt&quot;
-    &quot;time&quot;
-)
-func main() {
-    go func() {
-        var i int
-        for {
-            fmt.Println(&quot;计时器:&quot;, i)
-            time.Sleep(time.Second)
-            i++
+</code></pre><h2 id="4-1-thorw关键"><a href="#4-1-thorw关键" class="headerlink" title="4.1 thorw关键"></a>4.1 thorw关键</h2><p><strong>使用示例</strong></p>
+<pre><code>public class Main {
+
+    public static void main(String[] args) {
+        System.out.println(divsion(10,0));
+    }
+    /**
+     * description: 测试除法异常
+     **/
+    public static int  divsion(int a, int b ) throws ArithmeticException{
+        if (b == 0){
+            throw new ArithmeticException(&quot;除数不能为0！&quot;);
         }
-    }()
-    var input string
-    fmt.Scanln(&amp;input)
+        return  a / b ;
+    }
 }
-</code></pre><h2 id="3-2-并发运行性能调整"><a href="#3-2-并发运行性能调整" class="headerlink" title="3.2 并发运行性能调整"></a>3.2 并发运行性能调整</h2><h3 id="3-2-1-设置运行的-cpu-数"><a href="#3-2-1-设置运行的-cpu-数" class="headerlink" title="3.2.1 设置运行的 cpu 数"></a>3.2.1 设置运行的 cpu 数</h3><p><code>为了充分了利用多 cpu 的优势，在 Golang 程序中，可以通过runtime.GOMAXPROCS() 函数 设置运行的 cpu 数目</code></p>
-<p><b>使用格式:</b></p>
-<pre><code>runtime.GOMAXPROCS( 逻辑CPU)
-//逻辑CPU可以通过 runtime.NumCpu()函数获取
-</code></pre><p>这里的逻辑CPU数量可以有如下几种数值:</p>
-<ul>
-<li>逻辑CPU &lt; 1：不修改任何数值</li>
-<li>逻辑CPU = 1：单核心执行</li>
-<li>逻辑CPU &gt; 1：多核并发执行</li>
-</ul>
-<p><b>注意事项:</b></p>
-<ul>
-<li>Go 1.5版本之前，默认使用的是单核心执行。从Go 1.5版本开始，默认执行上面语句以便让代码并发执行，最大效率地利用CPU。</li>
-<li>GOMAXPROCS同时也是一个环境变量，在应用程序启动前设置环境变量也可以起到相同的作用。</li>
-</ul>
 
+/** 
+* 输出:
+
+Exception in thread &quot;main&quot; java.lang.ArithmeticException: 除数不能为0！
+    at Main.divsion(Main.java:47)
+    at Main.main(Main.java:39)
+**/
+
+</code></pre><h1 id="5-捕捉异常"><a href="#5-捕捉异常" class="headerlink" title="5. 捕捉异常"></a>5. 捕捉异常</h1><p>异常捕获处理是由try、catch与finally等3个关键字所组成的程序块，其语法如下所示</p>
+<h2 id="5-1-try-catch"><a href="#5-1-try-catch" class="headerlink" title="5.1 try-catch"></a>5.1 try-catch</h2><pre><code>try {
+    // todo ...
+} catch (ArithmeticException e) {
+    // 捕获到对应的异常
+}
+</code></pre><h2 id="5-2-try-catch-catch"><a href="#5-2-try-catch-catch" class="headerlink" title="5.2 try-catch-catch"></a>5.2 try-catch-catch</h2><pre><code>try {
+    // todo ...
+} catch (ArithmeticException e) {
+    // 捕获到对应的异常
+} catch (ArithmeticException e) {
+    // 捕获到对应的异常
+}
+</code></pre><h2 id="5-3-try-finally"><a href="#5-3-try-finally" class="headerlink" title="5.3 try-finally"></a>5.3 try-finally</h2><pre><code>try {
+    // todo ...
+} finally (ArithmeticException e) {
+   // 总会处理的逻辑
+}
+</code></pre><h2 id="5-4-try-catch-finally"><a href="#5-4-try-catch-finally" class="headerlink" title="5.4  try-catch-finally"></a>5.4  try-catch-finally</h2><pre><code>try {
+    // todo ...
+} catch (ArithmeticException e) {
+    // 捕获到对应的异常
+} finally (ArithmeticException e) {
+  // 总会处理的逻辑
+}
+</code></pre><h1 id="6-异常类关系图"><a href="#6-异常类关系图" class="headerlink" title="6. 异常类关系图"></a>6. 异常类关系图</h1><p><img src="https://mrliuqh.github.io/directionsImg/java/throwable-tree.png" alt=""></p>
+<h2 id="6-1-异常类型的继承关系"><a href="#6-1-异常类型的继承关系" class="headerlink" title="6.1 异常类型的继承关系"></a>6.1 异常类型的继承关系</h2><p>异常类型的最大父类是Throwable类，其分为两个子类，分别为Exception、Error。Exception表示程序可处理的异常，而Error表示JVM错误，一般无需程序开发人员自己处理。</p>
+<h2 id="6-2-RuntimeException和Exception的区别"><a href="#6-2-RuntimeException和Exception的区别" class="headerlink" title="6.2 RuntimeException和Exception的区别"></a>6.2 RuntimeException和Exception的区别</h2><ul>
+<li>RuntimeException类是Exception类的子类。</li>
+<li>Exception定义的类，强制性要求用户必须处理 </li>
+<li>RuntimeException定义的异常可以选择性地进行处理。</li>
+</ul>
+<h1 id="7-自定义异常类"><a href="#7-自定义异常类" class="headerlink" title="7.自定义异常类"></a>7.自定义异常类</h1><p><strong>自定义类的语法:</strong></p>
+<pre><code>class 异常类名 extends Exception {
+    ....
+}
+</code></pre><p><strong>使用示例:</strong></p>
+<pre><code>public class userDefinedException
+{
+  public static void main(String[]args)
+  {
+    try {
+       throw new MyException(&quot;自定义异常--仅为测试演示！&quot;);
+     } catch(MyException e){
+      System.out.println(e);
+    }
+  }
+}
+
+
+class MyException extends Exception
+{
+  public MyException(String msg)
+  {
+    super(msg); //调用Exception类的构造方法，存入异常信息
+  }
+}
+</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -858,11 +855,11 @@ func main() {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Go-7.并发使用</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">980</span></p>
+    <p><span class="copy-title">文章标题:</span>java-10-异常处理</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">696</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="刘庆辉">刘庆辉</a></p>
-    <p><span class="copy-title">发布时间:</span>2018-05-07 18:20</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/05/07/Go-7.并发使用/" title="Go-7.并发使用">https://mrliuqh.github.io/2018/05/07/Go-7.并发使用/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-11 18:14</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/java-10-异常处理/" title="java-10-异常处理">https://mrliuqh.github.io/2019/11/11/java-10-异常处理/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
