@@ -178,6 +178,7 @@ public interface 接口名称 {
 **示例:**
 
 - 无默认方法的接口
+
 ```java
 interface MyInterface{
     // 数据成员必须赋初值
@@ -188,6 +189,7 @@ interface MyInterface{
 ```
 
 - 有默认方法的接口
+
 ```java
 public interface MyInterface{
     // 数据成员必须赋初值
@@ -225,6 +227,7 @@ public interface MyInterface{
 
 ## 3.2 不同点
 - 抽象类不可以多重继承，接口可以（无论是多重类型继承还是多重行为继承）
+
 - 抽象类和接口所反映出的设计理念不同。其实抽象类表示的是"is-a"关系，接口表示的是"like-a"关系
 
 - 接口中定义的变量默认是public static final 型，且必须给其初值，所以实现类中不能重新定义，也不能改变其值；抽象类中的变量默认是 friendly 型，其值可以在子类中重新定义，也可以重新赋值

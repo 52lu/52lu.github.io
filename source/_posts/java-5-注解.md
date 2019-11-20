@@ -7,10 +7,10 @@ categories:
  - 后端
 ---
 
-## 1.什么是注解？
+# 1.什么是注解？
 标注（Annotations）就是代码里的标记，它提供与程序有关的数据，但是标注本身不是程序一部分。标注不对其所注解的代码的操作有直接的影响。在有的书中，将标注也称为注解。通过使用标注，程序开发人员可以在不改变原有逻辑的情况下，在源文件中嵌入一些补充的信息。代码分析工具、开发工具和部署工具可以通过这些补充信息进行验证或进行部署。
 
-## 2.注解的作用
+# 2.注解的作用
 简单地说，标注就是代码里的标记，这些标记在类加载、运行时或编译的时候可以被解释，但是不对程序的运行产生直接的影响。标注有很多作用，包括：
 - 为编译器提供信息。编译器可以使用标注来检测错误或禁止警告。
 
@@ -19,10 +19,13 @@ categories:
 
 >从某些方面看，标注就像修饰符一样被使用，<font color=red>并应用于包、类型、构造方法、方法、成员变量、参数、本地变量的声明中。</font>标注可以应用到程序的类的声明、字段的声明、方法的声明及其他程序元素的声明中。按惯例标注要出现在它自己所在行的第一行，并且可以包括带有名称或未命名值的元素，
 
-## 3.注解的分类
+# 3.注解的分类
 Java的注解可以分为三类：
 
-- 第一类是由编译器使用的注解，例如：
+- 第一类是由编译器使用的注解，
+
+例如：
+
 ```
 @Override：让编译器检查该方法是否正确地实现了重写；
 @SuppressWarnings：告诉编译器忽略此处代码产生的警告。
@@ -30,14 +33,18 @@ Java的注解可以分为三类：
 ```
 **这类注解不会被编译进入.class文件，它们在编译后就被编译器扔掉了。**
 
-- 第二类是由工具处理.class文件使用的注解，比如有些工具会在加载class的时候，对class做动态修改，实现一些特殊的功能。这类注解会被编译进入.class文件，但加载结束后并不会存在于内存中。这类注解只被一些底层库使用，一般我们不必自己处理。
+- 第二类是由工具处理.class文件使用的注解
+
+比如有些工具会在加载class的时候，对class做动态修改，实现一些特殊的功能。这类注解会被编译进入.class文件，但加载结束后并不会存在于内存中。这类注解只被一些底层库使用，一般我们不必自己处理。
+
 
 - 第三类是在程序运行期能够读取的注解，它们在加载后一直存在于JVM中，这也是最常用的注解。
 
-## 4.内置注解
-### 4.1 @Override
+# 4.内置注解
+## 4.1 @Override
 @Override 是一个标记注解，表示重写父类方法。
-**实例**
+**使用实例:**
+
 ```
 // UserDao 接口
 public interface IUserDao {
@@ -57,7 +64,7 @@ public class UserDao implement IUserDao {
 	// ...
 }
 ```
-### 4.2 @SuppressWarnnings
+## 4.2 @SuppressWarnnings
 @SuppressWarnnings 抑制编译器警告，取值为:
 - deprecation ：使用了不赞成使用的类或方法时的警告；
 - unchecked ：执行了未检查的转换时的警告，例如当使用集合时没有用泛型 (Generics) 来指定集合保存的类型;
@@ -80,7 +87,7 @@ public class UserDao {
     // ...
 }
 ```
-### 4.3 @Deprecated
+## 4.3 @Deprecated
 被此注解标记的类或者方法表示不再推荐使用此类或者方法。 此外对应的 java doc 中有一个 @deprecated tag。
 
 **实例**
@@ -114,11 +121,11 @@ public class UserDao {
 }
 ```
 
-## 5.元注解
+# 5.元注解
 元注解的作用就是负责注解其他注解.
 
 **Java5.0定义的元注解：**
-### 5.1 @Target:
+## 5.1 @Target:
 指定注解所修饰对象的范围。
 - ElementType.CONSTRUCTOR :用于描述构造器
 - ElementType.FIELD :用于描述域
@@ -128,20 +135,20 @@ public class UserDao {
 - ElementType.PARAMETER :用于描述参数
 - ElementType.TYPE :用于描述类、接口(包括注解类型) 或enum声明
 
-### 5.2 @Retention
+## 5.2 @Retention
 定义Annotation保留的时间长短。
 
 - RetentionPoicy.SOURCE :在源文件中有效（即源文件保留）
 - RetentionPoicy.CLASS :在class文件中有效（即class保留）
 - RetentionPoicy.RUNTIME :在运行时有效（即运行时保留），在运行时保留可以通过反射获取到该值的属性值同时相应做一些逻辑处理
 
-### 5.3 @Documented
+## 5.3 @Documented
 标记注解，含有该注解类型的元素(带有注释的)会通过javadoc或类似工具进行文档化。
-### 5.4 @Inherited
+## 5.4 @Inherited
 表示注解类型能被自动继承。 如果一个类使用了 @Inherited 类型的注解，则此类的子类也将含有该注解，当 Retention 为 RUNTIME 时通过反射API可以查询到此类以及其父类直到发现指定的annotation类型被发现，或者到达类继承结构的顶层。
 
 
-## 6.自定义注解
+# 6.自定义注解
 注解类型的定义有点类似接口的定义，使用<font color=red>@interface关键字用来声明一个注解，</font>实际上标注类型是接口的一种。里面的每一个方法表示声明了一个可配置的参数，方法名即为参数名。
 
 - 访问修饰符只能使用 public 或者 default（默认的、友好的）
@@ -151,12 +158,12 @@ public class UserDao {
 - 注解元素必须有确定的值，要么在定义注解元素时默认值指定，要么使用此注解时指定。非基本类型注解元素的值不可为 null
 
 
-### 6.1 第1步:用@interface定义注解
+## 6.1 第1步:用@interface定义注解
 ```
 public @interface Report {
 }
 ```
-### 6.2 第2步:添加参数、默认值
+## 6.2 第2步:添加参数、默认值
 ```
 public @interface Report {
     int type() default 0;
@@ -165,7 +172,7 @@ public @interface Report {
     ...;
 }
 ```
-### 6.3 用元注解配置注解：
+## 6.3 用元注解配置注解：
 ```
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
@@ -178,7 +185,7 @@ public @interface Report {
 ```
 > 其中，必须设置@Target和@Retention，@Retention一般设置为RUNTIME，因为我们自定义的注解通常要求在运行期读取。一般情况下，不必写@Inherited和@Repeatable。
 
-## 7. 解析注解
+# 7. 解析注解
 Java的注解本身对代码逻辑没有任何影响。根据@Retention的配置：
 
 - SOURCE类型的注解在编译期就被丢掉了；
@@ -189,11 +196,12 @@ Java的注解本身对代码逻辑没有任何影响。根据@Retention的配置
 
 因此，我们只讨论如何读取RUNTIME类型的注解。
 
-### 7.1 读取注解
+## 7.1 读取注解
 因为注解定义后也是一种class，所有的注解都继承自java.lang.annotation.Annotation，因此，读取注解，需要使用反射API。Java提供的使用反射API读取Annotation的方法包括：
 
-#### 7.1.1 判断某个注解是否存在于Class、Field、Method或Constructor：
+### 7.1.1 判断某个注解是否存在于Class、Field、Method或Constructor：
 **方法列表:**
+
 - Class.isAnnotationPresent(Class) 
 - Field.isAnnotationPresent(Class)
 - Method.isAnnotationPresent(Class)
@@ -205,7 +213,7 @@ Java的注解本身对代码逻辑没有任何影响。根据@Retention的配置
 Person.class.isAnnotationPresent(Report.class);
 ```
 
-#### 7.1.2 直接读取注解的方法列表
+### 7.1.2 直接读取注解的方法列表
 - Class.getAnnotation(Class)
 - Field.getAnnotation(Class)
 - Method.getAnnotation(Class)
@@ -220,9 +228,10 @@ String level = report.level();
 ```
 
 
-#### 7.1.4 射API读取注解的两种方法
+### 7.1.3 射API读取注解的两种方法
 
 - 是先判断Annotation是否存在，如果存在，就直接读取
+
 ```
 Class cls = Person.class;
 if (cls.isAnnotationPresent(Report.class)) {
@@ -230,7 +239,9 @@ if (cls.isAnnotationPresent(Report.class)) {
     ...
 }
 ```
+
 - 直接读取Annotation，如果Annotation不存在，将返回null
+
 ```
 Class cls = Person.class;
 Report report = cls.getAnnotation(Report.class);
@@ -239,8 +250,8 @@ if (report != null) {
 }
 ```
 
-## 8.第三方注解 
-### 8.1 springmvc校验注解
+# 8.第三方注解 
+## 8.1 springmvc校验注解
 - @NotNull: 注解元素必须是非空
 - @Null: 注解元素必须是空
 - @Digits: 验证数字构成是否合法

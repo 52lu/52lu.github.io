@@ -216,14 +216,17 @@ HashSet中每个能存储元素的“槽位”（slot）通常称为“桶”（
  - 第一步:把对象内每个有意义的Field（即每个用做equals()方法比较标准的Field）计算出一个int类型的hashCode值。计算方式如下表:
 ![](https://mrliuqh.github.io/directionsImg/java/hascode-rule.jpg)
 
-  **例如如下代码:**
+**例如代码:**
+
 ```
 return f1.hashCode() + (int)f2;
 ```
- - 第二步:为了避免直接相加产生偶然相等（两个对象的f1、f2 Field并不相等，但它们的和恰好相等），可以通过为各Field乘以任意一个质数后再相加。例如如下代码：
- ```
- return f1.hashCode() * 17 + (int)f2 * 13;
- ```
+- 第二步:为了避免直接相加产生偶然相等（两个对象的f1、f2 Field并不相等，但它们的和恰好相等），可以通过为各Field乘以任意一个质数后再相加。例如如下代码：
+
+**例如代码:**
+```
+return f1.hashCode() * 17 + (int)f2 * 13;
+```
  
 ### 8.2 LinkedHashSet类
 HashSet还有一个子类LinkedHashSet，LinkedHashSet集合也是根据元素的hashCode值来决定元素的存储位置，但它同时使用链表维护元素的次序，这样使得元素看起来是以插入的顺序保存的。也就是说，当遍历LinkedHashSet集合里的元素时，LinkedHashSet将会按元素的添加顺序来访问集合里的元素。

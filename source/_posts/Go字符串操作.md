@@ -1,5 +1,5 @@
 ---
-title: Go字符串操作
+title: 学Go笔记-字符串操作
 date: 2018-04-06
 tags:
  - go
