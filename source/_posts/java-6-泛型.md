@@ -16,6 +16,7 @@ categories:
 声明类的泛型版本与声明类的一般版本的语法格式很类似，只有稍微的不同。
 
 **声明一般类的语法格式为：**
+
 ```
 [修饰符] class类名 [extends父类名] [implements接口1名,接口2名,…]{
         //类体
@@ -24,6 +25,7 @@ categories:
 
 **而声明泛型类型时，只需要在类名后面跟上一个类型参数即可，其语法格式为：**
 - 单类型参数泛型类型声明
+
 ```
 [修饰符] class类名<类型参数> [extends父类名] [implements接口1名,接口2名,。。。]{
        //类体
@@ -31,6 +33,7 @@ categories:
 ```
 
 - 多类型参数泛型类型声明
+
 ```
 [修饰符] class类名<类型参数1,类型参数2,类型参数3> [extends父类名] [implements接口1名,接口2名,。。。]{
        //类体
@@ -43,6 +46,7 @@ categories:
 **代码示例:**
 
 - box类
+
 ```
 public class Box {
     private Object object;
@@ -56,6 +60,7 @@ public class Box {
 }
 ```
 - box 泛型类
+
 ```
 // Box类的泛型版本.
 public class Box<T> {
@@ -132,9 +137,11 @@ String middle = ArrayAlg.getHiddle("]ohn", "Q.", "Public");
 默认可以使用任何类型来实例化一个泛型类对象，但Java中也对泛型类实例的类型作了限制。
 
 **语法如下:**
+
 ```
  <T exteds anyClass>
 ```
+
 1. anyClass指某个接口或类
 2. anyClass指的是上限
 3. 限定上限的类型中，最多只能有1个类(或0个类)，其余的必须均为接口。
@@ -143,6 +150,7 @@ String middle = ArrayAlg.getHiddle("]ohn", "Q.", "Public");
 > 使用泛型限制后，泛型类的类型必须实现或者继承了anyClass 这个接口或类。无论anyClass是接口还是类，在进行泛型限制时都必须使用extends关键字。
 
 - 泛型类限制使用
+
 ```
 import java.util.List;
 public class LimitClass<T extends List>{
@@ -151,6 +159,7 @@ public class LimitClass<T extends List>{
 ```
 
 - 泛型方法限制使用
+
 ```
 import java.util.List;
 public class LimitClass{
@@ -162,6 +171,7 @@ public class LimitClass{
 
 对类型参数的限定，也可以包括指定额外的必须被实现的接口，使用&字符，例如指定类型变量U可接收的值为实现了MyInterface接口的Number类或其之类。
 **语法如下:**
+
 ```
 // 上限类型中有一个接口
 <U extends Number & MyInterface>
@@ -174,6 +184,7 @@ public class LimitClass{
 固定的泛型类型使用起来不灵活，java提供一种巧妙的方案:通配符类型。
 
 **定义格式**
+
 ```
 //不设置上限:表示任何类型
 AnyGeneric<?>
