@@ -2,8 +2,9 @@
 title: nginx 配置调优
 date: 2019-03-28 20:57:02
 tags:
-categories:
  - nginx
+categories:
+ - 服务使用
 ---
 
 ## 1. nginx.conf 配置文件

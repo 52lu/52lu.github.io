@@ -2,9 +2,9 @@
 title: nginx限流(防恶意请求)
 date: 2019-11-07 13:31:15
 tags:
-- 安全
+- nginx
 categories:
- - nginx
+ - 服务使用
 ---
 # 1. 限流算法
 ## 1.1 漏桶算法

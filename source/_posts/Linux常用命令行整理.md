@@ -4,7 +4,7 @@ date: 2015-06-19 17:24:14
 tags:
   - linux
 categories:
-  - linux
+  - 命令使用
 ---
 
 

@@ -2,8 +2,9 @@
 title: Nginx 反向代理
 date: 2017-04-17 12:32:56
 tags:
-categories:
  - nginx
+categories:
+ - 服务使用
 ---
 
 #### 关键词匹配 

@@ -2,9 +2,9 @@
 title: 创建自己的镜像
 date: 2019-05-21 16:27:11
 tags:
- - 镜像
-categories:
  - docker
+categories:
+ - 容器管理
 ---
 
 ### 1.创建一个简单的Node.js 应用镜像
