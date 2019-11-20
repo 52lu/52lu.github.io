@@ -184,7 +184,7 @@
     
         
             
-            <li><div data-rel="git">git<small>(1)</small></div>
+            <li><div data-rel="其他">其他<small>(3)</small></div>
                 
             </li>
             
@@ -192,7 +192,7 @@
     
         
             
-            <li><div data-rel="其他">其他<small>(3)</small></div>
+            <li><div data-rel="git">git<small>(1)</small></div>
                 
             </li>
             
@@ -305,15 +305,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">mac</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">php</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -345,15 +345,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">安全</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">算法</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color4">面试题</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">安全</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -680,7 +680,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-10-18 14:07:17">2019-10-17 19:10</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-20 14:46:41">2019-10-17 19:10</time>
         
     </div>
     <div class="article-meta">
@@ -741,45 +741,48 @@
 }
 </code></pre><p><strong>而声明泛型类型时，只需要在类名后面跟上一个类型参数即可，其语法格式为：</strong></p>
 <ul>
-<li><p>单类型参数泛型类型声明</p>
+<li>单类型参数泛型类型声明</li>
+</ul>
 <pre><code>[修饰符] class类名&lt;类型参数&gt; [extends父类名] [implements接口1名,接口2名,。。。]{
-     //类体
+       //类体
 }
-</code></pre></li>
-<li><p>多类型参数泛型类型声明</p>
+</code></pre><ul>
+<li>多类型参数泛型类型声明</li>
+</ul>
 <pre><code>[修饰符] class类名&lt;类型参数1,类型参数2,类型参数3&gt; [extends父类名] [implements接口1名,接口2名,。。。]{
-     //类体
+       //类体
 }
 </code></pre><blockquote>
 <font color="red">每个类型参数必须唯一。</font>
 </blockquote>
-</li>
-</ul>
 <p><strong>代码示例:</strong></p>
 <ul>
-<li><p>box类</p>
+<li>box类</li>
+</ul>
 <pre><code>public class Box {
-  private Object object;
+    private Object object;
 
-  public void add(Object object){
-      this.object = object;
-  }
-  public Object get(){
-      return object;
-  }
+    public void add(Object object){
+        this.object = object;
+    }
+    public Object get(){
+        return object;
+    }
 }
-</code></pre></li>
-<li>box 泛型类<pre><code>// Box类的泛型版本.
+</code></pre><ul>
+<li>box 泛型类</li>
+</ul>
+<pre><code>// Box类的泛型版本.
 public class Box&lt;T&gt; {
-  private T t;        // T代表&quot;类型&quot;
-  public void add(T t) {
-    this.t = t;
+    private T t;        // T代表&quot;类型&quot;
+    public void add(T t) {
+      this.t = t;
+    }
+    public T get() {
+      return t;
   }
-  public T get() {
-    return t;
 }
-}
-</code></pre></li>
+</code></pre><ul>
 <li>T:”代表类型变量”</li>
 </ul>
 <h2 id="3-泛型使用"><a href="#3-泛型使用" class="headerlink" title="3. 泛型使用"></a>3. 泛型使用</h2><p>一个泛型类型调用通常被看做是“参数化类型”。要实例化这个类，照常使用new关键字，但是将<code>&lt;Integer&gt;</code>放在类名和圆括号之间：</p>
@@ -827,22 +830,22 @@ System.out.println(someInteger)
 <p>使用泛型限制后，泛型类的类型必须实现或者继承了anyClass 这个接口或类。无论anyClass是接口还是类，在进行泛型限制时都必须使用extends关键字。</p>
 </blockquote>
 <ul>
-<li><p>泛型类限制使用</p>
+<li>泛型类限制使用</li>
+</ul>
 <pre><code>import java.util.List;
 public class LimitClass&lt;T extends List&gt;{
-  // ....
+    // ....
 }
-</code></pre></li>
-<li><p>泛型方法限制使用</p>
+</code></pre><ul>
+<li>泛型方法限制使用</li>
+</ul>
 <pre><code>import java.util.List;
 public class LimitClass{
-  public static &lt;T extends List&gt; void testMedthod(T t){
-      // ....
-  }
+    public static &lt;T extends List&gt; void testMedthod(T t){
+        // ....
+    }
 }
-</code></pre></li>
-</ul>
-<p>对类型参数的限定，也可以包括指定额外的必须被实现的接口，使用&amp;字符，例如指定类型变量U可接收的值为实现了MyInterface接口的Number类或其之类。<br><strong>语法如下:</strong></p>
+</code></pre><p>对类型参数的限定，也可以包括指定额外的必须被实现的接口，使用&amp;字符，例如指定类型变量U可接收的值为实现了MyInterface接口的Number类或其之类。<br><strong>语法如下:</strong></p>
 <pre><code>// 上限类型中有一个接口
 &lt;U extends Number &amp; MyInterface&gt;
 
@@ -1109,7 +1112,7 @@ last = new Object();
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#禅道','#数据结构','#linux','#mac','#php','#mysql','#镜像','#crond','#docker','#git','#http','#Java','#nfs','#算法','#面试题','#安全','#rabbitmq','#并发',],
+            'data': ['#go','#禅道','#数据结构','#linux','#mysql','#mac','#php','#镜像','#crond','#docker','#git','#http','#Java','#nfs','#安全','#算法','#面试题','#rabbitmq','#并发',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
