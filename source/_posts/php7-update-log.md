@@ -4,7 +4,7 @@ date: 2018-10-06
 tags:
  - php
 categories:
- - 后端
+ - 后端编程
 ---
 
 ## 一.PHP5.6.x 移植PHP7.0.x

@@ -4,7 +4,7 @@ date: 2016-04-19 18:41:53
 tags:
  - nfs
 categories:
- - linux
+ - 服务搭建
 ---
 ### 1.测试节点
 ```

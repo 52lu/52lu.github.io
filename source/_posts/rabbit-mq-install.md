@@ -4,7 +4,7 @@ date: 2018-08-03
 tags:
  - rabbitmq
 categories:
- - 队列 
+ - 服务搭建
 ---
 
 具体安装如下：

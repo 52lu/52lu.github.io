@@ -4,7 +4,7 @@ date: 2019-03-10 16:36:05
 tags: 
  - php
 categories:
- - 后端
+ - 后端编程
 ---
 >PHP-FPM是一个PHPFastCGI管理器，是只用于PHP的。
 

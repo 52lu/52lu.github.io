@@ -4,7 +4,7 @@ date: 2019-03-22 12:19:23
 tags:
  - php
 categories:
- - 后端
+ - 后端编程
 ---
 
 > <front color="red">进程是资源分配的最小单位，线程是CPU调度的最小单位</front>
