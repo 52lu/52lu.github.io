@@ -1,6 +1,6 @@
 ---
 title: RabbitMQ安装方法总结
-date: 2018-08-03
+date: 2016-08-03
 tags:
  - rabbitmq
 categories:
@@ -83,6 +83,3 @@ RabbitMQ服务启动、关闭、重启
 #service rabbitmq-server restart //重启
 ```
 
-
- 
-具体使用，待续....
