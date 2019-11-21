@@ -1,5 +1,5 @@
 ---
-title: 学Java笔记-枚举
+title: 基础篇-枚举
 date: 2019-10-15 19:20:56
 tags: 
  - Java
