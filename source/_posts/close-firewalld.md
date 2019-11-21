@@ -1,5 +1,5 @@
 ---
-title: close-firewalld
+title: 关闭防火墙(Centos7）
 date: 2015-08-17 12:04:26
 tags:
   - linux
