@@ -1,5 +1,5 @@
 ---
-title: 基础篇-泛型
+title: Java-基础篇-泛型
 date: 2019-10-17 19:10:22
 tags:
  - Java

@@ -1,5 +1,5 @@
 ---
-title: 基础篇-类
+title: Java-基础篇-类
 date: 2019-10-15 19:19:48
 tags:
  - Java
