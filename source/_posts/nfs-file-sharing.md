@@ -1,5 +1,5 @@
 ---
-title: Linux 搭建nfs文件共享
+title: 基于Linux搭建nfs文件共享
 date: 2016-04-19 18:41:53
 tags:
  - nfs

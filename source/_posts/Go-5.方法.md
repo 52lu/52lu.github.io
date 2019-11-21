@@ -1,5 +1,5 @@
 ---
-title: 学Go笔记-方法
+title: Go-基础篇-方法
 date: 2018-04-11 14:47:17
 tags:
  - go 

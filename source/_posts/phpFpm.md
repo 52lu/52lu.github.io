@@ -97,13 +97,12 @@ catch_workers_output = yes
 ## 主要参数介绍
 - ### pm (进程管理)
 `管理进程方式: pm = static/dynamic`
-
 1. static(静态) ：表示在fpm运行时直接fork出pm.max_chindren个worker进程
 2. dynamic(动态)：表示运行时fork出start_servers个进程，随着负载的情况，动态的调整，最多不超过max_children个进程
 
 > 一般推荐用static，优点是不用动态的判断负载情况，提升性能，缺点是多占用些系统内存资源。
 
-- ### max_children(子进程最大数)
+### max_children(子进程最大数)
 1. 这个值原则上是越大越好，php-cgi的进程多了就会处理的很快，排队的请求就会很少。
 
 2. 设置'max_children'需要根据服务器的性能进行设定
@@ -118,12 +117,12 @@ catch_workers_output = yes
 
 7. 如果长时间没有得到处理的请求就会出现504 Gateway Time-out这个错误，而正在处理的很累的那几个php-cgi如果遇到了问题就会出现502 Bad gateway这个错误。
 
-- ### start_servers(启动时的进程数)
+### start_servers(启动时的进程数)
 1. pm.start_servers的默认值为2。
 > 其在php-fpm中给的计算方式也为：{（cpu空闲时等待连接的php的最小子进程数） + （cpu空闲时等待连接的php的最大子进程数 - cpu空闲时等待连接的php的最小子进程数）/ 2} 用配置表示就是：min_spare_servers + (max_spare_servers - min_spare_servers) / 2；
 2. 一般而言，设置成10-20之间的数据足够满足需求了
 
-- ### max_requests(最大请求数)
+### max_requests(最大请求数)
 
 >最大处理请求数是指一个php-fpm的worker进程在处理多少个请求后就终止掉，master进程会重新spawn一个新的。这个配置的主要目的是避免php解释器或程序引用的第三方库造成的内存泄露。
 
@@ -137,7 +136,7 @@ catch_workers_output = yes
 
 > <front color=red>也正是因为这个机制，在高并发中，经常导致502错误，</front>
 
-- ### request_terminate_timeout(最长执行时间)
+### request_terminate_timeout(最长执行时间)
 `设置单个请求的超时中止时间。该选项可能会对 php.ini 设置中的 'max_execution_time' 因为某些特殊原因没有中止运行的脚本有用。设置为 '0' 表示 'Off'。`
 
 >这两项都是用来配置一个PHP脚本的最大执行时间的。当超过这个时间时，PHP-FPM不只会终止脚本的执行，还会终止执行脚本的Worker进程,Nginx会发现与自己通信的连接断掉了，就会返回给客户端502错误
@@ -148,6 +147,7 @@ catch_workers_output = yes
 - 的PHPFastCGI子进程数（max_children）调到适应大小
 - 使用socket连接FastCGI，linux操作系统可以放在 /dev/shm中
 > 注：在php-fpm.cnf里设置<value name=”listen_address”>/tmp/nginx.socket</value>就可以通过socket连接FastCGI了，/dev/shm是内存文件系统，放在内存中肯定会快了.记得这时也要在nginx里的配置里进行修改，保持一致．
+
 ``` 
 location ~ \.php${
    #将Nginx与FastCGI的通信方式由TCP改为Unix Socket。TCP在高并发访问下比Unix Socket稳定，但Unix Socket速度要比TCP快。
@@ -159,6 +159,7 @@ location ~ \.php${
 ```
 
 - 以root身份执行以下命令，调高linux内核打开文件数量
+
 ``` 
  echo 'ulimit -HSn 65536' >> /etc/profile
  echo 'ulimit -HSn 65536' >> /etc/rc.local
@@ -166,6 +167,7 @@ location ~ \.php${
 ```
 
 - 增加 PHP-FPM 打开文件描述符的限制:
+
 > 把php-fpm.conf文件中的rlimit_files值1024改为4096或者更高，然后<front color='red'>重启 PHP-FPM</front>
 
 - 使用php代码加速器，例如 eAccelerator, XCache.在linux平台上可以把`cache_dir`指向 /dev/shm

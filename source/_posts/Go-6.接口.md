@@ -1,5 +1,5 @@
 ---
-title: 学Go笔记-接口
+title: Go-基础篇-接口
 date: 2018-04-14 18:54:35
 tags:
  - go

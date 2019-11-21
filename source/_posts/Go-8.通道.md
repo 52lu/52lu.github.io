@@ -1,5 +1,5 @@
 ---
-title: 学Go笔记-通道
+title: Go-基础篇-通道
 date: 2018-05-08 13:53:15
 tags:
  - go
