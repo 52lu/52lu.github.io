@@ -1,5 +1,5 @@
 ---
-title: Java-基础篇-多线程
+title: Java-基础篇-了解多线程
 date: 2019-11-27 13:32:48
  - Java
 categories:
