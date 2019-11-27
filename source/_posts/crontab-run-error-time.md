@@ -21,7 +21,6 @@ categories:
 **处理方法:**
 
 - 修改时区
-
 ```$xslt
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
