@@ -126,12 +126,14 @@ bash-4.4$ cat /nexus-data/admin.password
     <repository>
         <id>self-nexus-releases</id>
         <name>Nexus Release Repository</name>
+        <!-- 这个地址是nexus3的服务地址-->
         <url>http://192.168.0.110:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
         <id>self-nexus-snapshots</id>
         <name>Nexus Snapshot Repository</name>
-        <url>http://192.168.0.110:110/repository/maven-snapshots/</url>
+         <!-- 这个地址是nexus3的服务地址-->
+        <url>http://192.168.0.110:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
 </distributionManagement>
 <!--  个人私服配置 -结束节点-->
