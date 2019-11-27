@@ -136,6 +136,14 @@
     
         
             
+            <li><div data-rel="服务使用">服务使用<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
                 
             </li>
@@ -152,14 +160,6 @@
     
         
             
-            <li><div data-rel="服务使用">服务使用<small>(3)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="入坑历史">入坑历史<small>(7)</small></div>
                 
             </li>
@@ -168,7 +168,7 @@
     
         
             
-            <li><div data-rel="命令使用">命令使用<small>(6)</small></div>
+            <li><div data-rel="数据库">数据库<small>(2)</small></div>
                 
             </li>
             
@@ -176,7 +176,7 @@
     
         
             
-            <li><div data-rel="数据库">数据库<small>(2)</small></div>
+            <li><div data-rel="命令使用">命令使用<small>(6)</small></div>
                 
             </li>
             
@@ -225,7 +225,7 @@
     <div><a class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="60">
-<input type="hidden" id="yelog_site_word_count" value="90.2k">
+<input type="hidden" id="yelog_site_word_count" value="90.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -289,6 +289,10 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">数据结构</a>
     </li>
     
@@ -297,7 +301,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">nginx</a>
+        <a href="javascript:" class="color4">mac</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -306,14 +318,6 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color1">linux</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">mac</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">php</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -349,15 +353,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">git</a>
+        <a href="javascript:" class="color4">rabbitmq</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">概念</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">rabbitmq</a>
     </li>
     
     <div class="clearfix"></div>
@@ -376,7 +376,7 @@
         </a>
         
         <a class="服务搭建 " href="/2019/11/24/maven-nexus-build/" data-tag="maven,nexus" data-author="">
-            <span class="post-title" title="Maven私服搭建(nexus3)">Maven私服搭建(nexus3)</span>
+            <span class="post-title" title="Maven私服搭建(nexus3)和使用">Maven私服搭建(nexus3)和使用</span>
             <span class="post-date" title="2019-11-24 00:04:08">2019/11/24</span>
         </a>
         
@@ -485,7 +485,7 @@
             <span class="post-date" title="2018-09-11 11:14:07">2018/09/11</span>
         </a>
         
-        <a class="入坑历史 " href="/2018/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/" data-tag="git" data-author="">
+        <a class="入坑历史 " href="/2018/08/13/Pathspec-xxx-is-in-submodule/" data-tag="git" data-author="">
             <span class="post-title" title="fatal: Pathspec &#39;xxx&#39; is in submodule for php yaf vendor">fatal: Pathspec &#39;xxx&#39; is in submodule for php yaf vendor</span>
             <span class="post-date" title="2018-08-13 11:33:58">2018/08/13</span>
         </a>
@@ -495,7 +495,7 @@
             <span class="post-date" title="2018-08-13 10:33:29">2018/08/13</span>
         </a>
         
-        <a class="入坑历史 " href="/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/" data-tag="mac,php" data-author="">
+        <a class="入坑历史 " href="/2018/07/31/brew-yaf-error/" data-tag="mac,php" data-author="">
             <span class="post-title" title="MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;">MacBook brew yaf error: unknown type name &#39;HASHKIT_API&#39;</span>
             <span class="post-date" title="2018-07-31 19:47:18">2018/07/31</span>
         </a>
@@ -967,7 +967,7 @@ class MyException extends Exception
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#数据结构','#docker','#nginx','#mysql','#linux','#mac','#php','#crond','#http','#Java','#maven','#nexus','#nfs','#算法','#面试题','#git','#概念','#rabbitmq',],
+            'data': ['#go','#nginx','#数据结构','#docker','#mac','#php','#git','#mysql','#linux','#crond','#http','#Java','#maven','#nexus','#nfs','#算法','#面试题','#rabbitmq','#概念',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
