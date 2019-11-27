@@ -1,5 +1,5 @@
 ---
-title: 关闭防火墙(Centos7）
+title: 在Centos7中使用防火墙
 date: 2015-08-17 12:04:26
 tags:
   - linux
