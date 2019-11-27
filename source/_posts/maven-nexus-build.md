@@ -1,5 +1,5 @@
 ---
-title: Maven私服搭建(nexus3)
+title: Maven私服搭建(nexus3)和使用
 date: 2019-11-24 00:04:08
 tags:
  - maven
@@ -90,3 +90,51 @@ bash-4.4$ cat /nexus-data/admin.password
 ```
 
 登录之后，根据引导，可以设置新密码。
+
+# 3. 使用nexus3
+
+## 3.1 第一步:修改maven的配置文件
+在maven的配置文件(settings.xml)中，servers 节点下添加以下代码
+
+``` 
+<servers>
+  ...
+  
+  <!-- 个人私服开始节点 -->
+      <server>
+        <!-- 注意:pom.xml中的id要和这个一致！！ -->
+        <id>self-nexus-releases</id>
+        <username>admin</username>
+        <password>123456</password>
+      </server>
+      <server>
+        <id>self-nexus-snapshots</id>
+        <username>admin</username>
+        <password>123456</password>
+      </server>
+      <!-- 个人私服结束节点 -->
+</servers>
+```
+## 3.2 第二步:修改项目pom.xml文件
+
+修改项目中pom.xml文件，添加节点distributionManagement，代码如下:
+
+```$xslt
+<!--  个人私服配置 -开始节点 -->
+<!--  id名称必须要与 maven settings.xml 中 Servers 配置的ID名称保持一致-->
+<distributionManagement>
+    <repository>
+        <id>self-nexus-releases</id>
+        <name>Nexus Release Repository</name>
+        <url>http://192.168.0.110:8081/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+        <id>self-nexus-snapshots</id>
+        <name>Nexus Snapshot Repository</name>
+        <url>http://192.168.0.110:110/repository/maven-snapshots/</url>
+    </snapshotRepository>
+</distributionManagement>
+<!--  个人私服配置 -结束节点-->
+```
+
+<font color=orange>@注意: repository节点和snapshotRepository节点下的id名称必须要与maven的配置文件(settings.xml)中的server下配置的id名称保持一致</font>
