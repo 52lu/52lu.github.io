@@ -1,5 +1,5 @@
 ---
-title: crontab 无运行日志文件或不按时执行
+title: 发现cron不生成日志文件或不按时执行怎么办?
 date: 2015-10-03 11:42:44
 tags:
   - crond
@@ -7,21 +7,35 @@ categories:
   - 入坑历史
 ---
 
-### Centos7 crontab 没有按时执行任务，并且在/var/log/ 没有cron日志文件
+# 1.在/var/log/ 没有cron日志文件
 
-#### 1.没有日志文件解决方法：
-```
+**处理方法:**
+
+```$xslt
 # yum install rsyslog 
 ```
 
 
-#### 2.没有按时执行解决方法:
+# 2.没有按时执行
+
+**处理方法:**
+
+- 修改时区
+
+```$xslt
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
-# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
-# 然后重启下面服务 
+- 重启服务
+```$xslt
 # service crond restart
 # service rsyslog restart
 ```
+
+
+# 3.在线生成定时任务
+[点击,去生成](https://crontab-generator.org/)
+
+![](https://mrliuqh.github.io/directionsImg/other/crontab-make.png)
+
 
