@@ -426,8 +426,8 @@
       </categories>
       <tags>
         <tag>php</tag>
-        <tag>面试题</tag>
         <tag>算法</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -576,7 +576,7 @@
   <entry>
     <title><![CDATA[发现cron不生成日志文件或不按时执行怎么办?]]></title>
     <url>%2F2015%2F10%2F03%2Fcrontab-run-error-time%2F</url>
-    <content type="text"><![CDATA[1.在/var/log/ 没有cron日志文件处理方法: # yum install rsyslog 2.没有按时执行处理方法: 修改时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 重启服务# service crond restart # service rsyslog restart 3.在线生成定时任务点击,去生成]]></content>
+    <content type="text"><![CDATA[1.在/var/log/ 没有cron日志文件处理方法: # yum install rsyslog 2.没有按时执行处理方法: 修改时区 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 重启服务 # service crond restart # service rsyslog restart 3.在线生成定时任务点击,去生成]]></content>
       <categories>
         <category>入坑历史</category>
       </categories>
