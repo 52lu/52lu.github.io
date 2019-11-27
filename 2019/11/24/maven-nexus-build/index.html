@@ -136,14 +136,6 @@
     
         
             
-            <li><div data-rel="服务使用">服务使用<small>(3)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
                 
             </li>
@@ -168,6 +160,14 @@
     
         
             
+            <li><div data-rel="服务使用">服务使用<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="数据库">数据库<small>(2)</small></div>
                 
             </li>
@@ -176,7 +176,7 @@
     
         
             
-            <li><div data-rel="命令使用">命令使用<small>(6)</small></div>
+            <li><div data-rel="容器管理">容器管理<small>(2)</small></div>
                 
             </li>
             
@@ -184,7 +184,7 @@
     
         
             
-            <li><div data-rel="容器管理">容器管理<small>(2)</small></div>
+            <li><div data-rel="命令使用">命令使用<small>(6)</small></div>
                 
             </li>
             
@@ -289,10 +289,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">nginx</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">数据结构</a>
     </li>
     
@@ -301,11 +297,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">mac</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">php</a>
+        <a href="javascript:" class="color1">mysql</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -313,7 +305,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
+        <a href="javascript:" class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">mac</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -345,11 +345,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">算法</a>
+        <a href="javascript:" class="color4">面试题</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">面试题</a>
+        <a href="javascript:" class="color3">算法</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -565,7 +565,7 @@
             <span class="post-date" title="2018-04-03 15:46:01">2018/04/03</span>
         </a>
         
-        <a class="后端编程 " href="/2018/01/12/php-sort/" data-tag="php,算法,面试题" data-author="">
+        <a class="后端编程 " href="/2018/01/12/php-sort/" data-tag="php,面试题,算法" data-author="">
             <span class="post-title" title="php排序算法汇总">php排序算法汇总</span>
             <span class="post-date" title="2018-01-12 10:12:07">2018/01/12</span>
         </a>
@@ -708,12 +708,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-11-27 14:03:01">2019-11-24 00:04</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-27 14:06:20">2019-11-24 00:04</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:665</span>
+        <span>字数:691</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -832,12 +832,14 @@ bash-4.4$ cat /nexus-data/admin.password
     &lt;repository&gt;
         &lt;id&gt;self-nexus-releases&lt;/id&gt;
         &lt;name&gt;Nexus Release Repository&lt;/name&gt;
+        &lt;!-- 这个地址是nexus3的服务地址--&gt;
         &lt;url&gt;http://192.168.0.110:8081/repository/maven-releases/&lt;/url&gt;
     &lt;/repository&gt;
     &lt;snapshotRepository&gt;
         &lt;id&gt;self-nexus-snapshots&lt;/id&gt;
         &lt;name&gt;Nexus Snapshot Repository&lt;/name&gt;
-        &lt;url&gt;http://192.168.0.110:110/repository/maven-snapshots/&lt;/url&gt;
+         &lt;!-- 这个地址是nexus3的服务地址--&gt;
+        &lt;url&gt;http://192.168.0.110:8081/repository/maven-snapshots/&lt;/url&gt;
     &lt;/snapshotRepository&gt;
 &lt;/distributionManagement&gt;
 &lt;!--  个人私服配置 -结束节点--&gt;
@@ -856,7 +858,7 @@ bash-4.4$ cat /nexus-data/admin.password
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>Maven私服搭建(nexus3)和使用</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">665</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">691</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="撸码">撸码</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-24 00:04</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/24/maven-nexus-build/" title="Maven私服搭建(nexus3)和使用">https://mrliuqh.github.io/2019/11/24/maven-nexus-build/</a>
@@ -941,7 +943,7 @@ bash-4.4$ cat /nexus-data/admin.password
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#nginx','#数据结构','#docker','#mac','#php','#git','#mysql','#linux','#crond','#http','#Java','#maven','#nexus','#nfs','#算法','#面试题','#rabbitmq','#概念',],
+            'data': ['#go','#数据结构','#docker','#mysql','#git','#nginx','#mac','#php','#linux','#crond','#http','#Java','#maven','#nexus','#nfs','#面试题','#算法','#rabbitmq','#概念',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
