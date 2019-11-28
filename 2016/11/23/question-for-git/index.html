@@ -136,7 +136,7 @@
     
         
             
-            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
+            <li><div data-rel="服务使用">服务使用<small>(3)</small></div>
                 
             </li>
             
@@ -152,7 +152,7 @@
     
         
             
-            <li><div data-rel="入坑历史">入坑历史<small>(7)</small></div>
+            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
                 
             </li>
             
@@ -160,7 +160,7 @@
     
         
             
-            <li><div data-rel="服务使用">服务使用<small>(3)</small></div>
+            <li><div data-rel="入坑历史">入坑历史<small>(7)</small></div>
                 
             </li>
             
@@ -225,7 +225,7 @@
     <div><a class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="60">
-<input type="hidden" id="yelog_site_word_count" value="90.5k">
+<input type="hidden" id="yelog_site_word_count" value="90.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -289,7 +289,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">数据结构</a>
+        <a href="javascript:" class="color1">nginx</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -297,15 +297,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">mysql</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">git</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">nginx</a>
+        <a href="javascript:" class="color5">数据结构</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -317,15 +309,23 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color1">linux</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">crond</a>
+        <a href="javascript:" class="color5">http</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">http</a>
+        <a href="javascript:" class="color1">crond</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -706,12 +706,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-11-20 15:10:30">2016-11-23 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-28 13:51:03">2016-11-23 00:00</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:88</span>
+        <span>字数:503</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -741,7 +741,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1-解决git-pull-push每次都需要输入密码问题"><span class="toc-text">Q1 解决git pull/push每次都需要输入密码问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2-git无法pull仓库refusing-to-merge-unrelated-histories"><span class="toc-text">Q2 git无法pull仓库refusing to merge unrelated histories</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3-error-cannot-lock-ref-‘refs-remotes-origin-’-ref-refs-remotes-origin-is-at-1907…927a1c-but-expected-8a5b…04b8"><span class="toc-text">Q3  error: cannot lock ref ‘refs/remotes/origin/..’: ref refs/remotes/origin/.. is at 1907…927a1c but expected 8a5b…04b8</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Q1-解决git-pull-push每次都需要输入密码问题"><span class="toc-text">Q1 解决git pull/push每次都需要输入密码问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q2-git无法pull仓库refusing-to-merge-unrelated-histories"><span class="toc-text">Q2 git无法pull仓库refusing to merge unrelated histories</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q3-error-cannot-lock-ref-refs-remotes-origin"><span class="toc-text">Q3  error: cannot lock ref refs/remotes/origin..</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q4-warning-远程-HEAD-指向一个不存在的引用，无法检出"><span class="toc-text">Q4 warning: 远程 HEAD 指向一个不存在的引用，无法检出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Q5-gitLab-remote-rejected-master-gt-master-pre-receive-hook-declined"><span class="toc-text">Q5 gitLab:[remote rejected] master -&gt; master (pre-receive hook declined)</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -756,15 +756,65 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1-解决git-pull-push每次都需要输入密码问题"><a href="#Q1-解决git-pull-push每次都需要输入密码问题" class="headerlink" title="Q1 解决git pull/push每次都需要输入密码问题"></a>Q1 解决git pull/push每次都需要输入密码问题</h3><p>解决办法:<br><strong> 进入你的项目目录，输入：</strong></p>
-<pre><code>git config --global credential.helper store
-</code></pre><h3 id="Q2-git无法pull仓库refusing-to-merge-unrelated-histories"><a href="#Q2-git无法pull仓库refusing-to-merge-unrelated-histories" class="headerlink" title="Q2 git无法pull仓库refusing to merge unrelated histories"></a>Q2 git无法pull仓库refusing to merge unrelated histories</h3><p>解决方法:</p>
-<pre><code>git pull --allow-unrelated-histories
-</code></pre><h3 id="Q3-error-cannot-lock-ref-‘refs-remotes-origin-’-ref-refs-remotes-origin-is-at-1907…927a1c-but-expected-8a5b…04b8"><a href="#Q3-error-cannot-lock-ref-‘refs-remotes-origin-’-ref-refs-remotes-origin-is-at-1907…927a1c-but-expected-8a5b…04b8" class="headerlink" title="Q3  error: cannot lock ref ‘refs/remotes/origin/..’: ref refs/remotes/origin/.. is at 1907…927a1c but expected 8a5b…04b8"></a>Q3  error: cannot lock ref ‘refs/remotes/origin/..’: ref refs/remotes/origin/.. is at 1907…927a1c but expected 8a5b…04b8</h3><p>解决方法:</p>
-<pre><code># rm .git/refs/remotes/origin/dev
+        <h1 id="Q1-解决git-pull-push每次都需要输入密码问题"><a href="#Q1-解决git-pull-push每次都需要输入密码问题" class="headerlink" title="Q1 解决git pull/push每次都需要输入密码问题"></a>Q1 解决git pull/push每次都需要输入密码问题</h1><p>解决办法:</p>
+<ul>
+<li>进入你的项目目录，输入：</li>
+<li><blockquote>
+<p>git config --global credential.helper store</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Q2-git无法pull仓库refusing-to-merge-unrelated-histories"><a href="#Q2-git无法pull仓库refusing-to-merge-unrelated-histories" class="headerlink" title="Q2 git无法pull仓库refusing to merge unrelated histories"></a>Q2 git无法pull仓库refusing to merge unrelated histories</h1><p>解决方法: </p>
+<pre><code>git pull origin master --allow-unrelated-histories
+</code></pre><h1 id="Q3-error-cannot-lock-ref-refs-remotes-origin"><a href="#Q3-error-cannot-lock-ref-refs-remotes-origin" class="headerlink" title="Q3  error: cannot lock ref refs/remotes/origin.."></a>Q3  error: cannot lock ref refs/remotes/origin..</h1><p>报错:</p>
+<pre><code>error: cannot lock ref &#39;refs/remotes/origin/分支名&#39;: ref refs/remotes/origin/分支名... 
+is at 19070aed6873f8d58f35e4631272b59f13927a1c but expected 8a5b3bda0778070bd6b92123556475c9484e04b8
+</code></pre><p>解决方法:</p>
+<pre><code># rm .git/refs/remotes/origin/分支名
 # git fetch
+</code></pre><h1 id="Q4-warning-远程-HEAD-指向一个不存在的引用，无法检出"><a href="#Q4-warning-远程-HEAD-指向一个不存在的引用，无法检出" class="headerlink" title="Q4 warning: 远程 HEAD 指向一个不存在的引用，无法检出"></a>Q4 warning: 远程 HEAD 指向一个不存在的引用，无法检出</h1><p>解决方法： </p>
+<pre><code>原因是.git目录下.git/refs/heads不存在HEAD指向的文件，这个时候可以用git show-ref命令查看 
+获得如下打印： 
+5fa0b60252ca2c10fa3c2e12780d351c047c802d refs/remotes/origin/branch_qc_origin 
+5fa0b60252ca2c10fa3c2e12780d351c047c802d refs/tags/XXXXXXXXXXXX 
+48dee3a5f7b9cac98349e949275c652e02b0b67e refs/tags/PXXXXV0.0.0B01-bringup 
+505a9bb0c6d815e6db561f7cb7ed0e20cd73ddde refs/tags/PXXXX_02550_201309260427 
+e2b211a3c9d8dabec9fe1018b4f7db5c953832ea refs/tags/PXXXX_bsp_02550_201309260422 
+0848e8b7922c78dbb364aa0e7c1b8375d16a70a3 refs/tags/branch_PXXXX_02550_201309190102 
+7384803be7c8866393b96ebaaa7e1b2b119654e7 refs/tags/branch_PXXXX_02550_201309200102 
+480f444dd26bb238aeaacf15da748ad861ea9378 refs/tags/branch_PXXXX_02550_201309210102 
+…… 
+可以看出，全部是标签tag，并没有类似refs/head/branch_name 
+继续执行命令： 
+git branch //输入出空 
+git branch -a //输出 remotes/origin/branch_qc_origin 
+git checkout remotes/origin/branch_qc_origin // ① checkout的是git branch -a输出的内容 
+这样通过ll命令查看，Contacts代码下载到工作目录了 
+接着创建分支： 
+git checkout -b remotes/origin/branch_qc_origin // ② 创建分支 
+git branch //可以看到输出*remotes/origin/branch_qc_origin了，不再为空 
+git branch -m remotes/origin/branch_qc_origin master // ③ 重命名分支叫master 
+git show-ref命令查看也能看到head了 
+至此，问题得到解决。
 
-</code></pre>
+</code></pre><h1 id="Q5-gitLab-remote-rejected-master-gt-master-pre-receive-hook-declined"><a href="#Q5-gitLab-remote-rejected-master-gt-master-pre-receive-hook-declined" class="headerlink" title="Q5 gitLab:[remote rejected] master -&gt; master (pre-receive hook declined)"></a>Q5 gitLab:[remote rejected] master -&gt; master (pre-receive hook declined)</h1><p>原因:</p>
+<ol>
+<li>项目中对应的分支，设置成了已保护，无法push</li>
+<li>ssh克隆下的地址有问题，具体什么问题还不清楚，对应的方案使用http</li>
+</ol>
+<p>报错:</p>
+<pre><code>remote: GitLab: You are not allowed to push code to protected branches on this project.
+To ssh://git.xxx.com:22138/ms-group/mm-test.git
+ ! [remote rejected] master -&gt; master (pre-receive hook declined)
+error: failed to push some refs to &#39;ssh://git@git.xxx.com:22138/ms-group/mm-test.git&#39;
+</code></pre><p>解决方法：</p>
+<ul>
+<li><p>第一步:查看gitlab中对应的项目是否设置保护分支;<br><img src="https://mrliuqh.github.io/directionsImg/git/gitlab-pre-receive-hook-declined.png" alt=""><br><img src="https://mrliuqh.github.io/directionsImg/git/gitlab-protected-branch.png" alt=""></p>
+</li>
+<li><p>第二步: 上面确认设置后，依旧报错，改用下面方法<br><img src="https://mrliuqh.github.io/directionsImg/git/gitlab-use-http.png" alt=""></p>
+</li>
+</ul>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -778,7 +828,7 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>Git相关的问题</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">88</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">503</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="撸码">撸码</a></p>
     <p><span class="copy-title">发布时间:</span>2016-11-23 00:00</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2016/11/23/question-for-git/" title="Git相关的问题">https://mrliuqh.github.io/2016/11/23/question-for-git/</a>
@@ -863,7 +913,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#数据结构','#docker','#mysql','#git','#nginx','#mac','#php','#linux','#crond','#http','#Java','#maven','#nexus','#nfs','#面试题','#算法','#rabbitmq','#概念',],
+            'data': ['#go','#nginx','#docker','#数据结构','#mac','#php','#mysql','#git','#linux','#http','#crond','#Java','#maven','#nexus','#nfs','#面试题','#算法','#rabbitmq','#概念',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
