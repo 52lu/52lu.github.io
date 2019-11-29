@@ -1,330 +1,280 @@
 <!DOCTYPE html>
 
 
-
-  
-
-
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="theme-color" content="#222">
 
 
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
 
+    <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
+    <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"/>
 
+    <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"/>
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
+    <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
+    <meta name="keywords" content="Hexo, NexT"/>
 
 
+    <meta name="description" content="记录：填坑、挖坑的心累历程。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="QingHui&#39;s Blog">
+    <meta property="og:url" content="http://yoursite.com/index.html">
+    <meta property="og:site_name" content="QingHui&#39;s Blog">
+    <meta property="og:description" content="记录：填坑、挖坑的心累历程。">
+    <meta property="og:locale" content="zh-Hans">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="QingHui&#39;s Blog">
+    <meta name="twitter:description" content="记录：填坑、挖坑的心累历程。">
 
 
+    <script type="text/javascript" id="hexo.configurations">
+        var NexT = window.NexT || {};
+        var CONFIG = {
+            root: '/',
+            scheme: 'Gemini',
+            version: '5.1.4',
+            sidebar: {
+                "position": "left",
+                "display": "post",
+                "offset": 12,
+                "b2t": false,
+                "scrollpercent": false,
+                "onmobile": false
+            },
+            fancybox: true,
+            tabs: true,
+            motion: {
+                "enable": true,
+                "async": false,
+                "transition": {
+                    "post_block": "fadeIn",
+                    "post_header": "slideDownIn",
+                    "post_body": "slideDownIn",
+                    "coll_header": "slideLeftIn",
+                    "sidebar": "slideUpIn"
+                }
+            },
+            duoshuo: {
+                userId: '0',
+                author: '博主'
+            },
+            algolia: {
+                applicationID: '',
+                apiKey: '',
+                indexName: '',
+                hits: {"per_page": 10},
+                labels: {
+                    "input_placeholder": "Search for Posts",
+                    "hits_empty": "We didn't find any results for the search: ${query}",
+                    "hits_stats": "${hits} results found in ${time} ms"
+                }
+            }
+        };
+    </script>
 
 
+    <link rel="canonical" href="http://yoursite.com/"/>
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <title>QingHui's Blog</title>
 
 
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="记录：填坑、挖坑的心累历程。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QingHui&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="QingHui&#39;s Blog">
-<meta property="og:description" content="记录：填坑、挖坑的心累历程。">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QingHui&#39;s Blog">
-<meta name="twitter:description" content="记录：填坑、挖坑的心累历程。">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>QingHui's Blog</title>
-  
-
-
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?0e1ba6ee40c0376e0e4906e5b784bae5";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?0e1ba6ee40c0376e0e4906e5b784bae5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-  
-    
-  
 
-  <div class="container sidebar-position-left 
+<div class="container sidebar-position-left
   page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+        <div class="header-inner">
+            <div class="site-brand-wrapper">
+                <div class="site-meta ">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">QingHui's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">书山有路勤为径，学海无涯苦作舟。</p>
-      
-  </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+                    <div class="custom-logo-site-title">
+                        <a href="/" class="brand" rel="start">
+                            <span class="logo-line-before"><i></i></span>
+                            <span class="site-title">QingHui's Blog</span>
+                            <span class="logo-line-after"><i></i></span>
+                        </a>
+                    </div>
 
-<nav class="site-nav">
-  
+                    <p class="site-subtitle">书山有路勤为径，学海无涯苦作舟。</p>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
+                </div>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+                <div class="site-nav-toggle">
+                    <button>
+                        <span class="btn-bar"></span>
+                        <span class="btn-bar"></span>
+                        <span class="btn-bar"></span>
+                    </button>
+                </div>
+            </div>
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
+            <nav class="site-nav">
+
+
+                <ul id="menu" class="menu">
+
+
+                    <li class="menu-item menu-item-home">
+                        <a href="/" rel="section">
+
+                            <i class="menu-item-icon fa fa-fw fa-home"></i> <br/>
+
+                            首页
+                        </a>
+                    </li>
+
+
+                    <li class="menu-item menu-item-tags">
+                        <a href="/tags/" rel="section">
+
+                            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>
+
+                            标签
+                        </a>
+                    </li>
+
+
+                    <li class="menu-item menu-item-categories">
+                        <a href="/categories/" rel="section">
+
+                            <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br/>
+
+                            分类
+                        </a>
+                    </li>
+
+
+                    <li class="menu-item menu-item-archives">
+                        <a href="/archives/" rel="section">
+
+                            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>
+
+                            归档
+                        </a>
+                    </li>
+
+
+                    <li class="menu-item menu-item-search">
+
+                        <a href="javascript:;" class="popup-trigger">
+
+
+                            <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>
+
+                            搜索
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <div class="site-search">
+
+                    <div class="popup search-popup local-search-popup">
+                        <div class="local-search-header clearfix">
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <span class="popup-btn-close">
+                            <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
+                            <div class="local-search-input-wrapper">
+                                <input autocomplete="off"
+                                       placeholder="搜索..." spellcheck="false"
+                                       type="text" id="local-search-input">
+                            </div>
+                        </div>
+                        <div id="local-search-result"></div>
+                    </div>
 
 
-
-    </div>
-  
-
- 
-  
-   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=236 height=86 src="//music.163.com/outchain/player?type=2&id=449578837&auto=1&height=66"></iframe>
-  
-</nav>
+                </div>
 
 
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=236 height=86
+                        src="//music.163.com/outchain/player?type=2&id=449578837&auto=1&height=66"></iframe>
 
- </div>
+            </nav>
+
+
+        </div>
     </header>
 
     <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
+        <div class="main-inner">
+            <div class="content-wrap">
+                <div id="content" class="content">
+
+                    <section id="posts" class="posts-expand">
 
 
-  
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/Linux docker 搭建禅道/">
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2019/02/14/Linux docker 搭建禅道/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019.bak/02/14/Linux docker 搭建禅道/" itemprop="url">Linux docker 搭建禅道</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link" href="/2019.bak/02/14/Linux docker 搭建禅道/"
+                                           itemprop="url">Linux docker 搭建禅道</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -343,8 +293,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -376,120 +326,77 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="一、下载地址"><a href="#一、下载地址" class="headerlink" title="一、下载地址"></a>一、下载地址</h3><p>禅道开源版：<a href="http://dl.cnezsoft.com/zentao/docker/docker_zentao.zip" target="_blank" rel="noopener">http://dl.cnezsoft.com/zentao/docker/docker_zentao.zip</a></p>
-<p>数据库用户名：root,默认密码： 123456。运行时，可以设置 MYSQL_ROOT_PASSWORD变量来更改密码。</p>
-<p>可挂载目录</p>
-<p>/app/zentaopms:该目录为禅道目录，里面包含禅道代码及附件上传目录。</p>
-<p>/var/lib/mysql:该目录为数据库的数据目录。</p>
-<h3 id="二、安装使用"><a href="#二、安装使用" class="headerlink" title="二、安装使用"></a>二、安装使用</h3><p><span style="color:red">注意：需要关闭下selinux </span><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019.bak/02/14/Linux docker 搭建禅道/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/question-for-git/">
+                                    <h3 id="一、下载地址"><a href="#一、下载地址" class="headerlink" title="一、下载地址"></a>一、下载地址</h3>
+                                    <p>禅道开源版：<a href="http://dl.cnezsoft.com/zentao/docker/docker_zentao.zip"
+                                                target="_blank" rel="noopener">http://dl.cnezsoft.com/zentao/docker/docker_zentao.zip</a>
+                                    </p>
+                                    <p>数据库用户名：root,默认密码： 123456。运行时，可以设置 MYSQL_ROOT_PASSWORD变量来更改密码。</p>
+                                    <p>可挂载目录</p>
+                                    <p>/app/zentaopms:该目录为禅道目录，里面包含禅道代码及附件上传目录。</p>
+                                    <p>/var/lib/mysql:该目录为数据库的数据目录。</p>
+                                    <h3 id="二、安装使用"><a href="#二、安装使用" class="headerlink" title="二、安装使用"></a>二、安装使用</h3>
+                                    <p><span style="color:red">注意：需要关闭下selinux </span><br>
+                                        <!--noindex-->
+                                    <div class="post-button text-center">
+                                        <a class="btn" href="/2019.bak/02/14/Linux docker 搭建禅道/#more" rel="contents">
+                                            阅读全文 &raquo;
+                                        </a>
+                                    </div>
+                                    <!--/noindex-->
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2018/11/23/question-for-git/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/11/23/question-for-git/" itemprop="url">question for git</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link" href="/2018.bak/11/23/question-for-git/"
+                                           itemprop="url">question for git</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -508,8 +415,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -530,121 +437,76 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3><span id="q1-解决git-pullpush每次都需要输入密码问题">Q1 解决git pull/push每次都需要输入密码问题</span></h3><p>解决办法:</p>
-<ul>
-<li>进入你的项目目录，输入：</li>
-<li><blockquote>
-<p>git config –global credential.helper store</p>
-</blockquote>
-</li>
-</ul>
-<h3><span id="q2-git无法pull仓库refusing-to-merge-unrelated-histories">Q2 git无法pull仓库refusing to merge unrelated histories</span></h3><blockquote>
-<p>解决方法: git pull –allow-unrelated-histories</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/crontab-无运行日志文件或不按时执行/">
+                                    <h3><span id="q1-解决git-pullpush每次都需要输入密码问题">Q1 解决git pull/push每次都需要输入密码问题</span>
+                                    </h3>
+                                    <p>解决办法:</p>
+                                    <ul>
+                                        <li>进入你的项目目录，输入：</li>
+                                        <li>
+                                            <blockquote>
+                                                <p>git config –global credential.helper store</p>
+                                            </blockquote>
+                                        </li>
+                                    </ul>
+                                    <h3><span id="q2-git无法pull仓库refusing-to-merge-unrelated-histories">Q2 git无法pull仓库refusing to merge unrelated histories</span>
+                                    </h3>
+                                    <blockquote>
+                                        <p>解决方法: git pull –allow-unrelated-histories</p>
+                                    </blockquote>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2018/10/03/crontab-无运行日志文件或不按时执行/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/10/03/crontab-无运行日志文件或不按时执行/" itemprop="url">crontab 无运行日志文件或不按时执行</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link" href="/2018.bak/10/03/crontab-无运行日志文件或不按时执行/"
+                                           itemprop="url">crontab 无运行日志文件或不按时执行</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -663,8 +525,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -685,118 +547,100 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3><span id="centos7-crontab-没有按时执行任务并且在varlog-没有cron日志文件">Centos7 crontab 没有按时执行任务，并且在/var/log/ 没有cron日志文件</span></h3><ul>
-<li><p>1.没有日志文件解决方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install rsyslog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.没有按时执行解决方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"></span><br><span class="line">//然后重启下面服务 </span><br><span class="line"></span><br><span class="line"># service crond restart</span><br><span class="line"># service rsyslog restart</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/Row-size-too-large-8126-for-mysql/">
+                                    <h3><span id="centos7-crontab-没有按时执行任务并且在varlog-没有cron日志文件">Centos7 crontab 没有按时执行任务，并且在/var/log/ 没有cron日志文件</span>
+                                    </h3>
+                                    <ul>
+                                        <li><p>1.没有日志文件解决方法：</p>
+                                            <figure class="highlight plain">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span
+                                                                    class="line"># yum install rsyslog</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </li>
+                                        <li><p>2.没有按时执行解决方法：</p>
+                                            <figure class="highlight plain">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span
+                                                                    class="line">2</span><br><span class="line">3</span><br><span
+                                                                    class="line">4</span><br><span class="line">5</span><br><span
+                                                                    class="line">6</span><br><span class="line">7</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line"></span><br><span class="line"># cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span
+                                                                    class="line"></span><br><span class="line">//然后重启下面服务 </span><br><span
+                                                                    class="line"></span><br><span class="line"># service crond restart</span><br><span
+                                                                    class="line"># service rsyslog restart</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </li>
+                                    </ul>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2018/09/11/Row-size-too-large-8126-for-mysql/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/09/11/Row-size-too-large-8126-for-mysql/" itemprop="url">Row size too large (> 8126) for mysql</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link"
+                                           href="/2018.bak/09/11/Row-size-too-large-8126-for-mysql/" itemprop="url">Row
+                                            size too large (> 8126) for mysql</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -815,8 +659,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -837,115 +681,120 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="问题：SQLSTATE-42000-Syntax-error-or-access-violation-1118-Row-size-too-large-gt-8126-Changing-some-columns-to-TEXT-or-BLOB-or-using-ROW-FORMAT-DYNAMIC-or-ROW-FORMAT-COMPRESSED-may-help-In-current-row-format-BLOB-prefix-of-768-bytes-is-stored-inline"><a href="#问题：SQLSTATE-42000-Syntax-error-or-access-violation-1118-Row-size-too-large-gt-8126-Changing-some-columns-to-TEXT-or-BLOB-or-using-ROW-FORMAT-DYNAMIC-or-ROW-FORMAT-COMPRESSED-may-help-In-current-row-format-BLOB-prefix-of-768-bytes-is-stored-inline" class="headerlink" title="问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline."></a>问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.</h3><h3 id="错误分析"><a href="#错误分析" class="headerlink" title="错误分析"></a>错误分析</h3><p>根据报错信息，mysql提示是行的数据过大，应该将一些字段类型声明为TEXT或者BLOB，再或者将ROW_FORMAT(行格式)设置为DYNAMIC或者COMPRESSED。根据这个信息，我们查看一下mysql数据库的一些变量参数信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有表的状态</span><br><span class="line">show table status;</span><br><span class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span class="line">| Name   | Engine | Version | Row_format | Rows | Avg_row_length | Data_length |</span><br><span class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span class="line">| t_test | InnoDB |      10 | Dynamic    |    0 |              0 |       16384 |</span><br><span class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span class="line"></span><br><span class="line"># 查看当前数据库innodb引擎的文件格式</span><br><span class="line">show variables like &apos;%innodb_file_format%&apos;;</span><br><span class="line">+--------------------------+-----------+</span><br><span class="line">| Variable_name            | Value     |</span><br><span class="line">+--------------------------+-----------+</span><br><span class="line">| innodb_file_format       | Barracuda |</span><br><span class="line">| innodb_file_format_check | ON        |</span><br><span class="line">| innodb_file_format_max   | Barracuda |</span><br><span class="line">+--------------------------+-----------+</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018.bak/09/11/Row-size-too-large-8126-for-mysql/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/">
+                                    <h3 id="问题：SQLSTATE-42000-Syntax-error-or-access-violation-1118-Row-size-too-large-gt-8126-Changing-some-columns-to-TEXT-or-BLOB-or-using-ROW-FORMAT-DYNAMIC-or-ROW-FORMAT-COMPRESSED-may-help-In-current-row-format-BLOB-prefix-of-768-bytes-is-stored-inline">
+                                        <a href="#问题：SQLSTATE-42000-Syntax-error-or-access-violation-1118-Row-size-too-large-gt-8126-Changing-some-columns-to-TEXT-or-BLOB-or-using-ROW-FORMAT-DYNAMIC-or-ROW-FORMAT-COMPRESSED-may-help-In-current-row-format-BLOB-prefix-of-768-bytes-is-stored-inline"
+                                           class="headerlink"
+                                           title="问题：SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline."></a>问题：SQLSTATE[42000]:
+                                        Syntax error or access violation: 1118 Row size too large (&gt; 8126). Changing
+                                        some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or
+                                        ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes
+                                        is stored inline.</h3>
+                                    <h3 id="错误分析"><a href="#错误分析" class="headerlink" title="错误分析"></a>错误分析</h3>
+                                    <p>
+                                        根据报错信息，mysql提示是行的数据过大，应该将一些字段类型声明为TEXT或者BLOB，再或者将ROW_FORMAT(行格式)设置为DYNAMIC或者COMPRESSED。根据这个信息，我们查看一下mysql数据库的一些变量参数信息：<br>
+                                        <figure class="highlight plain">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span
+                                                                class="line">2</span><br><span class="line">3</span><br><span
+                                                                class="line">4</span><br><span class="line">5</span><br><span
+                                                                class="line">6</span><br><span class="line">7</span><br><span
+                                                                class="line">8</span><br><span class="line">9</span><br><span
+                                                                class="line">10</span><br><span
+                                                                class="line">11</span><br><span
+                                                                class="line">12</span><br><span
+                                                                class="line">13</span><br><span
+                                                                class="line">14</span><br><span
+                                                                class="line">15</span><br><span
+                                                                class="line">16</span><br><span
+                                                                class="line">17</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"># 查看所有表的状态</span><br><span class="line">show table status;</span><br><span
+                                                                class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span
+                                                                class="line">| Name   | Engine | Version | Row_format | Rows | Avg_row_length | Data_length |</span><br><span
+                                                                class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span
+                                                                class="line">| t_test | InnoDB |      10 | Dynamic    |    0 |              0 |       16384 |</span><br><span
+                                                                class="line">+--------+--------+---------+------------+------+----------------+-------------+</span><br><span
+                                                                class="line"></span><br><span class="line"># 查看当前数据库innodb引擎的文件格式</span><br><span
+                                                                class="line">show variables like &apos;%innodb_file_format%&apos;;</span><br><span
+                                                                class="line">+--------------------------+-----------+</span><br><span
+                                                                class="line">| Variable_name            | Value     |</span><br><span
+                                                                class="line">+--------------------------+-----------+</span><br><span
+                                                                class="line">| innodb_file_format       | Barracuda |</span><br><span
+                                                                class="line">| innodb_file_format_check | ON        |</span><br><span
+                                                                class="line">| innodb_file_format_max   | Barracuda |</span><br><span
+                                                                class="line">+--------------------------+-----------+</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                    </p>
+                                    <!--noindex-->
+                                    <div class="post-button text-center">
+                                        <a class="btn" href="/2018.bak/09/11/Row-size-too-large-8126-for-mysql/#more"
+                                           rel="contents">
+                                            阅读全文 &raquo;
+                                        </a>
+                                    </div>
+                                    <!--/noindex-->
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2018/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/" itemprop="url">fatal: Pathspec 'xxx' is in submodule for php yaf vendor</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link"
+                                           href="/2018.bak/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/"
+                                           itemprop="url">fatal: Pathspec 'xxx' is in submodule for php yaf vendor</a>
+                                    </h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -964,8 +813,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -986,117 +835,104 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git-add。"><a href="#使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git-add。" class="headerlink" title="使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git add。"></a>使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git add。</h3><p>使用git status查看，没有任何提交，后手动删除重新copy了文件，再次使用git status：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modified: vendor/phpgangsta/googleauthenticator/PHPGangsta/GoogleAuthenticator.php (modified content)</span><br></pre></td></tr></table></figure>
-<p>git add后只增加了文件夹，但是没有文件。<br>手动Add:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git vendor/phpgangsta/googleauthenticator/PHPGangsta/GoogleAuthenticator.php</span><br><span class="line"></span><br><span class="line">报出错误信息： </span><br><span class="line">fatal: Pathspec &apos;xxx&apos; is in submodule</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018.bak/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/rabbit-mq-install/">
+                                    <h3 id="使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git-add。"><a
+                                            href="#使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git-add。" class="headerlink"
+                                            title="使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git add。"></a>使用YAF进行项目开发，在手动更新vendor的时候发现更新以后无法git
+                                        add。</h3>
+                                    <p>使用git status查看，没有任何提交，后手动删除重新copy了文件，再次使用git status：</p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">modified: vendor/phpgangsta/googleauthenticator/PHPGangsta/GoogleAuthenticator.php (modified content)</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+                                    <p>git add后只增加了文件夹，但是没有文件。<br>手动Add:<br>
+                                        <figure class="highlight plain">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span
+                                                                class="line">2</span><br><span class="line">3</span><br><span
+                                                                class="line">4</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">git vendor/phpgangsta/googleauthenticator/PHPGangsta/GoogleAuthenticator.php</span><br><span
+                                                                class="line"></span><br><span
+                                                                class="line">报出错误信息： </span><br><span class="line">fatal: Pathspec &apos;xxx&apos; is in submodule</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                    </p>
+                                    <!--noindex-->
+                                    <div class="post-button text-center">
+                                        <a class="btn"
+                                           href="/2018.bak/08/13/fatal-Pathspec-xxx-is-in-submodule-for-php-yaf-vendor/#more"
+                                           rel="contents">
+                                            阅读全文 &raquo;
+                                        </a>
+                                    </div>
+                                    <!--/noindex-->
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2018/08/01/rabbit-mq-install/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/08/01/rabbit-mq-install/" itemprop="url">RabbitMQ安装方法总结</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link" href="/2018.bak/08/01/rabbit-mq-install/"
+                                           itemprop="url">RabbitMQ安装方法总结</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1115,8 +951,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1137,116 +973,91 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>具体安装如下：</p>
-<h3 id="一：安装Erlang："><a href="#一：安装Erlang：" class="headerlink" title="一：安装Erlang："></a>一：安装Erlang：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"># rpm --import http://binaries.erlang-solutions.com/debian/erlang_solutions.asc  </span><br><span class="line"> </span><br><span class="line"># cd /etc/yum.repos.d/ </span><br><span class="line"> </span><br><span class="line"># wget http://binaries.erlang-solutions.com/rpm/centos/erlang_solutions.repo  </span><br><span class="line"> </span><br><span class="line"># yum install esl-erlang</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018.bak/08/01/rabbit-mq-install/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/php-in-array/">
+                                    <p>具体安装如下：</p>
+                                    <h3 id="一：安装Erlang："><a href="#一：安装Erlang：" class="headerlink"
+                                                            title="一：安装Erlang："></a>一：安装Erlang：</h3>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br><span
+                                                            class="line">2</span><br><span
+                                                            class="line">3</span><br><span
+                                                            class="line">4</span><br><span
+                                                            class="line">5</span><br><span
+                                                            class="line">6</span><br><span
+                                                            class="line">7</span><br><span
+                                                            class="line">8</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line"> </span><br><span class="line"># rpm --import http://binaries.erlang-solutions.com/debian/erlang_solutions.asc  </span><br><span
+                                                            class="line"> </span><br><span class="line"># cd /etc/yum.repos.d/ </span><br><span
+                                                            class="line"> </span><br><span class="line"># wget http://binaries.erlang-solutions.com/rpm/centos/erlang_solutions.repo  </span><br><span
+                                                            class="line"> </span><br><span class="line"># yum install esl-erlang</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+                                    <!--noindex-->
+                                    <div class="post-button text-center">
+                                        <a class="btn" href="/2018.bak/08/01/rabbit-mq-install/#more" rel="contents">
+                                            阅读全文 &raquo;
+                                        </a>
+                                    </div>
+                                    <!--/noindex-->
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/php-in-array/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/08/01/php-in-array/" itemprop="url">PHP 中 in_array 需要注意，根据具体场景设置第三个参数</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link" href="/2018.bak/08/01/php-in-array/" itemprop="url">PHP
+                                            中 in_array 需要注意，根据具体场景设置第三个参数</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1265,8 +1076,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1287,115 +1098,90 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>问题描述:<br> 在使用php的in_array 函数时；我习惯性使用以下的方式判断：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a     = &apos;1abc&apos;;</span><br><span class="line">$array =  [1,2,3];</span><br><span class="line">if (in_array($a,$array)&#123;</span><br><span class="line">    echo  &apos;do .....&apos;;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    echo  &apos;do else .....&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018.bak/08/01/php-in-array/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/php-float/">
+                                    <p>问题描述:<br> 在使用php的in_array 函数时；我习惯性使用以下的方式判断：<br>
+                                        <figure class="highlight plain">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span
+                                                                class="line">2</span><br><span class="line">3</span><br><span
+                                                                class="line">4</span><br><span class="line">5</span><br><span
+                                                                class="line">6</span><br><span class="line">7</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span
+                                                                class="line">$a     = &apos;1abc&apos;;</span><br><span
+                                                                class="line">$array =  [1,2,3];</span><br><span
+                                                                class="line">if (in_array($a,$array)&#123;</span><br><span
+                                                                class="line">    echo  &apos;do .....&apos;;</span><br><span
+                                                                class="line">&#125; else &#123;</span><br><span
+                                                                class="line">    echo  &apos;do else .....&apos;;</span><br><span
+                                                                class="line">&#125;</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                    </p>
+                                    <!--noindex-->
+                                    <div class="post-button text-center">
+                                        <a class="btn" href="/2018.bak/08/01/php-in-array/#more" rel="contents">
+                                            阅读全文 &raquo;
+                                        </a>
+                                    </div>
+                                    <!--/noindex-->
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/php-float/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/08/01/php-float/" itemprop="url">PHP float金额在强制转换为整型时，发现数值不对。</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link" href="/2018.bak/08/01/php-float/" itemprop="url">PHP
+                                            float金额在强制转换为整型时，发现数值不对。</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1414,8 +1200,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1436,115 +1222,68 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天发现一个很奇怪的问题: PHP float金额在强制转换为整型时，发现数值和实际相差1分。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018.bak/08/01/php-float/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/php-preg_match_all/">
+                                    <p>今天发现一个很奇怪的问题: PHP float金额在强制转换为整型时，发现数值和实际相差1分。</p>
+                                    <!--noindex-->
+                                    <div class="post-button text-center">
+                                        <a class="btn" href="/2018.bak/08/01/php-float/#more" rel="contents">
+                                            阅读全文 &raquo;
+                                        </a>
+                                    </div>
+                                    <!--/noindex-->
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2018/08/01/php-preg_match_all/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/08/01/php-preg_match_all/" itemprop="url">php 正则去掉字符串中非汉字字符串</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link" href="/2018.bak/08/01/php-preg_match_all/"
+                                           itemprop="url">php 正则去掉字符串中非汉字字符串</a></h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1563,8 +1302,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1585,114 +1324,95 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>直接上代码示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$str=&apos;2016，北京欢迎您 from around you..&apos;;</span><br><span class="line"> </span><br><span class="line">preg_match_all(&apos;/[\x&#123;4e00&#125;-\x&#123;9fff&#125;]+/u&apos;, $str, $matches);</span><br><span class="line"> </span><br><span class="line">$str = join(&apos;&apos;, $matches[0]);</span><br></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">北京欢迎您</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-      
+                                    </div>
+                                </header>
 
 
-  
+                                <div class="post-body" itemprop="articleBody">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/">
+                                    <p>直接上代码示例：</p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br><span
+                                                            class="line">2</span><br><span
+                                                            class="line">3</span><br><span
+                                                            class="line">4</span><br><span
+                                                            class="line">5</span><br><span
+                                                            class="line">6</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line"></span><br><span class="line">$str=&apos;2016，北京欢迎您 from around you..&apos;;</span><br><span
+                                                            class="line"> </span><br><span class="line">preg_match_all(&apos;/[\x&#123;4e00&#125;-\x&#123;9fff&#125;]+/u&apos;, $str, $matches);</span><br><span
+                                                            class="line"> </span><br><span class="line">$str = join(&apos;&apos;, $matches[0]);</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
+                                    <p>输出</p>
+                                    <figure class="highlight plain">
+                                        <table>
+                                            <tr>
+                                                <td class="gutter">
+                                                    <pre><span class="line">1</span><br></pre>
+                                                </td>
+                                                <td class="code">
+                                                    <pre><span class="line">北京欢迎您</span><br></pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </figure>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+                                </div>
+
+
+                                <footer class="post-footer">
+
+
+                                    <div class="post-eof"></div>
+
+                                </footer>
+                            </div>
+
+
+                        </article>
+
+
+                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+                            <div class="post-block">
+                                <link itemprop="mainEntityOfPage"
+                                      href="http://yoursite.com/2018/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/">
+
+                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Liu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/demo.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QingHui's Blog">
     </span>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018.bak/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/" itemprop="url">MacBook brew yaf error: unknown type name 'HASHKIT_API'</a></h1>
-        
+                                <header class="post-header">
 
-        <div class="post-meta">
+
+                                    <h1 class="post-title" itemprop="name headline">
+
+                                        <a class="post-title-link"
+                                           href="/2018.bak/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/"
+                                           itemprop="url">MacBook brew yaf error: unknown type name 'HASHKIT_API'</a>
+                                    </h1>
+
+
+                                    <div class="post-meta">
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1711,8 +1431,8 @@
             
           </span>
 
-          
-            <span class="post-category" >
+
+                                        <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1733,742 +1453,552 @@
                 
               
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018.bak/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
 
 
-    
-  </section>
-
-  
+                                    </div>
+                                </header>
 
 
-          </div>
-          
+                                <div class="post-body" itemprop="articleBody">
 
 
-          
+                                    <p>问题：在 mac 系统中安装 PHP yaf 扩展时，总是失败；报错：error: unknown type name ‘HASHKIT_API’</p>
+                                    <!--noindex-->
+                                    <div class="post-button text-center">
+                                        <a class="btn"
+                                           href="/2018.bak/07/31/brew-yaf-error-unknown-type-name-HASHKIT-API/#more"
+                                           rel="contents">
+                                            阅读全文 &raquo;
+                                        </a>
+                                    </div>
+                                    <!--/noindex-->
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
+                                </div>
 
-      
 
-      
+                                <footer class="post-footer">
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/demo.png"
-                alt="Mr.Liu" />
-            
-              <p class="site-author-name" itemprop="name">Mr.Liu</p>
-              <p class="site-description motion-element" itemprop="description">记录：填坑、挖坑的心累历程。</p>
-          </div>
 
-          <nav class="site-state motion-element">
+                                    <div class="post-eof"></div>
 
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
+                                </footer>
+                            </div>
 
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
+                        </article>
 
-          </nav>
 
-          
+                    </section>
 
-          
-            <div class="links-of-author motion-element">
+
+                </div>
+
+
+            </div>
+
+
+            <div class="sidebar-toggle">
+                <div class="sidebar-toggle-line-wrap">
+                    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+                    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+                    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+                </div>
+            </div>
+
+            <aside id="sidebar" class="sidebar">
+
+                <div class="sidebar-inner">
+
+
+                    <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+                        <div class="site-overview">
+                            <div class="site-author motion-element" itemprop="author" itemscope
+                                 itemtype="http://schema.org/Person">
+
+                                <img class="site-author-image" itemprop="image"
+                                     src="/images/demo.png"
+                                     alt="Mr.Liu"/>
+
+                                <p class="site-author-name" itemprop="name">Mr.Liu</p>
+                                <p class="site-description motion-element" itemprop="description">记录：填坑、挖坑的心累历程。</p>
+                            </div>
+
+                            <nav class="site-state motion-element">
+
+
+                                <div class="site-state-item site-state-posts">
+
+                                    <a href="/archives/">
+
+                                        <span class="site-state-item-count">10</span>
+                                        <span class="site-state-item-name">日志</span>
+                                    </a>
+                                </div>
+
+
+                                <div class="site-state-item site-state-categories">
+                                    <a href="/categories/index.html">
+                                        <span class="site-state-item-count">7</span>
+                                        <span class="site-state-item-name">分类</span>
+                                    </a>
+                                </div>
+
+
+                                <div class="site-state-item site-state-tags">
+                                    <a href="/tags/index.html">
+                                        <span class="site-state-item-count">9</span>
+                                        <span class="site-state-item-name">标签</span>
+                                    </a>
+                                </div>
+
+
+                            </nav>
+
+
+                            <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
                     <a href="https://github.com/MrLiuqh" target="_blank" title="gitHub">
                       
                         <i class="fa fa-fw fa-github"></i>gitHub</a>
                   </span>
-                
-                  <span class="links-of-author-item">
+
+                                <span class="links-of-author-item">
                     <a href="https://www.facebook.com/qinghui.liu.9" target="_blank" title="facebook">
                       
                         <i class="fa fa-fw fa-facebook-square"></i>facebook</a>
                   </span>
-                
-                  <span class="links-of-author-item">
+
+                                <span class="links-of-author-item">
                     <a href="mailto:liuqinghui1991@163.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
-                
-            </div>
-          
 
-          
-          
+                            </div>
 
-          
-          
 
-          
+                        </div>
+                    </section>
+
+
+                </div>
+            </aside>
+
 
         </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner">
-        
+        <div class="footer-inner">
 
 
-
-
-
-
-
-
-
-<div>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_pv" style='display:none'>
+            <div>
+                <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                <span id="busuanzi_container_site_pv" style='display:none'>
   本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
   <span class="post-meta-divider">|</span>
 </span>
-<span id="busuanzi_container_site_uv" style='display:none'>
+                <span id="busuanzi_container_site_uv" style='display:none'>
   有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
 </span>
-</div>
+            </div>
 
 
+            <div class="busuanzi-count">
+                <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
+                <span class="site-uv">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       
     </span>
-  
 
-  
-    <span class="site-pv">
+
+                <span class="site-pv">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
       
     </span>
-  
+
+            </div>
+
+
+        </div>
+    </footer>
+
+
+    <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+
+    </div>
+
+
 </div>
 
 
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+        window.Promise = null;
+    }
 </script>
 
 
+<script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
 
+<script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
 
+<script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
 
+<script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
 
+<script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
 
+<script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
+<script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
+<script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
+<script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
+<script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
 
+<script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+<script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
+<script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     var isXml = true;
     // Search DB path;
     var search_path = "search.xml";
     if (search_path.length === 0) {
-      search_path = "search.xml";
+        search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
-      isXml = false;
+        isXml = false;
     }
     var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
+        $('.popup').hide();
+        $('#local-search-input').val('');
+        $('.search-result-list').remove();
+        $('#no-result').remove();
+        $(".local-search-pop-overlay").remove();
+        $('body').css('overflow', '');
     }
 
     function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
+        $("body")
+            .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+            .css('overflow', 'hidden');
+        $('.search-popup-overlay').click(onPopupClose);
+        $('.popup').toggle();
+        var $localSearchInput = $('#local-search-input');
+        $localSearchInput.attr("autocapitalize", "none");
+        $localSearchInput.attr("autocorrect", "off");
+        $localSearchInput.focus();
     }
 
     // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
 
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+        // start loading animation
+        $("body")
+            .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+                '<div id="search-loading-icon">' +
+                '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+                '</div>' +
+                '</div>')
+            .css('overflow', 'hidden');
+        $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
+        $.ajax({
+            url: path,
+            dataType: isXml ? "xml" : "json",
+            async: true,
+            success: function (res) {
+                // get the contents from search data
+                isfetched = true;
+                $('.popup').detach().appendTo('.header-inner');
+                var datas = isXml ? $("entry", res).map(function () {
                     return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
                     };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
+                }).get() : res;
+                var input = document.getElementById(search_id);
+                var resultContent = document.getElementById(content_id);
+                var inputEventFunction = function () {
+                    var searchText = input.value.trim().toLowerCase();
+                    var keywords = searchText.split(/[\s\-]+/);
+                    if (keywords.length > 1) {
+                        keywords.push(searchText);
                     }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
+                    var resultItems = [];
+                    if (searchText.length > 0) {
+                        // perform local searching
+                        datas.forEach(function (data) {
+                            var isMatch = false;
+                            var hitCount = 0;
+                            var searchTextCount = 0;
+                            var title = data.title.trim();
+                            var titleInLowerCase = title.toLowerCase();
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            var contentInLowerCase = content.toLowerCase();
+                            var articleUrl = decodeURIComponent(data.url);
+                            var indexOfTitle = [];
+                            var indexOfContent = [];
+                            // only match articles with not empty titles
+                            if (title != '') {
+                                keywords.forEach(function (keyword) {
+                                    function getIndexByWord(word, text, caseSensitive) {
+                                        var wordLen = word.length;
+                                        if (wordLen === 0) {
+                                            return [];
+                                        }
+                                        var startPosition = 0, position = [], index = [];
+                                        if (!caseSensitive) {
+                                            text = text.toLowerCase();
+                                            word = word.toLowerCase();
+                                        }
+                                        while ((position = text.indexOf(word, startPosition)) > -1) {
+                                            index.push({position: position, word: word});
+                                            startPosition = position + wordLen;
+                                        }
+                                        return index;
+                                    }
 
-                  // sort slices in content by search text's count and hits' count
+                                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                                });
+                                if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                                    isMatch = true;
+                                    hitCount = indexOfTitle.length + indexOfContent.length;
+                                }
+                            }
 
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
+                            // show search results
+
+                            if (isMatch) {
+                                // sort index by position of keyword
+
+                                [indexOfTitle, indexOfContent].forEach(function (index) {
+                                    index.sort(function (itemLeft, itemRight) {
+                                        if (itemRight.position !== itemLeft.position) {
+                                            return itemRight.position - itemLeft.position;
+                                        } else {
+                                            return itemLeft.word.length - itemRight.word.length;
+                                        }
+                                    });
+                                });
+
+                                // merge hits into slices
+
+                                function mergeIntoSlice(text, start, end, index) {
+                                    var item = index[index.length - 1];
+                                    var position = item.position;
+                                    var word = item.word;
+                                    var hits = [];
+                                    var searchTextCountInSlice = 0;
+                                    while (position + word.length <= end && index.length != 0) {
+                                        if (word === searchText) {
+                                            searchTextCountInSlice++;
+                                        }
+                                        hits.push({position: position, length: word.length});
+                                        var wordEnd = position + word.length;
+
+                                        // move to next position of hit
+
+                                        index.pop();
+                                        while (index.length != 0) {
+                                            item = index[index.length - 1];
+                                            position = item.position;
+                                            word = item.word;
+                                            if (wordEnd > position) {
+                                                index.pop();
+                                            } else {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    searchTextCount += searchTextCountInSlice;
+                                    return {
+                                        hits: hits,
+                                        start: start,
+                                        end: end,
+                                        searchTextCount: searchTextCountInSlice
+                                    };
+                                }
+
+                                var slicesOfTitle = [];
+                                if (indexOfTitle.length != 0) {
+                                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                                }
+
+                                var slicesOfContent = [];
+                                while (indexOfContent.length != 0) {
+                                    var item = indexOfContent[indexOfContent.length - 1];
+                                    var position = item.position;
+                                    var word = item.word;
+                                    // cut out 100 characters
+                                    var start = position - 20;
+                                    var end = position + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (end < position + word.length) {
+                                        end = position + word.length;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                                }
+
+                                // sort slices in content by search text's count and hits' count
+
+                                slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                                        return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                                        return sliceRight.hits.length - sliceLeft.hits.length;
+                                    } else {
+                                        return sliceLeft.start - sliceRight.start;
+                                    }
+                                });
+
+                                // select top N slices in content
+
+                                var upperBound = parseInt('1');
+                                if (upperBound >= 0) {
+                                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                                }
+
+                                // highlight title and content
+
+                                function highlightKeyword(text, slice) {
+                                    var result = '';
+                                    var prevEnd = slice.start;
+                                    slice.hits.forEach(function (hit) {
+                                        result += text.substring(prevEnd, hit.position);
+                                        var end = hit.position + hit.length;
+                                        result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                                        prevEnd = end;
+                                    });
+                                    result += text.substring(prevEnd, slice.end);
+                                    return result;
+                                }
+
+                                var resultItem = '';
+
+                                if (slicesOfTitle.length != 0) {
+                                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                                } else {
+                                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                                }
+
+                                slicesOfContent.forEach(function (slice) {
+                                    resultItem += "<a href='" + articleUrl + "'>" +
+                                        "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                                        "...</p>" + "</a>";
+                                });
+
+                                resultItem += "</li>";
+                                resultItems.push({
+                                    item: resultItem,
+                                    searchTextCount: searchTextCount,
+                                    hitCount: hitCount,
+                                    id: resultItems.length
+                                });
+                            }
+                        })
+                    }
+                    ;
+                    if (keywords.length === 1 && keywords[0] === "") {
+                        resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+                    } else if (resultItems.length === 0) {
+                        resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
                     } else {
-                      return sliceLeft.start - sliceRight.start;
+                        resultItems.sort(function (resultLeft, resultRight) {
+                            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                                return resultRight.searchTextCount - resultLeft.searchTextCount;
+                            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                                return resultRight.hitCount - resultLeft.hitCount;
+                            } else {
+                                return resultRight.id - resultLeft.id;
+                            }
+                        });
+                        var searchResultList = '<ul class=\"search-result-list\">';
+                        resultItems.forEach(function (result) {
+                            searchResultList += result.item;
+                        })
+                        searchResultList += "</ul>";
+                        resultContent.innerHTML = searchResultList;
                     }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
                 }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
+
+                if ('auto' === 'auto') {
+                    input.addEventListener('input', inputEventFunction);
                 } else {
-                  return resultRight.id - resultLeft.id;
+                    $('.search-icon').click(inputEventFunction);
+                    input.addEventListener('keypress', function (event) {
+                        if (event.keyCode === 13) {
+                            inputEventFunction();
+                        }
+                    });
                 }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
+
+                // remove loading animation
+                $(".local-search-pop-overlay").remove();
+                $('body').css('overflow', '');
+
+                proceedsearch();
             }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
+        });
     }
 
     // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+    $('.popup-trigger').click(function (e) {
+        e.stopPropagation();
+        if (isfetched === false) {
+            searchFunc(path, 'local-search-input', 'local-search-result');
+        } else {
+            proceedsearch();
+        }
+        ;
     });
 
     $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
+    $('.popup').click(function (e) {
+        e.stopPropagation();
     });
     $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
+        var shouldDismissSearchPopup = event.which === 27 &&
+            $('.search-popup').is(':visible');
+        if (shouldDismissSearchPopup) {
+            onPopupClose();
+        }
     });
-  </script>
+</script>
 
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
