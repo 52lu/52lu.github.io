@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>PHP并发请求 | QingHui&#39;s Blog</title>
-  <meta name="keywords" content=" php ">
-  <meta name="description" content="PHP并发请求 | QingHui&#39;s Blog">
+  <title>博客迁移 | QingHui&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="博客迁移 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -695,9 +695,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-multiRequest" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <article id="post-move-blog" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">PHP并发请求</h1>
+        <h1 class="article-title">博客迁移</h1>
     
     <div class="article-meta">
         
@@ -705,26 +705,20 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="后端编程">后端编程</a>
+                <a href="javascript:" data-rel="博客迁移">博客迁移</a>
             
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">php</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-11-29 11:33:43">2019-11-29 11:32</time>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-11-20 15:08:43">2019-03-22 12:19</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>字数:1.2k</span>
+        <span>字数:31</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -754,7 +748,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-多线程并发-通过cURL并发请求"><span class="toc-text">1. 多线程并发:通过cURL并发请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-通过curl-multi实现"><span class="toc-text">1.1 通过curl_multi实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-PHP-curl-multi-实现并发请求步骤"><span class="toc-text">1.2 PHP curl_multi 实现并发请求步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-PHP-curl-multi-实现代码"><span class="toc-text">1.3 PHP curl_multi 实现代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-多进程并发：通过swoole-process实现"><span class="toc-text">2. 多进程并发：通过swoole_process实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-示例代码"><span class="toc-text">2.1 示例代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-多进程和多线程的区别？如何选择"><span class="toc-text">3. 多进程和多线程的区别？如何选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-不同的维度的对比"><span class="toc-text">3.1 不同的维度的对比</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#博客迁移"><span class="toc-text">博客迁移</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -769,214 +763,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<front color="red">进程是资源分配的最小单位，线程是CPU调度的最小单位</front>
-</blockquote>
-<h2 id="1-多线程并发-通过cURL并发请求"><a href="#1-多线程并发-通过cURL并发请求" class="headerlink" title="1. 多线程并发:通过cURL并发请求"></a>1. 多线程并发:通过cURL并发请求</h2><h3 id="1-1-通过curl-multi实现"><a href="#1-1-通过curl-multi实现" class="headerlink" title="1.1 通过curl_multi实现"></a>1.1 通过curl_multi实现</h3><p><a href="https://secure.php.net/manual/zh/ref.curl.php" target="_blank" rel="noopener">PHP cURL所有函数列表</a></p>
-<p><strong>并发中用的curl_multi_*相关函数</strong></p>
-<ul>
-<li><a href="https://php.net/manual/zh/function.curl-multi-add-handle.php" target="_blank" rel="noopener">curl_multi_add_handle</a>— 向curl批处理会话中添加单独的curl句柄</li>
-<li><a href="https://secure.php.net/manual/zh/function.curl-multi-close.php" target="_blank" rel="noopener">curl_multi_close</a> — 关闭一组cURL句柄</li>
-<li><a href="https://secure.php.net/manual/zh/function.curl-multi-exec.php" target="_blank" rel="noopener">curl_multi_exec</a> — 运行当前 cURL 句柄的子连接</li>
-<li><a href="https://secure.php.net/manual/zh/function.curl-multi-getcontent.php" target="_blank" rel="noopener">curl_multi_getcontent</a> — 如果设置了CURLOPT_RETURNTRANSFER，则返回获取的输出的文本流</li>
-<li><a href="https://secure.php.net/manual/zh/function.curl-multi-info-read.php" target="_blank" rel="noopener">curl_multi_info_read</a> — 获取当前解析的cURL的相关传输信息</li>
-<li><a href="https://secure.php.net/manual/zh/function.curl-multi-init.php" target="_blank" rel="noopener">curl_multi_init</a> — 返回一个新cURL批处理句柄</li>
-<li><a href="curl_multi_remove_handle">curl_multi_remove_handle</a> — 移除curl批处理句柄资源中的某个句柄资源</li>
-<li><a href="https://secure.php.net/manual/zh/function.curl-multi-select.php" target="_blank" rel="noopener">curl_multi_select</a> — 等待所有cURL批处理中的活动连接</li>
-<li><a href="https://secure.php.net/manual/zh/function.curl-multi-setopt.php" target="_blank" rel="noopener">curl_multi_setopt</a> — 为 cURL 并行处理设置一个选项</li>
-<li><a href="https://php.net/manual/zh/function.curl-multi-strerror.php" target="_blank" rel="noopener">curl_multi_strerror</a> — 返回字符串描述的错误代码<a id="more"></a>
-</li>
-</ul>
-<h3 id="1-2-PHP-curl-multi-实现并发请求步骤"><a href="#1-2-PHP-curl-multi-实现并发请求步骤" class="headerlink" title="1.2 PHP curl_multi 实现并发请求步骤"></a>1.2 PHP curl_multi 实现并发请求步骤</h3><ol>
-<li>调用 curl_multi_init，初始化一个批处理handle</li>
-<li>循环调用 curl_multi_add_handle，往1中的批处理handle 添加curl_init来的子handle</li>
-<li>持续调用 curl_multi_exec，直到所有子handle执行完毕。</li>
-<li>根据需要循环调用 curl_multi_getcontent 获取结果</li>
-<li>调用 curl_multi_remove_handle，并为每个字handle调用curl_close</li>
-<li>调用 curl_multi_close</li>
-</ol>
-<h3 id="1-3-PHP-curl-multi-实现代码"><a href="#1-3-PHP-curl-multi-实现代码" class="headerlink" title="1.3 PHP curl_multi 实现代码"></a>1.3 PHP curl_multi 实现代码</h3><pre><code class="php">&lt;?php
-
-    /**
-     *  Functional description : 
-     *  Programmer : Mr.Liu
-     * @param array $urls
-     *  $urls = [
-            &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-            &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-            &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-            &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-            &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-      ];
-     * @return array
-     */
-    function multiGetRequest(array $urls):array 
-    {
-
-        //1、初始化一个批处理handle
-        $mh = curl_multi_init();
-
-        //2、往批处理handle 添加curl_init来的子handle
-        foreach ($urls as $i =&gt; $url) {
-            $connect[$i] = curl_init($url);
-            curl_setopt($connect[$i], CURLOPT_HEADER, 0);
-            curl_setopt($connect[$i], CURLOPT_CONNECTTIMEOUT, 60);
-            curl_setopt($connect[$i], CURLOPT_RETURNTRANSFER, true);
-            curl_multi_add_handle($mh, $connect[$i]);
-        }
-
-        //3、并发执行，直到全部结束。
-        do {
-            curl_multi_exec($mh, $active);
-        } while ($active);
-
-        //4、获取结果
-        $return=[];
-        foreach ($urls as $i =&gt; $url) {
-            $return[] = curl_multi_getcontent($connect[$i]);
-
-        }
-        //5、移除子handle，并close子handle
-        foreach ($urls as $i =&gt; $url) {
-            curl_multi_remove_handle($mh, $connect[$i]);
-            curl_close($connect[$i]);
-        }
-
-        //6、关闭批处理handle
-        curl_multi_close($mh);
-        return $return;
-    }
-</code></pre>
-<h2 id="2-多进程并发：通过swoole-process实现"><a href="#2-多进程并发：通过swoole-process实现" class="headerlink" title="2. 多进程并发：通过swoole_process实现"></a>2. 多进程并发：通过swoole_process实现</h2><p><a href="https://wiki.swoole.com/wiki/page/214.html" target="_blank" rel="noopener">查看文档</a></p>
-<h3 id="2-1-示例代码"><a href="#2-1-示例代码" class="headerlink" title="2.1 示例代码"></a>2.1 示例代码</h3><pre><code class="php">&lt;?php
-
-$start_time = microtime(true);
-$urls       = [
-    &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-    &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-    &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-    &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-    &#39;http://liuqinghui.dev.lywf.me/test/libin/ttt&#39;,
-];
-
-//遍历任务创建子进程
-foreach ($urls as $url) {
-    /**
-     * 创建子进程，并调用方法 my_process
-     */
-    $process = new swoole_process(&quot;my_process&quot;, true);
-
-    /**
-     * 1.执行fork系统调用，启动进程;
-     * 创建成功返回子进程的PID，创建失败返回false
-     */
-    $process-&gt;start();
-    /**
-     * 通过管道发数据到子进程。
-     * 管道是单向的：发出的数据必须由另一端读取。不能读取自己发出去的
-     */
-    $process-&gt;write($url);
-
-    /**
-     * 保存进程,循环结算后统一调取返回数数据：
-     */
-    $process_list[] = $process;
-
-}
-//读取结果
-foreach ($process_list as $process){
-    //从管道中读取数据。
-    echo $rec = $process-&gt;read();
-}
-
-/**
- * 子进程结束必须要执行wait进行回收，否则子进程会变成僵尸进程
- * $ret 是个数组其数据结构：
-   array(3) {
-    &#39;pid&#39; =&gt;
-    int(461)
-    &#39;code&#39; =&gt;
-    int(0)
-    &#39;signal&#39; =&gt;
-    int(0)
- }
-*/
-while ($ret = swoole_process::wait()) {
-    $pid = $ret[&#39;pid&#39;];
-    echo PHP_EOL . &quot;Worker Exit, PID=&quot; . $pid . PHP_EOL;
-}
-
-
-//子进程创建成功后要执行的函数
-function my_process(swoole_process $worker)
-{
-    sleep(1);//暂停1s
-    $url    = $worker-&gt;read();
-    //---- 执行具体业务程序开始-----
-    $ch = curl_init();
-    // 设置URL和相应的选项
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    // 抓取URL并把它传递给浏览器
-    $return =  curl_exec($ch);
-    // 关闭cURL资源，并且释放系统资源
-    curl_close($ch);
-    //---- 执行具体业务程序结束-----
-    $worker-&gt;write($return);//写入数据到管道
-}
-$end_time = microtime(true);
-echo sprintf(&quot;use time:%.3f s\n&quot;, $end_time - $start_time);
-
-</code></pre>
-<h2 id="3-多进程和多线程的区别？如何选择"><a href="#3-多进程和多线程的区别？如何选择" class="headerlink" title="3. 多进程和多线程的区别？如何选择"></a>3. 多进程和多线程的区别？如何选择</h2><h3 id="3-1-不同的维度的对比"><a href="#3-1-不同的维度的对比" class="headerlink" title="3.1 不同的维度的对比"></a>3.1 不同的维度的对比</h3><table>
-<thead>
-<tr>
-<th>对比维度</th>
-<th>多进程</th>
-<th>多线程</th>
-<th>总结</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数据共享、同步</td>
-<td>数据共享复杂，需要用IPC；数据是分开的，同步简单</td>
-<td>因为共享进程数据，数据共享简单，但也是因为这个原因导致同步复杂</td>
-<td>各有优势</td>
-</tr>
-<tr>
-<td>内存、CPU</td>
-<td>占用内存多，切换复杂，CPU利用率低</td>
-<td>占用内存少，切换简单，CPU利用率高</td>
-<td>线程占优</td>
-</tr>
-<tr>
-<td>创建销毁、切换</td>
-<td>创建销毁、切换复杂，速度慢</td>
-<td>创建销毁、切换简单，速度很快</td>
-<td>线程占优</td>
-</tr>
-<tr>
-<td>编程、调试</td>
-<td>编程简单，调试简单</td>
-<td>编程复杂，调试复杂</td>
-<td>进程占优</td>
-</tr>
-<tr>
-<td>可靠性</td>
-<td>进程间不会互相影响</td>
-<td>一个线程挂掉将导致整个进程挂掉</td>
-<td>进程占优</td>
-</tr>
-<tr>
-<td>分布式</td>
-<td>适应于多核、多机分布式；如果一台机器不够，扩展到多台机器比较简单</td>
-<td>适应于多核分布式</td>
-<td>进程占优</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://blog.csdn.net/lishenglong666/article/details/8557215" target="_blank" rel="noopener">如何选择?</a></p>
+        <h2 id="博客迁移"><a href="#博客迁移" class="headerlink" title="博客迁移"></a>博客迁移</h2><p>老博客(<a href="https://mrliuqh.github.io/">https://mrliuqh.github.io/</a>) 2019.12之后，停止更新! 请前往<br><a href="https://luma66.github.io/" target="_blank" rel="noopener">新博客地址(https://luma66.github.io/)</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -990,11 +777,11 @@ echo sprintf(&quot;use time:%.3f s\n&quot;, $end_time - $start_time);
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>PHP并发请求</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">文章标题:</span>博客迁移</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">31</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="撸码">撸码</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-03-22 12:19</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/03/22/multiRequest/" title="PHP并发请求">https://mrliuqh.github.io/2019/03/22/multiRequest/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-29 11:32</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/29/move-blog/" title="博客迁移">https://mrliuqh.github.io/2019/11/29/move-blog/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
