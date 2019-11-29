@@ -1,14 +1,9 @@
 # 总览
 
-## 关于
+## 文章信息
 到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。
 <!--本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次-->
 
-## 博客迁移
-
-老博客后期停止更新!
-
-[新博客地址(https://luma66.github.io/)](https://luma66.github.io/)
 
 
 ## Java学习整理
