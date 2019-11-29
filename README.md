@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ```
 hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。
 hexo new page "pageName" #新建页面
