@@ -21,11 +21,13 @@ categories:
 **处理方法:**
 
 - 修改时区
+
 ```$xslt
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
 - 重启服务
+
 ```$xslt
 # service crond restart
 # service rsyslog restart
