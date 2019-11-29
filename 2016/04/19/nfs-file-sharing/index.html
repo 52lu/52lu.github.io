@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>基于Linux搭建nfs文件共享 | QingHui&#39;s Blog</title>
+  <title>记在Linux中搭建nfs文件共享的一次经历 | QingHui&#39;s Blog</title>
   <meta name="keywords" content=" nfs ">
-  <meta name="description" content="基于Linux搭建nfs文件共享 | QingHui&#39;s Blog">
+  <meta name="description" content="记在Linux中搭建nfs文件共享的一次经历 | QingHui&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -335,11 +335,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">算法</a>
+        <a href="javascript:" class="color4">面试题</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">面试题</a>
+        <a href="javascript:" class="color3">算法</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -555,7 +555,7 @@
             <span class="post-date" title="2018-04-03 15:46:01">2018/04/03</span>
         </a>
         
-        <a class="后端编程 " href="/2018/01/12/php-sort/" data-tag="php,算法,面试题" data-author="">
+        <a class="后端编程 " href="/2018/01/12/php-sort/" data-tag="php,面试题,算法" data-author="">
             <span class="post-title" title="php排序算法汇总">php排序算法汇总</span>
             <span class="post-date" title="2018-01-12 10:12:07">2018/01/12</span>
         </a>
@@ -626,7 +626,7 @@
         </a>
         
         <a class="服务搭建 " href="/2016/04/19/nfs-file-sharing/" data-tag="nfs" data-author="">
-            <span class="post-title" title="基于Linux搭建nfs文件共享">基于Linux搭建nfs文件共享</span>
+            <span class="post-title" title="记在Linux中搭建nfs文件共享的一次经历">记在Linux中搭建nfs文件共享的一次经历</span>
             <span class="post-date" title="2016-04-19 18:41:53">2016/04/19</span>
         </a>
         
@@ -674,7 +674,7 @@
     <div class="pjax">
         <article id="post-nfs-file-sharing" class="article article-type-post" itemscope="" itemprop="blogPost">
     
-        <h1 class="article-title">基于Linux搭建nfs文件共享</h1>
+        <h1 class="article-title">记在Linux中搭建nfs文件共享的一次经历</h1>
     
     <div class="article-meta">
         
@@ -696,12 +696,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-11-29 13:45:06">2016-04-19 18:41</time>
+        创建时间:<time class="date" title="更新时间: 2019-11-29 14:27:53">2016-04-19 18:41</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:475</span>
+        <span>字数:437</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -731,7 +731,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-测试节点"><span class="toc-text">1.测试节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-服务器端配置"><span class="toc-text">2.服务器端配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-安装NFS软件包"><span class="toc-text">2.1 安装NFS软件包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-创建共享目录"><span class="toc-text">2.2 创建共享目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-导出共享目录"><span class="toc-text">2.3 导出共享目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-重启NFS服务："><span class="toc-text">2.4 重启NFS服务：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-客户端"><span class="toc-text">3.客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-安装NFS软件包"><span class="toc-text">3.1 安装NFS软件包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-启用并启动NFS服务"><span class="toc-text">3.2 启用并启动NFS服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-在客户端上挂载NFS共享"><span class="toc-text">4.在客户端上挂载NFS共享</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-共享服务​​器目录"><span class="toc-text">4.1 共享服务​​器目录</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-服务器节点介绍"><span class="toc-text">1.服务器节点介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-服务节点"><span class="toc-text">1.1 服务节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-客户端节点"><span class="toc-text">1.2 客户端节点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-服务节点部署"><span class="toc-text">2. 服务节点部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-安装NFS相关软件包"><span class="toc-text">2.1 安装NFS相关软件包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-创建共享目录"><span class="toc-text">2.2. 创建共享目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-导出共享目录"><span class="toc-text">2.3 导出共享目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-重启NFS服务"><span class="toc-text">2.4 重启NFS服务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-客户端节点部署"><span class="toc-text">3.客户端节点部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-安装NFS相关软件包"><span class="toc-text">3.1 安装NFS相关软件包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-启用并启动NFS服务"><span class="toc-text">3.2 启用并启动NFS服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-挂载NFS共享"><span class="toc-text">3.3 挂载NFS共享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-卸载NFS共享"><span class="toc-text">3.4 卸载NFS共享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-注意事项"><span class="toc-text">4. 注意事项</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -746,48 +746,40 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-测试节点"><a href="#1-测试节点" class="headerlink" title="1.测试节点"></a>1.测试节点</h3><pre><code>NFS服务器主机名：server.unixmen.local 
-NFS服务器IP地址：192.168.1.101/24
-
-NFS客户端主机名：client.unixmen.local 
-NFS客户端IP地址：192.168.1.102/24
-</code></pre><h3 id="2-服务器端配置"><a href="#2-服务器端配置" class="headerlink" title="2.服务器端配置"></a>2.服务器端配置</h3><h4 id="2-1-安装NFS软件包"><a href="#2-1-安装NFS软件包" class="headerlink" title="2.1 安装NFS软件包"></a>2.1 安装NFS软件包</h4><pre><code>//使用以下命令在Server系统中安装NFS软件包：
-
-# yum install nfs-utils nfs-utils-lib
-
+        <h1 id="1-服务器节点介绍"><a href="#1-服务器节点介绍" class="headerlink" title="1.服务器节点介绍"></a>1.服务器节点介绍</h1><h2 id="1-1-服务节点"><a href="#1-1-服务节点" class="headerlink" title="1.1 服务节点"></a>1.1 服务节点</h2><pre><code>主机名: server.hui.local 
+IP地址: 192.168.1.101/24
+</code></pre><h2 id="1-2-客户端节点"><a href="#1-2-客户端节点" class="headerlink" title="1.2 客户端节点"></a>1.2 客户端节点</h2><pre><code>主机名: client.hui.local 
+IP地址: 192.168.1.102/24
+</code></pre><h1 id="2-服务节点部署"><a href="#2-服务节点部署" class="headerlink" title="2. 服务节点部署"></a>2. 服务节点部署</h1><h2 id="2-1-安装NFS相关软件包"><a href="#2-1-安装NFS相关软件包" class="headerlink" title="2.1 安装NFS相关软件包"></a>2.1 安装NFS相关软件包</h2><pre><code class="$xslt"># yum install nfs-utils nfs-utils-lib
 # systemctl enable rpcbind 
-
 # systemctl enable nfs-server 
-
 # systemctl enable nfs-lock 
-
 # ystemctl enable nfs-idmap
-
 # systemctl start rpcbind 
-
 # systemctl start nfs-server 
-
 # systemctl start nfs-lock 
-
 # systemctl start nfs-idmap
-</code></pre><h4 id="2-2-创建共享目录"><a href="#2-2-创建共享目录" class="headerlink" title="2.2 创建共享目录"></a>2.2 创建共享目录</h4><p><code>现在，让我们在服务器中创建一些共享目录。</code></p>
-<p>在服务器中创建名为/var/unixmen_share的共享目录，让客户端用户读取和写入该目录中的文件。</p>
-<pre><code># mkdir /var/unixmen_share 
-# chmod 777 /var/unixmen_share
-</code></pre><h4 id="2-3-导出共享目录"><a href="#2-3-导出共享目录" class="headerlink" title="2.3 导出共享目录"></a>2.3 导出共享目录</h4><p><code>在NFS服务器上导出共享目录：编辑文件/etc/exports，</code><br>添加以下行：</p>
-<pre><code># /var/unixmen_share/  192.168.1.0/24(rw,sync,no_root_squash,no_all_squash）
-
-&lt;1&gt; /var/unixmen_share - 共享目录
-&lt;2&gt; 192.168.1.0/24 - 客户端的IP地址范围
-&lt;3&gt; rw  - 共享文件夹同步的可写权限
-&lt;4&gt; sync - 同步共享目录
-&lt;5&gt; no_root_squash - 启用root权限
-&lt;6&gt; no_all_squash - 启用用户权限
-</code></pre><h4 id="2-4-重启NFS服务："><a href="#2-4-重启NFS服务：" class="headerlink" title="2.4 重启NFS服务："></a>2.4 重启NFS服务：</h4><pre><code># systemctl restart nfs-server
-</code></pre><hr>
-<h3 id="3-客户端"><a href="#3-客户端" class="headerlink" title="3.客户端"></a>3.客户端</h3><h4 id="3-1-安装NFS软件包"><a href="#3-1-安装NFS软件包" class="headerlink" title="3.1 安装NFS软件包"></a>3.1 安装NFS软件包</h4><p>使用以下命令在客户端系统中安装NFS软件包：</p>
-<pre><code># yum install nfs-utils nfs-utils-lib
-</code></pre><h4 id="3-2-启用并启动NFS服务"><a href="#3-2-启用并启动NFS服务" class="headerlink" title="3.2 启用并启动NFS服务"></a>3.2 启用并启动NFS服务</h4><pre><code># systemctl enable rpcbind 
+</code></pre>
+<h2 id="2-2-创建共享目录"><a href="#2-2-创建共享目录" class="headerlink" title="2.2. 创建共享目录"></a>2.2. 创建共享目录</h2><p>在服务器中创建名为/var/share的共享目录，让客户端用户读取和写入该目录中的文件</p>
+<pre><code class="$xslt"># mkdir /var/share 
+# chmod 777 /var/share
+</code></pre>
+<h2 id="2-3-导出共享目录"><a href="#2-3-导出共享目录" class="headerlink" title="2.3 导出共享目录"></a>2.3 导出共享目录</h2><p>在NFS服务器上导出共享目录：编辑文件/etc/exports，修改如下:</p>
+<pre><code class="$xslt"># /var/share/  192.168.1.0/24(rw,sync,no_root_squash,no_all_squash）
+</code></pre>
+<p><strong>代码说明:</strong></p>
+<pre><code class="$xslt">/var/share - 共享目录
+192.168.1.0/24 - 客户端的IP地址范围
+rw  - 共享文件夹同步的可写权限
+sync - 同步共享目录
+no_root_squash - 启用root权限
+no_all_squash - 启用用户权限
+</code></pre>
+<h2 id="2-4-重启NFS服务"><a href="#2-4-重启NFS服务" class="headerlink" title="2.4 重启NFS服务"></a>2.4 重启NFS服务</h2><pre><code class="$xslt"># systemctl restart nfs-server
+</code></pre>
+<h1 id="3-客户端节点部署"><a href="#3-客户端节点部署" class="headerlink" title="3.客户端节点部署"></a>3.客户端节点部署</h1><h2 id="3-1-安装NFS相关软件包"><a href="#3-1-安装NFS相关软件包" class="headerlink" title="3.1 安装NFS相关软件包"></a>3.1 安装NFS相关软件包</h2><pre><code class="$xslt"># yum install nfs-utils nfs-utils-lib
+</code></pre>
+<h2 id="3-2-启用并启动NFS服务"><a href="#3-2-启用并启动NFS服务" class="headerlink" title="3.2 启用并启动NFS服务"></a>3.2 启用并启动NFS服务</h2><pre><code class="$xslt"># systemctl enable rpcbind 
 # systemctl enable nfs-server 
 # systemctl enable nfs-lock 
 # systemctl enable nfs-idmap
@@ -796,15 +788,19 @@ NFS客户端IP地址：192.168.1.102/24
 # systemctl start nfs-server 
 # systemctl start nfs-lock 
 # systemctl start nfs-idmap
-</code></pre><h3 id="4-在客户端上挂载NFS共享"><a href="#4-在客户端上挂载NFS共享" class="headerlink" title="4.在客户端上挂载NFS共享"></a>4.在客户端上挂载NFS共享</h3><p><code>创建一个挂载点以挂载我们之前在服务器中创建的共享文件夹&#39;/var/unixmen_share&#39;</code>。</p>
-<pre><code># mkdir /var/nfs_share
-</code></pre><h4 id="4-1-共享服务​​器目录"><a href="#4-1-共享服务​​器目录" class="headerlink" title="4.1 共享服务​​器目录"></a>4.1 共享服务​​器目录</h4><p><code>将共享从服务​​器挂载到客户端，如下所示</code></p>
-<pre><code>// 挂载
-# mount -t nfs 192.168.1.101：/var/unixmen_share  /var/nfs_share 
-
-//强制卸载
-umount -lf /var/nfs_share
 </code></pre>
+<h2 id="3-3-挂载NFS共享"><a href="#3-3-挂载NFS共享" class="headerlink" title="3.3 挂载NFS共享"></a>3.3 挂载NFS共享</h2><p>创建一个挂载点以挂载我们之前在服务节点中创建的共享文件夹 ‘/var/share’</p>
+<pre><code class="$xslt"># mkdir /var/nfs_share
+# mount -t nfs 192.168.1.101：/var/share  /var/nfs_share
+</code></pre>
+<h2 id="3-4-卸载NFS共享"><a href="#3-4-卸载NFS共享" class="headerlink" title="3.4 卸载NFS共享"></a>3.4 卸载NFS共享</h2><p><strong>卸载:</strong></p>
+<pre><code># umount /var/nfs_share
+</code></pre><p><strong>强制卸载:</strong></p>
+<pre><code># umount -lf /var/nfs_share
+</code></pre><h2 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h2><ul>
+<li>服务端节点应做文件备份，如果客户端把文件误删除，则服务端对应的文件也会丢失。</li>
+</ul>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
@@ -817,11 +813,11 @@ umount -lf /var/nfs_share
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>基于Linux搭建nfs文件共享</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">475</span></p>
+    <p><span class="copy-title">文章标题:</span>记在Linux中搭建nfs文件共享的一次经历</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">437</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="撸码">撸码</a></p>
     <p><span class="copy-title">发布时间:</span>2016-04-19 18:41</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2016/04/19/nfs-file-sharing/" title="基于Linux搭建nfs文件共享">https://mrliuqh.github.io/2016/04/19/nfs-file-sharing/</a>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2016/04/19/nfs-file-sharing/" title="记在Linux中搭建nfs文件共享的一次经历">https://mrliuqh.github.io/2016/04/19/nfs-file-sharing/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
     </p>
@@ -913,7 +909,7 @@ var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "ht
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#go','#数据结构','#docker','#nginx','#mysql','#git','#mac','#php','#linux','#crond','#http','#Java','#maven','#nexus','#nfs','#算法','#面试题','#rabbitmq','#概念',],
+            'data': ['#go','#数据结构','#docker','#nginx','#mysql','#git','#mac','#php','#linux','#crond','#http','#Java','#maven','#nexus','#nfs','#面试题','#算法','#rabbitmq','#概念',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
