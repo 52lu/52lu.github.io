@@ -140,3 +140,98 @@ bash-4.4$ cat /nexus-data/admin.password
 ```
 
 <font color=orange>@注意: repository节点和snapshotRepository节点下的id名称必须要与maven的配置文件(settings.xml)中的server下配置的id名称保持一致</font>
+
+
+# 4. 把中央仓库的依赖同步到私服中
+如果所有的依赖都从中央仓库下载，在一些不能联外网或者网络差的情况下，势必会影响开发，最好的解决方法是从私服上下载；
+
+## 4.1 下载依赖包的流程:
+![](https://mrliuqh.github.io/directionsImg/java/maven-down-flow.png)
+
+## 4.2 开始配置 
+
+- 第一步:修改maven的配置文件中的servers
+在maven的配置文件(settings.xml)中，servers 节点下新增一个server,代码如下:
+
+``` 
+<servers>
+  ...
+  
+  <!-- 个人私服开始节点 -->
+      <server>
+        <!-- 注意:pom.xml中的id要和这个一致！！ -->
+        <id>self-nexus-releases</id>
+        <username>admin</username>
+        <password>123456</password>
+      </server>
+      <server>
+        <id>self-nexus-snapshots</id>
+        <username>admin</username>
+        <password>123456</password>
+      </server>
+      
+      <!-- 新增节点:maven-public-->
+      <server> 
+        <id>maven-public</id>  
+        <username>admin</username>  
+        <password>123456</password> 
+      </server>
+      <!-- 个人私服结束节点 -->
+</servers>
+```
+
+- 第二步:修改maven的配置文件中的mirrors
+
+```
+<mirrors> 
+  <mirror> 
+    <id>maven-public</id>  
+    <mirrorOf>*</mirrorOf>  
+    <name>maven-public</name>  
+    <url>http://192.168.0.114:8081/repository/maven-public/</url> 
+  </mirror> 
+</mirrors> 
+```
+
+- 第三步:修改maven的配置文件中的profiles
+
+```
+<profiles> 
+  <profile> 
+    <id>nexus</id>  
+    <repositories> 
+      <repository> 
+        <id>maven-public</id>  
+        <name>Nexus</name>  
+        <url>http://192.168.0.114:8081/repository/maven-public/</url>  
+        <releases>
+          <enabled>true</enabled>
+        </releases>  
+        <snapshots>
+          <enabled>true</enabled>
+        </snapshots> 
+      </repository> 
+    </repositories>  
+    <pluginRepositories> 
+      <pluginRepository> 
+        <id>maven-public</id>  
+        <name>Nexus Plugin Repository</name>  
+        <url>http://192.168.0.114:8081/repository/maven-public/</url>  
+        <releases>
+          <enabled>true</enabled>
+        </releases>  
+        <snapshots>
+          <enabled>true</enabled>
+        </snapshots> 
+      </pluginRepository> 
+    </pluginRepositories> 
+  </profile> 
+</profiles>
+```
+
+- 最后一步: 删除本地仓库代码，重新下载
+
+本地仓库一般位置在: /Users/xx/.m2/repository
+
+效果图:
+![](https://mrliuqh.github.io/directionsImg/java/nexus-mvn-public.png)
