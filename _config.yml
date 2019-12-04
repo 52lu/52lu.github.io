@@ -23,7 +23,7 @@ toc:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://mrliuqh.github.io
+url: https://52lu.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -83,7 +83,7 @@ theme: 3-hexo
 deploy:
   type: git
 #  repo: https://github.com/MrLiuqh/MrLiuqh.github.io.git
-  repo: https://github.com/luma66/luma66.github.io.git
+  repo: https://github.com/52lu/52lu.github.io.git
   barnch: hexo
 
 #search
