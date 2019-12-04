@@ -232,11 +232,11 @@ gentie:
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
 
 gitalk:
-  githubID: MrLiuqh
-  repo: MrLiuqh.github.io
+  githubID: 52lu
+  repo: 52lu.github.io
   ClientID: 2c2fa69918d1332db190
   ClientSecret: 331f6fa0fb5d55a2f042f449c656bed6e33e7f7f
-  adminUser: MrLiuqh
+  adminUser: 52lu
   distractionFreeMode: true
   language: zh-CN
   perPage: 10
