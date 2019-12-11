@@ -1,5 +1,5 @@
 ---
-title: PHP常用数组函数整理
+title: PHP-数组函数
 date: 2017-09-20 13:12
 tags:
  - php
@@ -1057,8 +1057,120 @@ Array
 )
 ```
 
+## 3.3 [rsort 对值:逆向排序](https://www.php.net/manual/zh/function.rsort.php)
+**功能:** 对数组进行逆向排序，不保留索引关系
+**语法:**
+```php
+rsort ( array &$array [, int $sort_flags = SORT_REGULAR ] ) : bool
+```
+**说明:** 对数组进行逆向排序（最高到最低）。
 
-## 3.x [array_multisort 多维数组排序](https://www.php.net/manual/zh/function.array-multisort.php)
+**代码:**
+
+```php
+$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+rsort($fruits);
+print_r($fruits);
+```
+
+**输出:**
+```php
+Array
+(
+   [0] => orange
+   [1] => lemon
+   [2] => banana
+   [3] => apple
+)
+```
+
+
+## 3.4 [sort 对值:正向排序](https://www.php.net/manual/zh/function.sort.php)
+**功能:** 对数组进行正向排序，不保留索引关系
+**语法:**
+```php
+sort ( array &$array [, int $sort_flags = SORT_REGULAR ] ) : bool
+```
+**说明:** 对数组进行逆向排序（最高到最低）。
+
+**代码:**
+
+```php
+$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+sort($fruits);
+print_r($fruits);
+```
+
+**输出:**
+```php
+Array
+(
+   [0] => apple
+   [1] => banana
+   [2] => lemon
+   [3] => orange
+)
+```
+
+
+
+## 3.5 [ksort 对key:正向排序](https://www.php.net/manual/zh/function.ksort.php)
+**功能:** 对数组按照键名正向排序
+**语法:**
+```php
+ksort ( array &$array [, int $sort_flags = SORT_REGULAR ] ) : bool
+```
+**说明:** 对数组按照键名正向排序，保留键名到数据的关联。主要用于结合数组。
+
+**代码:**
+
+```php
+$fruits = array("d"=>"lemon", "a"=>"orange", "b"=>"banana", "c"=>"apple");
+ksort($fruits);
+print_r($fruits);
+```
+
+**输出:**
+```php
+Array
+(
+   [a] => orange
+   [b] => banana
+   [c] => apple
+   [d] => lemon
+)
+```
+
+
+## 3.6 [krsort  对key:逆向排序](https://www.php.net/manual/zh/function.krsort.php)
+**功能:** 对数组按照键名逆向排序
+**语法:**
+```php
+krsort ( array &$array [, int $sort_flags = SORT_REGULAR ] ) : bool
+```
+**说明:** 对数组按照键名逆向排序，保留键名到数据的关联。主要用于结合数组。
+
+**代码:**
+
+```php
+$fruits = array("d"=>"lemon", "a"=>"orange", "b"=>"banana", "c"=>"apple");
+krsort($fruits);
+print_r($fruits);
+```
+
+**输出:**
+```php
+Array
+(
+   [d] => lemon
+   [c] => apple
+   [b] => banana
+   [a] => orange
+)
+```
+
+
+## 3.7 [array_multisort 多维数组排序](https://www.php.net/manual/zh/function.array-multisort.php)
 **功能:** 返回数组中所有的值
 **语法:**
 ```php
@@ -1066,13 +1178,224 @@ array_multisort ( array &$array1 [, mixed $array1_sort_order = SORT_ASC [, mixed
 ```
 **说明:** 可以用来一次对多个数组进行排序，或者根据某一维或多维对多维数组进行排序。
 - 关联（string）键名保持不变，但数字键名会被重新索引
+- array1_sort_order:参数要排列的顺序,SORT_ASC升序,SORT_DESC倒序,默认 SORT_ASC
+- array1_sort_flags:
+  - SORT_REGULAR - 将项目按照通常方法比较（不修改类型）
+  - SORT_NUMERIC - 按照数字大小比较
+  - SORT_STRING - 按照字符串比较
+
+
+### 1. 一维数组排序
 
 **代码:**
-
 ```php
+$a=array("Dog","Cat","Horse","Bear","Zebra");
+array_multisort($a);
+print_r($a);
+```
+**输出:**
+```php
+Array
+(
+   [0] => Bear
+   [1] => Cat
+   [2] => Dog
+   [3] => Horse
+   [4] => Zebra
+)
+```
+### 2. 多个一维数组排序
 
+**代码:**
+```php
+$ar1 = array(10, 100, 100, 0);
+$ar2 = array(1, 3, 2, 4);
+array_multisort($ar1, $ar2);
+
+var_dump($ar1);
+var_dump($ar2);
+```
+
+
+说明: 可以把$ar1和$ar2的数据可以看成一个表 如下：
+
+$ar1 | $ar2
+--- | ---
+10  | 1
+100 | 3
+100 | 2
+0   | 4
+
+> $ar1和$ar2分别为列名，然后像sql语句一样 排序即可
+```sql
+select * from table order by $ar1 asc ,$ar2 asc 
+```
+
+
+**输出:**
+```php
+array(4) {
+  [0]=> int(0)
+  [1]=> int(10)
+  [2]=> int(100)
+  [3]=> int(100)
+}
+array(4) {
+  [0]=> int(4)
+  [1]=> int(1)
+  [2]=> int(2)
+  [3]=> int(3)
+}
+```
+
+### 3.多维数组排序
+
+**原数据:**
+```php
+<?php
+$data[] = array('volume' => 67, 'edition' => 2);
+$data[] = array('volume' => 86, 'edition' => 1);
+$data[] = array('volume' => 85, 'edition' => 6);
+$data[] = array('volume' => 98, 'edition' => 2);
+$data[] = array('volume' => 86, 'edition' => 6);
+$data[] = array('volume' => 67, 'edition' => 7);
+```
+需求:将把 volume 降序排列，把 edition 升序排列。
+
+**代码:**
+```php
+<?php
+// 取得列的列表
+foreach ($data as $key => $row) {
+    $volume[$key]  = $row['volume'];
+    $edition[$key] = $row['edition'];
+}
+
+// 将数据根据 volume 降序排列，根据 edition 升序排列
+// 把 $data 作为最后一个参数，以通用键排序
+array_multisort($volume, SORT_DESC, $edition, SORT_ASC, $data);
+print_r($data);
+?>
 ```
 
 **输出:**
 ```php
+Array
+(
+   [0] => Array
+       (
+           [volume] => 98
+           [edition] => 2
+       )
+   [1] => Array
+       (
+           [volume] => 86
+           [edition] => 1
+       )
+   [2] => Array
+       (
+           [volume] => 86
+           [edition] => 6
+       )
+   [3] => Array
+       (
+           [volume] => 85
+           [edition] => 6
+       )
+   [4] => Array
+       (
+           [volume] => 67
+           [edition] => 2
+       )
+   [5] => Array
+       (
+           [volume] => 67
+           [edition] => 7
+       )
+)
 ```
+
+
+# 4.判断
+
+## 4.1 [array_key_exists key是否存在](https://www.php.net/manual/zh/function.array-key-exists.php)
+**功能:**  检查数组里是否有指定的键名或索引
+**语法:**
+```php
+array_key_exists(mixed $key , array $array) : bool
+```
+**说明:** 
+- 数组里有键key时，返回TRUE。 key可以是任何能作为数组索引的值。
+- 仅仅搜索第一维的键。 多维数组里嵌套的键不会被搜索到。
+- key_exists函数和此函数功能一样
+
+**代码:**
+```php
+<?php
+$search_array = array('first' => 1, 'second' => 4);
+if (array_key_exists('first', $search_array)) {
+    echo "key first 存在!";
+} else {
+    echo "key first 不存在!";
+}
+```
+
+**输出:**
+```php
+key first 存在!
+```
+
+**array_key_exists()与isset()对比**
+
+isset() 对于数组中为 NULL 的值不会返回 TRUE，而 array_key_exists() 会。
+
+```php
+<?php
+$search_array = array('first' => null, 'second' => 4);
+
+// returns false
+isset($search_array['first']);
+
+// returns true
+array_key_exists('first', $search_array);
+
+```
+
+
+## 4.2 [in_array 值是否存在](https://www.php.net/manual/zh/function.in-array.php)
+**功能:**  检查数组中是否存在某个值,如果找到 则返回TRUE，否则返回 FALSE。
+**语法:**
+```php
+in_array ( mixed $needle , array $haystack [, bool $strict = FALSE ] ) : bool
+```
+**说明:** 
+- needle:待搜索的值。
+- haystack:待搜索的数组。
+- strict: 如果第三个参数strict的值为TRUE则会严格匹配类型(===)
+
+**代码:**
+```php
+<?php
+// 非严格类型检查
+$os = array("Mac", "NT", "Irix", "Linux","1");
+if (in_array("Irix", $os)) {
+    echo "Got Irix";
+}
+// 严格类型检查
+if (in_array(1, $os,true)) {
+    echo "存在数字 1";
+} else {
+    echo "不存在数字 1";
+}
+
+```
+**输出:**
+```php
+Got Irix
+
+不存在数字 1
+```
+
+# 5.计算
+
+todo ...
