@@ -11,7 +11,7 @@ categories:
 
 多线程执行是Java平台的一个本质特性。每一个应用程序有至少一个线程（或者如果计算系统线程的话，如内存管理和信号处理，则是多个）。但是从应用程序程序员的角度，启动的只有一个线程，称为主线程（main thread）。这个线程有能力创建另外的线程。
 
-[什么是进程、线程、协程](https://mrliuqh.github.io/2018/07/13/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B/)
+[什么是进程、线程、协程](https://52lu.github.io/2018/07/13/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B/)
 
 # 2. 体验多线程
 ## 2.1 单线程代码
@@ -368,7 +368,7 @@ Thread-1出售票0
 每个Java程序都有一个默认的主线程，对于Java应用程序，主线程是main方法执行的线程；要想实现多线程，必须在主线程中创建新的线程对象。而一个线程具有5种状态，即创建、就绪、运行、阻塞、终止。
 
 **线程状态的转移与转移原因之间的关系如下图所示:**
-![](https://mrliuqh.github.io/directionsImg/java/threadStatus.png)
+![](https://52lu.github.io/directionsImg/java/threadStatus.png)
 
 在给定时间点上，一个线程只能处于一种状态（[详见JDK文档 Thread.State](https://www.tbaqkj.com/javase/8/docs/api/)）
 1. New(创建态): 至今尚未启动的线程处于这种状态。
@@ -435,6 +435,6 @@ hello
 # 6. 操作线程的方法
 操作线程的主要方法在Thread类中，下表列出了Thread类中的主要方法，[查阅SDK文档获得更多线程方法](https://www.tbaqkj.com/javase/8/docs/api/)。
 
-![](https://mrliuqh.github.io/directionsImg/java/thread-fun-1.png)
-![](https://mrliuqh.github.io/directionsImg/java/thread-fun-2.png)
+![](https://52lu.github.io/directionsImg/java/thread-fun-1.png)
+![](https://52lu.github.io/directionsImg/java/thread-fun-2.png)
 

@@ -11,7 +11,7 @@ categories:
 ## 1.1 关键字
 **关键字不能作为变量名使用,以下表格中是java中的关键字列表**
 
-![](https://mrliuqh.github.io/directionsImg/java/keyword.jpg)
+![](https://52lu.github.io/directionsImg/java/keyword.jpg)
 
 > true、false、null不是关键字，是保留字，但是仍然不能用于命名标识符。保留字是为Java预留的关键字，它们虽然现在没有作为关键字，但在以后的升级版本中有可能作为关键字。
 
@@ -104,11 +104,11 @@ final float PI=3.14F,price=13.86F,WEIGHT=86.32F;
 
 
 # 2.数据类型
-![](https://mrliuqh.github.io/directionsImg/java/basic_data_type.jpg)
+![](https://52lu.github.io/directionsImg/java/basic_data_type.jpg)
 
 ## 2.1 整数类型
 <b>整数类型取值范围</b>
-![](https://mrliuqh.github.io/directionsImg/java/int_ranage.jpg)
+![](https://52lu.github.io/directionsImg/java/int_ranage.jpg)
 
 
 ```
@@ -135,7 +135,7 @@ long account = 3124567893; //所赋的值超出了int型的取值范围，但是
 
 ## 2.2 浮点类型
 <b>浮点类型取值范围</b>
-![](https://mrliuqh.github.io/directionsImg/java/float_ranage.jpg)
+![](https://52lu.github.io/directionsImg/java/float_ranage.jpg)
 
 如果要声明一个用来保存小数的变量，必须使用浮点类型;
 ```
@@ -170,7 +170,7 @@ boolean falg = false;
 # 3.数据类型转换
 
 **数据类型级别与取值范围**
-![](https://mrliuqh.github.io/directionsImg/java/data_type_level.jpg)
+![](https://52lu.github.io/directionsImg/java/data_type_level.jpg)
 
 ## 3.1 自动（隐式）类型转换
 在对变量进行赋值时，如果是将低级数据类型（相对取值范围较小的数据类型）的数据，赋给高级数据类型（相对取值范围较大的数据类型）的变量，这时Java会自动完成从低级类型向高级类型的转换。在原始数据类型中，除了boolean类型外，其他数据均可参与算术运算。
@@ -248,19 +248,19 @@ System.out.println("count="+count);
 
 # 4.运算符
 ## 4.1 算术运算符
-![](https://mrliuqh.github.io/directionsImg/java/arithmetic_operation.jpg)
+![](https://52lu.github.io/directionsImg/java/arithmetic_operation.jpg)
 
 ## 4.2 赋值运算符
-![](https://mrliuqh.github.io/directionsImg/java/assignment_operation.jpg)
+![](https://52lu.github.io/directionsImg/java/assignment_operation.jpg)
 
 ## 4.3 关系运算符
-![](https://mrliuqh.github.io/directionsImg/java/relational_operation.jpg)
+![](https://52lu.github.io/directionsImg/java/relational_operation.jpg)
 
 ## 4.4 位运算符
-![](https://mrliuqh.github.io/directionsImg/java/bit_operation.png)
+![](https://52lu.github.io/directionsImg/java/bit_operation.png)
 
 ## 4.5 逻辑运算符
-![](https://mrliuqh.github.io/directionsImg/java/logic_operation.png)
+![](https://52lu.github.io/directionsImg/java/logic_operation.png)
 
 ## 4.6 三元运算符
 ```
@@ -268,5 +268,5 @@ System.out.println("count="+count);
 ```
 
 ## 4.7 运算符优先级
-![](https://mrliuqh.github.io/directionsImg/java/operator_precedence.jpg)
+![](https://52lu.github.io/directionsImg/java/operator_precedence.jpg)
 

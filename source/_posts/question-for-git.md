@@ -80,8 +80,8 @@ error: failed to push some refs to 'ssh://git@git.xxx.com:22138/ms-group/mm-test
 
 解决方法：
  - 第一步:查看gitlab中对应的项目是否设置保护分支;
- ![](https://mrliuqh.github.io/directionsImg/git/gitlab-pre-receive-hook-declined.png)
- ![](https://mrliuqh.github.io/directionsImg/git/gitlab-protected-branch.png)
+ ![](https://52lu.github.io/directionsImg/git/gitlab-pre-receive-hook-declined.png)
+ ![](https://52lu.github.io/directionsImg/git/gitlab-protected-branch.png)
  
  - 第二步: 上面确认设置后，依旧报错，改用下面方法
-  ![](https://mrliuqh.github.io/directionsImg/git/gitlab-use-http.png)
+  ![](https://52lu.github.io/directionsImg/git/gitlab-use-http.png)

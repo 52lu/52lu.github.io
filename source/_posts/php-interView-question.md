@@ -563,7 +563,7 @@ mysql_query("UPDATE `orderinfo` SET ordertitle='$title' where customerid=".$id);
 mysql_query("UNLOCK TABLES");
  ```
  - 建立索引
- [索引类型,请看3.7](https://mrliuqh.github.io/2017/09/17/php-interView-question/#3-7-索引类型)
+ [索引类型,请看3.7](https://52lu.github.io/2017/09/17/php-interView-question/#3-7-索引类型)
  - 优化查询语句
    - 避免在 where 子句中使用!=或<>操作符，否则将引擎放弃使用索引而进行全表扫描。
    - 避免全表扫描，首先应考虑在where及order by涉及的列上建立索引
@@ -591,7 +591,7 @@ mysql_query("UNLOCK TABLES");
    - 任何地方都不要使用 select \* from t ，用具体的字段列表代替"\*”，不要返回用不到的任何字段。
    
    - 通过explain查询和分析SQL的执行计划
- ![image](https://mrliuqh.github.io/directionsImg/mysql/explain.png)
+ ![image](https://52lu.github.io/directionsImg/mysql/explain.png)
  
  
  ### 3.4 mysql_fetch_row() 和 mysql_fetch_array() 有什么分别？
@@ -897,7 +897,7 @@ b. fastcgi 用tcp方式跟远程机子上的进程或本地进程建立连接要
  }
 ```
 
-### 6.2 [php排序算法汇总](https://mrliuqh.github.io/2018/01/12/php-sort/)
+### 6.2 [php排序算法汇总](https://52lu.github.io/2018/01/12/php-sort/)
 
 ### 6.3 遍历一个文件夹下的所有文件和子文件夹
 

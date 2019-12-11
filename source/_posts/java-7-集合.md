@@ -33,13 +33,13 @@ Java的集合类主要由两个接口派生而出：Collection和Map，Collectio
 
 
 ### 4.1 Collection接口、子接口及其实现类的继承树
-![](https://mrliuqh.github.io/directionsImg/java/collection-extends-tree.jpeg)
+![](https://52lu.github.io/directionsImg/java/collection-extends-tree.jpeg)
 
 `粗线圈出的Set和List接口是Collection接口派生的两个子接口，它们分别代表了无序集合和有序集合；Queue是Java提供的队列实现，有点类似于List`
 
 ### 4.2  Map接口、子接口及其实现类的继承树
 
-![](https://mrliuqh.github.io/directionsImg/java/map-tree.jpg)
+![](https://52lu.github.io/directionsImg/java/map-tree.jpg)
 
 
 
@@ -52,7 +52,7 @@ Java的集合类主要由两个接口派生而出：Collection和Map，Collectio
 - Map集合也像一个罐子，只是它里面的每项数据都由两个值组成。
 
 **三种集合示意图:**
-![](https://mrliuqh.github.io/directionsImg/java/conllection-save.jpg)
+![](https://52lu.github.io/directionsImg/java/conllection-save.jpg)
 
 ### 5.2 读取
 - List集合中的元素，可以直接根据元素的索引来访问；
@@ -60,7 +60,7 @@ Java的集合类主要由两个接口派生而出：Collection和Map，Collectio
 - Set集合中的元素，可以根据元素本身来访问（这也是Set集合里元素不允许重复的原因）
 
 ## 6.常用集合类及继承关系
-![](https://mrliuqh.github.io/directionsImg/java/offen-use-conllection.png)
+![](https://52lu.github.io/directionsImg/java/offen-use-conllection.png)
 
 
 
@@ -214,7 +214,7 @@ HashSet中每个能存储元素的“槽位”（slot）通常称为“桶”（
 
 下面给出重写hashCode()方法的一般规则。
  - 第一步:把对象内每个有意义的Field（即每个用做equals()方法比较标准的Field）计算出一个int类型的hashCode值。计算方式如下表:
-![](https://mrliuqh.github.io/directionsImg/java/hascode-rule.jpg)
+![](https://52lu.github.io/directionsImg/java/hascode-rule.jpg)
 
 **例如代码:**
 
@@ -504,7 +504,7 @@ LinkedList类是List接口的实现类——这意味着它是一个List集合�
 Java提供的List就是一个线性表接口，而ArrayList、LinkedList又是线性表的两种典型实现：基于数组的线性表和基于链的线性表。Queue代表了队列，Deque代表了双端队列（既可作为队列使用，也可作为栈使用），接下来对各种实现类的性能进行分析。
 
 LinkedList集合不仅提供了List的功能，还提供了双端队列、栈的功能。关于性能方面可看下图：
-![](https://mrliuqh.github.io/directionsImg/java/collentions-comparison.jpg)
+![](https://52lu.github.io/directionsImg/java/collentions-comparison.jpg)
 
 - 以数组作为底层实现的集合在随机访问时性能较好；
 - 以链表作为底层实现的集合在执行插入、删除操作时有很好的性能；

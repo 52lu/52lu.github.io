@@ -28,14 +28,14 @@ mysql> explain select * from user;
 >SELECT 查询的标识符. 每个 SELECT 都会自动分配一个唯一的标识符,id如果相同，可以认为是一个分组，从上往下顺序执行,id值越大，表示优先级越高，越先执行。
 
 - #### select_type: SELECT 查询的类型.
-![](https://mrliuqh.github.io/directionsImg/mysql/explan-selectType.png)
+![](https://52lu.github.io/directionsImg/mysql/explan-selectType.png)
 
 - #### table: 查询的是哪个表
 <!--more-->
 - #### partitions: 匹配的分区
 
 - #### type: 显示访问类型，是较为重要的一个指标。
-![](https://mrliuqh.github.io/directionsImg/mysql/explan-type.png)
+![](https://52lu.github.io/directionsImg/mysql/explan-type.png)
 
 > 从最好到最差依次是：system >const >eq_ref >ref >range >index >ALL
 
@@ -59,7 +59,7 @@ mysql> explain select * from user;
 - #### filtered: 表示此查询条件所过滤的数据的百分比
 
 - #### extra: 额外的信息
-![](https://mrliuqh.github.io/directionsImg/mysql/explan-extra.png)
+![](https://52lu.github.io/directionsImg/mysql/explan-extra.png)
 - ### Explain的作用
 - 表的读取顺序
 - 数据读取操作的操作类型

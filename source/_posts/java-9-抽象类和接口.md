@@ -217,8 +217,8 @@ public interface MyInterface{
 
 # 3.抽象类和接口的区别
 
-![](https://mrliuqh.github.io/directionsImg/java/abstractInterface.jpeg)
-<!--![](https://mrliuqh.github.io/directionsImg/java/hascode-rule.jpg)-->
+![](https://52lu.github.io/directionsImg/java/abstractInterface.jpeg)
+<!--![](https://52lu.github.io/directionsImg/java/hascode-rule.jpg)-->
 ## 3.1 共同点
 - 都是抽象类型
 

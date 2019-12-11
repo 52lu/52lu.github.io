@@ -37,6 +37,6 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 # 3.在线生成定时任务
 [点击,去生成](https://crontab-generator.org/)
 
-![](https://mrliuqh.github.io/directionsImg/other/crontab-make.png)
+![](https://52lu.github.io/directionsImg/other/crontab-make.png)
 
 

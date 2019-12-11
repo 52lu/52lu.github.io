@@ -68,7 +68,7 @@ drwxrwxrwx 15 root root 4096 11月 23 23:18 nexus
 
 # 2. 启动nexus3
 
-![](https://mrliuqh.github.io/directionsImg/service/nexus/nexus3.png)
+![](https://52lu.github.io/directionsImg/service/nexus/nexus3.png)
 
 
 <font color=red>@注意: 默认密码不是admin123,而是在容器中的/nexus-data/admin.password文件中</font>
@@ -146,7 +146,7 @@ bash-4.4$ cat /nexus-data/admin.password
 如果所有的依赖都从中央仓库下载，在一些不能联外网或者网络差的情况下，势必会影响开发，最好的解决方法是从私服上下载；
 
 ## 4.1 下载依赖包的流程:
-![](https://mrliuqh.github.io/directionsImg/java/maven-down-flow.png)
+![](https://52lu.github.io/directionsImg/java/maven-down-flow.png)
 
 ## 4.2 开始配置 
 
@@ -234,4 +234,4 @@ bash-4.4$ cat /nexus-data/admin.password
 本地仓库一般位置在: /Users/xx/.m2/repository
 
 效果图:
-![](https://mrliuqh.github.io/directionsImg/java/nexus-mvn-public.png)
+![](https://52lu.github.io/directionsImg/java/nexus-mvn-public.png)

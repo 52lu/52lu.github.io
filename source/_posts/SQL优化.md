@@ -84,7 +84,7 @@ log_output：日志存储方式。log_output='FILE'表示将日志存入文件�
 
 
 ### 1.3 explan分析SQL
-[查看explan使用分析](https://mrliuqh.github.io/2019/06/03/mysql-explan/)
+[查看explan使用分析](https://52lu.github.io/2019/06/03/mysql-explan/)
 
 
 ## 2 索引使用

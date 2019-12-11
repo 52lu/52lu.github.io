@@ -19,8 +19,8 @@ Java的异常处理机制也秉承着面向对象的基本思想。在Java中，
 
 # 3. 常见的异常
 
-![](https://mrliuqh.github.io/directionsImg/java/common-error-1.png)
-![](https://mrliuqh.github.io/directionsImg/java/common-error-2.png)
+![](https://52lu.github.io/directionsImg/java/common-error-1.png)
+![](https://52lu.github.io/directionsImg/java/common-error-2.png)
 
 # 4. 抛出异常
 ## 4.1 thorws关键
@@ -130,7 +130,7 @@ try {
 ```
 
 # 6. 异常类关系图
-![](https://mrliuqh.github.io/directionsImg/java/throwable-tree.png)
+![](https://52lu.github.io/directionsImg/java/throwable-tree.png)
 
 ## 6.1 异常类型的继承关系
 异常类型的最大父类是Throwable类，其分为两个子类，分别为Exception、Error。Exception表示程序可处理的异常，而Error表示JVM错误，一般无需程序开发人员自己处理。

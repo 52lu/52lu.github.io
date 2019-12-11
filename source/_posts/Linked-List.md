@@ -44,7 +44,7 @@ categories:
 
 `一个单向链表的节点被分成两个部分。第一个部分保存或者显示关于节点的信息，第二个部分存储下一个节点的地址。单向链表只可向一个方向遍历。`
 
-![单向链表图](https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list.png)
+![单向链表图](https://52lu.github.io/directionsImg/dataStructure/Unidirectional_linked_list.png)
 
 
 ### 7. 代码（PHP）实现单向链表

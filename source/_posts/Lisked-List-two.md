@@ -12,12 +12,12 @@ categories:
 
 `由于另外储存了指向链表内容的指针，并且可能会修改相邻的节点，有的时候第一个节点可能会被删除或者在之前添加一个新的节点。这时候就要修改指向首个节点的指针。有一种方便的可以消除这种特殊情况的方法是在最后一个节点之后、第一个节点之前储存一个永远不会被删除或者移动的虚拟节点，形成一个下面说的循环链表。这个虚拟节点之后的节点就是真正的第一个节点。这种情况通常可以用这个虚拟节点直接表示这个链表，对于把链表单独的存在数组里的情况，也可以直接用这个数组表示链表并用第0个或者第-1个（如果编译器支持）节点固定的表示这个虚拟节点。`
 
-![双向链表图](https://mrliuqh.github.io/directionsImg/dataStructure/Unidirectional_linked_list_two.png)
+![双向链表图](https://52lu.github.io/directionsImg/dataStructure/Unidirectional_linked_list_two.png)
 
 <!--more-->
 ### 2. 什么是循环链表?
 >循环链表指的是首节点和末节点被连接在一起的链表，这种方式在单向和双向链表中皆可实现。循环链表的无边界使得在这样的链表上设计算法会比普通链表更加容易。对于新加入的节点应该是在第一个节点之前还是最后一个节点之后可以根据实际要求灵活处理。
-![循环链表图](https://mrliuqh.github.io/directionsImg/dataStructure/cycle_list.png)
+![循环链表图](https://52lu.github.io/directionsImg/dataStructure/cycle_list.png)
 
 
 ### 3. 单向链表与双向链表优缺点

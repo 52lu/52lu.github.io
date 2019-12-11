@@ -31,7 +31,7 @@ categories:
 般基于线程的，开启过多的线程，资源耗费大，这里就突显 Go在并发上的优势了
 
 ## 2.2 Go主进程和Go协程（goroutine）关系示意图
-![](https://mrliuqh.github.io/directionsImg/go/go%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B.png)
+![](https://52lu.github.io/directionsImg/go/go%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B.png)
 
 ## 2.3 Go协程的特点
 - 有独立的栈空间

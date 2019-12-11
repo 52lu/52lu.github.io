@@ -14,14 +14,14 @@ categories:
  
 ## 1.1 goroutine与channel的通信图
  
-![](https://mrliuqh.github.io/directionsImg/go/goroutine%E4%B8%8Echannel%E7%9A%84%E9%80%9A%E4%BF%A1.png)
+![](https://52lu.github.io/directionsImg/go/goroutine%E4%B8%8Echannel%E7%9A%84%E9%80%9A%E4%BF%A1.png)
  
 # 2. 通道的特性
  - 道是一种特殊的类型
  - 任何时候，同时只能有一个goroutine访问通道进行发送和获取数据
  
  - channle本质就是一个数据结构-队列
-![](https://mrliuqh.github.io/directionsImg/go/gochannel.png)
+![](https://52lu.github.io/directionsImg/go/gochannel.png)
 - goroutine间通过通道就可以通信
 - 通道像一个传送带或者队列，总是遵循先入先出（First In First Out）的规则，保证收发数据的顺序
 - channel 是线程安全，多个协程操作同一个channel时，不会发生资源竞争问题（竞态）

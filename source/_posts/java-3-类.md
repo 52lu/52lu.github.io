@@ -210,8 +210,8 @@ Object类是Java一个比较特殊的类，Java中所有的类从根本上都继
 > 如果一个类没有使用extends关键字明确标识继承另外一个类，那么这个类就默认继承Object类
 
 ## Object类中常用的方法
-![](https://mrliuqh.github.io/directionsImg/java/object-fun1.jpg)
-![](https://mrliuqh.github.io/directionsImg/java/object-fun2.jpg)
+![](https://52lu.github.io/directionsImg/java/object-fun1.jpg)
+![](https://52lu.github.io/directionsImg/java/object-fun2.jpg)
 
 # 3. 内部类
 所谓的内部类就是指在一个类的内部又定义了其他类的情况。如果在类Outer的内部再定义一个类Inner，此时类Inner就称为内部类，而类Outer则称为外部类。内部类可声明为public或private。当内部类声明为public或private时，对其访问的限制与成员变量和成员方法完全相同。
