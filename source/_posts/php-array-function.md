@@ -96,44 +96,71 @@ Array
 )
 ```
 
-## 1.3 [array_merge_recursive 合并](https://www.php.net/manual/zh/function.array-merge-recursive.php)
-**功能:** 将一个或多个数组的单元合并起来，一个数组中的值附加在前一个数组的后面。返回作为结果的数组。
-**说明:** 如果输入的数组中有相同的字符串键名，则这些值会被合并到一个数组中去，这将递归下去，因此如果一个值本身是一个数组，本函数将按照相应的条目把它合并为另一个数组。需要注意的是，如果数组具有相同的数值键名，后一个值将不会覆盖原来的值，而是附加到后面。
+
+
+## 1.3 [array_unique 去重](https://www.php.net/manual/zh/function.array-unique.php)
+**功能:** 移除数组中重复的值
+**说明:** 接受 array 作为输入并返回没有重复值的新数组。注意键名保留不变。array_unique() 先将值作为字符串排序，然后对每个值只保留第一个遇到的键名，接着忽略所有后面的键名。这并不意味着在未排序的 array 中同一个值的第一个出现的键名会被保留。
 **语法:**
 ```php
-array_merge_recursive ( array $array1 [, array $... ] ) : array
+array_unique ( array $array [, int $sort_flags = SORT_STRING ] ) : array
 ```
-**代码:**
+
+**代码1:**
 
 ```php
 <?php
-$ar1 = array("color" => array("favorite" => "red"), 5);
-$ar2 = array(10, "color" => array("favorite" => "green", "blue"));
-$result = array_merge_recursive($ar1, $ar2);
+$input = array("a" => "green", "red", "b" => "green", "blue", "red");
+$result = array_unique($input);
 print_r($result);
 ?>
 ```
-**输出:**
 
+**输出:**
 ```php
 Array
 (
-    [color] => Array
-        (
-            [favorite] => Array
-                (
-                    [0] => red
-                    [1] => green
-                )
-
-            [0] => blue
-        )
-
-    [0] => 5
-    [1] => 10
+    [a] => green
+    [0] => red
+    [1] => blue
 )
+
 ```
 
+
+**代码2:**
+
+```php
+<?php
+$input = array(4, "4", "3", 4, 3, "3");
+$result = array_unique($input);
+var_dump($result);
+?>
+```
+
+**输出:**
+```php
+array(2) {
+  [0] => int(4)
+  [2] => string(1) "3"
+}
+```
+
+
+
+
+**输出:**
+```php
+Array
+(
+   [0] => Tank
+   [1] => Morpheus
+   [2] => Cypher
+   [3] => Trinity
+   [4] => Neo
+)
+
+```
 
 ## 1.4 [array_combine 创建](https://www.php.net/manual/zh/function.array-combine.php)
 **功能:**  创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值
@@ -355,49 +382,22 @@ Array
 raspberry
 ```
 
-
-
-## 1.11 [array_replace_recursive 替换](https://www.php.net/manual/zh/function.array-replace-recursive.php)
-**功能:** 使用传递的数组递归替换第一个数组的元素
+## 1.11 [shuffle 打乱](https://www.php.net/manual/zh/function.shuffle.php)
+**功能:** 打乱数组
+**说明:** 本函数打乱（随机排列单元的顺序）一个数组。 它使用的是伪随机数产生器，并不适合密码学的场合
 **语法:**
 ```php
-array_replace_recursive(array $array1 [, array $... ] ) : array
+shuffle ( array &$array ) : bool
 ```
-**说明:** 使用后面数组元素的值替换数组 array1 的值
-- 如果一个键存在于第一个数组同时也存在于第二个数组，它的值将被第二个数组中的值替换
-- 如果一个键存在于第二个数组，但是不存在于第一个数组，则会在第一个数组中创建这个元素。 
-- 如果一个键仅存在于第一个数组，它将保持不变。 
-- 如果传递了多个替换数组，它们将被按顺序依次处理，后面的数组将覆盖之前的值
-
 
 **代码:**
+
 ```php
 <?php
-$base = array('citrus' => array( "orange") , 'berries' => array("blackberry", "raspberry"), );
-$replacements = array('citrus' => array('pineapple'), 'berries' => array('blueberry'));
-
-$basket = array_replace_recursive($base, $replacements);
-print_r($basket);
-
+$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
+shuffle($input);
+print_r($input);
 ?>
-```
-
-**输出:**
-```php
-Array
-(
-    [citrus] => Array
-        (
-            [0] => pineapple
-        )
-
-    [berries] => Array
-        (
-            [0] => blueberry
-            [1] => raspberry
-        )
-
-)
 ```
 
 ## 1.12 [array_replace 替换](https://www.php.net/manual/zh/function.array-replace.php)
@@ -540,120 +540,7 @@ array_splice($input, 3, 0, "purple");
 ```
 
 
-## 1.16 [array_unique 去重](https://www.php.net/manual/zh/function.array-unique.php)
-**功能:** 移除数组中重复的值
-**说明:** 接受 array 作为输入并返回没有重复值的新数组。注意键名保留不变。array_unique() 先将值作为字符串排序，然后对每个值只保留第一个遇到的键名，接着忽略所有后面的键名。这并不意味着在未排序的 array 中同一个值的第一个出现的键名会被保留。
-**语法:**
-```php
-array_unique ( array $array [, int $sort_flags = SORT_STRING ] ) : array
-```
 
-**代码1:**
-
-```php
-<?php
-$input = array("a" => "green", "red", "b" => "green", "blue", "red");
-$result = array_unique($input);
-print_r($result);
-?>
-```
-
-**输出:**
-```php
-Array
-(
-    [a] => green
-    [0] => red
-    [1] => blue
-)
-
-```
-
-
-**代码2:**
-
-```php
-<?php
-$input = array(4, "4", "3", 4, 3, "3");
-$result = array_unique($input);
-var_dump($result);
-?>
-```
-
-**输出:**
-```php
-array(2) {
-  [0] => int(4)
-  [2] => string(1) "3"
-}
-```
-
-
-
-## 1.17 [shuffle 打乱](https://www.php.net/manual/zh/function.shuffle.php)
-**功能:** 打乱数组
-**说明:** 本函数打乱（随机排列单元的顺序）一个数组。 它使用的是伪随机数产生器，并不适合密码学的场合
-**语法:**
-```php
-shuffle ( array &$array ) : bool
-```
-
-**代码:**
-
-```php
-<?php
-$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
-shuffle($input);
-print_r($input);
-?>
-```
-
-**输出:**
-```php
-Array
-(
-   [0] => Tank
-   [1] => Morpheus
-   [2] => Cypher
-   [3] => Trinity
-   [4] => Neo
-)
-
-```
-
-
-## 1.18 [compact 创建](https://www.php.net/manual/zh/function.compact.php)
-**功能:** 建立一个数组，包括变量名和它们的值
-**说明:** 对每个参数，compact() 在当前的符号表中查找该变量名并将它添加到输出的数组中，变量名成为键名而变量的内容成为该键的值。简单说，它做的事和 [extract()](https://www.php.net/manual/zh/function.extract.php) 正好相反。返回将所有变量添加进去后的数组。
-**语法:**
-```php
-compact ( mixed $varname1 [, mixed $... ] ) : array
-```
-
-**代码:**
-
-```php
-<?php
-$city  = "San Francisco";
-$state = "CA";
-$event = "SIGGRAPH";
-
-$location_vars = array("city", "state");
-
-$result = compact("event", "nothing_here", $location_vars);
-print_r($result);
-?>
-```
-
-**输出:**
-```php
-Array
-(
-    [event] => SIGGRAPH
-    [city] => San Francisco
-    [state] => CA
-)
-```
 
 
 # 2.访问
@@ -1398,4 +1285,609 @@ Got Irix
 
 # 5.计算
 
-todo ...
+## 5.1 [array_count_values 统计值出现次数](https://www.php.net/manual/zh/function.array-count-values.php)
+**功能:**   统计数组中所有的值。
+**语法:**
+```php
+array_count_values ( array $array ) : array
+```
+**说明:** 
+结果返回一个数组:数组的键是array里单元的值； 数组的值是array单元的值出现的次数。
+
+**代码:**
+```php
+<?php
+$array = array(1, "hello", 1, "world", "hello");
+print_r(array_count_values($array));
+```
+**输出:**
+```php
+Array
+(
+    [1] => 2
+    [hello] => 2
+    [world] => 1
+)
+```
+
+## 5.2 [array_diff_assoc 数组值的差集](https://www.php.net/manual/zh/function.array-diff-assoc.php)
+**功能:** 带索引检查计算数组的差集。(比较value和key)
+**语法:**
+```php
+array_diff_assoc ( array $array1 , array $array2 [, array $... ] ) : array
+```
+**说明:** 
+array_diff_assoc()返回一个数组，该数组包括了所有在array1中但是不在任何其它参数数组中的值。注意和array_diff()不同的是键名也用于比较。
+**代码:**
+```php
+<?php
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "green", "yellow", "red");
+$result = array_diff_assoc($array1, $array2);
+print_r($result);
+```
+**输出:**
+```php
+Array
+(
+    [b] => brown
+    [c] => blue
+    [0] => red
+)
+```
+**分析:**
+上面的例子中可以看到键值对 "a" => "green" 在两个数组中都有，因此不在结果中的输出。与此不同，键值对 0 => "red" 出现在输出中是因为第二个参数中的 "red" 的键名是 1。
+
+## 5.3 [array_diff_key 数组key的差集](https://www.php.net/manual/zh/function.array-diff-key.php)
+**功能:** 使用键名比较计算数组的差集。
+**语法:**
+```php
+array_diff_key(array $array1 ,array $array2 [, array $... ] ) : array
+```
+**说明:** 
+array_diff_key()返回一个数组，该数组包括了所有出现在array1中但是未出现在任何其它参数数组中的键名的值。
+**代码:**
+```php
+<?php
+$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4,'0'=>'test');
+$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8 ,'test');
+print_r(array_diff_key($array1, $array2));
+```
+**输出:**
+```php
+Array
+(
+    [red] => 2
+    [purple] => 4
+)
+```
+**注意:**
+在 key => value 对中的两个键名仅在 (string) $key1 === (string) $key2 时被认为相等。换句话说，执行的是严格类型检查，因此字符串的表达必须完全一样。
+
+## 5.4 [array_diff 数组差集](https://www.php.net/manual/zh/function.array-diff.php)
+**功能:** 计算数组的差集。(比较key)
+**语法:**
+```php
+array_diff(array $array1 , array $array2 [, array $... ] ) : array
+```
+**说明:** 
+对比array1和其他一个或者多个数组，返回在array1中但是不在其他array里的值。
+**代码:**
+```php
+<?php
+$array1 = array("a" => "green", "red", "blue", "red");
+$array2 = array("b" => "green", "yellow", "red");
+$result = array_diff($array1, $array2);
+
+print_r($result);
+```
+**输出:**
+```php
+Array
+(
+    [1] => blue
+)
+```
+
+
+## 5.5 [array_intersect_assoc 数组值的交集](https://www.php.net/manual/zh/function.array-intersect-assoc.php)
+**功能:** 带索引检查计算数组的交集。(比较value和key)
+**语法:**
+```php
+array_intersect_assoc(array $array1 , array $array2 [, array $... ] ):array
+```
+**说明:** 
+返回一个数组，该数组包含了所有在array1中也同时出现在所有其它参数数组中的值。注意和array_intersect()不同的是键名也用于比较。
+**代码:**
+```php
+<?php
+$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
+$array2 = array("a" => "green", "b" => "yellow", "blue", "red");
+$result_array = array_intersect_assoc($array1, $array2);
+print_r($result_array);
+```
+**输出:**
+```php
+Array
+(
+    [a] => green
+)
+```
+
+## 5.6 [array_intersect 数组值的交集](https://www.php.net/manual/zh/function.array-intersect.php)
+**功能:** 计算数组的交集。(只比较value)
+**语法:**
+```php
+array_intersect(array $array1 ,array $array2 [, array $... ] ) : array
+```
+**说明:** 
+返回一个数组，该数组包含了所有在array1中也同时出现在所有其它参数数组中的值。注意键名保留不变。
+**代码:**
+```php
+<?php
+$array1 = array("a" => "green", "red", "blue");
+$array2 = array("b" => "green", "yellow", "red");
+$result = array_intersect($array1, $array2);
+print_r($result);
+```
+**输出:**
+```php
+Array
+(
+    [a] => green
+    [0] => red
+)
+```
+
+## 5.7 [array_intersect_key 数组key的交集](https://www.php.net/manual/zh/function.array-intersect.php)
+**功能:** 使用键名比较计算数组的交集。(只比较key)
+**语法:**
+```php
+array_intersect_key(array $array1 ,array $array2 [, array $... ] ):array
+```
+**说明:** 
+返回一个数组，该数组包含了所有出现在array1中并同时出现在所有其它参数数组中的键名的值。
+**代码:**
+```php
+<?php
+$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4);
+$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);
+print_r(array_intersect_key($array1, $array2));
+```
+**输出:**
+```php
+Array
+(
+    [blue] => 1
+    [green] => 3
+)
+```
+
+
+## 5.8 [array_product 值的乘积](https://www.php.net/manual/zh/function.array-product.php)
+**功能:** 计算数组中所有值的乘积
+**语法:**
+```php
+array_product(array $array ) : number
+```
+**说明:** 
+以整数或浮点数返回一个数组中所有值的乘积。
+**代码:**
+```php
+<?php
+$a = array(2, 4, 6, 8);
+echo "array_product(a) = " . array_product($a) . "\n";
+echo "array_product(array()) = " . array_product(array()) . "\n";
+```
+**输出:**
+```php
+array_product(a) = 384
+array_product(array()) = 1
+```
+
+## 5.9 [array_sum 值求和](https://www.php.net/manual/zh/function.array-sum.php)
+**功能:** 对数组中所有值求和
+**语法:**
+```php
+array_sum ( array $array ) : number
+```
+**说明:** 
+将数组中的所有值相加，并返回结果。
+**代码:**
+```php
+<?php
+$a = array(2, 4, 6, 8);
+echo "sum(a) = " . array_sum($a) . "\n";
+
+$b = array("a" => 1.2, "b" => 2.3, "c" => 3.4);
+echo "sum(b) = " . array_sum($b) . "\n";
+```
+**输出:**
+```php
+sum(a) = 20
+sum(b) = 6.9
+```
+
+# 6. 递归
+## 6.1 [array_merge_recursive 合并](https://www.php.net/manual/zh/function.array-merge-recursive.php)
+**功能:** 将一个或多个数组的单元合并起来，一个数组中的值附加在前一个数组的后面。返回作为结果的数组。
+**说明:** 如果输入的数组中有相同的字符串键名，则这些值会被合并到一个数组中去，这将递归下去，因此如果一个值本身是一个数组，本函数将按照相应的条目把它合并为另一个数组。需要注意的是，如果数组具有相同的数值键名，后一个值将不会覆盖原来的值，而是附加到后面。
+**语法:**
+```php
+array_merge_recursive ( array $array1 [, array $... ] ) : array
+```
+**代码:**
+
+```php
+<?php
+$ar1 = array("color" => array("favorite" => "red"), 5);
+$ar2 = array(10, "color" => array("favorite" => "green", "blue"));
+$result = array_merge_recursive($ar1, $ar2);
+print_r($result);
+?>
+```
+**输出:**
+
+```php
+Array
+(
+    [color] => Array
+        (
+            [favorite] => Array
+                (
+                    [0] => red
+                    [1] => green
+                )
+
+            [0] => blue
+        )
+
+    [0] => 5
+    [1] => 10
+)
+```
+
+
+
+## 6.2 [array_replace_recursive 替换](https://www.php.net/manual/zh/function.array-replace-recursive.php)
+**功能:** 使用传递的数组递归替换第一个数组的元素
+**语法:**
+```php
+array_replace_recursive(array $array1 [, array $... ] ) : array
+```
+**说明:** 使用后面数组元素的值替换数组 array1 的值
+- 如果一个键存在于第一个数组同时也存在于第二个数组，它的值将被第二个数组中的值替换
+- 如果一个键存在于第二个数组，但是不存在于第一个数组，则会在第一个数组中创建这个元素。 
+- 如果一个键仅存在于第一个数组，它将保持不变。 
+- 如果传递了多个替换数组，它们将被按顺序依次处理，后面的数组将覆盖之前的值
+
+
+**代码:**
+```php
+<?php
+$base = array('citrus' => array( "orange") , 'berries' => array("blackberry", "raspberry"), );
+$replacements = array('citrus' => array('pineapple'), 'berries' => array('blueberry'));
+
+$basket = array_replace_recursive($base, $replacements);
+print_r($basket);
+
+?>
+```
+
+**输出:**
+```php
+Array
+(
+    [citrus] => Array
+        (
+            [0] => pineapple
+        )
+
+    [berries] => Array
+        (
+            [0] => blueberry
+            [1] => raspberry
+        )
+
+)
+```
+
+
+
+## 6.3 [array_map 遍历](https://www.php.net/manual/zh/function.array-map.php)
+**功能:** 为数组的每个元素应用回调函数
+**语法:**
+```php
+array_map(callable $callback ,array $array1 [, array $... ] ):array
+```
+**说明:** 
+返回数组，是为array1每个元素应用callback函数之后的数组。 callback函数形参的数量和传给array_map()数组数量，两者必须一样。
+
+
+**代码:**
+```php
+<?php
+function cube($n)
+{
+    return($n * $n * $n);
+}
+
+$a = array(1, 2, 3, 4, 5);
+$b = array_map("cube", $a);
+print_r($b);
+
+// 匿名函数
+$a = array(1, 2, 3, 4, 5);
+$sign = 10;
+$b2 = array_map(function (&$value) use ($sign){
+    return $value * $sign;
+},$a);
+print_r($b2);
+
+?>
+```
+
+**输出:**
+```php
+Array
+(
+    [0] => 1
+    [1] => 8
+    [2] => 27
+    [3] => 64
+    [4] => 125
+)
+
+// 匿名函数输出
+Array
+(
+    [0] => 10
+    [1] => 20
+    [2] => 30
+    [3] => 40
+    [4] => 50
+)
+```
+
+
+
+## 6.4 [array_walk 遍历](https://www.php.net/manual/zh/function.array-walk.php)
+**功能:** 使用用户自定义函数对数组中的每个元素做回调处理
+**语法:**
+```php
+array_walk(array &$array,callable $callback [, mixed $userdata = NULL ]):bool
+```
+**说明:** 
+- 如果提供了可选参数userdata，将被作为第三个参数传递给callback funcname
+- callback 接受两个参数。array参数的值作为第一个，键名作为第二个。
+- 只有array的值才可以被改变，用户不应在回调函数中改变该数组本身的结构。例如增加/删除单元，unset 单元等等
+
+**代码:**
+```php
+<?php
+$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+function test_alter(&$item1, $key, $prefix)
+{
+    $item1 = "$prefix: $item1";
+}
+
+function test_print($item2, $key)
+{
+    echo "$key. $item2<br />\n";
+}
+echo "Before ...:\n";
+array_walk($fruits, 'test_print');
+
+array_walk($fruits, 'test_alter', 'fruit');
+echo "... and after:\n";
+array_walk($fruits, 'test_print');
+
+
+// 匿名函数调用
+$a = array(1, 2, 3, 4, 5, 8);
+$sign = 10;
+array_walk($a,function (&$val,$key,$sign){
+    if ($key > 2){
+        $val *= $sign;
+    }
+},$sign);
+print_r($a);
+?>
+```
+
+**输出:**
+```php
+Before ...:
+d. lemon
+a. orange
+b. banana
+c. apple
+... and after:
+d. fruit: lemon
+a. fruit: orange
+b. fruit: banana
+c. fruit: apple
+
+// 匿名函数调用输出
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 40
+    [4] => 50
+    [5] => 80
+)
+```
+
+
+## 6.5 [array_walk_recursive 遍历](https://www.php.net/manual/zh/function.array-walk-recursive.php)
+**功能:** 对数组中的每个成员递归地应用用户函数，(本函数会递归到更深层的数组中去)
+**语法:**
+```php
+array_walk_recursive(array &$array ,callable $callback [, mixed $userdata = NULL ]):bool
+```
+**说明:** 
+- 如果提供了可选参数userdata，将被作为第三个参数传递给callback funcname
+- callback 接受两个参数。array参数的值作为第一个，键名作为第二个。
+
+**代码:**
+```php
+<?php
+$sweet = array('a' => 'apple', 'b' => 'banana');
+$fruits = array('sweet' => $sweet, 'sour' => 'lemon');
+
+function test_print($item, $key)
+{
+    echo "$key holds $item\n";
+}
+
+array_walk_recursive($fruits, 'test_print');
+
+// 匿名函数使用
+$sweet = array('a' => 'apple', 'b' => 'banana');
+$fruits = array('sweet' => $sweet, 'sour' => 'lemon');
+$str = '===>';
+array_walk_recursive($fruits,function ($val,$key,$str){
+        echo "$key $str $val \n";
+},$str);
+?>
+```
+
+**输出:**
+```php
+a holds apple
+b holds banana
+sour holds lemon
+
+// 匿名函数调用输出
+a ===> apple 
+b ===> banana 
+sour ===> lemon 
+
+```
+
+# 7. 赋值与变量
+
+## 7.1 [list 给一组变量赋值](https://www.php.net/manual/zh/function.list.php)
+**功能:** 把数组中的值赋给一组变量
+**语法:**
+```php
+list(mixed $var1 [, mixed $... ] ):array
+```
+**说明:** 
+- 像array()一样，这不是真正的函数，而是语言结构。 list()可以在单次操作内就为一组变量赋值。
+- 在PHP7.1.0之前的版本，list()仅能用于数字索引的数组，并假定数字索引从0开始。
+- PHP5里，list()从最右边的参数开始赋值； PHP7里，list()从最左边的参数开始赋值
+
+- 常用例子 
+**代码:**
+
+```php
+<?php
+$info = array('coffee', 'brown', 'caffeine');
+
+// 列出所有变量
+list($drink, $color, $power) = $info;
+echo "$drink is $color and $power makes it special.\n";
+
+// 列出他们的其中一个
+list($drink, , $power) = $info;
+echo "$drink has $power.\n";
+
+// 或者让我们跳到仅第三个
+list( , , $power) = $info;
+echo "I need $power!\n";
+
+// list() 不能对字符串起作用
+list($bar) = "abcde";
+var_dump($bar); // NULL
+?>
+```
+- 嵌套的list() 
+**代码:**
+```php
+
+list($a, list($b, $c)) = array(1, array(2, 3));
+
+var_dump($a, $b, $c);
+```
+
+**输出:**
+```php
+int(1)
+int(2)
+int(3)
+```
+
+## 7.2 [compact 创建](https://www.php.net/manual/zh/function.compact.php)
+**功能:** 建立一个数组，包括变量名和它们的值
+**说明:** 对每个参数，compact() 在当前的符号表中查找该变量名并将它添加到输出的数组中，变量名成为键名而变量的内容成为该键的值。简单说，它做的事和 [extract()](https://www.php.net/manual/zh/function.extract.php) 正好相反。返回将所有变量添加进去后的数组。
+**语法:**
+```php
+compact ( mixed $varname1 [, mixed $... ] ) : array
+```
+
+**代码:**
+
+```php
+<?php
+$city  = "San Francisco";
+$state = "CA";
+$event = "SIGGRAPH";
+
+$location_vars = array("city", "state");
+
+$result = compact("event", "nothing_here", $location_vars);
+print_r($result);
+?>
+```
+
+**输出:**
+```php
+Array
+(
+    [event] => SIGGRAPH
+    [city] => San Francisco
+    [state] => CA
+)
+```
+
+
+## 7.3 [extract 导出为变量](https://www.php.net/manual/zh/function.extract.php)
+**功能:** 从数组中将变量导入到当前的符号表
+**说明:** 
+- array:一个关联数组。此函数会将键名当作变量名，值作为变量的值。 对每个键／值对都会在当前的符号表中建立变量，并受到 flags 和 prefix 参数的影响。
+- flags
+  - EXTR_OVERWRITE : 如果有冲突，覆盖已有的变量
+  - EXTR_SKIP: 如果有冲突，不覆盖已有的变量。
+  - EXTR_PREFIX_SAME: 如果有冲突，在变量名前加上前缀prefix。
+  - EXTR_PREFIX_ALL: 给所有变量名加上前缀 prefix。
+  ....
+**语法:**
+```php
+extract(array &$array [, int $flags = EXTR_OVERWRITE [, string $prefix = NULL ]]):int
+```
+
+**代码:**
+
+```php
+<?php
+
+/* 假定 $var_array 是 wddx_deserialize 返回的数组*/
+
+$size = "large";
+$var_array = array("color" => "blue",
+                   "size"  => "medium",
+                   "shape" => "sphere");
+extract($var_array, EXTR_PREFIX_SAME, "wddx");
+
+echo "$color, $size, $shape, $wddx_size\n";
+?>
+```
+
+**输出:**
+```php
+blue, large, sphere, medium
+```
+$size 没有被覆盖，因为指定了 EXTR_PREFIX_SAME，这使得 $wddx_size 被建立。如果指定了 EXTR_SKIP，则 $wddx_size 也不会被建立。
