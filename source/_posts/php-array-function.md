@@ -1780,8 +1780,9 @@ list(mixed $var1 [, mixed $... ] ):array
 - 在PHP7.1.0之前的版本，list()仅能用于数字索引的数组，并假定数字索引从0开始。
 - PHP5里，list()从最右边的参数开始赋值； PHP7里，list()从最左边的参数开始赋值
 
-- 常用例子 
-**代码:**
+
+
+**常用例代码:**
 
 ```php
 <?php
@@ -1804,8 +1805,9 @@ list($bar) = "abcde";
 var_dump($bar); // NULL
 ?>
 ```
-- 嵌套的list() 
-**代码:**
+
+
+**嵌套的list代码:**
 ```php
 
 list($a, list($b, $c)) = array(1, array(2, 3));
@@ -1863,7 +1865,8 @@ Array
   - EXTR_SKIP: 如果有冲突，不覆盖已有的变量。
   - EXTR_PREFIX_SAME: 如果有冲突，在变量名前加上前缀prefix。
   - EXTR_PREFIX_ALL: 给所有变量名加上前缀 prefix。
-  ....
+  [查看更多](https://www.php.net/manual/zh/function.extract.php)
+
 **语法:**
 ```php
 extract(array &$array [, int $flags = EXTR_OVERWRITE [, string $prefix = NULL ]]):int
