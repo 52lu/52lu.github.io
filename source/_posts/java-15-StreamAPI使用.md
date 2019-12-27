@@ -640,3 +640,5 @@ System.out.println("字符串集合过滤后的结果，toArray -> " + Arrays.to
 ### 11. collect()
 
 由于collect过于特殊和强大，拉出去单讲【collect() 和 Collectors(收集器) 】。
+
+[Java-基础篇-Collect方法详解](https://52lu.github.io/2019/12/16/java-16-Stream-collect/)

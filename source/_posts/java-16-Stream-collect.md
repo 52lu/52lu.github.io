@@ -1,5 +1,5 @@
 ---
-title: Java-基础篇-Stream API collect方法详解
+title: Java-基础篇-Collect方法详解
 date: 2019-12-16 13:17:20
 tags: 
  - Java
@@ -48,29 +48,27 @@ List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
 // toList操作
 List<Integer> collectList = integerList.stream().filter(integer -> integer % 3 == 0).collect(Collectors.toList());
 System.out.println("toList结果 -> " + collectList + "");
-// toList结果 -> [3, 6, 9]
+//  输出: toList结果 -> [3, 6, 9]
 
 // toSet操作
 Set<Integer> collectSet = integerList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toSet());
 System.out.println("toSet结果 -> " + collectSet + "");
-// toSet结果 -> [2, 4, 6, 8]
-
-// 
+// 输出: toSet结果 -> [2, 4, 6, 8]
 ```
 ## 3.2 toCollection : 转换成特定的集合
 ```java
 List<Integer> integers = Arrays.asList(11, 22, 14, 6, 9);
 ArrayList<Integer> arrayList = integers.stream().collect(Collectors.toCollection(ArrayList::new));
 System.out.println("toCollection 转ArrayList -> " + arrayList + "");
-// toCollection 转ArrayList -> [11, 22, 14, 6, 9]
+//  输出: toCollection 转ArrayList -> [11, 22, 14, 6, 9]
 
 HashSet<Integer> hashSet = integers.stream().collect(Collectors.toCollection(HashSet::new));
 System.out.println("toCollection 转HashSet -> " + hashSet + "");
-// toCollection 转HashSet -> [22, 6, 9, 11, 14]
+//  输出: toCollection 转HashSet -> [22, 6, 9, 11, 14]
 
 TreeSet<Integer> treeSet = integers.stream().collect(Collectors.toCollection(TreeSet::new));
 System.out.println("toCollection 转TreeSet -> " + treeSet + "");
-// toCollection 转TreeSet -> [6, 9, 11, 14, 22]
+//  输出: toCollection 转TreeSet -> [6, 9, 11, 14, 22]
 
 ```
 
@@ -134,7 +132,7 @@ public class Main {
 List<Integer> integers = Arrays.asList(1, 2, 4, 6, 9);
 Map<Integer, String> collect = integers.stream().collect(Collectors.toMap(x -> x, x -> String.valueOf(x)));
 System.out.println("集合转toMap -> " + collect + "");
-// 集合转toMap -> {1=1, 2=2, 4=4, 6=6, 9=9}
+//  输出: 集合转toMap -> {1=1, 2=2, 4=4, 6=6, 9=9}
 ```
 
 ## 3.4 averagingInt: 求平均值
@@ -142,7 +140,7 @@ System.out.println("集合转toMap -> " + collect + "");
 List<Integer> integers = Arrays.asList(11, 22, 14, 6, 9);
 Double collect = integers.stream().collect(Collectors.averagingInt(x -> x));
 System.out.println("平均值 -> " + collect + "");
-// 平均值 -> 12.4
+//  输出: 平均值 -> 12.4
 ```
 ## 3.5 joining : 拼接
 
