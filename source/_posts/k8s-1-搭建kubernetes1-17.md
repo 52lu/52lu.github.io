@@ -1,5 +1,5 @@
 ---
-title: Kubernetes-基于ubuntu18.04安装Kubernetes1.17
+title: K8s-安装Kubernetes1.17
 date: 2020-01-01 00:31:37
 tags:
  - Kubernetes
