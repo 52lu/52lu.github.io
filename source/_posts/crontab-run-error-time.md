@@ -1,13 +1,11 @@
 ---
-title: 定时任务(crontab)使用
+title: 定时任务(crontab)使用总结
 date: 2015-10-03 11:42:44
 tags:
   - crond
 categories:
   - 入坑历史
 ---
-
-[toc]
 
 
 # 1.crontab格式
