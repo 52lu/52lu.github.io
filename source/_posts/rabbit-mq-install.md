@@ -1,5 +1,5 @@
 ---
-title: RabbitMQ安装方法总结
+title: 服务-RabbitMQ安装方法总结
 date: 2016-08-03
 tags:
  - rabbitmq

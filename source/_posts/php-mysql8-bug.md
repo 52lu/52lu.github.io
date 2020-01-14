@@ -1,5 +1,5 @@
 ---
-title: Mysql8问题归纳
+title: Mysql-mysql8问题归纳
 date: 2019-08-03 10:16:09
 tags:
  - mysql

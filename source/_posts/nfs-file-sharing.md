@@ -1,5 +1,5 @@
 ---
-title: 记在Linux中搭建nfs文件共享的一次经历
+title: 服务-记在Linux中搭建nfs文件共享的一次经历
 date: 2016-04-19 18:41:53
 tags:
  - nfs

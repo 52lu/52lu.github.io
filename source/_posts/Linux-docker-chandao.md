@@ -1,5 +1,5 @@
 ---
-title: Linux docker 搭建禅道
+title: Docker-Linux docker 搭建禅道
 date: 2017-01-14
 tags:
  - docker

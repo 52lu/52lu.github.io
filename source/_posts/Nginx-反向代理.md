@@ -1,5 +1,5 @@
 ---
-title: Nginx 反向代理
+title: Nginx-反向代理
 date: 2017-04-17 12:32:56
 tags:
  - nginx

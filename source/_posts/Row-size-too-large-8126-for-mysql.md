@@ -1,5 +1,5 @@
 ---
-title: 'Row size too large (> 8126) for mysql'
+title: Mysql-'Row size too large (> 8126) for mysql'
 date: 2018-09-11 11:14:07
 tags:
  - mysql

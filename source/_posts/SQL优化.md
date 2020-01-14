@@ -1,5 +1,5 @@
 ---
-title: SQL优化
+title: Mysql-sql优化
 date: 2019-04-15 19:43:22
 tags:
  - mysql
