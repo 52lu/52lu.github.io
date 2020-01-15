@@ -135,6 +135,32 @@ InnoDB存储引擎和大多数数据库一样（如Oracle和Microsoft SQL Server
 
 可以通过命令`show table status  like 'table_name'` 查看当前表使用的行格式，如下:
 
+```$xslt
+mysql> show table status like 'hb_user'\G;
+*************************** 1. row ***************************
+           Name: hb_user
+         Engine: InnoDB
+        Version: 10
+     Row_format: Dynamic
+           Rows: 398
+ Avg_row_length: 288
+    Data_length: 114688
+Max_data_length: 0
+   Index_length: 131072
+      Data_free: 0
+ Auto_increment: NULL
+    Create_time: 2019-10-27 04:00:47
+    Update_time: NULL
+     Check_time: NULL
+      Collation: utf8_general_ci
+       Checksum: NULL
+ Create_options:
+        Comment: 用户表
+1 row in set (0.00 sec)
+
+ERROR:
+No query specified
+```
 
 #### Compact
 
@@ -182,7 +208,7 @@ Redundant记录头信息:
 
 
 ### 查看表行格式
-```bash
+```$xslt
 # 查看当前版本
 mysql> select version();
 +-----------+
