@@ -12,7 +12,7 @@
 
 
 
-## 主要功能
+## 博客快捷键
 - 页面全局快捷键
 
 ![](https://52lu.github.io/images/hexo-hotkey.png)
