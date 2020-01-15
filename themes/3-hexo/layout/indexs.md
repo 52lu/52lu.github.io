@@ -14,7 +14,8 @@
 
 ## 主要功能
 - 页面全局快捷键
-![](https://52.github.io/images/hexo-hotkey.png)
+
+![](https://52lu.github.io/images/hexo-hotkey.png)
 
 - 搜索支持文章标题、标签(#标签)
 
