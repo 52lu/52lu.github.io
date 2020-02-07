@@ -490,7 +490,8 @@ foreach (readTxt() as $key => $value) {
 ### 2.3 php7.2 为什么弃用__autoload
 `自动加载的原理，就是在我们new一个class的时候，PHP系统如果找不到你这个类，就会去自动调用本文件中的__autoload($class_name)方法，我们new的这个class_name 就成为这个方法的参数。所以我们就可以在这个方法中根据我们需要new class_name的各种判断和划分就去require对应的路径类文件，从而实现自动加载。`
 
-**弃用原因**:因是PHP不允许函数重名，所以一个项目中仅能出现一个__autoload函数。自己写的代码保证只有一个__autoload函数虽然有点难但也能做到，要是第三方库也定义了__autoload，那就很头疼了。__autoload的后继者是[spl_autoload_register](http://php.net/manual/zh/function.spl-autoload-register.php)函数
+**弃用原因**:PHP不允许函数重名，所以一个项目中仅能出现一个\__autoload函数。自己写的代码保证只有一个\__autoload函数虽然有点难但也能做到，要是第三方库也定义了
+\__autoload，那就很头疼了。\__autoload的后继者是[spl_autoload_register](http://php.net/manual/zh/function.spl-autoload-register.php)函数
 
 
 ### 2.4 Zval结构
@@ -572,6 +573,38 @@ struct _zval_struct {
 
 [深入理解PHP7内核之zval](http://www.laruence.com/2018/04/08/3170.html)
 
+
+### 2.5 PHP内存管理机制与垃圾回收机制
+
+**<font color='blue' >PHP的内存管理机制:</font>**
+预先给出一块空间，用来存储变量，当空间不够时，再申请一块新的空间。
+- 存储变量名，存在符号表。
+- 变量值存储在内存空间。
+- 在删除变量的时候，会将变量值存储的空间释放，而变量名所在的符号表不会减小。
+
+**<font color='blue' >PHP垃圾回收机制:</font>**
+
+**PHP5.2及之前版本:** PHP会根据引用计数refcount值来判断是不是垃圾，如果refcount值为0，PHP会当做垃圾释放掉，这种回收机制有缺陷，对于环状引用的变量无法回收。
+
+**PHP5.3及之后版本:**
+- 如果发现一个 zval 容器中的 refcount 在增加，说明不是垃圾； 
+- 如果发现一个 zval 容器中的 refcount 在减少，如果减到了0，直接当做垃圾回收； 
+- 如果发现一个 zval 容器中的 refcount 在减少，并没有减到0，PHP 会把该值放到缓冲区，当做有可能是垃圾的怀疑对象； 当缓冲区达到了临界值，PHP 会自动调用一个方法去遍历每一个值，如果发现是垃圾就清理。
+
+
+### 2.6 HTTP Keep-Alive的作用
+
+**作用:** Keep-Alive使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive功能避免了建立或者重新建立连接。Web服务器，基本上都支持HTTP Keep-Alive。
+
+**缺点:** 对于提供静态内容的网站来说，这个功能通常很有用。但是，对于负担较重的网站来说，虽然为客户保留打开的连 接有一定的好处，但它同样影响了性能，因为在处理暂停期间，本来可以释放的资源仍旧被占用。当Web服务器和应用服务器在同一台机器上运行时，Keep- Alive功能对资源利用的影响尤其突出。
+
+**解决:** 
+```bash
+Keep-Alive: timeout=5, max=100 
+# timeout：过期时间5秒（对应httpd.conf里的参数是：KeepAliveTimeout）
+# max是最多一百次请求，强制断掉连接。
+# 就是在timeout时间内又有新的连接过来，同时max会自动减1，直到为0，强制断掉。
+```
 ## 3、数据库
 
 ### 3.1 Mysql的存储引擎,MyISAM和InnoDB的区别。 
@@ -1256,7 +1289,7 @@ $newCar->show();
 
 ## 附加1、扩展
 
-### 1. 写代码来解决多进程/线程同时读写一个文件的问题
+### 1. 写个函数来解决多线程同时写一个文件的问题。
 ```php
 function write(){
     //打开文件
