@@ -742,41 +742,72 @@ mysql_query("UNLOCK TABLES");
 ### 3.7 索引类型
 
 - 普通索引(index):
-`
-创建:
-  CREATE INDEX <索引名> ON tablename (索引字段)
-修改:
-  ALTER TABLE tablename ADD INDEX [索引名] (索引字段)
-创表指定索引:
-  CREATE TABLE tablename([...],INDEX[索引名](索引字段))
-`
+```bash
+# 创建:
+CREATE INDEX <索引名> ON tablename (索引字段)
+# 修改:
+ALTER TABLE tablename ADD INDEX [索引名] (索引字段)
+# 创表指定索引:
+CREATE TABLE tablename([...],INDEX[索引名](索引字段))
+```
 
 - 唯一索引(unique):
 <font color='red'>在普通索引的基础上，会进行排除重复值</font>
-`
-创建:
-  CREATE UNIQUE <索引名> ON tablename (索引字段)
-修改:
-  ALTER TABLE tablename ADD UNIQUE [索引名] (索引字段)
-创表指定索引:
-   CREATE TABLE tablename([...],UNIQUE[索引名](索引字段)) 
-`
+```bash
+# 创建:
+CREATE UNIQUE <索引名> ON tablename (索引字段)
+# 修改:
+ALTER TABLE tablename ADD UNIQUE [索引名] (索引字段)
+# 创表指定索引:
+CREATE TABLE tablename([...],UNIQUE[索引名](索引字段)) 
+```
 
 - 主键(primary key):
 <font color='red'>和唯一索引的区别在于一个表里只能有一个主键索引，但是唯一索引可以有多个</font>
-``` 
- 它是唯一索引,一般在创建表是建立
- 语法：
-  CREATA TABLE tablename ([...],PRIMARY KEY[索引字段])
+```bash
+# 它是唯一索引,一般在创建表是建立,语法：
+ CREATA TABLE tablename ([...],PRIMARY KEY[索引字段])
 ```
 
 - 联合索引:
-`
-语法：
+```bash
+# 语法：
 ALTER TABLE table_name ADD INDEX index_name ( column1, column2, column3 )
-`
+```
 
 - 全文索引 (fulltext)
+**版本支持**
+- MySQL 5.6 以前的版本，只有 MyISAM 存储引擎支持全文索引；
+- MySQL 5.6 及以后的版本，MyISAM 和 InnoDB 存储引擎均支持全文索引;
+- 只有字段的数据类型为 char、varchar、text 及其系列才可以建全文索引。
+
+**创建全文索引**
+```bash
+# 创建表时创建全文索引
+CREATE TABLE `user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `phone` char(11) NOT NULL DEFAULT '' COMMENT '手机号',
+  `name` varchar(30) NOT NULL DEFAULT '' COMMENT '用户名',
+  `address` text NOT NULL COMMENT '地址',
+  PRIMARY KEY (`id`),
+  FULLTEXT KEY address_fulltext(address) # 创建全文索引列
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  COMMENT='用户帐号表';
+
+# 在已存在的表上创建全文索引
+CREATE fulltext index name_fulltext on `user`(address); 
+
+# 通过SQL语句 ALTER TABLE 创建全文索引
+alter table `user` add FULLTEXT index name_fulltext(address);
+```
+**使用全文索引**
+和常用的模糊匹配使用 like + % 不同，全文索引有自己的语法格式，使用 match 和 against 关键字，比如
+```bash
+SELECT * from `user` WHERE MATCH(`address`) against('碧园春小区')
+```
+> match() 函数中指定的列必须和全文索引中指定的列完全相同，否则就会报错，无法使用全文索引，这是因为全文索引不会记录关键字来自哪一列。如果想要对某一列使用全文索引，请单独为该列创建全文索引。
+
+
+
 
 `普通索引／唯一索引／主键索引 哪个速度更快？`
 `
@@ -891,7 +922,23 @@ set tx_isolation='read-uncommitted'
 - InnoDB 存储引擎:建议使用 VARCHAR 类型。对于 InnoDB 数据表，内部的行存储格式没有区分固定长度和可变长度列(所有数据行都使用指向数据列值的头指针)，因此在 本质上，使用固定长度的 CHAR 列不一定比使用可变长度 VARCHAR 列性能要好。因而，主要的性能因素是数据行使用的存储总量。由于 CHAR 平均占用的空间多于 VARCHAR，因此使 用 VARCHAR 来最小化需要处理的数据行的存储总量和磁盘 I/O 是比较好的。
 
 
-### 3.13 如何理解超键、候选键、主键、外键
+### 3.13 NOW() 和CURRENT_DATE() 有什么区别
+
+- NOW()  命令用于显示当前年份，月份，日期，小时，分钟和秒。
+
+- CURRENT_DATE() 仅显示当前年份，月份和日期。
+
+
+
+### 3.14  BLOB和TEXT有什么区别
+- 二者之间的主要差别是 BLOB 能用来保存二进制数据（比如照片），而TEXT只能保存字符数据
+
+- TEXT值是大小写不敏感的
+- BLOB值进行排序和比较时区分大小写
+
+
+
+### 3.15 如何理解超键、候选键、主键、外键
 
 - 主键(Primary Key)：对数据库表中的每一行数据进行唯一标识。
 
@@ -910,23 +957,33 @@ set tx_isolation='read-uncommitted'
 > 如：学生表中的候选键为：（学号）、（身份证号）。
 
 
+### 3.16 什么是存储过程？
+存储过程是一些预编译的SQL语句。
 
-### 3.14  BLOB和TEXT有什么区别
-- 二者之间的主要差别是 BLOB 能用来保存二进制数据（比如照片），而TEXT只能保存字符数据
+1. 更加直白的理解：存储过程可以说是一个记录集，它是由一些T-SQL语句组成的代码块，这些T-SQL语句代码像一个方法一样实现一些功能（对单表或多表的增删改查），然后再给这个代码块取一个名字，在用到这个功能的时候调用他就行了。
+2. 存储过程是一个预编译的代码块，执行效率比较高,一个存储过程替代大量T_SQL语句 ，可以降低网络通信量，提高通信速率,可以一定程度上确保数据安全。
 
-- TEXT值是大小写不敏感的
-- BLOB值进行排序和比较时区分大小写
-
-
-### 3.15 NOW() 和CURRENT_DATE() 有什么区别
-
-- NOW()  命令用于显示当前年份，月份，日期，小时，分钟和秒。
-
-- CURRENT_DATE() 仅显示当前年份，月份和日期。
+### 3.17 什么是视图？以及视图的使用场景有哪些？
+1. 视图是一种虚拟的表，具有和物理表相同的功能。可以对视图进行增，改，查，操作，试图通常是有一个表或者多个表的行或列的子集。对视图的修改不影响基本表。它使得我们获取数据更容易，相比多表查询。
+2. 只暴露部分字段给访问者，所以就建一个虚表，就是视图。
+3. 查询的数据来源于不同的表，而查询者希望以统一的方式查询，这样也可以建立一个视图，把多个表查询结果联合起来，查询者只需要直接从视图中获取数据，不必考虑数据来源于不同表所带来的差异
 
 
+### 3.18 数据库的乐观锁和悲观锁是什么？
+数据库管理系统（DBMS）中的并发控制的任务是确保在多个事务同时存取数据库中同一数据时不破坏事务的隔离性和统一性以及数据库的统一性。乐观并发控制(乐观锁)和悲观并发控制（悲观锁）是并发控制主要采用的技术手段。
+
+- **悲观锁:** 假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作
+- **乐观锁:** 假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。
 
 
+### 3.19 什么是触发器，MySQL中都有哪些触发器？
+触发器是指一段代码，当触发某个事件时，自动执行这些代码。在MySQL数据库中有如下六种触发器:
+- Before Insert
+- After Insert
+- Before Update
+- After Update
+- Before Delete
+- After Delete
 
 
 ## 4、缓存
