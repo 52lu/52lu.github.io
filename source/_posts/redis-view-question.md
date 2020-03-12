@@ -1,12 +1,13 @@
 ---
-title: Redis面试题整理
-date: 2017-09-18 11:12:02
+title: Redis-面试题整理
+date: 2017-09-18 11:12:32
 tags:
  - redis
  - 面试题
 categories:
  - 数据库
 ---
+
 #### 1.Redis与Memcached的区别与比较
 - Redis不仅仅支持简单的k/v类型的数据，同时还提供list，set，zset，hash等数据结构的存储。memcache支持简单的数据类型，String。
 - Redis支持数据的备份，即master-slave模式的数据备份。
