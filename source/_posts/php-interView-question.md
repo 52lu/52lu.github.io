@@ -3,9 +3,8 @@ title: PHP-面试题整理
 date: 2017-09-17 11:12:02
 tags:
  - php
- - 面试题
 categories:
- - 后端编程
+ - 面试题
 ---
 
 ## 1、基础

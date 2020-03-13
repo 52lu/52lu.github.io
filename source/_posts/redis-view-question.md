@@ -3,9 +3,8 @@ title: Redis-面试题整理
 date: 2017-09-18 11:12:32
 tags:
  - redis
- - 面试题
 categories:
- - 数据库
+ - 面试题
 ---
 
 #### 1.Redis与Memcached的区别与比较
