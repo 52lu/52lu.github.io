@@ -24,7 +24,7 @@ Java的异常处理机制也秉承着面向对象的基本思想。在Java中，
 ![](https://52lu.github.io/directionsImg/java/common-error-2.png)
 
 # 4. 抛出异常
-## 4.1 thorws关键
+## 4.1 thorws关键字
 在方法中使用thorws关键字抛出错误
 
 **语法**
@@ -59,7 +59,7 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
 
 ```
 
-## 4.2 thorw关键
+## 4.2 thorw关键字
 
 **使用示例**
 ```
