@@ -377,7 +377,7 @@ $rest = substr("abcdef", -3, -1); // 返回 "de"
 str_pad ( string $input , int $pad_length [, string $pad_string = " " [, int $pad_type = STR_PAD_RIGHT ]] ) : string
 ```
 
-**结果:** 该函数返回 input 被从左端、右端或者同时两端被填充到制定长度后的结果。如果可选的 pad_string 参数没有被指定，input 将被空格字符填充，否则它将被 pad_string 填充到指定长度。
+**结果:** 该函数返回 input 被从左端、右端或者同时两端被填充到制定长度后的结果。如果可选的 pad\_string 参数没有被指定，input 将被空格字符填充，否则它将被 pad\_string 填充到指定长度。
 
 
 
