@@ -337,7 +337,7 @@ preg_replace_callback_array(
 );
 ```
 - #### 1.17 随机数、随机字符函数
-新加入两个跨平台的函数： [random_bytes(http://php.net/manual/zh/function.random-bytes.php)]() 和 [random_int()](http://php.net/manual/zh/function.random-int.php) 用来产生高安全级别的随机字符串和随机整数。
+新加入两个跨平台的函数： [random_bytes()](http://php.net/manual/zh/function.random-bytes.php) 和 [random_int()](http://php.net/manual/zh/function.random-int.php) 用来产生高安全级别的随机字符串和随机整数。
 
 ```php
 <?php
