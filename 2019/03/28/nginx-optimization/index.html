@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Nginx-配置调优 | Hui&#39;s Blog</title>
+  <meta name="keywords" content=" nginx ">
+  <meta name="description" content="Nginx-配置调优 | Hui&#39;s Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://52lu.github.io/categories/index.html">
+<meta property="og:site_name" content="Hui&#39;s Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-22T02:14:35.925Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="categories">
+
+
+<link rel="icon" href="/images/yuanmaji.png">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/sublime.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/images/yuanmaji.png">
+</a>
+<div class="author">
+    <span>猿码记</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/52lu" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:liuqinghui1991@163.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(77)</small></div></li>
+    
+        
+            
+            <li><div data-rel="后端编程">后端编程<small>(35)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据结构">数据结构<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="服务搭建">服务搭建<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="面试题">面试题<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="服务使用">服务使用<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="入坑历史">入坑历史<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="命令使用">命令使用<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="容器管理">容器管理<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="其他">其他<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="微服务">微服务<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="消息队列">消息队列<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="行业术语">行业术语<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="正则表达">正则表达<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="77">
+<input type="hidden" id="yelog_site_word_count" value="138.3k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://www.ibm.com/developerworks/cn/topics">IBM</a></li>
+            
+            <li><a target="_blank" href="https://youzhixueyuan.com/history-articles.html">优知学院</a></li>
+            
+            <li><a target="_blank" href="https://developer.aliyun.com">阿里云开发者社区</a></li>
+            
+            <li><a target="_blank" href="https://segmentfault.com">Segmentfault</a></li>
+            
+            <li><a target="_blank" href="https://learnku.com/php/docs">LearnKu</a></li>
+            
+            <li><a target="_blank" href="http://blog.sina.com.cn/s/articlelist_3283485963_0_1.html">藏书者</a></li>
+            
+            <li><a target="_blank" href="https://www.open-open.com">深度开源</a></li>
+            
+            <li><a target="_blank" href="https://www.ctolib.com">CTOLib码库</a></li>
+            
+            <li><a target="_blank" href="https://leetcode-cn.com">LeetCode</a></li>
+            
+            <li><a target="_blank" href="http://www.xz577.com/">码农之家</a></li>
+            
+            <li><a target="_blank" href="http://www.laruence.com">风雪之隅</a></li>
+            
+            <li><a target="_blank" href="http://www.ruanyifeng.com/blog/algorithm">阮一峰</a></li>
+            
+            <li><a target="_blank" href="http://www.ityouknow.com">纯洁的微笑</a></li>
+            
+            <li><a target="_blank" href="https://www.javaboy.org">江南一点雨</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">go</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">消息队列</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">mac</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Centos</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">composer</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">crond</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">http</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">maven</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">nexus</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">Kubernetes</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">nfs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">rabbitmq</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">MQ</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">概念</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a class="" href="/2020/01/03/k8s-核心概念/" data-tag="" data-author="">
+            <span class="post-title" title="Kubernetes核心概念和术语">Kubernetes核心概念和术语</span>
+            <span class="post-date" title="2020-01-03 00:05:03">2020/01/03</span>
+        </a>
+        
+        <a class="微服务 " href="/2020/01/01/k8s-1-搭建kubernetes1-17/" data-tag="Kubernetes" data-author="">
+            <span class="post-title" title="K8s-安装Kubernetes1.17">K8s-安装Kubernetes1.17</span>
+            <span class="post-date" title="2020-01-01 00:31:37">2020/01/01</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/12/20/java-17-FutureTask初使用/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-进阶篇-FutureTask初使用">Java-进阶篇-FutureTask初使用</span>
+            <span class="post-date" title="2019-12-20 12:31:27">2019/12/20</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/12/16/java-16-Stream-collect/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-Collect方法详解">Java-基础篇-Collect方法详解</span>
+            <span class="post-date" title="2019-12-16 13:17:20">2019/12/16</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/12/15/java-15-StreamAPI使用/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-Stream使用">Java-基础篇-Stream使用</span>
+            <span class="post-date" title="2019-12-15 21:47:18">2019/12/15</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/12/14/java-14-Lambda操作Map/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-Lambda操作Map">Java-基础篇-Lambda操作Map</span>
+            <span class="post-date" title="2019-12-14 20:27:19">2019/12/14</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/12/13/java-13-Lambda操作集合/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-Lambda操作集合">Java-基础篇-Lambda操作集合</span>
+            <span class="post-date" title="2019-12-13 21:20:10">2019/12/13</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/12/11/java-12-初识Lambda/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-初识Lambda">Java-基础篇-初识Lambda</span>
+            <span class="post-date" title="2019-12-11 21:20:10">2019/12/11</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/11/27/java-11-多线程/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-了解多线程">Java-基础篇-了解多线程</span>
+            <span class="post-date" title="2019-11-27 13:32:48">2019/11/27</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/11/11/java-10-异常处理/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-异常处理">Java-基础篇-异常处理</span>
+            <span class="post-date" title="2019-11-11 18:14:17">2019/11/11</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/11/05/java-9-抽象类和接口/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-抽象类和接口">Java-基础篇-抽象类和接口</span>
+            <span class="post-date" title="2019-11-05 19:11:45">2019/11/05</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/28/java-8-map操作/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-整理篇-map操作">Java-整理篇-map操作</span>
+            <span class="post-date" title="2019-10-28 11:48:54">2019/10/28</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/18/java-7-集合/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-集合">Java-基础篇-集合</span>
+            <span class="post-date" title="2019-10-18 14:07:42">2019/10/18</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/17/java-6-泛型/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-泛型">Java-基础篇-泛型</span>
+            <span class="post-date" title="2019-10-17 19:10:22">2019/10/17</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/15/java-3-1-初始化块/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-初始化块">Java-基础篇-初始化块</span>
+            <span class="post-date" title="2019-10-15 20:19:48">2019/10/15</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/15/java-4-枚举/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-枚举">Java-基础篇-枚举</span>
+            <span class="post-date" title="2019-10-15 19:20:56">2019/10/15</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/15/java-5-注解/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-注解">Java-基础篇-注解</span>
+            <span class="post-date" title="2019-10-15 19:19:48">2019/10/15</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/15/java-3-类/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-类">Java-基础篇-类</span>
+            <span class="post-date" title="2019-10-15 19:19:48">2019/10/15</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/14/java-2-数组/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-数组">Java-基础篇-数组</span>
+            <span class="post-date" title="2019-10-14 16:46:19">2019/10/14</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/10/12/java-1-数据类型及运算/" data-tag="Java" data-author="">
+            <span class="post-title" title="Java-基础篇-原始数据类型及运算">Java-基础篇-原始数据类型及运算</span>
+            <span class="post-date" title="2019-10-12 17:45:29">2019/10/12</span>
+        </a>
+        
+        <a class="服务搭建 " href="/2019/08/08/maven-nexus-build/" data-tag="maven,nexus" data-author="">
+            <span class="post-title" title="服务-Maven私服搭建(nexus3)和使用">服务-Maven私服搭建(nexus3)和使用</span>
+            <span class="post-date" title="2019-08-08 00:04:08">2019/08/08</span>
+        </a>
+        
+        <a class="服务使用 " href="/2019/08/07/nginx-limit/" data-tag="nginx" data-author="">
+            <span class="post-title" title="Nginx-限流(防恶意请求)">Nginx-限流(防恶意请求)</span>
+            <span class="post-date" title="2019-08-07 13:31:15">2019/08/07</span>
+        </a>
+        
+        <a class="入坑历史 " href="/2019/08/03/php-mysql8-bug/" data-tag="mysql" data-author="">
+            <span class="post-title" title="Mysql-mysql8问题归纳">Mysql-mysql8问题归纳</span>
+            <span class="post-date" title="2019-08-03 10:16:09">2019/08/03</span>
+        </a>
+        
+        <a class="容器管理 " href="/2019/05/21/create-self-Image/" data-tag="docker" data-author="">
+            <span class="post-title" title="Docker-创建自己的镜像">Docker-创建自己的镜像</span>
+            <span class="post-date" title="2019-05-21 16:27:11">2019/05/21</span>
+        </a>
+        
+        <a class="数据库 " href="/2019/04/15/SQL优化/" data-tag="mysql" data-author="">
+            <span class="post-title" title="Mysql-sql优化">Mysql-sql优化</span>
+            <span class="post-date" title="2019-04-15 19:43:22">2019/04/15</span>
+        </a>
+        
+        <a class="数据库 " href="/2019/04/03/innodb-storage/" data-tag="mysql" data-author="">
+            <span class="post-title" title="MyISAM和InnoDB之存储结构对比">MyISAM和InnoDB之存储结构对比</span>
+            <span class="post-date" title="2019-04-03 19:25:27">2019/04/03</span>
+        </a>
+        
+        <a class="服务使用 " href="/2019/03/28/nginx-optimization/" data-tag="nginx" data-author="">
+            <span class="post-title" title="Nginx-配置调优">Nginx-配置调优</span>
+            <span class="post-date" title="2019-03-28 20:57:02">2019/03/28</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019/03/27/Lisked-List-two/" data-tag="数据结构" data-author="">
+            <span class="post-title" title="数据结构-双向链表、循环链">数据结构-双向链表、循环链</span>
+            <span class="post-date" title="2019-03-27 17:34:29">2019/03/27</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019/03/25/Linked-List/" data-tag="数据结构" data-author="">
+            <span class="post-title" title="数据结构-单向链表">数据结构-单向链表</span>
+            <span class="post-date" title="2019-03-25 19:15:35">2019/03/25</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/03/22/multiRequest/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-并发请求">PHP-并发请求</span>
+            <span class="post-date" title="2019-03-22 12:19:23">2019/03/22</span>
+        </a>
+        
+        <a class="后端编程 " href="/2019/03/10/phpFpm/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-php-fpm配置详情及优化">PHP-php-fpm配置详情及优化</span>
+            <span class="post-date" title="2019-03-10 16:36:05">2019/03/10</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/10/06/php7-update-log/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-php7更新记录">PHP-php7更新记录</span>
+            <span class="post-date" title="2018-10-06 00:00:00">2018/10/06</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/09/23/composer-pack-dev/" data-tag="php,composer" data-author="">
+            <span class="post-title" title="开发compose包">开发compose包</span>
+            <span class="post-date" title="2018-09-23 12:07:36">2018/09/23</span>
+        </a>
+        
+        <a class="消息队列 " href="/2018/09/15/rabbitmq-msg-type/" data-tag="MQ" data-author="">
+            <span class="post-title" title="RabbitMQ之消息类型">RabbitMQ之消息类型</span>
+            <span class="post-date" title="2018-09-15 11:16:08">2018/09/15</span>
+        </a>
+        
+        <a class="入坑历史 " href="/2018/09/11/Row-size-too-large-8126-for-mysql/" data-tag="mysql" data-author="">
+            <span class="post-title" title="Mysql-&#39;Row size too large (&gt; 8126) for mysql&#39;">Mysql-&#39;Row size too large (&gt; 8126) for mysql&#39;</span>
+            <span class="post-date" title="2018-09-11 11:14:07">2018/09/11</span>
+        </a>
+        
+        <a class="命令使用 " href="/2018/08/13/docker-command/" data-tag="docker" data-author="">
+            <span class="post-title" title="Docker-常用命令整理">Docker-常用命令整理</span>
+            <span class="post-date" title="2018-08-13 10:33:29">2018/08/13</span>
+        </a>
+        
+        <a class="入坑历史 " href="/2018/07/31/brew-yaf-error/" data-tag="mac,php" data-author="">
+            <span class="post-title" title="Bug-MacBook brew yaf error unknown type name HASHKIT_API">Bug-MacBook brew yaf error unknown type name HASHKIT_API</span>
+            <span class="post-date" title="2018-07-31 19:47:18">2018/07/31</span>
+        </a>
+        
+        <a class="行业术语 " href="/2018/07/13/进程、线程、协程/" data-tag="概念" data-author="">
+            <span class="post-title" title="进程、线程、协程">进程、线程、协程</span>
+            <span class="post-date" title="2018-07-13 13:48:27">2018/07/13</span>
+        </a>
+        
+        <a class="容器管理 " href="/2018/07/12/查看容器日志/" data-tag="docker" data-author="">
+            <span class="post-title" title="Docker-查看容器日志">Docker-查看容器日志</span>
+            <span class="post-date" title="2018-07-12 11:33:31">2018/07/12</span>
+        </a>
+        
+        <a class="数据库 " href="/2018/06/03/mysql-explan/" data-tag="mysql" data-author="">
+            <span class="post-title" title="Mysql-性能优化神器之Explain使用">Mysql-性能优化神器之Explain使用</span>
+            <span class="post-date" title="2018-06-03 18:53:53">2018/06/03</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/05/08/Go-8.通道/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-通道">Go-基础篇-通道</span>
+            <span class="post-date" title="2018-05-08 13:53:15">2018/05/08</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/05/07/Go-7.并发使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-并发使用">Go-基础篇-并发使用</span>
+            <span class="post-date" title="2018-05-07 18:20:22">2018/05/07</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/04/14/Go-6.接口/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-接口">Go-基础篇-接口</span>
+            <span class="post-date" title="2018-04-14 18:54:35">2018/04/14</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/04/11/Go-5.方法/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-方法">Go-基础篇-方法</span>
+            <span class="post-date" title="2018-04-11 14:47:17">2018/04/11</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/04/09/Go-4.结构体使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-结构体使用">Go-基础篇-结构体使用</span>
+            <span class="post-date" title="2018-04-09 18:54:38">2018/04/09</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/04/08/Go-3.函数使用/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-函数使用">Go-基础篇-函数使用</span>
+            <span class="post-date" title="2018-04-08 11:31:57">2018/04/08</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/04/06/Go字符串操作/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-字符串操作">Go-基础篇-字符串操作</span>
+            <span class="post-date" title="2018-04-06 00:00:00">2018/04/06</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/04/03/Go-1.程序结构/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-程序结构">Go-基础篇-程序结构</span>
+            <span class="post-date" title="2018-04-03 16:48:41">2018/04/03</span>
+        </a>
+        
+        <a class="后端编程 " href="/2018/04/03/Go-2.变量及数据类型/" data-tag="go" data-author="">
+            <span class="post-title" title="Go-基础篇-变量及数据类型">Go-基础篇-变量及数据类型</span>
+            <span class="post-date" title="2018-04-03 15:46:01">2018/04/03</span>
+        </a>
+        
+        <a class="入坑历史 " href="/2018/02/03/question-for-docker/" data-tag="docker" data-author="">
+            <span class="post-title" title="docker-使用中遇到的问题整理">docker-使用中遇到的问题整理</span>
+            <span class="post-date" title="2018-02-03 15:54:34">2018/02/03</span>
+        </a>
+        
+        <a class="面试题 " href="/2018/01/12/php-sort/" data-tag="php,算法" data-author="">
+            <span class="post-title" title="PHP-排序算法汇总">PHP-排序算法汇总</span>
+            <span class="post-date" title="2018-01-12 10:12:07">2018/01/12</span>
+        </a>
+        
+        <a class="行业术语 " href="/2017/11/23/幂等性/" data-tag="概念" data-author="">
+            <span class="post-title" title="幂等性">幂等性</span>
+            <span class="post-date" title="2017-11-23 00:11:28">2017/11/23</span>
+        </a>
+        
+        <a class="行业术语 " href="/2017/11/20/存储单位/" data-tag="概念" data-author="">
+            <span class="post-title" title="存储单位">存储单位</span>
+            <span class="post-date" title="2017-11-20 15:20:16">2017/11/20</span>
+        </a>
+        
+        <a class="后端编程 " href="/2017/09/22/php-str-function/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-字符串函数">PHP-字符串函数</span>
+            <span class="post-date" title="2017-09-22 12:12:42">2017/09/22</span>
+        </a>
+        
+        <a class="后端编程 " href="/2017/09/21/php-magic-function/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-魔术函数">PHP-魔术函数</span>
+            <span class="post-date" title="2017-09-21 18:20:02">2017/09/21</span>
+        </a>
+        
+        <a class="后端编程 " href="/2017/09/20/php-array-function/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-数组函数">PHP-数组函数</span>
+            <span class="post-date" title="2017-09-20 13:12:00">2017/09/20</span>
+        </a>
+        
+        <a class="面试题 " href="/2017/09/19/MQ-面试题/" data-tag="消息队列" data-author="">
+            <span class="post-title" title="MQ-面试题">MQ-面试题</span>
+            <span class="post-date" title="2017-09-19 14:44:34">2017/09/19</span>
+        </a>
+        
+        <a class="面试题 " href="/2017/09/18/redis-view-question/" data-tag="redis" data-author="">
+            <span class="post-title" title="Redis-面试题整理">Redis-面试题整理</span>
+            <span class="post-date" title="2017-09-18 11:12:32">2017/09/18</span>
+        </a>
+        
+        <a class="面试题 " href="/2017/09/17/php-interView-question/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-面试题整理">PHP-面试题整理</span>
+            <span class="post-date" title="2017-09-17 11:12:02">2017/09/17</span>
+        </a>
+        
+        <a class="正则表达 " href="/2017/06/27/正则/" data-tag="" data-author="">
+            <span class="post-title" title="正则使用">正则使用</span>
+            <span class="post-date" title="2017-06-27 18:34:57">2017/06/27</span>
+        </a>
+        
+        <a class="命令使用 " href="/2017/05/21/git批量上线脚本/" data-tag="" data-author="">
+            <span class="post-title" title="Git-批量上线脚本">Git-批量上线脚本</span>
+            <span class="post-date" title="2017-05-21 19:44:05">2017/05/21</span>
+        </a>
+        
+        <a class="服务使用 " href="/2017/04/17/Nginx-反向代理/" data-tag="nginx" data-author="">
+            <span class="post-title" title="Nginx-反向代理">Nginx-反向代理</span>
+            <span class="post-date" title="2017-04-17 12:32:56">2017/04/17</span>
+        </a>
+        
+        <a class="服务搭建 " href="/2017/01/14/Linux-docker-chandao/" data-tag="docker" data-author="">
+            <span class="post-title" title="Docker-Linux docker 搭建禅道">Docker-Linux docker 搭建禅道</span>
+            <span class="post-date" title="2017-01-14 00:00:00">2017/01/14</span>
+        </a>
+        
+        <a class="入坑历史 " href="/2016/11/23/question-for-git/" data-tag="git" data-author="">
+            <span class="post-title" title="Git-相关的问题">Git-相关的问题</span>
+            <span class="post-date" title="2016-11-23 00:00:00">2016/11/23</span>
+        </a>
+        
+        <a class="行业术语 " href="/2016/10/20/写时复制/" data-tag="概念" data-author="">
+            <span class="post-title" title="写时复制">写时复制</span>
+            <span class="post-date" title="2016-10-20 15:21:50">2016/10/20</span>
+        </a>
+        
+        <a class="行业术语 " href="/2016/08/16/行业术语/" data-tag="概念" data-author="">
+            <span class="post-title" title="TPS/QPS/PV/UV">TPS/QPS/PV/UV</span>
+            <span class="post-date" title="2016-08-16 10:33:29">2016/08/16</span>
+        </a>
+        
+        <a class="行业术语 " href="/2016/08/15/其他术语/" data-tag="概念" data-author="">
+            <span class="post-title" title="其他术语">其他术语</span>
+            <span class="post-date" title="2016-08-15 15:25:23">2016/08/15</span>
+        </a>
+        
+        <a class="服务搭建 " href="/2016/08/03/rabbit-mq-install/" data-tag="rabbitmq" data-author="">
+            <span class="post-title" title="服务-RabbitMQ安装方法总结">服务-RabbitMQ安装方法总结</span>
+            <span class="post-date" title="2016-08-03 00:00:00">2016/08/03</span>
+        </a>
+        
+        <a class="其他 " href="/2016/07/23/http头部属性/" data-tag="http" data-author="">
+            <span class="post-title" title="Http-头部属性">Http-头部属性</span>
+            <span class="post-date" title="2016-07-23 11:36:42">2016/07/23</span>
+        </a>
+        
+        <a class="其他 " href="/2016/07/14/http状态码/" data-tag="http" data-author="">
+            <span class="post-title" title="Http-状态码">Http-状态码</span>
+            <span class="post-date" title="2016-07-14 14:31:28">2016/07/14</span>
+        </a>
+        
+        <a class="服务搭建 " href="/2016/04/19/nfs-file-sharing/" data-tag="nfs" data-author="">
+            <span class="post-title" title="服务-记在Linux中搭建nfs文件共享的一次经历">服务-记在Linux中搭建nfs文件共享的一次经历</span>
+            <span class="post-date" title="2016-04-19 18:41:53">2016/04/19</span>
+        </a>
+        
+        <a class="入坑历史 " href="/2015/10/03/crontab-run-error-time/" data-tag="crond" data-author="">
+            <span class="post-title" title="服务-定时任务(crontab)使用总结">服务-定时任务(crontab)使用总结</span>
+            <span class="post-date" title="2015-10-03 11:42:44">2015/10/03</span>
+        </a>
+        
+        <a class="命令使用 " href="/2015/08/17/close-firewalld/" data-tag="Centos" data-author="">
+            <span class="post-title" title="Centos-在Centos7中使用防火墙">Centos-在Centos7中使用防火墙</span>
+            <span class="post-date" title="2015-08-17 12:04:26">2015/08/17</span>
+        </a>
+        
+        <a class="命令使用 " href="/2015/08/13/ls使用/" data-tag="linux" data-author="">
+            <span class="post-title" title="命令-ls">命令-ls</span>
+            <span class="post-date" title="2015-08-13 12:21:14">2015/08/13</span>
+        </a>
+        
+        <a class="命令使用 " href="/2015/07/26/scp使用/" data-tag="linux" data-author="">
+            <span class="post-title" title="命令-scp">命令-scp</span>
+            <span class="post-date" title="2015-07-26 19:26:20">2015/07/26</span>
+        </a>
+        
+        <a class="命令使用 " href="/2015/07/12/command-curl/" data-tag="linux" data-author="">
+            <span class="post-title" title="命令-curl">命令-curl</span>
+            <span class="post-date" title="2015-07-12 11:55:26">2015/07/12</span>
+        </a>
+        
+        <a class="后端编程 " href="/2015/03/09/php-preg_match_all/" data-tag="php" data-author="">
+            <span class="post-title" title="PHP-正则去掉字符串中非汉字字符串">PHP-正则去掉字符串中非汉字字符串</span>
+            <span class="post-date" title="2015-03-09 10:05:37">2015/03/09</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-nginx-optimization" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">Nginx-配置调优</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="服务使用">服务使用</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">nginx</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2020-07-22 10:14:35">2019-03-28 20:57</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-nginx-conf-配置文件"><span class="toc-text">1. nginx.conf 配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-nginx-pid文件"><span class="toc-text">2.nginx.pid文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-什么是-var-run-nginx-pid文件"><span class="toc-text">2.1 什么是 var/run/nginx.pid文件?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-nginx启动报错找不到nginx-pid"><span class="toc-text">2.2 nginx启动报错找不到nginx.pid</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Worker-Processess-说明"><span class="toc-text">3.Worker Processess 说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Worker进程连接数优化-worker-connections"><span class="toc-text">4.Worker进程连接数优化(worker_connections)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-HTTP和TCP优化"><span class="toc-text">5.HTTP和TCP优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Keep-Alive-减少浏览器重新连接的次数"><span class="toc-text">5.1 Keep Alive:减少浏览器重新连接的次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-服务处于TIME-WAIT-状态的-TCP-连接数异常的原因"><span class="toc-text">5.2 服务处于TIME_WAIT 状态的 TCP 连接数异常的原因</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Buffers-size优化"><span class="toc-text">6. Buffers size优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-超时设置"><span class="toc-text">7. 超时设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-静态资源服务"><span class="toc-text">8.静态资源服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Gzip压缩内容"><span class="toc-text">9.Gzip压缩内容</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-5 i,
+    .toc-level-5 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-nginx-conf-配置文件"><a href="#1-nginx-conf-配置文件" class="headerlink" title="1. nginx.conf 配置文件"></a>1. nginx.conf 配置文件</h2><pre><code>#运行的用户
+user www-data;
+pid /var/run/nginx.pid;
+
+#定义了nginx对外提供web服务时的worder进程数，CPU核的数量、存储数据的硬盘数量及负载模式
+worker_processes auto; 
+
+#更改worker进程的最大打开文件数限制,比&#39;ulimit -a&#39;多。解决&quot;too many open files&quot;
+worker_rlimit_nofile 100000; 
+events {
+    #worker进程同时打开的最大连接数
+    worker_connections 65536; 
+    #当收到一个新连接通知后接受尽可能多的连接
+    multi_accept on; 
+    #设置用于复用客户端线程的轮询方法,epoll需要linux2.6+
+    use epoll; 
+}
+http {
+    access_log off; #设置nginx是否将存储访问日志。关闭这个选项可以让读取磁盘IO操作更快(aka,YOLO)
+    error_log /var/log/nginx/error.log crit; #告诉nginx只能记录严重的错误
+
+  #HTTP和TCP优化
+    keepalive_timeout 10; #给客户端分配keep-alive链接超时时间。服务器将在这个超时时间过后关闭链接
+    keepalive_requests 1024;#限制了一个 HTTP 长连接最多可以处理完成的最大请求数, 默认是 100。当连接处理完成的请求数达到最大请求数后，将关闭连接。
+    tcp_nopush on; #在一个数据包里发送所有头文件，而不一个接一个的发送
+    tcp_nodelay on; #nginx不要缓存数据，而是一段一段的发送--当需要及时发送数据时，就应该给应用设置这个属性，这样发送一小块数据信息时就不能立即得到返回值。
+
+  #Buffers size优化
+    client_body_buffer_size  128k;#处理客户端缓冲区大小。 大多数客户端缓冲区都来自POST方法表单提交。128k通常是此设置的不错选择。
+    client_max_body_size  10m;#置最大body缓冲区大小。如果请求中的大小超过配置的值，则会将413（请求实体过大）错误返回给客户端。 不过浏览器无法正确显示413错误。 将大小设置为0将禁用对客户机请求正文大小的检查
+    client_header_buffer_size    1k; #处理客户端头大小。 默认情况下，1k通常是一个合理的选择。
+    large_client_header_buffers  4 4k; #设置客户端头的缓冲区的最大数量和大小。 4个报头与4k缓冲区应该足够了。
+    output_buffers  1 32k;#置用于从磁盘读取响应的缓冲区的数量和大小。 如果可能，客户端数据的传输将被推迟，直到Nginx至少具有要发送的数据的字节数的集合大小。零值禁止推迟数据传输。
+    postpone_output  1460;#指定Nginx发送给客户端最小的数值，如果可能的话，没有数据会发送，直到达到此值
+
+   #超时
+    client_header_timeout 10; #设置请求头超时时间，建议低
+    client_body_timeout 10; #请求体(各自)的超时时间
+    reset_timedout_connection on; #关闭不响应的客户端连接。这将会释放那个客户端所占有的内存空间
+    send_timeout 10; #指定客户端的响应超时时间
+
+  #静态资源服务
+    open_file_cache max=100000 inactive=20s; #打开缓存的同时也指定了缓存最大数目，以及缓存的时间
+    open_file_cache_valid 30s; #在open_file_cache中指定检测正确信息的间隔时间
+    open_file_cache_min_uses 2; #定义了open_file_cache中指令参数不活动时间期间里最小的文件数
+    open_file_cache_errors on; #指定了当搜索一个文件时是否缓存错误信息，也包括再次给配置中添加文件
+
+  #Gzip压缩内容
+    gzip on; #开启gzip压缩
+    gzip_disable &quot;msie6&quot;; #低版本兼容
+    gzip_proxied any; #允许或者禁止压缩基于请求和响应的响应流。我们设置为any，意味着将会压缩所有的请求
+    gzip_static on; #告诉nginx在压缩资源之前，先查找是否有预先gzip处理过的资源
+    gzip_min_length 1000; #设置对数据启用压缩的最少字节数
+    gzip_comp_level 6; #压缩级别,1-10越高越消耗CPU，但是压缩越好
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript; #设置需要压缩的数据格式
+
+  #其他优化
+    limit_conn_zone $binary_remote_addr zone=addr:5m; #设置用于保存各种key（比如当前连接数）的共享内存的参数。5m就是5兆字节，这个值应该被设置的足够大以存储（32K*5）32byte状态或者（16K*5）64byte状态。
+    limit_conn addr 100; #给定的key设置最大连接数。这里key是addr，我们设置的值是100，也就是说我们允许每一个IP地址最多同时打开有100个连接。
+    server_tokens off; #关闭nginx版本号
+    sendfile on; #sendfile()可以在磁盘和TCP socket之间互相拷贝数据(或任意两个文件描述符)。Pre-sendfile是传送数据之前在用户空间申请数据缓冲区。之后用read()将数据从文件拷贝到这个缓冲区，write()将缓冲区数据写入网络。sendfile()是立即将数据从磁盘读到OS缓存。因为这种拷贝是在内核完成的，sendfile()要比组合read()和write()以及打开关闭丢弃缓冲更加有效(更多有关于sendfile)
+
+    default_type text/html; #设置文件默认MIME-type
+    include /etc/nginx/mime.types; #只是一个在当前文件中包含另一个文件内容的指令。
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+}
+</code></pre><h2 id="2-nginx-pid文件"><a href="#2-nginx-pid文件" class="headerlink" title="2.nginx.pid文件"></a>2.nginx.pid文件</h2><h3 id="2-1-什么是-var-run-nginx-pid文件"><a href="#2-1-什么是-var-run-nginx-pid文件" class="headerlink" title="2.1 什么是 var/run/nginx.pid文件?"></a>2.1 什么是 var/run/nginx.pid文件?</h3><a id="more"></a>
+<p> var/run这个目录包含描述系统启动以来系统信息的数据。此文件夹下的文件必须在启动过程初期清除（删除或归零）。程序可以在/var/run下有自己的子文件夹。原先放在/etc下的进程标识（PID）文件必须放在/var/run里面。PID文件的命名惯例是<program-name>.pid。所以，nginx的PID文件名为/var/run/nginx.pid。</program-name></p>
+<p><code>nginx.pid存放的是nginx的master进程的进程号。</code></p>
+<h3 id="2-2-nginx启动报错找不到nginx-pid"><a href="#2-2-nginx启动报错找不到nginx-pid" class="headerlink" title="2.2 nginx启动报错找不到nginx.pid"></a>2.2 nginx启动报错找不到nginx.pid</h3><p><code>nginx: [error] open() &quot;/usr/local/nginx/logs/nginx.pid&quot; failed (2: No such file or directory)</code></p>
+<pre><code>[root@localhost nginx]# nginx -c /usr/local/nginx/conf/nginx.conf
+</code></pre><h2 id="3-Worker-Processess-说明"><a href="#3-Worker-Processess-说明" class="headerlink" title="3.Worker Processess 说明"></a>3.Worker Processess 说明</h2><p><code>通常来说设置一个cpu核心对应一个worker processer，最多不超过4个，提高worker process的值是为了提高计算能力，但一般在越到cpu瓶颈前，你会遇到别的瓶颈(如网络问题)只有当你要处理大量静态文件的磁盘I/O时，worker进程是单线程的，所以这个读取文件的阻塞IO会降低CPU的处理速度，这是可以增加worker进程数量，其它情况是不需要的。</code></p>
+<pre><code>//一般设置为:auto
+# worker_processes auto;
+
+//如果你想手动设置，你可以使用以下命令行查找服务器的cpu线程数。
+# grep ^processor /proc/cpuinfo | wc -l
+</code></pre><h2 id="4-Worker进程连接数优化-worker-connections"><a href="#4-Worker进程连接数优化-worker-connections" class="headerlink" title="4.Worker进程连接数优化(worker_connections)"></a>4.Worker进程连接数优化(worker_connections)</h2><p><code>worker_connections选项设置每个worker进程一次可以处理的最大连接数。 默认情况下，worker连接限制为512，但系统可以处理比这值更多的连接。
+适当的值可以通过测试得出。</code></p>
+<blockquote>
+<p>系统的核心限制也可以通过使用ulimit找到</p>
+</blockquote>
+<pre><code># ulimit -n
+</code></pre><h2 id="5-HTTP和TCP优化"><a href="#5-HTTP和TCP优化" class="headerlink" title="5.HTTP和TCP优化"></a>5.HTTP和TCP优化</h2><h3 id="5-1-Keep-Alive-减少浏览器重新连接的次数"><a href="#5-1-Keep-Alive-减少浏览器重新连接的次数" class="headerlink" title="5.1 Keep Alive:减少浏览器重新连接的次数"></a>5.1 Keep Alive:减少浏览器重新连接的次数</h3><ul>
+<li>keepalive_timeout和keepalive_requests 控制保持活动设置。</li>
+<li>sendfile 优化Nginx提供文件系统的静态文件服务的性能，如logo。</li>
+<li>tcp_nodelay 允许Nginx使TCP发送多个缓冲区作为单独的数据包。</li>
+<li>tcp_nopush 通过激活TCP堆栈中的TCP_CORK选项来优化一次向下游发送的数据量。TCP_CORK阻塞数据，直到分组到达MSS，这等于MTU减去IP报头的40或60字节。</li>
+</ul>
+<h3 id="5-2-服务处于TIME-WAIT-状态的-TCP-连接数异常的原因"><a href="#5-2-服务处于TIME-WAIT-状态的-TCP-连接数异常的原因" class="headerlink" title="5.2 服务处于TIME_WAIT 状态的 TCP 连接数异常的原因"></a>5.2 服务处于TIME_WAIT 状态的 TCP 连接数异常的原因</h3><blockquote>
+<p>keepalive_requests 参数限制了一个 HTTP 长连接最多可以处理完成的最大请求数, 默认是 100。当连接处理完成的请求数达到最大请求数后，将关闭连接</p>
+</blockquote>
+<p><code>而我并没有配置 keepalive_requests，所以，就是使用的默认数 100，即一个长连接只能处理一百个请求，然后 Nginx 就就会主动关闭连接，使大量连接处于 TIME_WAIT 状态</code></p>
+<h2 id="6-Buffers-size优化"><a href="#6-Buffers-size优化" class="headerlink" title="6. Buffers size优化"></a>6. Buffers size优化</h2><p><code>调整缓冲区大小可能是有利的。 如果缓冲区大小太低，那么Nginx将写入一个临时文件。 这将导致过多的磁盘I/O。</code></p>
+<ul>
+<li>client_body_buffer_size 处理客户端缓冲区大小。 大多数客户端缓冲区都来自POST方法表单提交。 128k通常是此设置的不错选择。</li>
+<li>client_max_body_size 设置最大body缓冲区大小。 如果请求中的大小超过配置的值，则会将413（请求实体过大）错误返回给客户端。 不过浏览器无法正确显示413错误。 将大小设置为0将禁用对客户机请求正文大小的检查。</li>
+<li>client_header_buffer_size 处理客户端头大小。 默认情况下，1k通常是一个合理的选择。</li>
+<li>large_client_header_buffers 设置客户端头的缓冲区的最大数量和大小。 4个报头与4k缓冲区应该足够了。</li>
+<li>output_buffers 设置用于从磁盘读取响应的缓冲区的数量和大小。 如果可能，客户端数据的传输将被推迟，直到Nginx至少具有要发送的数据的字节数的集合大小。 零值禁止推迟数据传输。</li>
+</ul>
+<h2 id="7-超时设置"><a href="#7-超时设置" class="headerlink" title="7. 超时设置"></a>7. 超时设置</h2><p><code>超时设置还可以大幅提高性能。</code></p>
+<ul>
+<li>client_body_timeout 指令设置服务器等待客户端完成发送body的最大时间。</li>
+<li>client_header_timeout 指令设置服务器等待客户端完成发送header的最大时间。</li>
+<li>sent_timeout 指定对客户端的响应超时。 此超时不适用于整个传输，而是仅应用于两个后续的客户端读取操作之间。 因此，如果客户端没有读取任何数据这段时间，那么Nginx关闭连接。</li>
+</ul>
+<h2 id="8-静态资源服务"><a href="#8-静态资源服务" class="headerlink" title="8.静态资源服务"></a>8.静态资源服务</h2><p><code>如果您的网站提供静态资源（如CSS/JavaScript/images），Nginx可以缓存这些文件很短的时间。</code></p>
+<pre><code>#告诉Nginx缓存1000个文件30秒，不包括在20秒内未被访问的任何文件
+open_file_cache max=100000 inactive=20s; 
+#在open_file_cache中指定检测正确信息的间隔时间
+open_file_cache_valid 30s; 
+#定义了open_file_cache中指令参数不活动时间期间里最小的文件数
+open_file_cache_min_uses 2; 
+#指定了当搜索一个文件时是否缓存错误信息，也包括再次给配置中添加文件
+open_file_cache_errors on; 
+</code></pre><blockquote>
+<p>还可以缓存特定位置的资源,缓存文件很长时间是有好处的。如放在具体某个服务配置中..</p>
+<pre><code>location ~* .(woff|eot|ttf|svg|mp4|webm|jpg|jpeg|png|gif|ico|css|js)$ {
+    expires 365d;
+}
+</code></pre></blockquote>
+<h2 id="9-Gzip压缩内容"><a href="#9-Gzip压缩内容" class="headerlink" title="9.Gzip压缩内容"></a>9.Gzip压缩内容</h2><pre><code>#开启gzip压缩
+gzip on; 
+#低版本兼容
+gzip_disable &quot;msie6&quot;; 
+#允许或者禁止压缩基于请求和响应的响应流。我们设置为any，意味着将会压缩所有的请求
+gzip_proxied any; 
+#告诉nginx在压缩资源之前，先查找是否有预先gzip处理过的资源
+gzip_static on; 
+#设置对数据启用压缩的最少字节数
+gzip_min_length 1000; 
+#压缩级别,1-10越高越消耗CPU，但是压缩越好
+gzip_comp_level 6; 
+#设置需要压缩的数据格式
+gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript; 
+</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Nginx-配置调优</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.8k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="猿码记">猿码记</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-03-28 20:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/03/28/nginx-optimization/" title="Nginx-配置调优">https://52lu.github.io/2019/03/28/nginx-optimization/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '2c2fa69918d1332db190',
+            clientSecret: '331f6fa0fb5d55a2f042f449c656bed6e33e7f7f',
+            repo: '52lu.github.io',
+            owner: '52lu',
+            admin: ['52lu'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <style>
+.cnzz_stat_icon_1278248605 a{
+    color: black;
+}
+</style>
+
+<div style="color:;font-size:15px;" class="footer-entry">
+<p class="footer-entry">©2015 <img src="/images/heart.png" height="15">  猿码记</p>
+
+
+<!-- 网站运行时间-->
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20150309,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `我已静悄悄的运行 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-entry").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+<p></p>
+
+
+
+
+
+<!-- 统计-->
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278248605'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1278248605%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>看您心情~~</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#go','#数据结构','#docker','#消息队列','#nginx','#mysql','#mac','#php','#Centos','#composer','#linux','#crond','#http','#Java','#maven','#nexus','#Kubernetes','#nfs','#算法','#rabbitmq','#git','#MQ','#redis','#概念',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
