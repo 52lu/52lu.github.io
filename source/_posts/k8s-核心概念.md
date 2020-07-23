@@ -5,7 +5,6 @@ tags:
 categories:
 ---
 
-[toc]
 
 ## Kubernetes架构图
 
@@ -20,23 +19,23 @@ Kubernetes的基本调度单元称为“Pod”，一个Pod包含一个或多个�
 
 Kubernetes集群的设计中，Pod是有生命周期的对象。用户通过手工创建或由Controller（控制器）直接创建的Pod对象会被“调度器”（Scheduler）调度至集群中的某工作节点运行，待到容器应用进程运行结束之后正常终止，随后就会被删除。
 
-<font color=green >**控制器本身也是一种资源类型，它有着多种实现，其中与工作负载相关的实现如Replication Controller、Deployment、StatefulSet、DaemonSet和Jobs等，也可统称它们为Pod控制器。**</font>
+**控制器本身也是一种资源类型，它有着多种实现，其中与工作负载相关的实现如Replication Controller、Deployment、StatefulSet、DaemonSet和Jobs等，也可统称它们为Pod控制器。**
 
 #### 1.Replication Controller
 
-<font color=red>Replication Controller用于管理、控制Pod的副本数，用于解决Pod的扩容、缩容问题。</font>通常，分布式应用为了性能或高可用性的考虑，需要复制多份资源，并且根据负载情况实现动态伸缩。通过Replication Controller，我们可以指定一个应用需要几份副本，Kubernetes将为每份副本创建一个Pod，并且保证实际运行Pod数量总是与该副本数量相等。如果少于指定数量的Pod副本，Replication Controller会重新启动新的Pod副本，反之会“杀死”多余的副本以保证数量不变
+**Replication Controller用于管理、控制Pod的副本数，用于解决Pod的扩容、缩容问题。**通常，分布式应用为了性能或高可用性的考虑，需要复制多份资源，并且根据负载情况实现动态伸缩。通过Replication Controller，我们可以指定一个应用需要几份副本，Kubernetes将为每份副本创建一个Pod，并且保证实际运行Pod数量总是与该副本数量相等。如果少于指定数量的Pod副本，Replication Controller会重新启动新的Pod副本，反之会“杀死”多余的副本以保证数量不变
 
 #### 2.Deployment
 
 Deployment的主要职责同样是为了保证Pod的数量和健康，而且绝大多数的功能与Replication Controller完全一样，因此可以被看作新一代的Replication Controller。但是，它又具备了Replication Controller不具备的新特性：
 
-- 事件和状态查看：可以查看升级的详细进度和状态
-- 回滚：当升级Pod镜像或者相关参数的时候发现问题，可以使用回滚操作回滚到上一个稳定的版本或者指定的版本。
-- 版本记录：每一次对Deployment的操作都能保存下来，给予后续可能的回滚使用。
-- 暂停和启动：对于每一次升级，都能够随时暂停和启动。
-- 多种升级方案: 
+-  事件和状态查看：可以查看升级的详细进度和状态
+-  回滚：当升级Pod镜像或者相关参数的时候发现问题，可以使用回滚操作回滚到上一个稳定的版本或者指定的版本。
+-  版本记录：每一次对Deployment的操作都能保存下来，给予后续可能的回滚使用。
+-  暂停和启动：对于每一次升级，都能够随时暂停和启动。
+-  多种升级方案: 
   -  Recreate——删除所有已存在的Pod，重新创建新的
-  - RollingUpdate——滚动升级，即逐步替换的策略。滚动升级时支持更多的附加参数，例如，设置最大不可用Pod数量、最小升级间隔时间等。
+  -  RollingUpdate——滚动升级，即逐步替换的策略。滚动升级时支持更多的附加参数，例如，设置最大不可用Pod数量、最小升级间隔时间等。
 
 ![image-20200706130725244](https://gitee.com/QingHui/picGo-img-bed/raw/master/img/image-20200706130725244.png)
 
@@ -53,7 +52,8 @@ StatefulSet使用起来相对复杂，当应用具有以下特点时才建议使
  - 有序的自动滚动更新需求。
 
 ### Service
-<font color=red>Service是真实应用服务的抽象，定义了Pod的逻辑集合和访问这个集合的策略</font>。Service是一组协同工作的Pod，就像多层架构应用中的一层，是Pod的路由代理抽象，用于解决Pod之间的服务发现问题。<font color=blue>因为Pod的运行状态可动态变化（比如，Pod迁移到其他机器或者在缩容过程中被终止等），所以访问端不能以固定IP的方式去访问该Pod提供的服务。Service的引入旨在保证Pod的动态变化对访问端透明，访问端只需要知道Service的地址，由Service来提供代理。</font>构成服务的Pod组通过Label选择器来定义。Kubernetes通过给服务分配静态IP地址和域名来提供服务发现机制，并且以轮询调度的方式将流量负载均衡到能与选择器匹配的Pod的IP地址的网络连接上（即使是故障导致Pod从一台机器移动到另一台机器）。默认情况下，一个服务会暴露在集群中（例如，多个后端Pod可能被分组成一个服务，前端Pod的请求在它们之间负载均衡）；但是，一个服务也可以暴露在集群外部（例如，从客户端访问前端Pod）。
+ Service是真实应用服务的抽象，定义了Pod的逻辑集合和访问这个集合的策略。Service是一组协同工作的Pod，就像多层架构应用中的一层，是Pod的路由代理抽象，用于解决Pod之间的服务发现问题。<font color=blue>因为Pod的运行状态可动态变化（比如，Pod迁移到其他机器或者在缩容过程中被终止等），所以访问端不能以固定IP的方式去访问该Pod提供的服务。Service的引入旨在保证Pod的动态变化对访问端透明，访问端只需要知道Service的地址，由Service来提供代理。</font>构成服务的Pod组通过Label选择器来定义。Kubernetes通过给服务分配静态IP地址和域名来提供服务发现机制，并且以轮询调度的方式将流量负载均衡到能与选择器匹配的Pod的IP地址的网络连接上（即使是故障导致Pod从一台机器移动到另一台机器）。默认情况下，一个服务会暴露在集群中（例如，多个后端Pod可能被分组成一个服务，前端Pod的请求在它们之间负载均衡）；但是，一个服务也可以暴露在集群外部（例如，从客户端访问前端Pod）。
+
 
 ### Label及Label Selector (标签及标签选择器)
 

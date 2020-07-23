@@ -8,4 +8,11 @@ hexo new "postName" #新建文章
 hexo d -g #生成静态页面并将.deploy目录部署到GitHub
 ```
 
+### 安装软件
+```shell script
+# 安装nvm弄得
+```
+### 版本要求
+- node : 12.3
+-
 [命令参考](https://segmentfault.com/a/1190000002632530)
